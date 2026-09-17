@@ -141,6 +141,76 @@
       ],
       "archive_path": "archives/stock-analysis-c65226ed5e71c231-archive.json",
       "archive_filename": "stock-analysis-c65226ed5e71c231-archive.json"
+    },
+    "CIK:0001513845|NASDAQ:NBIS:CLASS-A": {
+      "earnings_events": [
+        {
+          "id": "nbis-q326-results",
+          "kind": "results",
+          "period": "Q3 2026",
+          "confidence": "Estimated",
+          "date": "2026-10-22",
+          "checked_at": "2026-09-17",
+          "source_id": "calendar",
+          "timezone": "America/New_York",
+          "basis": {
+            "en": "TipRanks lists October 22 but contradicts itself with both Confirmed and Estimated labels. No issuer announcement found in the financials/newsroom or latest SEC submissions. Treat this as a low-confidence calendar placeholder and recheck; no call time assumed.",
+            "ro": "TipRanks indică 22 octombrie, dar folosește contradictoriu etichete Confirmat și Estimat. Nu a fost găsit anunț al emitentului în rezultate, știri sau ultimele depuneri SEC. Reper de calendar cu încredere redusă, de reverificat; fără oră presupusă a apelului."
+          },
+          "source_url": "https://www.tipranks.com/stocks/nbis/earnings",
+          "source_title": "TipRanks NBIS earnings calendar: contradictory confirmed/estimated labels",
+          "baseline_report_id": "NBIS-2026-09-17-v3",
+          "reviewed_report_id": null
+        }
+      ],
+      "latest_report_id": "NBIS-2026-09-17-v3",
+      "latest_cutoff": "2026-09-17T22:31:00Z",
+      "watch_count": 7,
+      "card": {
+        "report_id": "NBIS-2026-09-17-v3",
+        "summary": {
+          "en": "AI demand is real. Turning a huge buildout into cash per share is the test.",
+          "ro": "Cererea AI este reală. Testul este transformarea extinderii în numerar pe acțiune."
+        },
+        "business": {
+          "en": "Computing infrastructure and cloud software for companies building and running AI.",
+          "ro": "Infrastructură de calcul și software cloud pentru companii care construiesc și rulează AI."
+        },
+        "risk": {
+          "en": "Heavy investment, delivery risk and dilution make the share price demanding.",
+          "ro": "Investițiile mari, riscul de livrare și diluția fac prețul exigent."
+        },
+        "logo_data_uri": "data:image/png;base64,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",
+        "logo_url": "https://nebius.com/favicon/apple-touch-icon.png",
+        "logo_source_url": "https://nebius.com/"
+      },
+      "company": {
+        "issuer_id": "CIK:0001513845",
+        "security_id": "NASDAQ:NBIS:CLASS-A",
+        "name": "Nebius Group N.V.",
+        "ticker": "NBIS",
+        "exchange": "NASDAQ",
+        "share_class": "Class A ordinary shares (not ADRs)",
+        "reporting_currency": "USD",
+        "trading_currency": "USD",
+        "fiscal_year_end": "December 31"
+      },
+      "ticker_aliases": [
+        "NBIS"
+      ],
+      "archive_sha256": "dd50f630c488af8e446a7d268351fe8e063105c55611701a9bd996f8a22a70f9",
+      "reports": [
+        {
+          "report_id": "NBIS-2026-09-17-v3",
+          "cutoff": "2026-09-17T22:31:00Z",
+          "parent_report_id": null,
+          "watch_count": 7,
+          "html_path": "reports/NBIS-stock-analysis-v3-2026-09-17.html",
+          "html_filename": "NBIS-stock-analysis-v3-2026-09-17.html"
+        }
+      ],
+      "archive_path": "archives/stock-analysis-cf86239689a624ef-archive.json",
+      "archive_filename": "stock-analysis-cf86239689a624ef-archive.json"
     }
   },
   "storage": {
