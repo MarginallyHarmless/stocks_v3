@@ -6,3 +6,9 @@
 
 /* Guided reading keeps the answer complete while analysis stays optional. */
 .guide .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:25px}.guide .metric{min-width:0}.metric-meaning{font-size:15px;line-height:1.6;margin-top:14px}.metric-meaning .claim{margin:0}.takeaway{border-left:2px solid var(--accent);padding:4px 0 1px 18px;margin:24px 0}.takeaway>strong{font-size:14px;display:block;margin-bottom:7px}.takeaway .claim{margin-bottom:5px}.deep-data{border-top:1px solid var(--line);margin-top:15px;padding:9px 0}.deep-data>summary{font-size:15px;min-height:44px;padding:8px 0;color:var(--accent)}.detail-content{padding-top:20px;font-size:16px}.section{padding-top:44px;padding-bottom:44px}.caveat{font-size:15px}.guide,.metric,.takeaway{overflow-wrap:anywhere}main{min-width:0}
+
+.sidebar .home-link{display:block;padding:0 0 5px;text-decoration:none}
+.home-link .brand-name{display:flex;align-items:center;gap:9px;white-space:nowrap;font-size:11px}
+.home-link .brand-icon{font-size:23px;line-height:1;color:var(--accent);font-weight:400;letter-spacing:0}
+.home-link .back-label{display:block;font-size:11px;font-weight:400;letter-spacing:0;text-transform:none;margin-top:10px;color:var(--muted)}
+.home-link:hover .back-label{color:var(--accent)}
