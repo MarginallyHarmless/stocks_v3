@@ -1,0 +1,15 @@
+interface:
+  display_name: Stock Analysis
+  short_description: Guided stock research with explained numbers and next checks
+  default_prompt: Use $stock-analysis to analyze a company in plain language with
+    the guided question structure, explain why the key numbers matter, and save what
+    to check at its next results.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
