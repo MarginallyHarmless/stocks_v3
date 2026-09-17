@@ -18,4 +18,12 @@ node skills/stock-analysis/scripts/tests/test_company_index.js
 node skills/stock-analysis/scripts/tests/test_report_controls.js
 ```
 
-Commit and push the report, archive, registry and index together. Never force-push. Inspect the remote commit after saving. GitHub Pages should publish from main at the repository root. Do not describe its URL as live until the deployment and page response have been checked.
+Commit and push the report, archive, registry and index together. Never force-push. Inspect the remote commit after saving. The connected GitHub app can write to this repository; use its native tools when the shell has no push credentials. A local browser login is not needed for routine updates.
+
+Every push to `main` runs `.github/workflows/pages.yml`: validate the research, regenerate the index, package the website and deploy to GitHub Pages. Pull requests validate without publishing. Website files belong in `index.html`, `stock-analysis-registry.json`, `reports/`, `archives/` and optional `assets/`; update the packaging step if adding another public directory.
+
+Monitor the Actions run for the exact pushed commit. Inspect failed job logs and fix actionable failures; re-run failed jobs after a transient error or an account-side setup change. If an expired artifact prevents a retry, run the workflow again from the Actions UI or make the next intended content push. Do not force-push or fabricate a content change just to trigger deployment.
+
+One-time account setup is Settings → Pages → Build and deployment → Source: **GitHub Actions**. The connected app cannot change repository administration settings. Once enabled, the workflow uses GitHub's built-in credentials; no personal token, hosting secret or browser login is needed for future deployments. Keep the GitHub app connected with access to this repository.
+
+After a successful deployment, check the index and changed report URLs under `https://marginallyharmless.github.io/stocks_v3/` before describing them as live. Report an unresolved deployment failure explicitly, even when the push succeeded.

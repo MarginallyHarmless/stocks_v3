@@ -14,7 +14,13 @@ Download the repository and open `index.html` in a browser. Reports also work as
 
 ## Publish with GitHub Pages
 
-In this repository's Settings → Pages, choose **Deploy from a branch**, **main**, **/(root)**, then Save. The expected address is https://marginallyharmless.github.io/stocks_v3/ once deployment completes. GitHub Pages publishes the committed static files; no package install or build service is needed.
+The [deployment workflow](.github/workflows/pages.yml) tests the research tools, verifies saved archives, rebuilds the index and publishes the website after every push to `main`. Pull requests run validation without publishing. Deployments use GitHub's built-in credentials; no personal access token or hosting secrets are needed.
+
+**One-time setup:** Open [Settings → Pages](https://github.com/MarginallyHarmless/stocks_v3/settings/pages). Under **Build and deployment → Source**, select **GitHub Actions**. Keep the ChatGPT Codex Connector connected with access to this repository so Codex can push future updates.
+
+Then open [Actions](https://github.com/MarginallyHarmless/stocks_v3/actions/workflows/pages.yml). If the first run failed because Pages was not enabled, choose **Re-run failed jobs**, or use **Run workflow** on `main` to start a fresh deployment. Subsequent pushes publish automatically.
+
+The site address after a successful deployment is [marginallyharmless.github.io/stocks_v3](https://marginallyharmless.github.io/stocks_v3/). Check the workflow result and live page before treating an update as published. Files deployed are the index, registry, reports, archives and optional `assets/` directory.
 
 ## Add or update research
 
