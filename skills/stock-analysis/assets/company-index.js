@@ -76,18 +76,28 @@ function layoutTimeline(){
   const timeline=$('#timeline'), width=timeline.clientWidth;
   if(!width||!timeline.querySelector('.timeline-events'))return;
   const mobile=matchMedia('(max-width:600px)').matches, cardWidth=164, inset=12;
-  const lanes=[];
-  timeline.querySelectorAll('.timeline-item').forEach(item=>{
+  const lanes={above:[],below:[]};
+  let maxHeight=0;
+  const items=[...timeline.querySelectorAll('.timeline-item')];
+  items.forEach(item=>{maxHeight=Math.max(maxHeight,item.querySelector('.timeline-event').offsetHeight);});
+  const rowHeight=maxHeight+12, gap=32;
+  items.forEach((item,i)=>{
     const x=inset+(width-inset*2)*Number(item.dataset.days)/Number(timeline.dataset.horizon);
     const left=Math.max(0,Math.min(width-cardWidth,x-20));
-    let lane=lanes.findIndex(right=>left>=right+18);
-    if(lane<0)lane=lanes.length;
-    lanes[lane]=left+cardWidth;
+    const available=side=>{const lane=lanes[side].findIndex(right=>left>=right+18);return lane<0?lanes[side].length:lane;};
+    const above=available('above'), below=available('below');
+    const side=above===below?(i%2?'below':'above'):(above<below?'above':'below');
+    const lane=side==='above'?above:below;
+    lanes[side][lane]=left+cardWidth;
+    item.classList.toggle('is-above',side==='above');
     item.style.setProperty('--x',`${x}px`);
     item.style.setProperty('--left',`${left}px`);
-    item.style.setProperty('--stem',`${32+lane*112}px`);
+    item.style.setProperty('--stem',`${gap+lane*rowHeight}px`);
   });
-  timeline.style.setProperty('--timeline-height',`${mobile?0:72+lanes.length*112}px`);
+  const upper=lanes.above.length?gap+lanes.above.length*rowHeight:28;
+  const lower=lanes.below.length?gap+lanes.below.length*rowHeight:16;
+  timeline.style.setProperty('--axis-top',`${upper}px`);
+  timeline.style.setProperty('--timeline-height',`${mobile?0:upper+lower}px`);
 }
 function renderSelected(){
   const panel=$('#selected-event'), rows=events().filter(x=>x.e.date===selected);
