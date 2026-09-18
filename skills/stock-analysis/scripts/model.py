@@ -354,22 +354,20 @@ def validate(data, baseline=None):
     narrative_keys = {'text','evidence_gaps','question','why','description','rationale','caveat','nav_label',
                       'concept','example','trap','thesis_change','coverage_note','reason','thesis_impact',
                       'favorable','adverse','mixed','unresolved','comparability_reason','restatement_note'}
-    def check_languages(value):
+    def check_languages(value, context=None):
         if isinstance(value,list):
-            for item in value: check_languages(item)
+            for item in value: check_languages(item, context)
         elif isinstance(value,dict):
             for key,item in value.items():
-                if key == 'key_stats':
-                    # Here concept is a machine identifier, not lesson prose.
-                    for stat in item:
-                        check_languages({k: v for k, v in stat.items() if k != 'concept'})
+                if context == 'key_stats' and key == 'concept':
+                    need(isinstance(item, str) and bool(item), 'Key-stat concept must be an identifier')
                     continue
                 if key in narrative_keys and len(data['languages']) > 1:
                     need(isinstance(item,dict) and set(data['languages']) <= set(item) and all(text_ok(item[x]) for x in data['languages']), f'Missing authored translation for {key}')
                 elif isinstance(item,dict) and set(item) <= {'en','ro'}:
                     need(set(data['languages']) <= set(item), f'Missing translation for {key}')
                 if key not in {'sources','evidence','company'}:
-                    check_languages(item)
+                    check_languages(item, key)
     check_languages(data)
     sources = {}
     for s in data.get("sources", []):

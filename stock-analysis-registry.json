@@ -351,6 +351,76 @@
       ],
       "archive_path": "archives/stock-analysis-hood-class-a-archive.json",
       "archive_filename": "stock-analysis-hood-class-a-archive.json"
+    },
+    "CIK:0001751008|NASDAQ:APP:CLASS-A": {
+      "earnings_events": [
+        {
+          "id": "app-q326-results",
+          "kind": "results",
+          "period": "Q3 2026",
+          "confidence": "Estimated",
+          "date": "2026-11-11",
+          "checked_at": "2026-09-18",
+          "source_id": "calendar",
+          "timezone": "America/New_York",
+          "basis": {
+            "en": "TipRanks estimates November 11 but also displays a conflicting Confirmed label. No issuer announcement verified; treat as a provisional date. No call or filing time assumed.",
+            "ro": "TipRanks estimează 11 noiembrie, dar afișează și Confirmat contradictoriu. Fără anunț verificat al emitentului; dată provizorie. Fără oră de apel sau depunere presupusă."
+          },
+          "source_url": "https://www.tipranks.com/stocks/app/earnings",
+          "source_title": "TipRanks APP earnings calendar",
+          "baseline_report_id": "APP-2026-09-18-v3",
+          "reviewed_report_id": null
+        }
+      ],
+      "latest_report_id": "APP-2026-09-18-v3",
+      "latest_cutoff": "2026-09-18T08:36:13+00:00",
+      "watch_count": 7,
+      "card": {
+        "report_id": "APP-2026-09-18-v3",
+        "summary": {
+          "en": "Strong profits at a more reasonable valuation. Cash recovery and model performance are the next tests.",
+          "ro": "Profit puternic la evaluare mai rezonabilă. Următoarele teste: numerarul și modelele."
+        },
+        "business": {
+          "en": "Advertising software that helps businesses find customers and publishers earn from ads.",
+          "ro": "Software publicitar care găsește clienți și ajută editorii să câștige din reclame."
+        },
+        "risk": {
+          "en": "Advertiser results, platform dependence and slower growth can change the earnings case quickly.",
+          "ro": "Rezultatele reclamelor, dependența de platforme și încetinirea pot schimba rapid teza."
+        },
+        "logo_url": "https://storage.googleapis.com/applovin_assets_us/libraries/visual/brand/img-brand-mark-dk.webp",
+        "logo_source_url": "https://www.applovin.com/en/brand",
+        "logo_data_uri": "data:image/webp;base64,UklGRoYMAABXRUJQVlA4IHoMAABQ4QCdASrIBLECPmEwmEikIyKhIFVYOIAMCWlu4Xf+ABnZzjb/EdnP+TwiDIg+HfcL9/wg8AL8Q/SO8YgA+rv+74wNIFoAfm/1W/6L/1eU389/zH/m/yPwG/yz+5+lB66f249kz9bAMxRKvNbYs6dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTpvoAxFJjm81tizp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTpvk38jwkgZAGNQfcHTKyOfrzp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOjiT7OvbsEZPkThShKAyATvGoqwc094cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhvxABf/DVpKtxCDlkC3Clv4GkIYD9izp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06b4TjoeIkkE8b9kwUKkR0Z6Rya32rBzT3hw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDfhMVleMKOZMfRWz8Bqssm5mwIz9UaUfqflDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhwyEQfMomgWzpxa4zAuc/mj6FrbYgg6LlwV4vs6YWoCE4rGb4oZdimLpbnaZU65nvYs6dOnTp06dOnTp06dOnTp06dOnTp06dOnTp03yU9AE+PDLY3p3J9mUN/RhXE3KjTGn2TY3SgyeRhqSLjphyB+HDhw4cOHDhw4cOHDhw4cOHDhw4cOHDhw4cOHDfjVcP+9RXENZ6P/A7E9rbFnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOnTp06dOm/VHgNTwGp4DU8BqeA1PAangNTwGp4DU8BqeA1PAangNTwGp4DU8BqeA1PAangNTwGp4DU8BqeA1PAangNTwGp4DU8BqeA1PAangNTwGp4DU8BqeA1PAangNTwGoAAD+/rLUd1j3ADDUCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxiIFjTDBQMQ4kTT0NwOAcO4J+UnSskcAA39m17fm1E4VfTQO7Q0oU24eRROBJQqa6RQowSO98/0p5Uvm5IHkYNjhPwVwpvP7Y49kl8Be6noxrJWJVF0vKLTjkrm/fcqrtp6m9Awt/wFNJfl4mBZ9CTpUgg4HaL32tMTZXbAdXHNY+eAABVWO8+J4PmtKWJyeBX9oEYhXjvnwu+qFPLQiRVtMadAmgPqy9s+JjzofHwt1N4P9fS6GkcT4WSHQM0bxapKYkcaFWs4nyeMEZXqjesX//2GvMkHcxgIN4erUSgdYzdD2V9WUyLWDF/PW8mTLbdOngzkHxrOwHOgABA1YfvN78XAdRyyQLMbQZuKxJu/8aqainXaNvhFtrvuhfZTAYPSWFVcBWNh1NCaBwHDzG8zIk6FEfXMHYaW2FLLBZkpLh3Ery66Td7tYCJXjpi2qLz9MPnAmsC1pb1TsHuma0R/A5iyLBAp7sg0MSGVWWJ5qJouMJXunbsaTtqDalmAA4N9EfvGJrJMgyENcefu117HYlHdf+qOZUoqsEhAANw3atAO3u5blHd/OHksTiugOsQTt9WhCIDvVI7TIfCUinwVp5t5XhxNb3IsNehtQ/WUeE1A1MaoO29gmriw/ZVNY6s0+EFNbuS8oPSW0uY6i5dBUwF/nVjqKTNRN40vuMMAATg4VlyS/mlPkQfMVstFoG2+D1CGfVg537MNns+lm4mrsFF1WbP+vc3sBwuFCrjErEXhqqne7qtjomTD9KprZrdy7F/GLL3IuBc//leApRIw5n9ChpvT7by66umQ5djP4tFlB6vMq6irv/vtqvA++JPzZgAHgwrrSKYULUT7HpSzxRLDEDzvMH4nzFB/3BOVP4aLelqXkwOH2jcHkjrDbxyIuTFbuZOjJAC+Claa+LyxgJz9Hd57Y+BAFi34X++gO2QML+H5FmPkH0Lcye8yDvKi7rjII3MkYOTtPEehK4ybenw1vSpSLZDq6x/Yf4crdozmsHUtnzSCg1Fi4VnvOYE8EC8iBKw9GP6xf6+7bhwhAIA4wEgSI+U2vE0LtdrSzr3vkNVP5zKh0R9/f8xqqaXIcxUR6YgW8EFHO6sxukWwDXUkNq5bcT49AlA9R7RP/9IT7/WJM5dvMlM05CHp5R2HuoeVTG8Jc3kQgkgGA4BSwKfFAOmLNgnaf8KCXKZWfWS3ZPsekpJVzXTer0943++kbWwYmNhoGwCzysqEOP2/0ZFXvF0SNKJ9WRlptNpfnLUPivKJH3wH/1Ad+Nik57juAppmz00pOyVHZmYJ3esZEt19WYTkOXk9349yRjC0IKzq8AJvuZcoQNNIz3nME6UYdPSAvPRZwztk0ogHc64FAOmAsRTKIiYF6JeqbjvLF5l+/Q6JcAAksjj5UYqyFBIaJ79DlWKviyIMGq2Tu73xZNUOqqb3enlFujrOguMcT4tatLQd8+He2lLEDovYaTceIno2tVEEyH+9op+99jKgIDnouL55cj7d5a5qqXMC9DQrw0ruXNO6x2vCoTGMULP3MmSS1Kuztnwh68FsFUszY7z+x8CF+6r875ZLWgR/Ww5ssnxbE3g7MBLDBy0UXPZhxlzrfC/CvdgAdGIA4wUh8Mnm/2jZ3x04JN37/5v2UqKznxxfzbpVu/Ocg8wpT4AAI3fuddrJJcBzYftfLoefq/KIj2PMJArbbS2WAHDPnjKA1uJsql4Pr5Ku/Qlv+Np0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJHxQwUAAAAAA=="
+      },
+      "company": {
+        "issuer_id": "CIK:0001751008",
+        "security_id": "NASDAQ:APP:CLASS-A",
+        "name": "AppLovin Corporation",
+        "ticker": "APP",
+        "exchange": "NASDAQ",
+        "share_class": "Class A common stock",
+        "reporting_currency": "USD",
+        "trading_currency": "USD",
+        "fiscal_year_end": "December 31"
+      },
+      "ticker_aliases": [
+        "APP"
+      ],
+      "archive_sha256": "02672c293dd0191862db2290dba54ca26ef3f13a886092b27ff881bdda76b9a5",
+      "reports": [
+        {
+          "report_id": "APP-2026-09-18-v3",
+          "cutoff": "2026-09-18T08:36:13+00:00",
+          "parent_report_id": null,
+          "watch_count": 7,
+          "html_path": "reports/APP-stock-analysis-v3-2026-09-18.html",
+          "html_filename": "APP-stock-analysis-v3-2026-09-18.html"
+        }
+      ],
+      "archive_path": "archives/stock-analysis-app-class-a-archive.json",
+      "archive_filename": "stock-analysis-app-class-a-archive.json"
     }
   },
   "storage": {
