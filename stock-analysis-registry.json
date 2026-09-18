@@ -561,6 +561,84 @@
       ],
       "archive_path": "archives/stock-analysis-ceg-common-archive.json",
       "archive_filename": "stock-analysis-ceg-common-archive.json"
+    },
+    "CIK:0001035267|NASDAQ:ISRG:COMMON": {
+      "earnings_events": [
+        {
+          "id": "isrg-q326-results",
+          "kind": "results",
+          "period": "Q3 2026",
+          "confidence": "Estimated",
+          "date": "2026-10-20",
+          "checked_at": "2026-09-18",
+          "source_id": "quote",
+          "timezone": "America/New_York",
+          "basis": {
+            "en": "Stock Analysis lists October 20. Issuer calendar lists no upcoming event as checked September 18; date remains estimated, no call time assumed.",
+            "ro": "Stock Analysis indică 20 octombrie. Calendarul emitentului nu listează evenimente viitoare la 18 septembrie; data rămâne estimată, fără oră presupusă."
+          },
+          "source_url": "https://stockanalysis.com/stocks/isrg/",
+          "source_title": "Stock Analysis ISRG overview",
+          "baseline_report_id": "ISRG-2026-09-18-v3-rebuilt",
+          "reviewed_report_id": null
+        }
+      ],
+      "latest_report_id": "ISRG-2026-09-18-v3-rebuilt",
+      "latest_cutoff": "2026-09-18T14:27:17.205196+00:00",
+      "watch_count": 6,
+      "card": {
+        "logo_url": "https://isrg.intuitive.com/sites/g/files/knoqqb87176/files/logo.png",
+        "logo_source_url": "https://isrg.intuitive.com/",
+        "logo_data_uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAAoCAYAAAAcwQPnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkYxOEUxRkNEOTUxNzExRTg5NjMzRDdGREE0MjgzNTc5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkYxOEUxRkNFOTUxNzExRTg5NjMzRDdGREE0MjgzNTc5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjE4RTFGQ0I5NTE3MTFFODk2MzNEN0ZEQTQyODM1NzkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjE4RTFGQ0M5NTE3MTFFODk2MzNEN0ZEQTQyODM1NzkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz67nGOFAAADbUlEQVR42uxbgXWbMBC95nkAbxBGoBOYbOANmg3iTGA6QewJQjdwJrAzQegEphOUDSi04vmsCiRAAuH8/56esY2xdPrc/TsJIqANQdley1awdi7bI0zTjKIoYIQWhGX7LZGKt1eYCMTqg7NEpGPZPqTP4LlArE5YS6EvYN/F0ncAiGWMWOOVuOcCFMS6gxm0yBSf5TBLO0AsNThxvikyxRAmAvqWGeQMMBLa64zMEBprCF5aSg2FKEUEMBOIZZNcZ4TDdmJ9gRmMwmKVGd4L7fWzbAcIeHgsAOUGAOUGAACxgLGxEOK0TpszUleaOSJ2XAnYtOXcKnNaiuOTwfVM0dTPJcvWuvQt1Yhx03ODniWIkyZ5MJ2fyPCarsf1979jlkbHJtqMrms5bTiSfk2t6NHiFsPy3QimfYssnRv3HA8ZXlM3Px8dxkR0XewNbY3LhnhfEraO+IST5I10cxcYevdeoXAoqrW0ZMDvHxSfvTDDPCsGnXk6sYkiBIViPHW4eXb4/+9l24jjVdl2FsMmH+OPMYgVCeOlFu4yrt2ITcZpJh5Dp4Fyx2NJO3islURIU/wyGcOQUMgn/wlRyDti6wR3X4/lvNzAPcmaZRfAPHSWafY8OrGIxVqIeH/w3hDuRvNWNoiVsJCIcDgfj8WJ9eYjsYhlhAH1K3YC7nRWZCDcT74Say+VHgC/vFbU4rF0WawK9+L3TW1pi1hVxw7i+JGwq9I3nRVa1lfVHB9bWmiLWFzEE0S8F0hbBHzYQECrWFi6zkF4rkCEwxhzOzmxcrpelLelrxJqr7ynNolVe60tXbbyJpjfyXXWmi6F0syCvqrgvPIuYwcR773OMtnG5E1WWCNnXiqCiPcqMwwV+uptLsSSRfwWc+uFzuK6ynn9yhWxTixuY/3QH68VSa+6HbPeEavCd/GqykjGdP+RhtjBWHevJzprzcbsfLwuiDX1w5y8hrNpOGfDjJzS7YIT6KmBcLMhVk6XSvwU2Es6b6Mg1bbh/FvUWSSFwdl6rKknK5EMWm0Lrh76qJYbzuI9fzIl+UTZoQ19Vd2U2odD7hzeKVPqlgeJXEv6vwSSknq//S3rLOdlhhoLkcXVJMg63AE6bbIfSEweWvuE46/0bwVgKxEqE33bjdSfvIPNVOg6PyrNu5LeD+mDEf4IMADEGVXRQoULlwAAAABJRU5ErkJggg==",
+        "report_id": "ISRG-2026-09-18-v3-rebuilt",
+        "summary": {
+          "en": "Strong recurring cash engine. The price still needs durable growth.",
+          "ro": "Venituri recurente și numerar solid. Prețul cere creștere durabilă."
+        },
+        "business": {
+          "en": "Surgical robots, instruments and services used by hospitals.",
+          "ro": "Roboți chirurgicali, instrumente și servicii pentru spitale."
+        },
+        "risk": {
+          "en": "Slower procedure growth, stronger rivals and a demanding valuation.",
+          "ro": "Proceduri în creștere mai lentă, concurenți mai puternici și evaluare exigentă."
+        }
+      },
+      "company": {
+        "issuer_id": "CIK:0001035267",
+        "security_id": "NASDAQ:ISRG:COMMON",
+        "name": "Intuitive Surgical, Inc.",
+        "ticker": "ISRG",
+        "exchange": "NASDAQ",
+        "share_class": "Common stock",
+        "reporting_currency": "USD",
+        "trading_currency": "USD",
+        "fiscal_year_end": "12-31"
+      },
+      "ticker_aliases": [
+        "ISRG"
+      ],
+      "archive_sha256": "3082e05259f06953629ec74ea7f52da2b927217aba04a07ef7e8fb6df1013d45",
+      "reports": [
+        {
+          "report_id": "ISRG-2026-09-18-v3",
+          "cutoff": "2026-09-18T14:01:27.017272+00:00",
+          "parent_report_id": null,
+          "watch_count": 6,
+          "html_path": "reports/ISRG-stock-analysis-v3-2026-09-18.html",
+          "html_filename": "ISRG-stock-analysis-v3-2026-09-18.html"
+        },
+        {
+          "report_id": "ISRG-2026-09-18-v3-rebuilt",
+          "cutoff": "2026-09-18T14:27:17.205196+00:00",
+          "parent_report_id": null,
+          "watch_count": 6,
+          "html_path": "reports/ISRG-stock-analysis-v3-rebuilt-2026-09-18.html",
+          "html_filename": "ISRG-stock-analysis-v3-rebuilt-2026-09-18.html"
+        }
+      ],
+      "archive_path": "archives/stock-analysis-isrg-common-archive.json",
+      "archive_filename": "stock-analysis-isrg-common-archive.json"
     }
   },
   "storage": {
