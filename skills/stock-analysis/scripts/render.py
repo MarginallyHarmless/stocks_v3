@@ -57,6 +57,7 @@ def event_html(ev, sources, lang, compact=False):
 
 def metrics_html(ids, ev, lang, explanations=None):
     result = '<div class="metrics">'
+    assumptions = []
     for key in ids:
         e = ev[key]
         explanation = (explanations or {}).get(key)
@@ -65,8 +66,11 @@ def metrics_html(ids, ev, lang, explanations=None):
         result += f'<div class="metric"><span class="label">{h(t(label,lang))}</span><strong>{h(format_number(e,lang))}</strong><span class="period">{h(e["period"]["label"])} · {h(e["basis"])}{f"<span class=tag>{tag}</span>" if tag else ""}</span>'
         result += (f'<div class="metric-meaning">{claims([explanation["meaning"]],lang,True)}</div>' if explanation else ref_buttons([key],lang)) + '</div>'
         if e.get('model_assumptions'):
-            result += f'<p class="caveat">{tr(lang,"Model assumptions","Ipotezele modelului")}: {h(t(e["model_assumptions"],lang))}</p>'
-    return result + '</div>'
+            note = t(e['model_assumptions'], lang)
+            if note not in assumptions:
+                assumptions.append(note)
+    result += '</div>'
+    return result + ''.join(f'<p class="caveat">{tr(lang,"Model assumptions","Ipotezele modelului")}: {h(note)}</p>' for note in assumptions)
 
 
 def series_html(series, ev, lang):
@@ -85,6 +89,23 @@ def series_html(series, ev, lang):
     svg += '</svg>'
     rows = ''.join(f'<tr><td>{h(e["period"]["label"])}</td><td class="numeric">{h(format_number(e,lang))}</td><td>{ref_buttons([e["id"]],lang)}</td></tr>' for e in records)
     return f'<figure style="margin:20px 0"><div class="chart-wrap">{svg}</div><figcaption class="chart-caption">{h(t(series["title"],lang))} · {h(records[0]["basis"])}</figcaption></figure><details class="evidence-disclosure"><summary>{tr(lang,"Trend data & sources","Datele tendinței și sursele")}</summary><div class="table-wrap"><table><thead><tr><th>{tr(lang,"Period","Perioadă")}</th><th>{tr(lang,"Value","Valoare")}</th><th>{tr(lang,"Evidence","Dovezi")}</th></tr></thead><tbody>{rows}</tbody></table></div></details>'
+
+
+def evidence_table_html(table, ev, lang):
+    out = '<div class="table-wrap"><table><caption>' + h(t(table['title'], lang)) + '</caption><thead><tr>'
+    out += ''.join('<th scope="col">' + h(t(x, lang)) + '</th>' for x in table['columns']) + '</tr></thead><tbody>'
+    for row in table['rows']:
+        out += '<tr><th scope="row">' + h(t(row['label'], lang)) + '</th>'
+        for cell in row['cells']:
+            if 'evidence_ref' in cell:
+                e = ev[cell['evidence_ref']]
+                val = format_number(e, lang) if 'value' in e else t(e['state'], lang)
+                content = h(val) + ref_buttons([e['id']], lang)
+            else:
+                content = claims([cell], lang, True)
+            out += '<td>' + content + '</td>'
+        out += '</tr>'
+    return out + '</tbody></table></div>'
 
 
 def section_html(s, ev, lang, index, sources):
@@ -110,12 +131,18 @@ def section_html(s, ev, lang, index, sources):
             output += metrics_html(s['metrics'],ev,lang)
     if s.get("series"):
         output += series_html(s["series"], ev, lang)
+    if s.get('evidence_table'):
+        output += evidence_table_html(s['evidence_table'], ev, lang)
     ids = list(s.get("metrics", [])) + [x for c in s["claims"] for x in c.get("evidence_refs",[])]
     if guide:
         guide_claims = guide['claims'] + [guide['why_it_matters']] + [m['meaning'] for m in guide.get('metrics',[])]
         ids += [x for c in guide_claims for x in c.get('evidence_refs',[])]
     if s.get('series'):
         ids += s['series']['evidence_refs']
+    if s.get('evidence_table'):
+        for row in s['evidence_table']['rows']:
+            for cell in row['cells']:
+                ids += [cell['evidence_ref']] if 'evidence_ref' in cell else cell.get('evidence_refs', [])
     roots, todo, seen = {}, list(ids), set()
     while todo:
         key=todo.pop()

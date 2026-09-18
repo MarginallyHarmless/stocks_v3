@@ -197,6 +197,24 @@ def calculate(e, inputs):
             answer = ((vals[0] / vals[1]) ** (1 / declared) - 1) * 100
         else:
             answer = (vals[0] / vals[1] - 1) * 100
+    elif op in {"equity_value", "valuation_multiple"}:
+        need(len(inputs) == 2 and text_ok(e.get("model_assumptions")), "Valuation bridge assumptions required")
+        b = inputs[1]
+        need(e['basis'] == 'model', 'Valuation bridge must use model basis')
+        need(a['period']['kind'] == 'instant' and not a['period']['forecast'], 'Valuation requires an observed point in time')
+        need(period_key(e) == period_key(a), 'Valuation output date must match observed value')
+        if op == 'equity_value':
+            need(a['unit'] == 'currency_per_share' and a['basis'] == 'market', 'Equity value requires market price per share')
+            need(b['unit'] == 'shares' and b['period']['kind'] == 'instant' and not b['period']['forecast'], 'Equity value requires observed shares')
+            need(b['period']['end'] <= a['period']['end'], 'Share count cannot postdate quote')
+            need(vals[0] > 0 and vals[1] > 0, 'Price and shares must be positive')
+            need(e['unit'] == 'currency' and e.get('currency') == a.get('currency'), 'Equity value currency mismatch')
+            answer = vals[0] * vals[1]
+        else:
+            need(a['unit'] == b['unit'] == 'currency' and a.get('currency') == b.get('currency'), 'Valuation multiple requires matching currencies')
+            need(b['period']['kind'] == 'duration' and vals[1] > 0, 'Valuation multiple needs a positive duration denominator')
+            need(e['unit'] == 'ratio' and not e.get('currency'), 'Valuation multiple must be dimensionless')
+            answer = vals[0] / vals[1]
     elif op in {"discounted_value", "required_revenue", "eps_multiple"}:
         need(len(inputs) == 2 and text_ok(e.get("model_assumptions")), "Model assumptions required")
         need(e["basis"] == "model", "Model result basis must be model")
@@ -436,6 +454,17 @@ def validate(data, baseline=None):
         refs(s.get("metrics", []), evidence, "section metrics", required=False)
         need(all("value" in evidence[x] for x in s.get("metrics", [])), "Metric must be numeric")
         need(text_ok(s.get("caveat")), "Visible section caveat required")
+        if s.get('evidence_table'):
+            table = s['evidence_table']
+            need(text_ok(table.get('title')) and len(table.get('columns', [])) >= 2, 'Evidence table needs title and columns')
+            need(all(text_ok(x) for x in table['columns']), 'Evidence table column label missing')
+            for row in table.get('rows', []):
+                need(text_ok(row.get('label')) and len(row.get('cells', [])) == len(table['columns']) - 1, 'Evidence table row width mismatch')
+                for cell in row['cells']:
+                    if 'evidence_ref' in cell:
+                        refs([cell['evidence_ref']], evidence, 'Evidence table cell')
+                    else:
+                        claim(cell, evidence)
         guide = s.get("guide")
         if data.get("presentation") == "guided":
             need(isinstance(guide, dict), "Guided reports require a guide for every section")

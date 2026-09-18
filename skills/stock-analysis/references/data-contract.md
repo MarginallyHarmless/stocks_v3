@@ -75,6 +75,8 @@ Every calculation adds `operation`, `inputs` (evidence IDs), numerical output fi
 | `net_debt_to_fcf` | `[instant_net_debt, TTM_FCF]` with matched end date and positive FCF. Explain net cash separately. |
 | `product`, `taxed_profit` | `[amount, ratio]`; taxed profit uses amount × (1−ratio). Match periods or declare assumption rationale and model basis. |
 | `required_revenue` | `[equity_market_value, assumed_P/S]`; model basis and `model_assumptions` required. Do not silently substitute EV. |
+| `equity_value` | `[observed_price, observed_instant_shares]`; model basis and explicit bridge assumptions. Share observation cannot postdate quote; output uses quote date. Distinguish basic shares from future dilution. |
+| `valuation_multiple` | `[instant_equity_or_enterprise_value, positive_duration_amount]`; matching currency, model basis and explicit period/basis assumptions. Output uses valuation date. Label P/S versus EV/sales correctly. |
 | `eps_multiple` | `[positive_future_EPS, positive_multiple]`; model basis, forecast period and `model_assumptions`. Output is future price. |
 | `discounted_value` | `[future_value, discount_rate_ratio]`; `parameters.years`, matching actual dated horizon, model basis and assumptions. |
 
@@ -105,6 +107,8 @@ Full reports require all module coverage keys: business, moat, growth, profitabi
 `checklist` maps every original ID from checklist.json to status, reason, evidence_refs and section_ids. Statuses: meets/mixed/does_not_meet/insufficient_evidence/not_applicable; optional IDs may be not_researched. Do not count unavailable tests as met. Retain thresholds from checklist.md in the relevant visible discussion when material.
 
 ## Watchlists and events
+
+Optional `section.evidence_table` has an authored `title`, `columns`, and `rows`. Each row has a `label` and one `cells` entry per non-label column. Each cell is either `{evidence_ref: ID}` or a typed claim. Values render from the ledger; claims follow normal evidence and translation validation. The table appears in Detailed analysis and its references join the source navigation. Use it for peer matrices with explicit period and comparability limits.
 
 See earnings-follow-up.md for meaning. Each item has id, positive criterion_version, question, why, baseline_refs, due_period, optional due_date, criterion and impact. `impact` has favorable/adverse/mixed/unresolved text.
 

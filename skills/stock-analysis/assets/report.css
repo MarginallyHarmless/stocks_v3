@@ -12,3 +12,5 @@
 .home-link .brand-icon{font-size:23px;line-height:1;color:var(--accent);font-weight:400;letter-spacing:0}
 .home-link .back-label{display:block;font-size:11px;font-weight:400;letter-spacing:0;text-transform:none;margin-top:10px;color:var(--muted)}
 .home-link:hover .back-label{color:var(--accent)}
+
+@media(max-width:560px){.toolbar label{flex:1 1 150px;min-width:150px}}
