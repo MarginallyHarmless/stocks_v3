@@ -5,6 +5,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from financial_terms import annotate
 
 class FinancialTermsTests(unittest.TestCase):
+    def test_bilingual_key_stat_uses_machine_concept_and_translated_label(self):
+        from demo import fixture
+        from model import validate, Invalid
+        data = fixture()
+        data['key_stats'] = [{'concept': 'revenue', 'evidence_ref': 'revenue',
+                              'label': {'en': 'Revenue', 'ro': 'Venituri'}}]
+        validate(data)
+        data['key_stats'][0]['label'] = {'en': 'Revenue'}
+        with self.assertRaises(Invalid):
+            validate(data)
+
     def test_longest_match_and_boundaries(self):
         out = annotate('<p>non-GAAP GAAP P/E forward P/E EPS PEPSICO</p>', 'x')
         self.assertEqual(out.count('class="finance-term"'), 5)

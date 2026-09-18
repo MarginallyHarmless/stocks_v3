@@ -359,6 +359,11 @@ def validate(data, baseline=None):
             for item in value: check_languages(item)
         elif isinstance(value,dict):
             for key,item in value.items():
+                if key == 'key_stats':
+                    # Here concept is a machine identifier, not lesson prose.
+                    for stat in item:
+                        check_languages({k: v for k, v in stat.items() if k != 'concept'})
+                    continue
                 if key in narrative_keys and len(data['languages']) > 1:
                     need(isinstance(item,dict) and set(data['languages']) <= set(item) and all(text_ok(item[x]) for x in data['languages']), f'Missing authored translation for {key}')
                 elif isinstance(item,dict) and set(item) <= {'en','ro'}:
