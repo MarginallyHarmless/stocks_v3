@@ -39,6 +39,6 @@ Countdowns recalculate on opening, visibility return and while open. Date-only r
 
 ## Presentation and verification
 
-Use succinct cards and a restrained four-month calendar with real company logos. Clicking a logo reveals its date, period and status. Group same-day releases without losing companies. Preserve search, attention filtering, month navigation, mobile reflow, keyboard access, English/Romanian, light/dark themes, report downloads and copyable follow-up prompts. Do not add synthetic companies to the user's saved index to demonstrate density.
+Use succinct cards and a compact calendar-style side agenda with real company logos. Keep the agenda sticky on desktop and bounded in height on phones. Use a consistent 18px identity, 14px reading text and 12px metadata hierarchy; avoid oversized countdowns and redundant future-state badges. Clicking a logo reveals its date, period and status. Group same-day releases without losing companies. Preserve search, attention filtering, mobile reflow, keyboard access, English/Romanian, light/dark themes, report downloads and copyable follow-up prompts. Do not add synthetic companies to the user's saved index to demonstrate density.
 
 Verify future, today, overdue estimate, overdue confirmed, published-unreviewed, unknown, rescheduled, reviewed, provisional and wrong-period states, and preservation of other companies. Run `node scripts/tests/test_company_index.js` plus standard skill tests. Inspect desktop/phone layouts when preview is available.

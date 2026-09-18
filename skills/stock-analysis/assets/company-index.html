@@ -6,13 +6,15 @@
 <main>
 <h1 class="sr-only" data-t="title">Company index</h1>
 <div id="stats" class="stats"></div>
-<section class="schedule" aria-labelledby="timeline-title">
+<div class="index-layout">
+<section aria-labelledby="companies-title"><div class="section-head companies-heading"><h2 id="companies-title" data-t="companies">Companies</h2><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a company or ticker" aria-label="Find a company or ticker"></label></div><div class="filters"><button data-filter="all" aria-pressed="true" data-t="all">All companies</button><button data-filter="attention" aria-pressed="false" data-t="attention">Needs attention</button></div><div id="cards" class="cards"></div></section>
+<aside class="schedule" aria-labelledby="timeline-title">
 <div class="section-head"><h2 id="timeline-title" data-t="timeline">Earnings ahead</h2><span id="timeline-range" class="timeline-range"></span></div>
 <div id="timeline" class="timeline"></div>
 <div id="timeline-notes" class="timeline-notes" hidden></div>
 <div id="selected-event" class="selected-event" hidden></div>
-</section>
-<section aria-labelledby="companies-title"><div class="section-head companies-heading"><h2 id="companies-title" data-t="companies">Companies</h2><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a company or ticker" aria-label="Find a company or ticker"></label></div><div class="filters"><button data-filter="all" aria-pressed="true" data-t="all">All companies</button><button data-filter="attention" aria-pressed="false" data-t="attention">Needs attention</button></div><div id="cards" class="cards"></div></section>
+</aside>
+</div>
 <footer><p data-t="foot">Countdowns update when this file is open. Research and earnings dates are refreshed when we run the skill.</p><div><span id="saved-at"></span><button id="export" class="text-button" data-t="export">Export index data ↓</button></div></footer>
 </main></div>
 <dialog id="prompt-dialog"><div class="dialog-head"><h2 data-t="continue">Continue the research</h2><button id="close-dialog" aria-label="Close">×</button></div><p data-t="promptHelp">Copy this into a new conversation to check the results against your saved watchlist.</p><textarea id="prompt-text" readonly aria-label="New conversation prompt"></textarea><button id="copy-prompt" class="primary" data-t="copy">Copy prompt</button><p id="copy-status" role="status"></p></dialog>
