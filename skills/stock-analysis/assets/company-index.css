@@ -85,3 +85,23 @@
 @media(max-width:760px){.index-layout{grid-template-columns:1fr;gap:28px}.schedule{position:static;max-height:none;border:1px solid var(--line);border-radius:12px;padding:18px;grid-row:1}.timeline{max-height:270px;overflow-y:auto;scrollbar-width:thin;padding-right:6px}.cards{grid-template-columns:1fr}.schedule>.section-head{flex-direction:row}.companies-heading{flex-direction:row;align-items:center}.search input{width:180px}.card-context:first-of-type{min-height:0}.stat span{font-size:12px}}
 @media(max-width:420px){.shell{padding:0 16px}.companies-heading{flex-direction:column;align-items:stretch}.search input{width:100%}.card-main{padding:20px}.card-footer{padding:14px 20px 18px}.stats{gap:10px}.stat{padding:0 10px}.stat span{font-size:12px}footer>div{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.card,.timeline-arrow{transition:none}.card.linked:hover{transform:none}}
+
+/* Quiet agenda: one row per release, details on demand. */
+.index-layout{grid-template-columns:minmax(0,1fr) 220px;gap:28px}
+.schedule{padding-left:20px}
+.schedule>.section-head{gap:6px}
+.schedule h2{font-size:13px}
+.timeline-range{font-size:11px}
+.timeline{margin-top:16px}
+.agenda-day{grid-template-columns:52px minmax(0,1fr);gap:8px;padding-bottom:2px}
+.agenda-date{display:block;padding-top:11px;font-size:12px;color:var(--quiet);white-space:nowrap}
+.agenda-releases{gap:2px}
+.timeline-event,.timeline-event.is-estimated,.is-next .timeline-event{min-height:40px;padding:8px;border:0;border-radius:6px;background:transparent}
+.timeline-event:hover,.timeline-event[aria-expanded=true]{background:var(--surface)}
+.timeline-identity{gap:8px}
+.timeline-identity .logo{width:20px;height:20px;padding:2px;border-radius:4px}
+.timeline-identity strong{font-weight:500}
+.estimate-mark{color:var(--quiet);margin-left:3px;font-weight:400}
+.timeline-arrow{font-size:11px}
+@media(max-width:1100px){.index-layout{grid-template-columns:minmax(0,1fr) 200px;gap:20px}.schedule{padding-left:14px}}
+@media(max-width:760px){.index-layout{grid-template-columns:1fr}.schedule{padding:14px 16px}.timeline{max-height:200px;margin-top:8px}.agenda-day{grid-template-columns:58px minmax(0,1fr)}}

@@ -24,12 +24,12 @@ function renderTimeline(){
   const all=events(), upcoming=all.filter(x=>['today','upcoming'].includes(x.s.key))
     .sort((a,b)=>a.s.days-b.s.days||a.c.company.ticker.localeCompare(b.c.company.ticker));
   const timeline=$('#timeline');
-  $('#timeline-range').textContent=upcoming.length?`${upcoming.length} ${lang==='ro'?'raportări':'releases'}`:'';
+  $('#timeline-range').textContent=upcoming.some(x=>x.e.confidence==='Estimated')?'* '+(lang==='ro'?'estimat':'estimated'):'';
   const groups=new Map();
   upcoming.forEach(row=>{if(!groups.has(row.e.date))groups.set(row.e.date,[]);groups.get(row.e.date).push(row)});
-  timeline.innerHTML=upcoming.length?`<div class="agenda-now"><span></span>${t('now')}<time>${fmt(S.today(new Date(),Intl.DateTimeFormat().resolvedOptions().timeZone),{day:'numeric',month:'short'})}</time></div><ol class="timeline-events">${[...groups].map(([date,rows],i)=>`<li class="agenda-day ${i===0?'is-next':''}"><time class="agenda-date" datetime="${esc(date)}"><span>${fmt(date,{month:'short'})}</span><strong>${fmt(date,{day:'2-digit'})}</strong></time><div class="agenda-releases">${rows.map(({c,e,s})=>{
+  timeline.innerHTML=upcoming.length?`<ol class="timeline-events">${[...groups].map(([date,rows],i)=>`<li class="agenda-day ${i===0?'is-next':''}"><time class="agenda-date" datetime="${esc(date)}">${fmt(date,{day:'numeric',month:'short'})}</time><div class="agenda-releases">${rows.map(({c,e,s})=>{
     const relative=s.days===0?t('today'):t('inDays').replace('{n}',s.days);
-    return `<button class="timeline-event ${e.confidence==='Estimated'?'is-estimated':''}" data-date="${esc(date)}" aria-label="${esc(c.company.name+' · '+fmt(date)+' · '+relative+' · '+confidence(e))}" aria-expanded="${selected===date}" aria-controls="selected-event"><span class="timeline-identity">${logo(c)}<strong>${esc(c.company.ticker)}</strong><span class="timeline-arrow" aria-hidden="true">↗</span></span><span class="timeline-countdown">${relative}<span class="timeline-confidence">${confidence(e)}</span></span></button>`;
+    return `<button class="timeline-event ${e.confidence==='Estimated'?'is-estimated':''}" data-date="${esc(date)}" title="${esc(c.company.name+' · '+relative+' · '+confidence(e))}" aria-label="${esc(c.company.name+' · '+fmt(date)+' · '+relative+' · '+confidence(e))}" aria-expanded="${selected===date}" aria-controls="selected-event"><span class="timeline-identity">${logo(c)}<strong>${esc(c.company.ticker)}${e.confidence==='Estimated'?'<span class="estimate-mark" aria-hidden="true">*</span>':''}</strong><span class="timeline-arrow" aria-hidden="true">↗</span></span></button>`;
   }).join('')}</div></li>`).join('')}</ol>`:`<p class="timeline-empty">${t('noEvents')}</p>`;
   timeline.querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{selected=selected===b.dataset.date?null:b.dataset.date;renderSelected()});
   const attention=all.filter(x=>x.s.attention), unknown=entries.filter(c=>S.companyState(c).primary.key==='unknown');
