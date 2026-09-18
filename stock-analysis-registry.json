@@ -639,6 +639,74 @@
       ],
       "archive_path": "archives/stock-analysis-isrg-common-archive.json",
       "archive_filename": "stock-analysis-isrg-common-archive.json"
+    },
+    "SEC-FILE:001-38086|NYSE:VST:COMMON": {
+      "earnings_events": [
+        {
+          "id": "vst-q326-results",
+          "kind": "results",
+          "period": "Q3 2026",
+          "confidence": "Estimated",
+          "date": "2026-11-05",
+          "checked_at": "2026-09-18",
+          "source_id": "quote",
+          "basis": {
+            "en": "Stock Analysis estimate; issuer events page displays no upcoming event. No time assumed.",
+            "ro": "Estimare Stock Analysis; calendarul emitentului nu afișează evenimente viitoare. Fără oră presupusă."
+          },
+          "source_url": "https://stockanalysis.com/stocks/vst/",
+          "source_title": "Stock Analysis VST quote and estimated earnings date",
+          "baseline_report_id": "VST-2026-09-18-v3",
+          "reviewed_report_id": null
+        }
+      ],
+      "latest_report_id": "VST-2026-09-18-v3",
+      "latest_cutoff": "2026-09-18T18:45:00Z",
+      "watch_count": 7,
+      "card": {
+        "report_id": "VST-2026-09-18-v3",
+        "summary": {
+          "en": "Power demand supports growth. Cash conversion and capital discipline decide the return.",
+          "ro": "Cererea susține creșterea. Numerarul și disciplina capitalului decid randamentul."
+        },
+        "business": {
+          "en": "Electricity generation and retail supply across US power markets.",
+          "ro": "Producție și furnizare de electricitate pe piețele SUA."
+        },
+        "risk": {
+          "en": "Debt, heavy investment and project execution leave limited room for mistakes.",
+          "ro": "Datoriile, investițiile și execuția lasă puțin loc pentru erori."
+        },
+        "logo_url": "https://mmx.prnewswire.com/media/MS1239707/Vistra-Corp-Logo.jpg?id=OA2834308",
+        "logo_source_url": "https://investor.vistracorp.com/2026-08-07-Vistra-Reports-Second-Quarter-2026-Results"
+      },
+      "company": {
+        "issuer_id": "SEC-FILE:001-38086",
+        "security_id": "NYSE:VST:COMMON",
+        "name": "Vistra Corp.",
+        "ticker": "VST",
+        "exchange": "NYSE",
+        "share_class": "Common stock",
+        "reporting_currency": "USD",
+        "trading_currency": "USD",
+        "fiscal_year_end": "December 31"
+      },
+      "ticker_aliases": [
+        "VST"
+      ],
+      "archive_sha256": "5ef04d3c1d5ccd5afe58e4512a0fcf529e6fc32e151e9db65ee7dc43f01ae222",
+      "reports": [
+        {
+          "report_id": "VST-2026-09-18-v3",
+          "cutoff": "2026-09-18T18:45:00Z",
+          "parent_report_id": null,
+          "watch_count": 7,
+          "html_path": "reports/VST-stock-analysis-v3-2026-09-18.html",
+          "html_filename": "VST-stock-analysis-v3-2026-09-18.html"
+        }
+      ],
+      "archive_path": "archives/stock-analysis-vst-common-archive.json",
+      "archive_filename": "stock-analysis-vst-common-archive.json"
     }
   },
   "storage": {
