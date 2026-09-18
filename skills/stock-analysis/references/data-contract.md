@@ -133,3 +133,7 @@ Changed future items retaining an ID must increment criterion_version. A revisio
 ## What validation does not prove
 
 Structural/numerical checks do not establish source truth, economic appropriateness, honest classification of a limitation, completeness of prose or translation quality. Perform the source-to-claim audit and scenario/evaluation review in the skill. No source or outcome is an automatic investment recommendation.
+
+### Key stats (optional presentation selection)
+
+`key_stats` is a list of `{ "concept": "eps", "evidence_ref": "eps-ttm" }` rows. `concept` refers to a definition ID in `assets/financial-terms.json`, or `price` / `revenue`. An optional localized `label` can clarify the basis without changing it. The referenced evidence supplies the value or unavailable state, period, accounting basis, forecast flag and source chain. For an explicitly missing figure, omit `evidence_ref` and provide localized `label` and `note`; no value is fabricated. Retain reported and adjusted/forecast figures as separate rows. Historic editorial selections live in `assets/key-stats.json`, keyed by exact report ID, without changing immutable research.

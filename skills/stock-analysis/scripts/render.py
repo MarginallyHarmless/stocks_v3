@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 from pathlib import Path
+from financial_terms import annotate, TERMS
 from archive import verify_archive
 from model import digest, format_number, number, validate, need, dimensions, period_key
 
@@ -236,6 +237,36 @@ def watch_html(data, ev, sources, lang):
     return out
 
 
+def key_stats_html(data, ev, lang):
+    # Presentation-only mappings keep historic research snapshots immutable.
+    presets = json.loads((ASSETS / 'key-stats.json').read_text())
+    rows = data.get('key_stats', presets.get(data['report_id'], []))
+    if not rows:
+        return ''
+    meanings = {term['id']: term[lang] for term in TERMS}
+    meanings['price'] = tr(lang, 'The cost of one share at the recorded date. Share price alone does not show whether a business is cheap.', 'Costul unei acțiuni la data indicată. Prețul singur nu arată dacă afacerea este ieftină.')
+    meanings['revenue'] = tr(lang, 'Sales recorded during this period, before costs. Revenue is not profit or cash collected.', 'Vânzări înregistrate în perioada indicată, înainte de costuri. Veniturile nu sunt profit sau numerar încasat.')
+    out = '<section class="key-stats" aria-label="' + tr(lang, 'Key stats', 'Indicatori esențiali') + '"><h2>' + tr(lang, 'Key stats', 'Indicatori esențiali') + '</h2><p class="meta">' + tr(lang, 'Saved report figures, not live quotes. Hover, focus or tap a dotted term for its meaning.', 'Valorile analizei salvate, nu cotații live. Treci cursorul, focalizează sau atinge un termen subliniat punctat pentru explicație.') + '</p><dl class="key-stats-list">'
+    for row in rows:
+        need(row.get('concept') in meanings, 'Unknown key-stat concept')
+        key = row.get('evidence_ref')
+        need(key is None or key in ev, 'Unknown key-stat evidence')
+        e = ev.get(key) if key else None
+        label = t(row.get('label', e['label'] if e else 'EPS'), lang)
+        out += '<div class="key-stat"><dt>' + h(label) + '<span class="stat-meaning">' + h(meanings[row['concept']]) + '</span></dt><dd>'
+        if e and 'value' in e:
+            out += '<strong class="stat-value">' + h(format_number(e,lang)) + '</strong><span class="stat-period">' + h(e['period']['label']) + ' · ' + h(e['basis'])
+            if e['period']['forecast']:
+                out += ' · ' + tr(lang, 'Forecast', 'Prognoză')
+            out += '</span>' + ref_buttons([key],lang)
+        else:
+            out += '<strong class="stat-value">' + tr(lang, 'Not established', 'Nestabilit') + '</strong>'
+            note = e['state'] if e else row['note']
+            out += '<p class="stat-note">' + h(t(note,lang)) + '</p>' + (ref_buttons([key],lang) if key else '')
+        out += '</dd></div>'
+    return out + '</dl></section>'
+
+
 def render(data, baseline=None, archive=None):
     validate(data, baseline)
     ev = {e["id"]:e for e in data["evidence"]}
@@ -255,7 +286,7 @@ def render(data, baseline=None, archive=None):
         main += f'<header class="summary" id="{lang}-summary"><div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1><p class="meta">{tr(lang,"Information cutoff","Date disponibile până la")}: {h(data["cutoff"])} · {h(data["report_id"])}</p><div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></dl><p class="notice">{h(t(data["evidence_gaps"],lang))}</p>'
         if data.get("next_event"):
             main += event_html(data["next_event"], sources,lang,True)
-        main += '</header>'
+        main += key_stats_html(data, ev, lang) + '</header>'
         if data.get("review"):
             main += review_html(data,baseline,ev,lang)
         main += ''.join(section_html(s,ev,lang,i,sources) for i,s in enumerate(data["sections"],1))
@@ -273,7 +304,9 @@ def render(data, baseline=None, archive=None):
     embedded = json.dumps(package, ensure_ascii=False, allow_nan=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
     opts = ''.join(f'<option value="{lang}"{" selected" if lang == default else ""}>{"English" if lang == "en" else "Română"}</option>' for lang in data["languages"])
     css = (ASSETS / 'report.css').read_text()
-    js = (ASSETS / 'report.js').read_text()
+    js = (ASSETS / 'report.js').read_text() + '\n' + (ASSETS / 'financial-terms.js').read_text()
+    main = annotate(main, 'report')
+    evidence = annotate(evidence, 'evidence')
     home_link = '<a class="brand home-link" href="../index.html"><span class="brand-name"><span class="brand-icon" aria-hidden="true">◒</span> Stock Analysis / 03</span><span class="back-label" data-lang="en">← All companies</span><span class="back-label" data-lang="ro" hidden>← Toate companiile</span></a>'
     if default == 'ro':
         home_link = home_link.replace('data-lang="en">', 'data-lang="en" hidden>').replace('data-lang="ro" hidden>', 'data-lang="ro">')

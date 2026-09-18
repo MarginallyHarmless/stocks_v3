@@ -1,0 +1,129 @@
+{
+  "AVGO-2026-09-16-v3-final": [
+    {
+      "concept": "price",
+      "evidence_ref": "price"
+    },
+    {
+      "concept": "marketcap",
+      "evidence_ref": "marketcap"
+    },
+    {
+      "concept": "eps",
+      "evidence_ref": "eps-ttm"
+    },
+    {
+      "concept": "pe",
+      "evidence_ref": "pe-gaap"
+    },
+    {
+      "concept": "eps",
+      "evidence_ref": "adj-ttm"
+    },
+    {
+      "concept": "pe",
+      "evidence_ref": "pe-adjusted"
+    },
+    {
+      "concept": "forward",
+      "evidence_ref": "pe26"
+    },
+    {
+      "concept": "fcf",
+      "evidence_ref": "fcf-ttm"
+    }
+  ],
+  "ONDS-2026-09-17-v3": [
+    {
+      "concept": "price",
+      "evidence_ref": "price"
+    },
+    {
+      "concept": "marketcap",
+      "evidence_ref": "equity-value"
+    },
+    {
+      "concept": "eps",
+      "evidence_ref": "eps-fy"
+    },
+    {
+      "concept": "pe",
+      "evidence_ref": "pe",
+      "label": {
+        "en": "P/E · interpretation limit",
+        "ro": "P/E · limită de interpretare"
+      }
+    },
+    {
+      "concept": "grossmargin",
+      "evidence_ref": "gross-margin"
+    },
+    {
+      "concept": "fcf",
+      "evidence_ref": "fcf-h"
+    }
+  ],
+  "NBIS-2026-09-17-v3": [
+    {
+      "concept": "price",
+      "evidence_ref": "price"
+    },
+    {
+      "concept": "eps",
+      "label": {
+        "en": "EPS",
+        "ro": "EPS"
+      },
+      "note": {
+        "en": "An EPS figure was not captured in this saved research. No value is inferred from a different profit or share-count definition.",
+        "ro": "Analiza salvată nu conține o valoare EPS. Nu deducem o valoare din definiții diferite ale profitului sau numărului de acțiuni."
+      }
+    },
+    {
+      "concept": "pe",
+      "evidence_ref": "pe",
+      "label": {
+        "en": "P/E · interpretation limit",
+        "ro": "P/E · limită de interpretare"
+      }
+    },
+    {
+      "concept": "revenue",
+      "evidence_ref": "rev-ttm"
+    },
+    {
+      "concept": "opmargin",
+      "evidence_ref": "op-margin"
+    },
+    {
+      "concept": "fcf",
+      "evidence_ref": "fcf-ttm"
+    }
+  ],
+  "PLTR-2026-09-17-v3": [
+    {
+      "concept": "price",
+      "evidence_ref": "price"
+    },
+    {
+      "concept": "marketcap",
+      "evidence_ref": "marketcap"
+    },
+    {
+      "concept": "eps",
+      "evidence_ref": "eps-ttm"
+    },
+    {
+      "concept": "pe",
+      "evidence_ref": "pe"
+    },
+    {
+      "concept": "revenue",
+      "evidence_ref": "rev-ttm"
+    },
+    {
+      "concept": "fcf",
+      "evidence_ref": "fcf-ttm"
+    }
+  ]
+}

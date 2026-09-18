@@ -35,3 +35,11 @@ Only plot comparable values already present in the ledger. Label value, period, 
 Check desktop, 768px and narrow 320/390px widths. Watch for clipping, page-wide horizontal overflow, overly tiny chart text, translated labels, oversized numbers, and long IDs/URLs. Dense update tables reflow into labeled rows on phones. Verify keyboard focus, touch controls, dialog Escape/close, nested calculation links, independent language/reading preferences, copy fallback and JSON download. Use only offline bundled assets; no analytics or external JS dependencies.
 
 Interpretive claims remain authored text. Check their numbers against typed metrics; the number formatter prevents metric-display drift but cannot fact-check free prose.
+
+## Key stats and inline definitions
+
+Add a compact `key_stats` list near the top: dated share price, market capitalization, reported annual/TTM EPS and matching P/E, then a few relevant sales, margin or cash figures. Each row references the typed ledger and uses a concept from `assets/financial-terms.json` (plus `price` and `revenue`). Include adjusted or forward multiples only with explicit basis and period. Explain distorted, unavailable or nonmeaningful P/E instead of displaying a negative multiple as a bargain. Do not substitute quarterly EPS into annual P/E. Context and limitations remain visible.
+
+The renderer annotates financial terms with a dotted underline and a short EN/RO definition on hover, focus or tap. Definitions supplement the main explanation; they do not replace the concept → company evidence → implication sequence. Add new reusable terms and aliases to `assets/financial-terms.json`; avoid ambiguous short aliases. Links, controls, code, source IDs and exported research are not rewritten.
+
+For editorial regeneration use `python3 scripts/render_reports.py` from the repository root, then `python3 scripts/build_index.py`. `assets/key-stats.json` selects existing evidence for older immutable report IDs; new research should author `key_stats` directly. Never use this presentation mapping to alter an archived value or analysis date.

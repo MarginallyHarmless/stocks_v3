@@ -30,6 +30,7 @@ jobs:
           python3 -m unittest discover -s skills/stock-analysis/scripts/tests
           node skills/stock-analysis/scripts/tests/test_company_index.js
           node skills/stock-analysis/scripts/tests/test_report_controls.js
+          node skills/stock-analysis/scripts/tests/test_financial_terms.js
 
       - name: Validate archives and build the index
         run: python3 scripts/build_index.py

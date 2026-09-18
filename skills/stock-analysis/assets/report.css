@@ -14,3 +14,10 @@
 .home-link:hover .back-label{color:var(--accent)}
 
 @media(max-width:560px){.toolbar label{flex:1 1 150px;min-width:150px}}
+/* Inline definitions preserve the reading rhythm. */
+.finance-term{display:inline;font:inherit;line-height:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:none;border:0;border-bottom:1px dotted var(--muted);border-radius:0;padding:0;min-height:0;cursor:help;text-align:inherit}
+.finance-term:hover,.finance-term[aria-expanded=true]{color:var(--accent);border-color:var(--accent)}
+.term-definition{position:fixed;z-index:1000;width:310px;max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);overflow:auto;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:14px 16px;font:14px/1.55 Arial,Helvetica,sans-serif;letter-spacing:normal;text-transform:none;box-shadow:0 8px 24px #0003;white-space:normal}
+.term-definition[hidden]{display:none}.key-stats{margin:28px 0 8px}.key-stats h2{font-size:20px;margin-bottom:8px}.key-stats-list{margin:0}.key-stat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:18px;padding:14px 0;border-top:1px solid var(--line)}.key-stat dt{font-size:14px}.key-stat dd{margin:0}.stat-value{display:block;font-size:22px;line-height:1.35;font-variant-numeric:tabular-nums}.stat-meaning{display:block;font-size:13px;line-height:1.5;color:var(--muted);margin-top:5px}.stat-period{display:block;font-size:12px;color:var(--muted);margin-top:4px}.key-stat .ref{font-size:12px}.stat-note{font-size:13px;line-height:1.55;color:var(--muted);margin-top:5px}
+@media(max-width:420px){.key-stat{grid-template-columns:1fr;gap:8px}.stat-value{font-size:21px}}
+@media print{.finance-term{border:0}.term-definition{display:none!important}}

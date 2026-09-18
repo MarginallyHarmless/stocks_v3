@@ -1,0 +1,320 @@
+[
+  {
+    "id": "gaap",
+    "aliases": [
+      "GAAP"
+    ],
+    "en": "Standard US accounting rules used for reported results. Profit under these rules can still include one-off gains or costs.",
+    "ro": "Reguli contabile standard din SUA, folosite pentru rezultatele raportate. Profitul poate include și câștiguri sau costuri nerecurente."
+  },
+  {
+    "id": "adjusted",
+    "aliases": [
+      "non-GAAP",
+      "non GAAP",
+      "adjusted earnings",
+      "adjusted profit",
+      "profit ajustat",
+      "EPS ajustat"
+    ],
+    "en": "Company-adjusted results that remove selected items. Read which costs were excluded; recurring costs can be excluded too.",
+    "ro": "Rezultate ajustate de companie prin eliminarea unor elemente. Verifică ce costuri sunt excluse; pot fi eliminate și costuri recurente."
+  },
+  {
+    "id": "eps",
+    "aliases": [
+      "EPS",
+      "earnings per share",
+      "profit pe acțiune"
+    ],
+    "en": "Earnings per share: profit or loss allocated to one share for the stated period. It is not the cash dividend you receive.",
+    "ro": "Profit sau pierdere aferentă unei acțiuni în perioada indicată. Nu reprezintă dividendul încasat."
+  },
+  {
+    "id": "diluted",
+    "aliases": [
+      "diluted",
+      "diluat"
+    ],
+    "en": "Allows for potential extra shares, such as employee awards, when they reduce earnings per share under accounting rules.",
+    "ro": "Ia în calcul acțiuni suplimentare potențiale, inclusiv cele acordate angajaților, când acestea reduc profitul pe acțiune conform regulilor contabile."
+  },
+  {
+    "id": "pe",
+    "aliases": [
+      "P/E"
+    ],
+    "en": "Price divided by annual earnings per share. Hypothetical: a $50 price and $2 EPS give 25×. A low ratio alone does not mean cheap; zero or negative earnings make it unhelpful.",
+    "ro": "Preț împărțit la profitul anual pe acțiune. Exemplu ipotetic: preț 50 USD și EPS 2 USD dau 25×. O valoare mică nu înseamnă automat ieftin; profitul zero sau negativ face raportul neutil."
+  },
+  {
+    "id": "forward",
+    "aliases": [
+      "forward P/E",
+      "P/E anticipat"
+    ],
+    "en": "Price divided by forecast annual earnings per share. Estimates can change; check the forecast year and whether earnings are adjusted.",
+    "ro": "Preț împărțit la profitul anual estimat pe acțiune. Estimările se pot schimba; verifică anul prognozat și dacă profitul este ajustat."
+  },
+  {
+    "id": "ttm",
+    "aliases": [
+      "TTM",
+      "trailing twelve months",
+      "trailing-year"
+    ],
+    "en": "The latest twelve months of reported results, often the last four quarters. This looks backward, not at next year.",
+    "ro": "Ultimele douăsprezece luni raportate, de obicei ultimele patru trimestre. Descrie trecutul, nu anul viitor."
+  },
+  {
+    "id": "marketcap",
+    "aliases": [
+      "market cap",
+      "market capitalization",
+      "equity market value",
+      "capitalizare bursieră"
+    ],
+    "en": "The stock-market value of the shares: share price × shares outstanding. It excludes debt and is not the company’s cash balance.",
+    "ro": "Valoarea bursieră a acțiunilor: preț × numărul de acțiuni existente. Nu include datoria și nu este numerarul companiei."
+  },
+  {
+    "id": "ev",
+    "aliases": [
+      "enterprise value",
+      "EV",
+      "valoarea întreprinderii"
+    ],
+    "en": "Value of the operating business used in valuation: equity value plus debt and other claims, minus eligible cash. Check the exact bridge.",
+    "ro": "Valoare folosită în evaluarea afacerii: valoarea acțiunilor plus datorii și alte drepturi, minus numerarul eligibil. Verifică exact calculul."
+  },
+  {
+    "id": "ps",
+    "aliases": [
+      "P/S"
+    ],
+    "en": "Equity market value divided by annual revenue. Sales are not profit, so margins and cash needs still matter.",
+    "ro": "Valoarea bursieră împărțită la veniturile anuale. Veniturile nu sunt profit: contează și marjele și necesarul de numerar."
+  },
+  {
+    "id": "evsales",
+    "aliases": [
+      "EV/revenue",
+      "EV/sales"
+    ],
+    "en": "Enterprise value divided by revenue for the stated period. It compares business value with sales, without showing how profitable those sales are.",
+    "ro": "Valoarea întreprinderii împărțită la veniturile perioadei. Compară valoarea afacerii cu vânzările, fără să arate profitabilitatea lor."
+  },
+  {
+    "id": "fcf",
+    "aliases": [
+      "FCF",
+      "free cash flow",
+      "flux de numerar liber",
+      "fluxul de numerar liber"
+    ],
+    "en": "Operating cash flow less the capital spending defined in this report. It shows cash after those investments; debt payments and acquisitions may still use it.",
+    "ro": "Numerar din operațiuni minus investițiile definite în raport. Arată numerarul rămas după acestea; datoriile și achizițiile pot consuma în continuare bani."
+  },
+  {
+    "id": "pfcf",
+    "aliases": [
+      "P/FCF"
+    ],
+    "en": "Equity market value divided by annual free cash flow. Check the cash-flow definition; a negative denominator is not a cheap valuation signal.",
+    "ro": "Valoarea bursieră împărțită la fluxul de numerar liber anual. Verifică definiția; un numitor negativ nu indică o evaluare ieftină."
+  },
+  {
+    "id": "cfo",
+    "aliases": [
+      "operating cash flow",
+      "CFO",
+      "numerar operațional"
+    ],
+    "en": "Cash generated or used by day-to-day operations. Timing of customer collections and supplier payments can move it independently of profit.",
+    "ro": "Numerar generat sau consumat de activitatea curentă. Momentul încasărilor și plăților îl poate modifica independent de profit."
+  },
+  {
+    "id": "capex",
+    "aliases": [
+      "CAPEX",
+      "capital expenditure",
+      "capital spending"
+    ],
+    "en": "Spending on long-lived assets such as buildings, equipment or computing infrastructure. It uses cash even when the cost hits profit over several years.",
+    "ro": "Cheltuieli pentru active durabile: clădiri, echipamente sau infrastructură de calcul. Consumă numerar chiar dacă impactul asupra profitului se întinde pe mai mulți ani."
+  },
+  {
+    "id": "ebitda",
+    "aliases": [
+      "EBITDA"
+    ],
+    "en": "Earnings before interest, taxes, depreciation and amortization. It leaves out important costs and investment needs, so it is not free cash flow.",
+    "ro": "Profit înainte de dobânzi, impozite, depreciere și amortizare. Exclude costuri importante și necesarul de investiții; nu este flux de numerar liber."
+  },
+  {
+    "id": "sbc",
+    "aliases": [
+      "SBC",
+      "stock-based compensation",
+      "stock compensation",
+      "remunerare în acțiuni"
+    ],
+    "en": "Employee pay in shares or share awards. It is a real cost and can increase the share count even without an immediate cash payment.",
+    "ro": "Remunerație acordată angajaților în acțiuni sau drepturi asupra lor. Este un cost real și poate crește numărul de acțiuni fără o plată imediată în numerar."
+  },
+  {
+    "id": "dilution",
+    "aliases": [
+      "dilution",
+      "diluție"
+    ],
+    "en": "More shares can make each existing share a smaller ownership slice. Check whether the new funding also increases value per share.",
+    "ro": "Mai multe acțiuni pot reduce procentul deținut de fiecare acțiune existentă. Verifică dacă finanțarea nouă crește și valoarea pe acțiune."
+  },
+  {
+    "id": "grossmargin",
+    "aliases": [
+      "gross margin",
+      "marjă brută"
+    ],
+    "en": "The share of revenue left after direct cost of sales. Other operating costs, interest and taxes still need to be paid.",
+    "ro": "Procentul din venituri rămas după costul direct al vânzărilor. Mai trebuie acoperite celelalte costuri operaționale, dobânzile și impozitele."
+  },
+  {
+    "id": "opmargin",
+    "aliases": [
+      "operating margin",
+      "marjă operațională"
+    ],
+    "en": "Operating profit as a percentage of revenue, before financing costs and income tax. A negative value means operating costs exceeded sales.",
+    "ro": "Profit operațional ca procent din venituri, înainte de costurile finanțării și impozitul pe profit. O valoare negativă înseamnă costuri operaționale peste venituri."
+  },
+  {
+    "id": "netmargin",
+    "aliases": [
+      "net margin",
+      "marjă netă"
+    ],
+    "en": "Net profit as a percentage of revenue, after expenses and taxes. Unusual gains or losses can distort it.",
+    "ro": "Profit net ca procent din venituri, după cheltuieli și impozite. Câștigurile sau pierderile neobișnuite îl pot distorsiona."
+  },
+  {
+    "id": "growth",
+    "aliases": [
+      "YoY",
+      "year-over-year"
+    ],
+    "en": "Compared with the same period a year earlier. This helps reduce seasonal distortions.",
+    "ro": "Comparație cu aceeași perioadă a anului anterior. Ajută la reducerea distorsiunilor sezoniere."
+  },
+  {
+    "id": "qoq",
+    "aliases": [
+      "QoQ",
+      "quarter-over-quarter"
+    ],
+    "en": "Compared with the immediately previous quarter. Seasonal changes can affect this comparison.",
+    "ro": "Comparație cu trimestrul imediat anterior. Sezonalitatea poate influența rezultatul."
+  },
+  {
+    "id": "cagr",
+    "aliases": [
+      "CAGR"
+    ],
+    "en": "The constant annual growth rate that would connect a starting value to an ending value. Actual yearly growth can vary widely.",
+    "ro": "Rata anuală constantă care ar lega valoarea inițială de cea finală. Creșterea reală poate varia mult de la an la an."
+  },
+  {
+    "id": "guidance",
+    "aliases": [
+      "guidance"
+    ],
+    "en": "Management’s forecast or target for future results. It is an expectation, not a result already achieved.",
+    "ro": "Prognoza sau obiectivul conducerii pentru rezultate viitoare. Este o așteptare, nu un rezultat deja obținut."
+  },
+  {
+    "id": "consensus",
+    "aliases": [
+      "consensus",
+      "consens"
+    ],
+    "en": "A summary of analysts’ forecasts. Check its date, contributors and accounting basis; analysts can be wrong.",
+    "ro": "O sinteză a estimărilor analiștilor. Verifică data, participanții și baza contabilă; estimările pot fi greșite."
+  },
+  {
+    "id": "backlog",
+    "aliases": [
+      "backlog"
+    ],
+    "en": "Orders not yet recognized as revenue. Timing, cancellations and contract conditions affect how much becomes sales.",
+    "ro": "Comenzi care nu au devenit încă venituri recunoscute. Calendarul, anulările și condițiile contractuale influențează conversia în vânzări."
+  },
+  {
+    "id": "arr",
+    "aliases": [
+      "ARR"
+    ],
+    "en": "Annual recurring revenue: a measure of recurring business at a point in time. Definitions vary; it is not automatically revenue already earned over a year.",
+    "ro": "Venituri recurente anualizate: măsură a activității recurente la un moment dat. Definițiile variază; nu reprezintă automat venituri deja realizate într-un an."
+  },
+  {
+    "id": "netdebt",
+    "aliases": [
+      "net debt",
+      "datorie netă"
+    ],
+    "en": "Debt minus eligible cash. A negative amount can mean net cash; debt maturities and restrictions on cash still matter.",
+    "ro": "Datorie minus numerar eligibil. O valoare negativă poate indica numerar net; scadențele și restricțiile asupra banilor contează în continuare."
+  },
+  {
+    "id": "runway",
+    "aliases": [
+      "cash runway"
+    ],
+    "en": "How long available funding might cover assumed cash needs. It changes if spending, customer payments or new financing change.",
+    "ro": "Cât timp ar putea acoperi finanțarea disponibilă necesarul estimat de numerar. Depinde de cheltuieli, încasări și finanțări noi."
+  },
+  {
+    "id": "warrants",
+    "aliases": [
+      "warrants",
+      "warrant"
+    ],
+    "en": "A right to buy shares at specified terms. Exercise can increase the share count; accounting revaluations can also move reported profit.",
+    "ro": "Drept de cumpărare a acțiunilor în condiții stabilite. Exercitarea poate crește numărul de acțiuni; reevaluările contabile pot modifica profitul raportat."
+  },
+  {
+    "id": "roic",
+    "aliases": [
+      "ROIC"
+    ],
+    "en": "Return on invested capital: operating profit after tax relative to the capital used by the business. Definitions affect comparisons.",
+    "ro": "Randamentul capitalului investit: profit operațional după impozit raportat la capitalul utilizat de afacere. Definiția influențează comparațiile."
+  },
+  {
+    "id": "buybacks",
+    "aliases": [
+      "buybacks",
+      "răscumpărări"
+    ],
+    "en": "The company buys its own shares. This can reduce shares outstanding or offset new issuance; the price paid matters.",
+    "ro": "Compania își cumpără propriile acțiuni. Poate reduce numărul lor sau compensa emisiuni noi; contează prețul plătit."
+  },
+  {
+    "id": "yield",
+    "aliases": [
+      "dividend yield",
+      "randament al dividendului"
+    ],
+    "en": "Annual dividend per share divided by share price. Dividends can be cut; this is not the stock’s total return.",
+    "ro": "Dividend anual pe acțiune împărțit la preț. Dividendele pot fi reduse; nu este randamentul total al acțiunii."
+  },
+  {
+    "id": "fy",
+    "aliases": [
+      "FY"
+    ],
+    "en": "Fiscal year: the company’s accounting year. Its start and end may differ from the calendar year.",
+    "ro": "An fiscal: anul contabil al companiei. Poate începe și se poate încheia la alte date decât anul calendaristic."
+  }
+]
