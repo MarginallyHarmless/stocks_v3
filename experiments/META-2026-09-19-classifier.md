@@ -1,6 +1,6 @@
 # classifier.dev trial on META
 
-Date: September 19, 2026. Companion research: `META-2026-09-19-v3`.
+Date: September 19, 2026. Companion research: `META-2026-09-19-v3-r2` (same financial values and criteria as the original baseline; corrected source links and explicit component sums).
 
 **Decision: keep experimental; do not integrate into the stock-analysis skill yet.** The service can suggest topic tags, but this trial did not demonstrate sufficient recall or time savings for routine evidence routing.
 
