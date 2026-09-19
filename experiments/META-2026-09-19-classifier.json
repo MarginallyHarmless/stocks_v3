@@ -1,0 +1,683 @@
+{
+  "date": "2026-09-19",
+  "design": "Curated public filing excerpts; reference labels frozen before first service call. Topical relevance only; not a test of numeric extraction, truth, watchlist outcomes, full-document recall or saved time. Multi-topic relevance deliberately included.",
+  "reference_labels_frozen_before_call": true,
+  "annotator": "Report-author assistant; no independent human adjudication",
+  "endpoint": "classifier.dev WebMCP classify_multi_label",
+  "request": {
+    "labels": [
+      "Advertising demand and audience growth",
+      "Operating profit, costs and taxes",
+      "Capital spending and operating cash flow",
+      "Debt, available liquidity and future commitments",
+      "Share ownership, dilution and capital returns",
+      "Legal and regulatory risks"
+    ],
+    "max_labels": 6
+  },
+  "model": "jev-1.13.0",
+  "tier": "fast",
+  "wall_ms": 17344,
+  "service_reported_ms": 396,
+  "metrics": {
+    "cases": 26,
+    "true_positive_label_assignments": 24,
+    "false_positive_label_assignments": 0,
+    "false_negative_label_assignments": 12,
+    "micro_precision": 1,
+    "micro_recall": 0.6666666666666666,
+    "exact_label_set_matches": 15,
+    "exact_label_set_rate": 0.5769230769230769
+  },
+  "cases": [
+    {
+      "id": "revenue",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 103248:103716",
+      "input_sha256": "d41ca5692a1565cdd8d6fd8d8b8a7e6e3fa1bf8ff589780dfe9cf59f246114b7",
+      "input_characters": 468,
+      "reference_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "annotation_note": "Revenue, ad volume and price drivers",
+      "predicted_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.92,
+        "Capital spending and operating cash flow": 0.08,
+        "Debt, available liquidity and future commitments": 0.03,
+        "Legal and regulatory risks": 0.02,
+        "Operating profit, costs and taxes": 0.36,
+        "Share ownership, dilution and capital returns": 0.04
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "op-profit",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 103717:104189",
+      "input_sha256": "9761920bd6cc99f7381849ee651f2815edcc085a9a3eef81b4cecaa13c27c7ca",
+      "input_characters": 472,
+      "reference_labels": [
+        "Operating profit, costs and taxes",
+        "Legal and regulatory risks"
+      ],
+      "annotation_note": "Profit decline and cost drivers; legal costs explicitly mentioned",
+      "predicted_labels": [
+        "Operating profit, costs and taxes"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.05,
+        "Capital spending and operating cash flow": 0.1,
+        "Debt, available liquidity and future commitments": 0.04,
+        "Legal and regulatory risks": 0.19,
+        "Operating profit, costs and taxes": 0.96,
+        "Share ownership, dilution and capital returns": 0.03
+      },
+      "missing_labels": [
+        "Legal and regulatory risks"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "capex",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 105153:105284",
+      "input_sha256": "f8876c4bc194d5af1c704d9c4a078bb2a75df6ada73ada2337778ba9b86dbf24",
+      "input_characters": 131,
+      "reference_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "annotation_note": "Equipment and finance-lease investment",
+      "predicted_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.03,
+        "Capital spending and operating cash flow": 0.96,
+        "Debt, available liquidity and future commitments": 0.24,
+        "Legal and regulatory risks": 0.03,
+        "Operating profit, costs and taxes": 0.14,
+        "Share ownership, dilution and capital returns": 0.06
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "dividends",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 105287:105389",
+      "input_sha256": "c5cef3772803f045ce7e70a48c5a668c618bcf402f43c723fc58b8e964b07791",
+      "input_characters": 102,
+      "reference_labels": [
+        "Share ownership, dilution and capital returns"
+      ],
+      "annotation_note": "Cash distributions",
+      "predicted_labels": [
+        "Share ownership, dilution and capital returns"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.03,
+        "Capital spending and operating cash flow": 0.17,
+        "Debt, available liquidity and future commitments": 0.2,
+        "Legal and regulatory risks": 0.02,
+        "Operating profit, costs and taxes": 0.14,
+        "Share ownership, dilution and capital returns": 0.88
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "liquid-assets",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 105392:105482",
+      "input_sha256": "6ec4a8f9c9b226a50d4094d83be1146080a9a5905ce9a87a8a8968fbddc9ae66",
+      "input_characters": 90,
+      "reference_labels": [
+        "Debt, available liquidity and future commitments"
+      ],
+      "annotation_note": "Available financial assets",
+      "predicted_labels": [
+        "Debt, available liquidity and future commitments"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.03,
+        "Capital spending and operating cash flow": 0.26,
+        "Debt, available liquidity and future commitments": 0.9,
+        "Legal and regulatory risks": 0.02,
+        "Operating profit, costs and taxes": 0.06,
+        "Share ownership, dilution and capital returns": 0.12
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "bonds",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 105485:105539",
+      "input_sha256": "8b558a3fb038415d0de0708c353109cca11abff3fe6e686197536a341df35e72",
+      "input_characters": 54,
+      "reference_labels": [
+        "Debt, available liquidity and future commitments"
+      ],
+      "annotation_note": "Borrowing balance",
+      "predicted_labels": [
+        "Debt, available liquidity and future commitments"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.02,
+        "Capital spending and operating cash flow": 0.09,
+        "Debt, available liquidity and future commitments": 0.97,
+        "Legal and regulatory risks": 0.04,
+        "Operating profit, costs and taxes": 0.07,
+        "Share ownership, dilution and capital returns": 0.12
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "headcount",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 105613:105902",
+      "input_sha256": "fe4b8864abab9a93f34fc8a6ce0ed0c0682686592430c15b30b7d64972b2666e",
+      "input_characters": 289,
+      "reference_labels": [
+        "Operating profit, costs and taxes"
+      ],
+      "annotation_note": "Staffing and planned reductions",
+      "predicted_labels": [],
+      "scores": {
+        "Advertising demand and audience growth": 0.1,
+        "Capital spending and operating cash flow": 0.04,
+        "Debt, available liquidity and future commitments": 0.03,
+        "Legal and regulatory risks": 0.05,
+        "Operating profit, costs and taxes": 0.21,
+        "Share ownership, dilution and capital returns": 0.11
+      },
+      "missing_labels": [
+        "Operating profit, costs and taxes"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "audience",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 105928:106037",
+      "input_sha256": "eefee7275ca806483f6fbeccb07cef90006944ee572479a38fe64569c7a841bd",
+      "input_characters": 109,
+      "reference_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "annotation_note": "Audience scale and growth",
+      "predicted_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.87,
+        "Capital spending and operating cash flow": 0.02,
+        "Debt, available liquidity and future commitments": 0.02,
+        "Legal and regulatory risks": 0.02,
+        "Operating profit, costs and taxes": 0.03,
+        "Share ownership, dilution and capital returns": 0.03
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "impressions",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 106040:106153",
+      "input_sha256": "9290f5c06cbf9c7eabad8b8c2a26454afc66010e740266a6211ea227a4261066",
+      "input_characters": 113,
+      "reference_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "annotation_note": "Advertising volume",
+      "predicted_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.82,
+        "Capital spending and operating cash flow": 0.03,
+        "Debt, available liquidity and future commitments": 0.02,
+        "Legal and regulatory risks": 0.02,
+        "Operating profit, costs and taxes": 0.05,
+        "Share ownership, dilution and capital returns": 0.02
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "ad-price",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 106156:106239",
+      "input_sha256": "3fb4b3ed30f00cf780548538b16af047181d4f0de67d2c661e2bc698568568cc",
+      "input_characters": 83,
+      "reference_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "annotation_note": "Advertising price",
+      "predicted_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.72,
+        "Capital spending and operating cash flow": 0.04,
+        "Debt, available liquidity and future commitments": 0.02,
+        "Legal and regulatory risks": 0.02,
+        "Operating profit, costs and taxes": 0.13,
+        "Share ownership, dilution and capital returns": 0.02
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "leases",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 47459:48086",
+      "input_sha256": "0ba0ee0f9e8a9715bfaf20cd8c6f2364d516f3ad29f2373eb399e9482d02ab05",
+      "input_characters": 626,
+      "reference_labels": [
+        "Capital spending and operating cash flow",
+        "Debt, available liquidity and future commitments"
+      ],
+      "annotation_note": "Future infrastructure commitments; no current-period cash expense",
+      "predicted_labels": [
+        "Debt, available liquidity and future commitments"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.04,
+        "Capital spending and operating cash flow": 0.46,
+        "Debt, available liquidity and future commitments": 0.97,
+        "Legal and regulatory risks": 0.11,
+        "Operating profit, costs and taxes": 0.1,
+        "Share ownership, dilution and capital returns": 0.04
+      },
+      "missing_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "commitments",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 48086:48899",
+      "input_sha256": "5ca5b45e62793675c2631657acc8ebf452e68cdaf861d1bbef9481c98999d67f",
+      "input_characters": 812,
+      "reference_labels": [
+        "Capital spending and operating cash flow",
+        "Debt, available liquidity and future commitments"
+      ],
+      "annotation_note": "Cloud/equipment commitments and payment timing",
+      "predicted_labels": [
+        "Debt, available liquidity and future commitments"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.04,
+        "Capital spending and operating cash flow": 0.53,
+        "Debt, available liquidity and future commitments": 0.97,
+        "Legal and regulatory risks": 0.18,
+        "Operating profit, costs and taxes": 0.19,
+        "Share ownership, dilution and capital returns": 0.09
+      },
+      "missing_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "restricted-cash",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 48899:49368",
+      "input_sha256": "1b3f8cb63118d0c6e1f312c0cb684fdf62c2967bcc82a675fbf749294de186c5",
+      "input_characters": 468,
+      "reference_labels": [
+        "Capital spending and operating cash flow",
+        "Debt, available liquidity and future commitments"
+      ],
+      "annotation_note": "Infrastructure escrow; unavailable for general use",
+      "predicted_labels": [
+        "Debt, available liquidity and future commitments"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.03,
+        "Capital spending and operating cash flow": 0.36,
+        "Debt, available liquidity and future commitments": 0.83,
+        "Legal and regulatory risks": 0.18,
+        "Operating profit, costs and taxes": 0.11,
+        "Share ownership, dilution and capital returns": 0.1
+      },
+      "missing_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "repurchases",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 87582:87980",
+      "input_sha256": "dfe8b5d2cc50e4651e3d6a6d7adfc10002d3736b73f9a9dd3e4ee11feb2c4cf0",
+      "input_characters": 397,
+      "reference_labels": [
+        "Share ownership, dilution and capital returns"
+      ],
+      "annotation_note": "Authorization differs from actual repurchases",
+      "predicted_labels": [
+        "Share ownership, dilution and capital returns"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.03,
+        "Capital spending and operating cash flow": 0.22,
+        "Debt, available liquidity and future commitments": 0.61,
+        "Legal and regulatory risks": 0.07,
+        "Operating profit, costs and taxes": 0.07,
+        "Share ownership, dilution and capital returns": 0.98
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "equity-plan",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 88460:88823",
+      "input_sha256": "715e54bb062f755c94b3f1e6a0afe8b3cb51b64e653d2dc33fe9f2300d9e4dff",
+      "input_characters": 362,
+      "reference_labels": [
+        "Share ownership, dilution and capital returns"
+      ],
+      "annotation_note": "Reserved employee shares",
+      "predicted_labels": [
+        "Share ownership, dilution and capital returns"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.03,
+        "Capital spending and operating cash flow": 0.03,
+        "Debt, available liquidity and future commitments": 0.07,
+        "Legal and regulatory risks": 0.1,
+        "Operating profit, costs and taxes": 0.04,
+        "Share ownership, dilution and capital returns": 0.87
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "r-and-d",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 132458:133033",
+      "input_sha256": "6505f71043ddeb1b73c5e9d17c2e920e0f9cf6a8afe2fd31f4b76294faf1d2f9",
+      "input_characters": 574,
+      "reference_labels": [
+        "Operating profit, costs and taxes",
+        "Share ownership, dilution and capital returns"
+      ],
+      "annotation_note": "Operating costs; share compensation creates ownership relevance",
+      "predicted_labels": [
+        "Operating profit, costs and taxes"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.05,
+        "Capital spending and operating cash flow": 0.19,
+        "Debt, available liquidity and future commitments": 0.04,
+        "Legal and regulatory risks": 0.03,
+        "Operating profit, costs and taxes": 0.89,
+        "Share ownership, dilution and capital returns": 0.12
+      },
+      "missing_labels": [
+        "Share ownership, dilution and capital returns"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "cfo",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 143204:143804",
+      "input_sha256": "99d3297017e17daec06cc9f5a40996544a27120549d89b28793a3421d474a5ba",
+      "input_characters": 599,
+      "reference_labels": [
+        "Operating profit, costs and taxes",
+        "Capital spending and operating cash flow",
+        "Share ownership, dilution and capital returns"
+      ],
+      "annotation_note": "Cash reconciliation includes profit and share compensation",
+      "predicted_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.16,
+        "Capital spending and operating cash flow": 0.95,
+        "Debt, available liquidity and future commitments": 0.26,
+        "Legal and regulatory risks": 0.03,
+        "Operating profit, costs and taxes": 0.59,
+        "Share ownership, dilution and capital returns": 0.18
+      },
+      "missing_labels": [
+        "Operating profit, costs and taxes",
+        "Share ownership, dilution and capital returns"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "investing",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 143838:144427",
+      "input_sha256": "67d68ced8d98dc4d6d16f22430318bd89086f13817f26c5eb817f58ed9cd59ab",
+      "input_characters": 588,
+      "reference_labels": [
+        "Capital spending and operating cash flow",
+        "Debt, available liquidity and future commitments"
+      ],
+      "annotation_note": "Equipment cash spending and securities investments",
+      "predicted_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.04,
+        "Capital spending and operating cash flow": 0.96,
+        "Debt, available liquidity and future commitments": 0.31,
+        "Legal and regulatory risks": 0.03,
+        "Operating profit, costs and taxes": 0.12,
+        "Share ownership, dilution and capital returns": 0.08
+      },
+      "missing_labels": [
+        "Debt, available liquidity and future commitments"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "capex-plan",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 144448:144588",
+      "input_sha256": "bd17226163caffd2157ddd325e80e413c2367172d13f003abc3fe70eaeebbf62",
+      "input_characters": 140,
+      "reference_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "annotation_note": "Future capital expenditure guidance",
+      "predicted_labels": [
+        "Capital spending and operating cash flow"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.05,
+        "Capital spending and operating cash flow": 0.97,
+        "Debt, available liquidity and future commitments": 0.66,
+        "Legal and regulatory risks": 0.03,
+        "Operating profit, costs and taxes": 0.17,
+        "Share ownership, dilution and capital returns": 0.07
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "financing",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 144627:145206",
+      "input_sha256": "a5c73030327da2571f7daf30e45a81a370d6c26c18e92108c8ee47fb3734f1b6",
+      "input_characters": 578,
+      "reference_labels": [
+        "Debt, available liquidity and future commitments",
+        "Share ownership, dilution and capital returns"
+      ],
+      "annotation_note": "Debt proceeds, stock-award tax payments, dividends and buybacks",
+      "predicted_labels": [
+        "Share ownership, dilution and capital returns",
+        "Debt, available liquidity and future commitments"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.05,
+        "Capital spending and operating cash flow": 0.67,
+        "Debt, available liquidity and future commitments": 0.87,
+        "Legal and regulatory risks": 0.06,
+        "Operating profit, costs and taxes": 0.23,
+        "Share ownership, dilution and capital returns": 0.9
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "funding-outlook",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 145233:146016",
+      "input_sha256": "2c96870b83e9fb091db7f4db0b6ec5f21ca7d0c655fddbedecee2ca347c34fbe",
+      "input_characters": 783,
+      "reference_labels": [
+        "Capital spending and operating cash flow",
+        "Debt, available liquidity and future commitments",
+        "Share ownership, dilution and capital returns"
+      ],
+      "annotation_note": "Funding for operating/investment needs and shareholder returns",
+      "predicted_labels": [
+        "Debt, available liquidity and future commitments",
+        "Capital spending and operating cash flow",
+        "Share ownership, dilution and capital returns"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.07,
+        "Capital spending and operating cash flow": 0.85,
+        "Debt, available liquidity and future commitments": 0.95,
+        "Legal and regulatory risks": 0.07,
+        "Operating profit, costs and taxes": 0.21,
+        "Share ownership, dilution and capital returns": 0.81
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "legal-accrual",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 49692:50371",
+      "input_sha256": "7c29b2466452380228af10537d7939db575a850a5d8b25ce39b86b55e185eeb4",
+      "input_characters": 679,
+      "reference_labels": [
+        "Operating profit, costs and taxes",
+        "Legal and regulatory risks"
+      ],
+      "annotation_note": "Loss recognition and unresolved litigation amounts",
+      "predicted_labels": [
+        "Legal and regulatory risks"
+      ],
+      "scores": {
+        "Advertising demand and audience growth": 0.02,
+        "Capital spending and operating cash flow": 0.02,
+        "Debt, available liquidity and future commitments": 0.04,
+        "Legal and regulatory risks": 0.95,
+        "Operating profit, costs and taxes": 0.1,
+        "Share ownership, dilution and capital returns": 0.03
+      },
+      "missing_labels": [
+        "Operating profit, costs and taxes"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "accounting-rule",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 29571:30267",
+      "input_sha256": "f20a92c1a8858789d030ea718dc5021a7f73c74db2b79875e93056e587758eee",
+      "input_characters": 695,
+      "reference_labels": [],
+      "annotation_note": "Environmental-credit accounting adoption; no substantive topic evidence",
+      "predicted_labels": [],
+      "scores": {
+        "Advertising demand and audience growth": 0.03,
+        "Capital spending and operating cash flow": 0.02,
+        "Debt, available liquidity and future commitments": 0.03,
+        "Legal and regulatory risks": 0.65,
+        "Operating profit, costs and taxes": 0.08,
+        "Share ownership, dilution and capital returns": 0.03
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    },
+    {
+      "id": "metric-definition",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 117772:119123",
+      "input_sha256": "21342c7eac7321356d2cae45cf42bc2fb59984a3d2987c5e08224a487836ac97",
+      "input_characters": 1351,
+      "reference_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "annotation_note": "Audience measurement; relevant even without current growth",
+      "predicted_labels": [],
+      "scores": {
+        "Advertising demand and audience growth": 0.61,
+        "Capital spending and operating cash flow": 0.02,
+        "Debt, available liquidity and future commitments": 0.02,
+        "Legal and regulatory risks": 0.08,
+        "Operating profit, costs and taxes": 0.03,
+        "Share ownership, dilution and capital returns": 0.04
+      },
+      "missing_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "metric-limit",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 16195:16681",
+      "input_sha256": "e3f6cd74f6e704eff39c915b70ec0a7487d4998e9ae075f09133223eec8e45ef",
+      "input_characters": 486,
+      "reference_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "annotation_note": "Audience geography measurement limitation",
+      "predicted_labels": [],
+      "scores": {
+        "Advertising demand and audience growth": 0.26,
+        "Capital spending and operating cash flow": 0.02,
+        "Debt, available liquidity and future commitments": 0.02,
+        "Legal and regulatory risks": 0.09,
+        "Operating profit, costs and taxes": 0.03,
+        "Share ownership, dilution and capital returns": 0.02
+      },
+      "missing_labels": [
+        "Advertising demand and audience growth"
+      ],
+      "extra_labels": []
+    },
+    {
+      "id": "filing-title",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "locator": "Q2 2026 10-Q; extracted-text offsets 3116:3192",
+      "input_sha256": "4eced87db1dc9831a06ba57c682e19a9d2a7a667be1866d619bbb54ff9ada95a",
+      "input_characters": 75,
+      "reference_labels": [],
+      "annotation_note": "Document heading only",
+      "predicted_labels": [],
+      "scores": {
+        "Advertising demand and audience growth": 0.03,
+        "Capital spending and operating cash flow": 0.03,
+        "Debt, available liquidity and future commitments": 0.04,
+        "Legal and regulatory risks": 0.06,
+        "Operating profit, costs and taxes": 0.03,
+        "Share ownership, dilution and capital returns": 0.04
+      },
+      "missing_labels": [],
+      "extra_labels": []
+    }
+  ],
+  "decision": "Keep experimental. Suitable for provisional topic tags, but missed multi-topic relevance, headcount, and audience measurement. Do not add as a default skill dependency or use to exclude evidence. A held-out company plus timed baseline is needed before claiming workflow improvement."
+}
