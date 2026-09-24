@@ -277,10 +277,9 @@ def watch_html(data, ev, sources, lang):
     return out
 
 
-def key_stats_html(data, ev, lang):
-    # Presentation-only mappings keep historic research snapshots immutable.
-    presets = json.loads((ASSETS / 'key-stats.json').read_text())
-    rows = data.get('key_stats', presets.get(data['report_id'], []))
+def key_stats_html(data, ev, lang, preset=None):
+    # A repository-supplied preset selects evidence for older immutable snapshots.
+    rows = data.get('key_stats', preset or [])
     if not rows:
         return ''
     meanings = {term['id']: term[lang] for term in TERMS}
@@ -323,7 +322,7 @@ def revision_html(data, archive, lang, report_links):
     return out
 
 
-def render(data, baseline=None, archive=None, visual_data=None, report_links=None):
+def render(data, baseline=None, archive=None, visual_data=None, report_links=None, key_stats=None):
     validate(data, baseline)
     ev = {e["id"]:e for e in data["evidence"]}
     sources = {s["id"]:s for s in data["sources"]}
@@ -344,7 +343,7 @@ def render(data, baseline=None, archive=None, visual_data=None, report_links=Non
         main += f'<header class="summary" id="{lang}-summary">{revision_html(data, archive, lang, report_links)}<div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1><p class="meta">{tr(lang,"Information cutoff","Date disponibile până la")}: {h(data["cutoff"])} · {h(data["report_id"])}</p><div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></dl><p class="notice">{h(t(data["evidence_gaps"],lang))}</p>'
         if data.get("next_event"):
             main += event_html(data["next_event"], sources,lang,True)
-        main += key_stats_html(data, ev, lang) + '</header>'
+        main += key_stats_html(data, ev, lang, key_stats) + '</header>'
         if visual_data:
             main += dashboard_html(visual_data, data, lang)
         if data.get("review"):

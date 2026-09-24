@@ -1,6 +1,6 @@
 # Inherited material and scope
 
-Implementation based on the user's `stock-analysis-repository-review.md`, dated 16 September 2026, and these inspected snapshots:
+Implementation based on the user's repository review dated 16 September 2026 (not included in this repository) and these inspected snapshots:
 
 - `MarginallyHarmless/stock_analysis_v2` at `e80376352af18dfdb6f7e4a2f6ec3feeb3c65c26`: original checklist JSON/Markdown/PDF retained; research method retained with the calculation-contract paragraph updated. Evidence kinds, provenance, sector applicability, separate business/price judgments and snapshot principles form the foundation.
 - `MarginallyHarmless/stock-research` at `080c9b463c9e309f29e20478afbf36738ff960f8`: concept → company evidence → implication teaching pattern, quarterly momentum, per-share growth, market-context questions, conditional expectations and integrated comparisons adapted. The glossary is corrected and rewritten rather than copied with its overly definite claims.
