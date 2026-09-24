@@ -1,6 +1,6 @@
 # Beginner explanations
 
-Keep the older skill's teaching sequence: a short concept, the company's actual evidence, and what it means. The visible report must remain understandable with every explanation closed. Put definitions, a clearly hypothetical example and one common trap inside “Explain this”. Do not repeat a full lesson in several sections; link to its main home.
+Keep the older skill's teaching sequence: a short concept, the company's actual evidence, and what it means. The report must be understandable from the guide alone; the visible “Learn the concept” card then teaches a definition, a clearly hypothetical example and one common trap. Do not repeat a full lesson in several sections; link to its main home.
 
 The following corrected lessons preserve the original approachable intent. Adapt them to the company's context. Provide EN/RO versions when the report supports both; keep the English finance term alongside a natural Romanian explanation when useful.
 

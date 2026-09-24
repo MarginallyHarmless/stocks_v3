@@ -64,7 +64,7 @@ class Guided(unittest.TestCase):
         self.data = fixture()
         self.cash = next(s for s in self.data['sections'] if s['id'] == 'cash')
 
-    def test_visible_story_and_expanded_detail_are_both_complete(self):
+    def test_visible_story_interpretation_and_lessons_are_complete(self):
         doc = Document(render(self.data))
         for lang in self.data['languages']:
             for section in self.data['sections']:
@@ -75,14 +75,25 @@ class Guided(unittest.TestCase):
                 self.assertIn(section['caveat'][lang], visible)
                 deep = node.all('details', 'deep-data')[0]
                 self.assertNotIn('open', deep.attrs)
-                self.assertIn(section['claims'][0]['text'][lang], deep.text())
-                self.assertNotIn(section['claims'][0]['text'][lang], visible)
+                # Every authored interpretation is readable without opening anything.
+                for claim in section['claims']:
+                    self.assertIn(claim['text'][lang], visible)
+                if section.get('lesson'):
+                    for part in ('concept', 'example', 'trap'):
+                        self.assertIn(section['lesson'][part][lang], visible)
                 for metric in section['guide'].get('metrics', []):
                     self.assertIn(metric['meaning']['text'][lang], visible)
             watch = doc.by_id(lang+'-watch').text(True)
             for item in self.data['watchlist']:
                 self.assertIn(item['criterion']['description'][lang], watch)
                 self.assertIn(item['impact']['adverse'][lang], watch)
+
+    def test_repeated_guide_text_is_shown_once(self):
+        self.cash['claims'].insert(0, self.cash['guide']['claims'][0])
+        doc = Document(render(self.data))
+        for lang in self.data['languages']:
+            visible = doc.by_id(lang+'-cash').text(True)
+            self.assertEqual(visible.count(self.cash['guide']['claims'][0]['text'][lang]), 1)
 
     def test_guided_report_requires_every_section_guide(self):
         del self.cash['guide']

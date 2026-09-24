@@ -6,7 +6,7 @@ Use the bundled renderer/CSS/JS and the embedded OFL fonts in `assets/fonts/` (I
 
 1. First screen: company/security identity, information cutoff, clear answer, strongest supporting/opposing evidence, separate business and price assessments, important missing evidence, next reporting date/confidence.
 2. Main sections: question → concept in everyday language → company answer → zero to three decisive typed figures, each with its meaning → “Why it matters” → material caveat. Use five main questions plus the closing watchlist by default; keep the complete checklist in the underlying research.
-3. “Explain this”: short concept, hypothetical worked example, common trap. “Sources & calculation”: underlying evidence, direct document link, definition, period, source locator and calculation input chain. Keep these distinct.
+3. “Learn the concept”: short concept, hypothetical worked example, common trap, visible after the section's analysis. “Sources & calculation”: underlying evidence, direct document link, definition, period, source locator and calculation input chain. Keep these distinct.
 4. Closing section: prioritized next questions, why each matters, exact target and due period, date confidence/source, favorable/adverse implications. Original baselines, criterion versions, rationale and mixed/unresolved implications remain in expandable context. Copyable update prompt and portable export follow. The source appendix is reached through the evidence dialog, not a long mandatory scroll after the watchlist.
 
 ## Default six-part reading path
@@ -24,7 +24,7 @@ Adapt the question to the evidence, including weak companies and missing data. D
 
 For every main section author a `guide` (data-contract.md). Use short sentences and ordinary words; explain a concept before asking the reader to interpret its figure. One paragraph should make one point. A metric caption must explain the actual figure, not repeat its label. Prefer “cash left after the defined business investments” before introducing FCF. Avoid unexplained GAAP, TTM, EPS, SBC and P/E in the main prose. Preserve exact periods and basis alongside figures, but explain their significance in words. Label all invented teaching examples as hypothetical.
 
-The essential conclusion, adverse evidence, material assumptions, forecast labels and gaps stay visible in both modes. Detailed mode opens the full analysis; Guided closes it. Optional lessons stay available in either mode. “Explain all” opens lessons and returns to Guided. Language, theme and reading preferences are independent. Never require opening a lesson to understand the main conclusion. Source buttons say “Sources”, with internal identifiers confined to the evidence view and exports.
+The essential conclusion, adverse evidence, material assumptions, forecast labels and gaps stay visible in both modes. Guided reading shows every authored interpretation under “What else to understand” (typed, with sources; text that repeats the guide is shown once) and each lesson as a visible “Learn the concept” card. Only supporting figures, tables and the source list fold under “Figures, tables & sources”; Detailed mode opens them. Language, theme and reading preferences are independent. Never require opening a lesson to understand the main conclusion. Source buttons say “Sources”, with internal identifiers confined to the evidence view and exports.
 
 ## Charts
 

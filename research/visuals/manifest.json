@@ -62,5 +62,9 @@
   "ASTS-2026-09-18-v3-r2": {
     "path": "research/visuals/2026-09-24.json",
     "key": "ASTS"
+  },
+  "HOOD-2026-09-18-v3-r2": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "HOOD"
   }
 }

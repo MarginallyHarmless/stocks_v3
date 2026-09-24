@@ -8,6 +8,8 @@ Before researching or updating a company:
 2. Fetch the latest main branch and load the complete `stock-analysis-registry.json`.
 3. Resolve the company by issuer and security identity, then verify its archive under `archives/`. Never reconstruct the original watchlist from memory.
 
+To make an existing report explain more ("deepen it like HOOD"), follow `skills/stock-analysis/references/depth-revisions.md` and the tools in `scripts/depth/`; the worked example is `research/depth/HOOD-2026-09-18-v3-r2.spec.json`.
+
 Save report HTML under `reports/` and immutable research snapshots in the same company archive. Use a new report ID/file for new research; preserve earlier reports. Editorial-only changes keep the research cutoff and archived facts unchanged. Catalog repository-relative paths, update the company card and earnings schedule with sources, then run `python3 scripts/build_index.py`. Preserve other companies and unreviewed past periods. Only a saved earnings review of the matching period can clear its flag.
 
 Before committing, run the generator and verify the archive. For generator changes also run:

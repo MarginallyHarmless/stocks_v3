@@ -165,8 +165,8 @@ def tables_html(tables, ev, lang):
     return out
 
 
-def scenario_assumptions_html(s, ev, lang):
-    """Keep the authored model claims visible beside a guided model result."""
+def scenario_assumption_claims(s, ev):
+    """Model claims behind a guided model result, shown together under their own heading."""
     model_inputs, pending = set(), [m['evidence_ref'] for m in s.get('guide', {}).get('metrics', [])
                                     if ev[m['evidence_ref']].get('basis') == 'model']
     while pending:
@@ -174,7 +174,12 @@ def scenario_assumptions_html(s, ev, lang):
         if key not in model_inputs:
             model_inputs.add(key)
             pending.extend(ev[key].get('inputs', []))
-    assumptions = [c for c in s['claims'] if c['type'] == 'model' and model_inputs.intersection(c.get('evidence_refs', []))]
+    return [c for c in s['claims'] if c['type'] == 'model' and model_inputs.intersection(c.get('evidence_refs', []))]
+
+
+def scenario_assumptions_html(s, ev, lang):
+    """Keep the authored model claims visible beside a guided model result."""
+    assumptions = scenario_assumption_claims(s, ev)
     if not assumptions:
         return ''
     return (f'<aside class="scenario-assumptions"><h3>{tr(lang,"Assumptions behind the displayed scenario","Ipotezele scenariului afișat")}</h3>'
@@ -196,13 +201,22 @@ def section_html(s, ev, lang, index, sources, total=None):
         output += claims(s["claims"], lang)
         if s.get("metrics"):
             output += metrics_html(s["metrics"],ev,lang)
+    if guide:
+        # Guided reading shows every authored interpretation; only figures, tables and sources fold away.
+        shown = {t(c['text'],lang) for c in guide['claims'] + [guide['why_it_matters']] + scenario_assumption_claims(s, ev)}
+        deeper = [c for c in s['claims'] if t(c['text'],lang) not in shown]
+        if deeper:
+            output += (f'<div class="deeper"><h3>{tr(lang,"What else to understand","Ce mai trebuie înțeles")}</h3>'
+                       + claims(deeper,lang) + '</div>')
     output += f'<p class="caveat">{h(t(s["caveat"],lang))}</p>'
     lesson = s.get("lesson")
     if lesson:
-        output += f'<details class="lesson"><summary>{tr(lang,"Explain this","Explică-mi conceptul")}</summary><div class="lesson-content"><p>{h(t(lesson["concept"],lang))}</p><p class="example"><strong>{tr(lang,"Hypothetical example","Exemplu ipotetic")}: </strong>{h(t(lesson["example"],lang))}</p><p><strong>{tr(lang,"Common trap","Confuzie frecventă")}: </strong>{h(t(lesson["trap"],lang))}</p></div></details>'
+        output += (f'<aside class="lesson-card"><h3>{tr(lang,"Learn the concept","Învață conceptul")}</h3><p class="lesson-concept">{h(t(lesson["concept"],lang))}</p>'
+                   f'<div class="lesson-pair"><p class="example"><strong>{tr(lang,"Hypothetical example","Exemplu ipotetic")}</strong>{h(t(lesson["example"],lang))}</p>'
+                   f'<p class="trap"><strong>{tr(lang,"Common trap","Confuzie frecventă")}</strong>{h(t(lesson["trap"],lang))}</p></div></aside>')
     if guide:
         output += scenario_assumptions_html(s, ev, lang)
-        output += f'<details class="deep-data"><summary>{tr(lang,"Detailed analysis","Analiza detaliată")}</summary><div class="detail-content">' + claims(s['claims'],lang)
+        output += f'<details class="deep-data"><summary>{tr(lang,"Figures, tables & sources","Cifre, tabele și surse")}</summary><div class="detail-content">'
         if s.get('metrics'):
             output += metrics_html(s['metrics'],ev,lang)
     if s.get("series"):
@@ -418,12 +432,13 @@ def render(data, baseline=None, archive=None, visual_data=None, report_links=Non
     main = annotate(main, 'report')
     evidence = annotate(evidence, 'evidence')
     option = lambda value, en, ro: f'<option value="{value}" data-en="{h(en)}" data-ro="{h(ro)}">{h(ro if default == "ro" else en)}</option>'
+    lessons_hidden = '' if 'class="lesson"' in main else ' hidden'
     toolbar = ('<div class="toolbar"><details class="display-menu"><summary>' + bi('Display', 'Afișare', default) + '</summary><div class="display-panel">'
                f'<label>{bi("Language","Limbă",default)}<select id="language">{opts}</select></label>'
                f'<label>{bi("Reading","Lectură",default)}<select id="reading">{option("beginner","Guided","Ghidat")}{option("experienced","Detailed","Detaliat")}</select></label>'
                f'<label>{bi("Theme","Temă",default)}<select id="theme">{option("dark","Dark","Întunecată")}{option("light","Light","Luminoasă")}</select></label>'
                '</div></details>'
-               f'<button id="expand-lessons" aria-expanded="false">{bi("Explain all","Explică tot",default)}</button>'
+               f'<button id="expand-lessons" aria-expanded="false"{lessons_hidden}>{bi("Explain all","Explică tot",default)}</button>'
                f'<button id="open-sources">{bi("Evidence","Dovezi",default)}</button></div>')
     home_link = '<a class="brand home-link" href="../index.html"><span class="brand-name"><span class="brand-icon" aria-hidden="true">◒</span> Stock Analysis / 03</span><span class="back-label" data-lang="en">← All companies</span><span class="back-label" data-lang="ro" hidden>← Toate companiile</span></a>'
     if default == 'ro':

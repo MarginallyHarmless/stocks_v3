@@ -1,0 +1,338 @@
+{
+ "base": "HOOD-2026-09-18-v3",
+ "new_id": "HOOD-2026-09-18-v3-r2",
+ "revision_note": {
+  "en": "Depth revision: adds plain-language explanations and concept lessons that interpret figures already in this report, plus three ratios calculated from saved figures. No new sources or reported figures; the cutoff, conclusions and watch criteria are unchanged.",
+  "ro": "Revizie de aprofundare: adaugă explicații pe înțelesul tuturor și lecții despre concepte, care interpretează cifre deja prezente în raport, plus trei rapoarte calculate din cifrele salvate. Nu există surse sau cifre raportate noi; data-limită, concluziile și criteriile de verificare sunt neschimbate."
+ },
+ "evidence": [
+  {
+   "id": "gold-share",
+   "kind": "calculation",
+   "label": {
+    "en": "Funded customers paying for Gold",
+    "ro": "Clienți cu cont finanțat care plătesc Gold"
+   },
+   "definition": "Gold subscribers divided by funded customers",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "operating",
+   "period": {
+    "kind": "instant",
+    "end": "2026-06-30",
+    "label": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "percent_ratio",
+   "inputs": [
+    "gold",
+    "customers"
+   ]
+  },
+  {
+   "id": "growth-h",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half revenue growth YoY",
+    "ro": "Creșterea anuală a veniturilor în primul semestru"
+   },
+   "definition": "H1 2026 net revenue versus H1 2025",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "rev-h",
+    "rev-ho"
+   ]
+  },
+  {
+   "id": "gain-share",
+   "kind": "calculation",
+   "label": {
+    "en": "Share of quarterly net income from investment gains",
+    "ro": "Ponderea câștigurilor din investiții în profitul net trimestrial"
+   },
+   "definition": "Disclosed investment-related gains divided by net income attributable to Robinhood",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q2 2026",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "percent_ratio",
+   "inputs": [
+    "gain",
+    "profit"
+   ]
+  }
+ ],
+ "sections": {
+  "business": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "transactions",
+      "options",
+      "events-rev",
+      "crypto"
+     ],
+     "text": {
+      "en": "Transaction revenue is itself a mix. Of the $776M in Q2 2026, options contributed $342M, event contracts $156M and crypto $100M. All of them depend on customers choosing to trade, which tends to rise and fall with market enthusiasm.",
+      "ro": "Veniturile din tranzacții sunt la rândul lor un amestec. Din cele 776 mil. USD din T2 2026, opțiunile au adus 342 mil. USD, contractele pe evenimente 156 mil. USD, iar criptomonedele 100 mil. USD. Toate depind de decizia clienților de a tranzacționa, care tinde să crească și să scadă odată cu entuziasmul pieței."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "interest",
+      "rev"
+     ],
+     "text": {
+      "en": "Net interest revenue ($389M in Q2 2026) depends on interest rates and on the balances customers keep with Robinhood, not on how often they trade. It is a second source of income, but one that can shrink if interest rates fall.",
+      "ro": "Veniturile nete din dobânzi (389 mil. USD în T2 2026) depind de nivelul dobânzilor și de soldurile pe care clienții le păstrează la Robinhood, nu de cât de des tranzacționează. Sunt o a doua sursă de venit, dar se pot reduce dacă dobânzile scad."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "gold-share",
+      "gold",
+      "customers"
+     ],
+     "text": {
+      "en": "About one in six funded customers (16.9%) paid for Gold at the end of June. That shows real willingness to pay for extras, but most customers still use only the free service.",
+      "ro": "Aproximativ unul din șase clienți cu cont finanțat (16,9%) plătea abonamentul Gold la sfârșitul lunii iunie. Asta arată disponibilitate reală de a plăti pentru servicii suplimentare, dar majoritatea clienților folosesc doar serviciul gratuit."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "aug-assets",
+      "cash"
+     ],
+     "text": {
+      "en": "Platform assets were $383.7B at the end of August, while Robinhood’s own corporate cash was $5.36B at June 30. The first figure is customers’ money, on which Robinhood earns fees and interest; only the second belongs to the company.",
+      "ro": "Activele de pe platformă erau de 383,7 mld. USD la sfârșitul lui august, iar numerarul propriu al companiei era de 5,36 mld. USD la 30 iunie. Prima cifră reprezintă banii clienților, din care Robinhood câștigă comisioane și dobânzi; doar a doua aparține companiei."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A platform business earns money from what happens on it: fees when customers trade, interest on the balances they keep, and subscriptions for extra features. Each source reacts differently to market conditions.",
+     "ro": "O afacere de tip platformă câștigă din ce se întâmplă pe ea: comisioane când clienții tranzacționează, dobândă la soldurile pe care le păstrează și abonamente pentru funcții suplimentare. Fiecare sursă reacționează diferit la condițiile din piață."
+    },
+    "example": {
+     "en": "Hypothetical: an app with 10 million customers earns $5 per customer from trading in a busy year but only $2 in a quiet year, while 1 million subscribers pay $50 a year either way. Subscriptions are half of revenue in the busy year ($50M of $100M) and over 70% in the quiet year ($50M of $70M), without growing at all.",
+     "ro": "Exemplu ipotetic: o aplicație cu 10 milioane de clienți câștigă 5 USD per client din tranzacții într-un an agitat, dar doar 2 USD într-un an liniștit, în timp ce 1 milion de abonați plătesc 50 USD pe an în ambele cazuri. Abonamentele reprezintă jumătate din venituri în anul agitat (50 mil. din 100 mil. USD) și peste 70% în anul liniștit (50 mil. din 70 mil. USD), fără să fi crescut deloc."
+    },
+    "trap": {
+     "en": "Money customers hold on the platform is not the company’s money or its revenue. A broker holding $100 billion for customers does not have $100 billion to spend.",
+     "ro": "Banii pe care clienții îi țin pe platformă nu sunt banii companiei și nici veniturile ei. Un broker care păstrează 100 mld. USD pentru clienți nu are 100 mld. USD de cheltuit."
+    }
+   }
+  },
+  "growth": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "growth-h",
+      "rev-h",
+      "rev-ho",
+      "growth"
+     ],
+     "text": {
+      "en": "Over the first half of 2026, revenue was $2.38B versus $1.92B a year earlier, 24.0% higher. That is slower than the roughly 32% jump in Q2 alone because Q1 2026 was weaker. Six months of data smooth out one strong quarter.",
+      "ro": "În primul semestru din 2026, veniturile au fost de 2,38 mld. USD, față de 1,92 mld. USD cu un an înainte, adică 24,0% mai mari. Este mai puțin decât saltul de aproximativ 32% din T2, pentru că T1 2026 a fost mai slab. Șase luni de date netezesc efectul unui singur trimestru puternic."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "fwd-rev",
+      "rev-fy",
+      "growth-h"
+     ],
+     "text": {
+      "en": "Analysts’ average estimate for FY2026 revenue is $5.2B, against $4.47B reported for FY2025. That implies full-year growth below the first half’s 24% pace, so analysts expect the second half to grow more slowly. Estimates are opinions, and providers may define revenue slightly differently from the company.",
+      "ro": "Estimarea medie a analiștilor pentru veniturile din 2026 este de 5,2 mld. USD, față de 4,47 mld. USD raportate pentru 2025. Asta implică o creștere anuală sub ritmul de 24% din primul semestru, deci analiștii se așteaptă ca a doua jumătate a anului să crească mai lent. Estimările sunt opinii, iar furnizorii pot defini veniturile ușor diferit față de companie."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "scope",
+      "deposits",
+      "aug-deposits"
+     ],
+     "text": {
+      "en": "Part of the deposit growth comes from businesses Robinhood bought (TradePMR from March, WonderFi from June) and from Trump Account contributions from July. Acquired inflows are real money on the platform, but they say less about whether the original app is winning new customers.",
+      "ro": "O parte din creșterea depozitelor provine din afacerile cumpărate de Robinhood (TradePMR din martie, WonderFi din iunie) și din contribuțiile în conturile Trump din iulie. Intrările din achiziții sunt bani reali pe platformă, dar spun mai puțin despre capacitatea aplicației inițiale de a atrage clienți noi."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "events-rev",
+      "aug-events"
+     ],
+     "text": {
+      "en": "Event contracts (contracts that pay out depending on the outcome of a real-world event, often called prediction markets) are a new and fast-moving line: $156M of Q2 revenue and 4.7B contracts traded in August. New products can grow quickly, but this one also carries the regulatory uncertainty described under risks.",
+      "ro": "Contractele pe evenimente (contracte care plătesc în funcție de rezultatul unui eveniment real, numite adesea piețe de predicție) sunt o activitate nouă, care se mișcă rapid: 156 mil. USD din veniturile T2 și 4,7 mld. de contracte tranzacționate în august. Produsele noi pot crește repede, dar acesta aduce și incertitudinea de reglementare descrisă la riscuri."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Year-over-year growth compares a period with the same period a year earlier, which removes seasonal effects. Looking at several periods together shows whether one strong quarter is part of a trend.",
+     "ro": "Creșterea de la an la an compară o perioadă cu aceeași perioadă de acum un an, eliminând efectele sezoniere. Mai multe perioade privite împreună arată dacă un trimestru puternic face parte dintr-o tendință."
+    },
+    "example": {
+     "en": "Hypothetical: a company’s quarterly revenue goes $100, $80, then $130. The last quarter is 30% above the first, but the path includes a 20% drop, so the trend is bumpier than the headline suggests.",
+     "ro": "Exemplu ipotetic: veniturile trimestriale ale unei companii sunt 100, 80, apoi 130 USD. Ultimul trimestru este cu 30% peste primul, dar drumul include o scădere de 20%, deci tendința este mai accidentată decât sugerează cifra principală."
+    },
+    "trap": {
+     "en": "More customer money on the platform (deposits) is not the same as more revenue. Money can sit on the platform without producing much income.",
+     "ro": "Mai mulți bani ai clienților pe platformă (depozite) nu înseamnă automat venituri mai mari. Banii pot sta pe platformă fără să producă mult venit."
+    }
+   }
+  },
+  "cash": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "cfo",
+      "rev-h",
+      "funding"
+     ],
+     "text": {
+      "en": "Operating cash flow in the first half ($2.76B) was larger than revenue in the same period ($2.38B). For most companies that would signal that something other than day-to-day earnings is moving cash; here it reflects customer and financing balances, which is why it cannot be read as profit turned into cash.",
+      "ro": "Fluxul de numerar operațional din primul semestru (2,76 mld. USD) a fost mai mare decât veniturile din aceeași perioadă (2,38 mld. USD). La majoritatea companiilor, acesta ar fi un semn că altceva decât activitatea de zi cu zi mișcă numerarul; aici reflectă soldurile clienților și finanțările, de aceea nu poate fi citit ca profit transformat în numerar."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "gain-share",
+      "gain",
+      "profit"
+     ],
+     "text": {
+      "en": "Investment gains made up 23.0% of Q2 net income ($129M of $561M). Without them the quarter is still clearly profitable, but those gains depend on the value of investments and should not be expected to repeat every quarter.",
+      "ro": "Câștigurile din investiții au reprezentat 23,0% din profitul net din T2 (129 mil. din 561 mil. USD). Fără ele, trimestrul rămâne clar profitabil, dar aceste câștiguri depind de valoarea investițiilor și nu trebuie presupus că se repetă în fiecare trimestru."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "capex-sales",
+      "capex",
+      "rev-h"
+     ],
+     "text": {
+      "en": "Cash spent on equipment and software was 1.77% of first-half revenue. A software-based broker needs little physical investment, so most of what it spends to grow appears as operating expenses rather than as capital spending.",
+      "ro": "Numerarul cheltuit pe echipamente și software a reprezentat 1,77% din veniturile primului semestru. Un broker bazat pe software are nevoie de puține investiții fizice, deci mare parte din ce cheltuiește pentru creștere apare ca cheltuieli operaționale, nu ca investiții de capital."
+     }
+    }
+   ]
+  },
+  "risks": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "excess",
+      "segregated"
+     ],
+     "text": {
+      "en": "Brokers must keep a regulatory capital cushion. The main broker subsidiary held $3.44B above its minimum at quarter-end, which gives room to absorb losses. Separately, $12.02B of cash and securities was set aside for customers under regulatory rules and is not available to the company.",
+      "ro": "Brokerii trebuie să păstreze o rezervă de capital cerută de autorități. Principala filială de brokeraj avea 3,44 mld. USD peste minim la finalul trimestrului, ceea ce oferă spațiu pentru a absorbi pierderi. Separat, 12,02 mld. USD în numerar și titluri erau puse deoparte pentru clienți conform reglementărilor și nu sunt la dispoziția companiei."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "delinquency",
+      "pastdue",
+      "cardloans",
+      "cash"
+     ],
+     "text": {
+      "en": "About 6% of card loans were past due at June 30 ($87M of $1.46B). The card book is small next to Robinhood’s $5.36B of corporate cash, so losses are manageable today. A fast-growing loan book can look healthier than it is, because new loans have not yet had time to go bad.",
+      "ro": "Aproximativ 6% din creditele pe card erau restante la 30 iunie (87 mil. din 1,46 mld. USD). Portofoliul de carduri este mic față de numerarul propriu de 5,36 mld. USD al companiei, deci pierderile sunt gestionabile acum. Un portofoliu de credite care crește rapid poate părea mai sănătos decât este, pentru că creditele noi nu au avut încă timp să devină problematice."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A loan is delinquent when payments are late; it is charged off when the lender stops expecting to be repaid and records the loss. Delinquencies usually rise first, so they work as an early warning.",
+     "ro": "Un credit este restant când plățile întârzie; este trecut pe pierdere când creditorul nu mai așteaptă să fie rambursat și înregistrează pierderea. Restanțele cresc de obicei primele, deci funcționează ca un semnal timpuriu."
+    },
+    "example": {
+     "en": "Hypothetical: a lender has $1,000 of card loans. $60 are late (6% delinquency); months later, $20 of those are written off (2% charge-off).",
+     "ro": "Exemplu ipotetic: un creditor are 1.000 USD în credite pe card. 60 USD sunt restanți (6% restanțe); după câteva luni, 20 USD din aceștia sunt trecuți pe pierdere (2% pierderi)."
+    },
+    "trap": {
+     "en": "A past-due rate is not a loss rate. Many late loans are eventually repaid, while losses from a young loan book tend to show up later.",
+     "ro": "Rata restanțelor nu este o rată a pierderilor. Multe credite restante sunt până la urmă rambursate, iar pierderile dintr-un portofoliu nou tind să apară mai târziu."
+    }
+   }
+  },
+  "valuation": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "pe",
+      "eps-ttm",
+      "price"
+     ],
+     "text": {
+      "en": "At 48.6 times trailing reported earnings, a buyer pays about $49 for each $1 of the last year’s profit per share. If profit never grew, it would take roughly 49 years of today’s earnings to add up to the price, so the price only makes sense if profit keeps growing strongly.",
+      "ro": "La 48,6 ori profitul raportat din ultimele 12 luni, un cumpărător plătește aproximativ 49 USD pentru fiecare 1 USD de profit pe acțiune. Dacă profitul nu ar mai crește deloc, ar fi nevoie de circa 49 de ani de profit la nivelul actual pentru a acoperi prețul, deci prețul are sens doar dacă profitul continuă să crească puternic."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "forward-pe",
+      "pe",
+      "fwd-eps",
+      "eps-ttm"
+     ],
+     "text": {
+      "en": "The forward multiple (43.2×) is lower than the trailing one (48.6×) partly because it divides by a different kind of profit: analysts’ adjusted estimate. The gap between the two is not a measure of expected earnings growth.",
+      "ro": "Multiplul estimat (43,2×) este mai mic decât cel istoric (48,6×) parțial pentru că împarte la alt tip de profit: estimarea ajustată a analiștilor. Diferența dintre cele două nu măsoară creșterea așteptată a profitului."
+     }
+    },
+    {
+     "type": "model",
+     "evidence_refs": [
+      "bear-pv",
+      "base-pv",
+      "bull-pv",
+      "price"
+     ],
+     "text": {
+      "en": "The discounted scenario values range from $40.20 to $180.90 against a price of $109.81. That width is the honest message: modest changes in assumed earnings and in the multiple investors pay move the value a lot.",
+      "ro": "Valorile actualizate ale scenariilor variază între 40,20 și 180,90 USD, față de un preț de 109,81 USD. Amplitudinea este mesajul important: schimbări moderate ale profitului presupus și ale multiplului plătit de investitori modifică mult valoarea."
+     }
+    }
+   ]
+  }
+ }
+}
