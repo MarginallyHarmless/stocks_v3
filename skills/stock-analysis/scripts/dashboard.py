@@ -210,6 +210,8 @@ def chart(d, keys, lang, style='bar', median=False):
     if median_value is not None:
         yy = y(median_value)
         svg += f'<line class="viz-median" x1="{x0}" x2="{x1}" y1="{yy:.2f}" y2="{yy:.2f}"/>'
+    selected_x = x0 + step * (len(labels) - .5)
+    svg += f'<g class="viz-period-focus" data-viz-focus data-start="{x0}" data-step="{step}" transform="translate({selected_x},0)" aria-hidden="true"><rect x="{-step/2}" y="{y0}" width="{step}" height="{y1-y0}"/><line x1="0" x2="0" y1="{y0}" y2="{y1}"/></g>'
     for j, ((key, _), row) in enumerate(zip(series, values)):
         color = COLORS[j % len(COLORS)]
         segment = []
@@ -220,16 +222,17 @@ def chart(d, keys, lang, style='bar', median=False):
             if v is None:
                 svg += flush(); segment = []; continue
             label = f'{labels[i]} · {name(key,lang)}: {fmt(v,unit,lang=lang)}'
+            point_attrs = f'data-viz-point="{i}" data-selected="{str(i == len(labels)-1).lower()}"'
             if style == 'bar':
                 bw = step * .76 / len(series)
                 xx = x - step * .38 + j * bw
                 yy = min(y(v), y(0)); height = abs(y(v) - y(0))
                 # A true zero is a hairline, never a fabricated positive bar.
                 fill = 'var(--plot-loss)' if v < 0 and len(series) == 1 else color
-                svg += f'<rect x="{xx:.2f}" y="{yy:.2f}" width="{bw*.83:.2f}" height="{max(height,.5):.2f}" fill="{fill}" rx="1.5"><title>{h(label)}</title></rect>'
+                svg += f'<rect {point_attrs} x="{xx:.2f}" y="{yy:.2f}" width="{bw*.83:.2f}" height="{max(height,.5):.2f}" fill="{fill}" rx="1.5"><title>{h(label)}</title></rect>'
             else:
                 segment.append(f'{x:.2f},{y(v):.2f}')
-                svg += f'<circle cx="{x:.2f}" cy="{y(v):.2f}" r="3" fill="{color}"><title>{h(label)}</title></circle>'
+                svg += f'<circle {point_attrs} cx="{x:.2f}" cy="{y(v):.2f}" r="3" fill="{color}"><title>{h(label)}</title></circle>'
         svg += flush()
     label_indices = sorted(set([0, len(labels)//3, 2*len(labels)//3, len(labels)-1]))
     for i in label_indices:
@@ -237,15 +240,14 @@ def chart(d, keys, lang, style='bar', median=False):
         anchor = 'start' if i == 0 else ('end' if i == len(labels)-1 else 'middle')
         svg += f'<text x="{x:.2f}" y="216" text-anchor="{anchor}">{h(labels[i].replace(" 20", " ’"))}</text>'
     svg += '</svg>'
-    out = '<div class="viz-readout" aria-live="polite">'
+    out = '<div class="viz-inspection" aria-live="polite" aria-atomic="true"><p class="viz-selected-period">' + tr(lang, 'Values for ', 'Valori pentru ') + f'<strong data-viz-period-label>{h(labels[-1])}</strong></p><div class="viz-readout">'
     for j, ((key, _), row) in enumerate(zip(series, values)):
         out += f'<div><span><i style="background:{COLORS[j%3]}"></i>{h(name(key,lang))}</span><strong data-viz-value="{j}">{h(fmt(row[-1],unit,lang=lang))}</strong></div>'
-    out += '</div>'
+    out += '</div></div>'
     absent = [name(k,lang) for k in keys if k not in d['series']]
     if absent:
         out += '<p class="viz-footnote">' + h(', '.join(absent)) + ': ' + tr(lang,'not supplied separately.','nefurnizat separat.') + '</p>'
-    selected = labels[-1]
-    out += f'<div class="viz-chart-box">{svg}</div><div class="viz-period-row"><span>{tr(lang,"Period","Perioadă")}</span><select class="viz-period" aria-label="{h(tr(lang,"Inspect period — ","Vezi perioada — ")+name(keys[0],lang))}">'
+    out += f'<div class="viz-chart-box">{svg}</div><div class="viz-period-row"><span>{tr(lang,"Highlight period","Evidențiază perioada")}</span><select class="viz-period" aria-label="{h(tr(lang,"Inspect period — ","Vezi perioada — ")+name(keys[0],lang))}">'
     for i, label in enumerate(labels):
         out += f'<option value="{i}"{" selected" if i==len(labels)-1 else ""}>{h(label)}</option>'
     out += '</select></div>'
@@ -263,7 +265,7 @@ def chart(d, keys, lang, style='bar', median=False):
     out += '<details class="viz-data"><summary>' + tr(lang, 'View values & sources', 'Vezi valorile și sursele') + '</summary><div class="table-wrap"><table><caption>' + h(' / '.join(name(k,lang) for k,_ in series)) + '</caption><thead><tr><th>' + tr(lang,'Period','Perioadă') + '</th>'
     out += ''.join(f'<th>{h(name(k,lang))}</th>' for k,_ in series) + '</tr></thead><tbody>'
     for i, label in enumerate(labels):
-        out += '<tr><th scope="row">' + h(label) + '</th>' + ''.join('<td>' + h(fmt(row[i],unit,lang=lang,compact=False)) + '</td>' for row in values) + '</tr>'
+        out += f'<tr data-viz-row="{i}" data-selected="{str(i == len(labels)-1).lower()}"><th scope="row">' + h(label) + '</th>' + ''.join('<td>' + h(fmt(row[i],unit,lang=lang,compact=False)) + '</td>' for row in values) + '</tr>'
     out += '</tbody></table></div><ul class="viz-sources">'
     for key, s in series:
         source = d['sources'][s['source_id']]

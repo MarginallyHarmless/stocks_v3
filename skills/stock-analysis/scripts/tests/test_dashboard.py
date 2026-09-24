@@ -2,6 +2,7 @@ import copy
 import json
 import sys
 import unittest
+from html.parser import HTMLParser
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from dashboard import chart, chart_data, validate_dashboard
@@ -16,6 +17,22 @@ def series(points, scale=1):
 
 
 class Charts(unittest.TestCase):
+    def test_period_focus_contract_preserves_missing_points(self):
+        d=fixture();d['series']={'cfo':series([('Q1 2025',10),('Q3 2025',30)]),'fcf':series([('Q1 2025',5),('Q3 2025',20)])}
+        for style in ('bar','line'):
+            rendered=chart(d,['cfo','fcf'],'en',style)
+            tags=[]
+            parser=HTMLParser()
+            parser.handle_starttag=lambda tag,attrs: tags.append((tag,dict(attrs)))
+            parser.feed(rendered)
+            points=[a for _,a in tags if 'data-viz-point' in a]
+            self.assertEqual(len(points),4)
+            self.assertFalse(any(a['data-viz-point']=='1' for a in points))
+            self.assertEqual(sum(a['data-selected']=='true' for a in points),2)
+            self.assertEqual(len([a for _,a in tags if 'data-viz-focus' in a]),1)
+            self.assertEqual(len([a for _,a in tags if 'data-viz-row' in a]),3)
+            self.assertIn('data-viz-period-label>Q3 2025</strong>',rendered)
+
     def test_period_alignment_and_missing_quarter(self):
         d=fixture();d['series']={'cfo':series([('Q1 2025',10),('Q3 2025',30)]),'fcf':series([('Q1 2025',5),('Q3 2025',20)])}
         _,labels,values=chart_data(d,['cfo','fcf'])

@@ -70,3 +70,4 @@ assert.equal(theme.value,'light');
 ids['close-sources'].fire('click');
 assert.equal(dialog.open,false);
 console.log('Reading modes, independent preferences and nested grouped sources passed.');
+require('./test_dashboard_controls.js');
