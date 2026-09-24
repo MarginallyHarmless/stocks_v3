@@ -303,14 +303,15 @@ def financial_card(d, title, keys, lang, explanation_pair, style='bar', median=F
         subtitle = f'{count} {cadence} · ' + ('USD' if series[0]['unit']=='currency' else tr(lang,'shares','acțiuni') if series[0]['unit']=='shares' else tr(lang,'times earnings / sales','multiplu al profitului / veniturilor'))
     else:
         subtitle = tr(lang,'Historical data unavailable','Istoric indisponibil')
-    result = card_open(title, subtitle) + chart(d,keys,lang,style,median)
-    if keys==['cfo','fcf'] and d.get('cash_bridge'):
-        b=d['cash_bridge'];value=lambda k:fmt(b[k],'currency',b['scale'],lang)
-        result += '<div class="viz-bridge"><strong>' + tr(lang,'Why the company reports a different figure','De ce compania raportează altă valoare') + '</strong><p>' + h(b['period']) + ': ' + h(fmt(b['cfo']-b['cash_capex'],'currency',b['scale'],lang)) + tr(lang,' before lease principal − ',' înainte de principalul leasingului − ') + h(value('lease_principal')) + ' = <strong>' + h(value('issuer_fcf')) + '</strong> ' + tr(lang,'company-defined free cash flow.','flux liber definit de companie.') + '</p>' + link(d,b['source_id'],lang) + '</div>'
+    result = card_open(title, subtitle) + explanation(*explanation_pair,lang)
     for k in keys:
         if d['series'].get(k, {}).get('note'):
             result += '<p class="viz-note">' + h(d['series'][k]['note'][lang]) + '</p>'
-    return result + explanation(*explanation_pair,lang) + '</article>'
+    result += chart(d,keys,lang,style,median)
+    if keys==['cfo','fcf'] and d.get('cash_bridge'):
+        b=d['cash_bridge'];value=lambda k:fmt(b[k],'currency',b['scale'],lang)
+        result += '<div class="viz-bridge"><strong>' + tr(lang,'Why the company reports a different figure','De ce compania raportează altă valoare') + '</strong><p>' + h(b['period']) + ': ' + h(fmt(b['cfo']-b['cash_capex'],'currency',b['scale'],lang)) + tr(lang,' before lease principal − ',' înainte de principalul leasingului − ') + h(value('lease_principal')) + ' = <strong>' + h(value('issuer_fcf')) + '</strong> ' + tr(lang,'company-defined free cash flow.','flux liber definit de companie.') + '</p>' + link(d,b['source_id'],lang) + '</div>'
+    return result + '</article>'
 
 
 SESSIONS = {'regular_close': ('Regular close', 'Închiderea ședinței'), 'intraday': ('Intraday, delayed', 'În timpul ședinței, cu întârziere'),
@@ -323,6 +324,7 @@ def session_label(session, lang):
 
 def price_card(d, lang):
     out = card_open(tr(lang,'Price in the past 12 months','Prețul în ultimele 12 luni'),tr(lang,'Published 52-week range · USD','Interval publicat pentru 52 de săptămâni · USD'))
+    out += explanation('Range uses the provider’s published high and low, not daily closing prices. Position and moving averages describe history; they do not identify a buying point.', 'Intervalul folosește minimul și maximul publicate de furnizor, nu închiderile zilnice. Poziția și media descriu trecutul; nu indică un moment de cumpărare.',lang)
     m=d.get('market',{}); q=m.get('overview_quote'); r=m.get('range')
     if not q or not r:
         return out + blank(lang) + '</article>'
@@ -341,7 +343,6 @@ def price_card(d, lang):
               (r.get('low_date') or not_supplied) + ' / ' + (r.get('high_date') or not_supplied)
               if r.get('low_date') or r.get('high_date') else tr(lang,'Not supplied','Nefurnizate'))]
     out += rows_html(rows) + '<p class="viz-footnote">'+link(d,r['source_id'],lang)+' · '+(link(d,ma['source_id'],lang) if ma else '')+'</p>'
-    out += explanation('Range uses the provider’s published high and low, not daily closing prices. Position and moving averages describe history; they do not identify a buying point.', 'Intervalul folosește minimul și maximul publicate de furnizor, nu închiderile zilnice. Poziția și media descriu trecutul; nu indică un moment de cumpărare.',lang)
     return out+'</article>'
 
 
@@ -350,6 +351,7 @@ def consensus_card(d,lang):
     months = (t or {}).get('horizon_months')
     subtitle = tr(lang,f'{months}-month price targets · estimates',f'Ținte de preț pe {months} luni · estimări') if months else tr(lang,'Price targets · horizon not supplied · estimates','Ținte de preț · orizont nefurnizat · estimări')
     out=card_open(tr(lang,'Analyst consensus','Consensul analiștilor'),subtitle)
+    out+=explanation('Targets are opinions, not guaranteed returns. Target contributors and recommendation counts can differ because coverage differs.', 'Țintele sunt opinii, nu randamente garantate. Numărul analiștilor cu ținte poate diferi de numărul recomandărilor.',lang)
     if c.get('label'):
         label = dict(zip(RATINGS, RATINGS_RO)).get(c['label'], c['label']) if lang == 'ro' else c['label']
         out += '<p class="viz-consensus-label">' + h(label) + '</p>'
@@ -371,7 +373,6 @@ def consensus_card(d,lang):
         out+='</ul><p class="viz-footnote">'+tr(lang,'Average score','Scor mediu')+f': {r["score"]:.2f}/5 · '+tr(lang,'1 = strong buy; 5 = strong sell.','1 = cumpărare fermă; 5 = vânzare fermă.')+'</p>'
     else:out+=blank(lang,'Recommendation counts were not supplied.','Numărul recomandărilor nu a fost furnizat.')
     if t:out+='<p class="viz-footnote">'+link(d,t['source_id'],lang)+'</p>'
-    out+=explanation('Targets are opinions, not guaranteed returns. Target contributors and recommendation counts can differ because coverage differs.', 'Țintele sunt opinii, nu randamente garantate. Numărul analiștilor cu ținte poate diferi de numărul recomandărilor.',lang)
     return out+'</article>'
 
 

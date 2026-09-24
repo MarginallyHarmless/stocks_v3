@@ -1,5 +1,6 @@
 """Deterministic, offline HTML reports with optional lessons and evidence dialogs."""
 from __future__ import annotations
+import base64
 import html
 import json
 from pathlib import Path
@@ -29,7 +30,40 @@ def ref_buttons(ids, lang):
     ids = list(dict.fromkeys(ids))
     if not ids:
         return ''
-    return f'<button class="ref" data-evidence="{h(ids[0])}" data-evidence-ids="{h(json.dumps(ids))}">{tr(lang,"Sources","Surse")}</button>'
+    return f'<button class="ref" data-evidence="{h(ids[0])}" data-evidence-ids="{h(json.dumps(ids))}"><span class="ref-label">{tr(lang,"Sources","Surse")}</span></button>'
+
+
+def bi(en, ro, default):
+    """Interface text that follows the selected report language."""
+    return ''.join(f'<span data-lang="{lang}"{"" if lang == default else " hidden"}>{h(text)}</span>' for lang, text in (('en', en), ('ro', ro)))
+
+
+MONTHS = {'en': ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+          'ro': ['ian.','feb.','mar.','apr.','mai','iun.','iul.','aug.','sept.','oct.','nov.','dec.']}
+
+
+def friendly_date(value, lang):
+    """Readable date for the reading layer; the exact stored value stays available beside it."""
+    try:
+        year, month, day = (int(x) for x in str(value)[:10].split('-'))
+        return f'{day} {MONTHS[lang][month-1]} {year}'
+    except (ValueError, IndexError):
+        return str(value)
+
+
+FONT_FILES = (('Report Sans', 'Inter'), ('Report Serif', 'SourceSerif4'))
+FONT_RANGES = {'latin': 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2190-2199,U+2212,U+2215,U+2248,U+2260,U+2264-2265,U+FEFF,U+FFFD',
+               'latin-ext': 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+20A0-20AB,U+20AD-20C0,U+2C60-2C7F,U+A720-A7FF'}
+
+
+def fonts_css():
+    """Embed the bundled OFL fonts so reports stay offline and self-contained."""
+    out = ''
+    for family, stem in FONT_FILES:
+        for subset, unicode_range in FONT_RANGES.items():
+            data = base64.b64encode((ASSETS / 'fonts' / f'{stem}-{subset}.woff2').read_bytes()).decode()
+            out += f"@font-face{{font-family:'{family}';font-style:normal;font-weight:200 900;font-display:swap;src:url(data:font/woff2;base64,{data}) format('woff2');unicode-range:{unicode_range}}}"
+    return out
 
 
 def claims(items, lang, compact=False):
@@ -51,7 +85,7 @@ def event_html(ev, sources, lang, compact=False):
         s = sources[ev["source_id"]]
         link = f' · <a href="{h(s["url"])}" target="_blank" rel="noopener noreferrer">{h(t(s["title"],lang))}</a>'
     heading = {'results':tr(lang,'Next results','Următoarele rezultate'),'call':tr(lang,'Earnings call','Conferința de rezultate'),'filing':tr(lang,'Regulatory filing','Raportarea de reglementare')}[ev['kind']]
-    result = f'<div class="event"><span class="kicker">{heading} · {h(t(ev["period"],lang))}</span><br><strong>{h(date)}{h(time)}</strong> <span class="meta">— {confidence}</span><div class="meta">{tr(lang,"Schedule checked","Calendar verificat")}: {h(ev["checked_at"])}{link}</div>'
+    result = f'<div class="event"><span class="kicker">{heading} · {h(t(ev["period"],lang))}</span><br><strong>{f'<time datetime="{h(ev["date"])}">{h(friendly_date(ev["date"],lang))}</time>' if ev.get("date") else h(date)}{h(time)}</strong> <span class="meta">— {confidence}</span><div class="meta">{tr(lang,"Schedule checked","Calendar verificat")}: {h(ev["checked_at"])}{link}</div>'
     if ev.get("basis"):
         result += f'<div class="meta">{h(t(ev["basis"],lang))}</div>'
     return result + '</div>'
@@ -147,11 +181,13 @@ def scenario_assumptions_html(s, ev, lang):
             + claims(assumptions, lang) + '</aside>')
 
 
-def section_html(s, ev, lang, index, sources):
-    output = f'<section class="section" id="{h(lang)}-{h(s["id"])}"><div class="section-no">{index:02d}</div><h2>{h(t(s["question"],lang))}</h2>'
+def section_html(s, ev, lang, index, sources, total=None):
+    count = f'<span class="section-count">{tr(lang,"Question","Întrebarea")} {index} {tr(lang,"of","din")} {total}</span>' if total else ''
+    output = f'<section class="section" id="{h(lang)}-{h(s["id"])}"><div class="section-no"><span class="section-badge">{index:02d}</span>{count}</div><h2>{h(t(s["question"],lang))}</h2>'
     guide = s.get('guide')
     if guide:
-        output += '<div class="guide">' + claims(guide['claims'],lang,True)
+        output += (f'<div class="guide"><div class="short-answer"><span class="short-label">{tr(lang,"The short answer","Răspunsul pe scurt")}</span>'
+                   + claims(guide['claims'][:1],lang,True) + '</div>' + claims(guide['claims'][1:],lang,True))
         explanations = {m['evidence_ref']:m for m in guide.get('metrics',[])}
         if explanations:
             output += metrics_html(list(explanations),ev,lang,explanations)
@@ -266,11 +302,18 @@ def watch_html(data, ev, sources, lang):
     if data.get('related_events'):
         out += f'<details class="evidence-disclosure"><summary>{tr(lang,"Call and filing dates","Datele conferinței și raportării")}</summary>'
         out += ''.join(event_html(related,sources,lang) for related in data['related_events']) + '</details>'
+    impact = lambda w: (t(w["impact"]["favorable"],lang), t(w["impact"]["adverse"],lang))
+    shared = len(data["watchlist"]) > 1 and len({impact(w) for w in data["watchlist"]}) == 1
+    def impacts(w):
+        return f'<div class="impacts"><p class="impact impact-good"><strong>{tr(lang,"If favorable","Dacă este favorabil")}: </strong>{h(t(w["impact"]["favorable"],lang))}</p><p class="impact impact-bad"><strong>{tr(lang,"If adverse","Dacă este nefavorabil")}: </strong>{h(t(w["impact"]["adverse"],lang))}</p></div>'
+    if shared:
+        out += f'<div class="impacts-shared"><p class="impacts-intro">{tr(lang,"How to read each result below","Cum interpretăm fiecare rezultat de mai jos")}</p>{impacts(data["watchlist"][0])}</div>'
     for i,w in enumerate(data["watchlist"],1):
         baseline = '; '.join((format_number(ev[x],lang) if 'value' in ev[x] else t(ev[x]["state"],lang)) + ' · ' + ev[x].get('period',{}).get('label','') for x in w["baseline_refs"])
         basis = {"management_guidance":tr(lang,"Management guidance","Estimarea conducerii"), "external_estimate":tr(lang,"External estimate","Estimare externă"), "analytical_test":tr(lang,"Our analytical test","Criteriul nostru de analiză")}[w["criterion"]["basis"]]
         out += f'<article class="watch-item"><span class="index">{i:02d}</span><h3>{h(t(w["question"],lang))}</h3><p class="why"><strong>{tr(lang,"Why it matters","De ce contează")}: </strong>{h(t(w["why"],lang))}</p><p class="watch-check"><strong>{tr(lang,"What to check","Ce verificăm")}: </strong>{h(t(w["criterion"]["description"],lang))}</p><p class="meta watch-meta"><span>{basis}</span><i class="sep"> · </i><span>{h(w["due_period"])}</span>{('<i class="sep"> · </i><span>'+h(w["due_date"])+"</span>") if w.get("due_date") else ""}</p>'
-        out += f'<div class="impacts"><p class="impact impact-good"><strong>{tr(lang,"If favorable","Dacă este favorabil")}: </strong>{h(t(w["impact"]["favorable"],lang))}</p><p class="impact impact-bad"><strong>{tr(lang,"If adverse","Dacă este nefavorabil")}: </strong>{h(t(w["impact"]["adverse"],lang))}</p></div>'
+        if not shared:
+            out += impacts(w)
         out += f'<details class="deep-data"><summary>{tr(lang,"Saved rule and context","Criteriul salvat și contextul")}</summary><p class="meta">{h(w["id"])} · v{w["criterion_version"]}</p><dl class="watch-grid"><dt>{tr(lang,"Starting point","Punct de plecare")}</dt><dd>{h(baseline)}{ref_buttons(w["baseline_refs"],lang)}</dd><dt>{tr(lang,"Why this criterion","De ce acest criteriu")}</dt><dd>{h(t(w["criterion"]["rationale"],lang))}{ref_buttons(w["criterion"].get("evidence_refs",[]),lang)}</dd></dl><p><strong>{tr(lang,"If mixed","Dacă este mixt")}: </strong>{h(t(w["impact"]["mixed"],lang))}</p><p><strong>{tr(lang,"If unresolved","Dacă rămâne neclar")}: </strong>{h(t(w["impact"]["unresolved"],lang))}</p></details></article>'
     prompt = f'Use $stock-analysis to review the new results for {data["company"]["name"]} ({data["company"]["ticker"]}, {data["company"]["exchange"]}, {data["company"]["share_class"]}). Retrieve baseline {data["report_id"]}, security {data["company"]["security_id"]}, and assess every saved watch item against its original criterion before creating the next watchlist.'
     out += f'<div class="prompt-box"><h3>{tr(lang,"Continue after results are published","Continuă după publicarea rezultatelor")}</h3><p class="meta">{tr(lang,"Copy this prompt into a new session. If the saved analysis cannot be found, attach the exported research package.","Copiază acest text într-o sesiune nouă. Dacă analiza salvată nu poate fi găsită, atașează pachetul de date exportat.")}</p><textarea id="prompt-{lang}" aria-label="{tr(lang,"New-session prompt","Text pentru sesiunea nouă")}" readonly>{h(prompt)}</textarea><div class="actions"><button data-copy="prompt-{lang}">{tr(lang,"Copy update prompt","Copiază textul")}</button><button data-export="{h(data["report_id"])}-package.json">{tr(lang,"Export research package","Exportă pachetul de date")}</button></div><p class="status" aria-live="polite"></p></div></section>'
@@ -292,7 +335,7 @@ def key_stats_html(data, ev, lang, preset=None):
         need(key is None or key in ev, 'Unknown key-stat evidence')
         e = ev.get(key) if key else None
         label = t(row.get('label', e['label'] if e else 'EPS'), lang)
-        out += '<div class="key-stat"><dt>' + h(label) + '<span class="stat-meaning">' + h(meanings[row['concept']]) + '</span></dt><dd>'
+        out += '<div class="key-stat"><dt>' + h(label) + '</dt><dd>'
         if e and 'value' in e:
             out += '<strong class="stat-value">' + h(format_number(e,lang)) + '</strong><span class="stat-period">' + h(e['period']['label']) + ' · ' + h(e['basis'])
             if e['period']['forecast']:
@@ -302,18 +345,20 @@ def key_stats_html(data, ev, lang, preset=None):
             out += '<strong class="stat-value">' + tr(lang, 'Not established', 'Nestabilit') + '</strong>'
             note = e['state'] if e else row['note']
             out += '<p class="stat-note">' + h(t(note,lang)) + '</p>' + (ref_buttons([key],lang) if key else '')
-        out += '</dd></div>'
+        out += '<span class="stat-meaning">' + h(meanings[row['concept']]) + '</span></dd></div>'
     return out + '</dl></section>'
 
 
-def revision_html(data, archive, lang, report_links):
+def revision_html(data, archive, lang, report_links, editorial=True, replaced=True):
     """Make editorial revisions and replaced reports traceable from the page itself."""
     def named(rid):
         href = (report_links or {}).get(rid)
         return f'<a href="{h(href)}">{h(rid)}</a>' if href else h(rid)
     out = ''
-    if data.get('revision_note'):
-        out += f'<p class="notice">{tr(lang,"Editorial revision of","Revizie editorială a")} {named(data.get("editorial_revision_of", ""))}: {h(t(data["revision_note"],lang))}</p>'
+    if editorial and data.get('revision_note'):
+        out += f'<p class="revision-note">{tr(lang,"Editorial revision of","Revizie editorială a")} {named(data.get("editorial_revision_of", ""))}: {h(t(data["revision_note"],lang))}</p>'
+    if not replaced:
+        return out
     later = [d for d in (v['research'] for v in (archive or {}).get('snapshots', {}).values())
              if d['mode'] != 'update' and snapshot_order(d) > snapshot_order(data)]
     if later:
@@ -340,7 +385,12 @@ def render(data, baseline=None, archive=None, visual_data=None, report_links=Non
         main += f'<div data-lang="{lang}"{hidden}>'
         if data["synthetic"]:
             main += f'<div class="synthetic">{tr(lang,"ILLUSTRATIVE DEMO · Fictional company and invented numbers. This is a workflow example, not company research.","DEMONSTRAȚIE · Companie fictivă și valori inventate. Exemplu de funcționare, nu analiză a unei companii reale.")}</div>'
-        main += f'<header class="summary" id="{lang}-summary">{revision_html(data, archive, lang, report_links)}<div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1><p class="meta">{tr(lang,"Information cutoff","Date disponibile până la")}: {h(data["cutoff"])} · {h(data["report_id"])}</p><div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><div class="assess assess-business"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd></div><div class="assess assess-price"><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></div></dl><p class="notice">{h(t(data["evidence_gaps"],lang))}</p>'
+        about = (f'<details class="about-report"><summary>{tr(lang,"About this report","Despre acest raport")}</summary><div class="about-body">'
+                 f'<p class="meta">{tr(lang,"Information cutoff","Date disponibile până la")}: {h(data["cutoff"])} · {h(data["report_id"])}</p>'
+                 f'{revision_html(data, archive, lang, report_links, replaced=False)}</div></details>')
+        main += (f'<header class="summary" id="{lang}-summary">{revision_html(data, archive, lang, report_links, editorial=False)}<div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1>'
+                 f'<div class="hero-meta"><span class="as-of">{tr(lang,"Information up to","Date până la")} <time datetime="{h(data["cutoff"])}">{h(friendly_date(data["cutoff"],lang))}</time></span>{about}</div>')
+        main += f'<div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><div class="assess assess-business"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd></div><div class="assess assess-price"><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></div></dl><aside class="coverage-note"><h3>{tr(lang,"What we could and couldn’t check","Ce am putut și ce nu am putut verifica")}</h3><p>{h(t(data["evidence_gaps"],lang))}</p></aside>'
         if data.get("next_event"):
             main += event_html(data["next_event"], sources,lang,True)
         main += key_stats_html(data, ev, lang, key_stats) + '</header>'
@@ -348,7 +398,7 @@ def render(data, baseline=None, archive=None, visual_data=None, report_links=Non
             main += dashboard_html(visual_data, data, lang)
         if data.get("review"):
             main += review_html(data,baseline,ev,lang)
-        main += ''.join(section_html(s,ev,lang,i,sources) for i,s in enumerate(data["sections"],1))
+        main += ''.join(section_html(s,ev,lang,i,sources,len(data["sections"])) for i,s in enumerate(data["sections"],1))
         main += watch_html(data,ev,sources,lang) + '</div>'
         # Evidence IDs occur only once in the shared dialog; both language views share the same ledger.
     evidence = "".join(f'<div data-lang="{lang}"{(" hidden" if lang != default else "")}>{coverage_html(data,lang)}{evidence_html(data,lang)}</div>' for lang in data["languages"])
@@ -363,14 +413,22 @@ def render(data, baseline=None, archive=None, visual_data=None, report_links=Non
     embedded = json.dumps(package, ensure_ascii=False, allow_nan=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
     visual_embedded = json.dumps(visual_data, ensure_ascii=False).replace("<", "\\u003c") if visual_data else "null"
     opts = ''.join(f'<option value="{lang}"{" selected" if lang == default else ""}>{"English" if lang == "en" else "Română"}</option>' for lang in data["languages"])
-    css = (ASSETS / 'report.css').read_text() + '\n' + (ASSETS / 'dashboard.css').read_text()
+    css = fonts_css() + '\n' + (ASSETS / 'report.css').read_text() + '\n' + (ASSETS / 'dashboard.css').read_text()
     js = (ASSETS / 'dashboard.js').read_text() + '\n' + (ASSETS / 'report.js').read_text() + '\n' + (ASSETS / 'financial-terms.js').read_text() + '\n' + (ASSETS / 'report-enhance.js').read_text()
     main = annotate(main, 'report')
     evidence = annotate(evidence, 'evidence')
+    option = lambda value, en, ro: f'<option value="{value}" data-en="{h(en)}" data-ro="{h(ro)}">{h(ro if default == "ro" else en)}</option>'
+    toolbar = ('<div class="toolbar"><details class="display-menu"><summary>' + bi('Display', 'Afișare', default) + '</summary><div class="display-panel">'
+               f'<label>{bi("Language","Limbă",default)}<select id="language">{opts}</select></label>'
+               f'<label>{bi("Reading","Lectură",default)}<select id="reading">{option("beginner","Guided","Ghidat")}{option("experienced","Detailed","Detaliat")}</select></label>'
+               f'<label>{bi("Theme","Temă",default)}<select id="theme">{option("dark","Dark","Întunecată")}{option("light","Light","Luminoasă")}</select></label>'
+               '</div></details>'
+               f'<button id="expand-lessons" aria-expanded="false">{bi("Explain all","Explică tot",default)}</button>'
+               f'<button id="open-sources">{bi("Evidence","Dovezi",default)}</button></div>')
     home_link = '<a class="brand home-link" href="../index.html"><span class="brand-name"><span class="brand-icon" aria-hidden="true">◒</span> Stock Analysis / 03</span><span class="back-label" data-lang="en">← All companies</span><span class="back-label" data-lang="ro" hidden>← Toate companiile</span></a>'
     if default == 'ro':
         home_link = home_link.replace('data-lang="en">', 'data-lang="en" hidden>').replace('data-lang="ro" hidden>', 'data-lang="ro">')
-    return f'''<!doctype html><html lang="{default}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{h(data["company"]["name"])} — Stock Analysis</title><style>{css}</style></head><body data-reading="beginner"><a class="skip" href="#main">Skip to report</a><div class="layout"><aside class="sidebar">{home_link}{nav}</aside><main id="main"><div class="toolbar"><label>Language / Limbă<select id="language">{opts}</select></label><label>Reading / Lectură<select id="reading"><option value="beginner">Guided / Ghidat</option><option value="experienced">Detailed / Detaliat</option></select></label><label>Theme / Temă<select id="theme"><option value="dark">Dark / Întunecată</option><option value="light">Light / Luminoasă</option></select></label><button id="expand-lessons" aria-expanded="false">Explain all / Explică tot</button><button id="open-sources">Evidence / Dovezi</button></div><noscript><p class="nojs">Interactive evidence and language controls require JavaScript. The main report remains readable.</p></noscript>{main}</main></div><dialog id="evidence-dialog" aria-label="Sources and calculations"><div class="dialog-head"><h2>Sources & calculation / Surse și calcul</h2><button id="close-sources" autofocus>Close / Închide</button></div><label for="evidence-search">Search evidence / Caută dovezi</label><input id="evidence-search" type="search">{evidence}</dialog><script type="application/json" id="visual-package">{visual_embedded}</script><script type="application/json" id="research-package">{embedded}</script><script>{js}</script></body></html>'''
+    return f'''<!doctype html><html lang="{default}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{h(data["company"]["name"])} — Stock Analysis</title><style>{css}</style></head><body data-reading="beginner"><a class="skip" href="#main">Skip to report</a><div class="layout"><aside class="sidebar">{home_link}{nav}</aside><main id="main">{toolbar}<noscript><p class="nojs">Interactive evidence and language controls require JavaScript. The main report remains readable.</p></noscript>{main}</main></div><dialog id="evidence-dialog" aria-label="Sources and calculations"><div class="dialog-head"><h2>{bi("Sources & calculation","Surse și calcul",default)}</h2><button id="close-sources" autofocus>{bi("Close","Închide",default)}</button></div><label for="evidence-search">{bi("Search evidence","Caută dovezi",default)}</label><input id="evidence-search" type="search">{evidence}</dialog><script type="application/json" id="visual-package">{visual_embedded}</script><script type="application/json" id="research-package">{embedded}</script><script>{js}</script></body></html>'''
 
 
 def compare(reports, spec):

@@ -1,6 +1,6 @@
 # Report design
 
-Use the bundled renderer/CSS/JS. Keep a single main reading column with compact section navigation. Defaults: warm-neutral near-black background, restrained borders, legible 17–18px body text, aligned tabular numbers, subdued green and amber with text labels. Light theme is available independently of language/reading level. Do not fill the screen with equal-weight score cards.
+Use the bundled renderer/CSS/JS and the embedded OFL fonts in `assets/fonts/` (Inter, Source Serif 4; subset, no network). Keep a single main reading column with compact section navigation. Defaults: warm-neutral near-black background, restrained borders, legible 17–18px body text, aligned tabular numbers, subdued green and amber with text labels. Light theme is available independently of language/reading level. Do not fill the screen with equal-weight score cards.
 
 ## Information hierarchy
 
