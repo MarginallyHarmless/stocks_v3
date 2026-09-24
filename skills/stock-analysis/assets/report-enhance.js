@@ -45,3 +45,23 @@
     });
   });
 })();
+// Wide tables: say when more columns are hidden and fade the edge that scrolls.
+(() => {
+  const lang = () => document.documentElement.lang;
+  document.querySelectorAll('.table-wrap').forEach(wrap => {
+    const hint = document.createElement('p');
+    hint.className = 'scroll-hint';
+    hint.hidden = true;
+    hint.innerHTML = `<span data-lang="en"${lang() === 'en' ? '' : ' hidden'}>Scroll sideways for more columns →</span><span data-lang="ro"${lang() === 'ro' ? '' : ' hidden'}>Derulează lateral pentru mai multe coloane →</span>`;
+    wrap.before(hint);
+    const update = () => {
+      const more = wrap.scrollWidth - wrap.clientWidth > 2;
+      hint.hidden = !more;
+      wrap.classList.toggle('fade-right', more && wrap.scrollLeft + wrap.clientWidth < wrap.scrollWidth - 2);
+      wrap.classList.toggle('fade-left', more && wrap.scrollLeft > 2);
+    };
+    wrap.addEventListener('scroll', update, {passive: true});
+    if ('ResizeObserver' in window) new ResizeObserver(update).observe(wrap);
+    update();
+  });
+})();

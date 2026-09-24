@@ -5,6 +5,7 @@ import html
 import json
 from pathlib import Path
 from financial_terms import annotate, TERMS
+from labels import period as period_label, basis as basis_label, cell as cell_label
 from dashboard import dashboard_html
 from archive import snapshot_order, verify_archive
 from model import digest, format_number, number, validate, need, dimensions, period_key
@@ -85,7 +86,7 @@ def event_html(ev, sources, lang, compact=False):
         s = sources[ev["source_id"]]
         link = f' · <a href="{h(s["url"])}" target="_blank" rel="noopener noreferrer">{h(t(s["title"],lang))}</a>'
     heading = {'results':tr(lang,'Next results','Următoarele rezultate'),'call':tr(lang,'Earnings call','Conferința de rezultate'),'filing':tr(lang,'Regulatory filing','Raportarea de reglementare')}[ev['kind']]
-    result = f'<div class="event"><span class="kicker">{heading} · {h(t(ev["period"],lang))}</span><br><strong>{f'<time datetime="{h(ev["date"])}">{h(friendly_date(ev["date"],lang))}</time>' if ev.get("date") else h(date)}{h(time)}</strong> <span class="meta">— {confidence}</span><div class="meta">{tr(lang,"Schedule checked","Calendar verificat")}: {h(ev["checked_at"])}{link}</div>'
+    result = f'<div class="event"><span class="kicker">{heading} · {h(period_label(t(ev["period"],lang),lang))}</span><br><strong>{f'<time datetime="{h(ev["date"])}">{h(friendly_date(ev["date"],lang))}</time>' if ev.get("date") else h(date)}{h(time)}</strong> <span class="meta">— {confidence}</span><div class="meta">{tr(lang,"Schedule checked","Calendar verificat")}: {h(ev["checked_at"])}{link}</div>'
     if ev.get("basis"):
         result += f'<div class="meta">{h(t(ev["basis"],lang))}</div>'
     return result + '</div>'
@@ -99,7 +100,7 @@ def metrics_html(ids, ev, lang, explanations=None):
         explanation = (explanations or {}).get(key)
         label = explanation.get('label', e['label']) if explanation else e['label']
         tag = tr(lang,"Forecast","Prognoză") if e["period"]["forecast"] else (tr(lang,"Assumption","Ipoteză") if e["kind"] == "assumption" else "")
-        result += f'<div class="metric"><span class="label">{h(t(label,lang))}</span><strong>{h(format_number(e,lang))}</strong><span class="period">{h(e["period"]["label"])} · {h(e["basis"])}{f"<span class=tag>{tag}</span>" if tag else ""}</span>'
+        result += f'<div class="metric"><span class="label">{h(t(label,lang))}</span><strong>{h(format_number(e,lang))}</strong><span class="period">{h(period_label(e["period"]["label"],lang))} · {h(basis_label(e["basis"],lang))}{f"<span class=tag>{tag}</span>" if tag else ""}</span>'
         result += (f'<div class="metric-meaning">{claims([explanation["meaning"]],lang,True)}</div>' if explanation else ref_buttons([key],lang)) + '</div>'
         if e.get('model_assumptions'):
             note = t(e['model_assumptions'], lang)
@@ -121,17 +122,17 @@ def series_html(series, ev, lang):
     points = ' '.join(f'{x:.1f},{y:.1f}' for x,y in xy)
     svg = f'<svg class="chart" viewBox="0 0 720 220" role="img" aria-label="{h(t(series["title"],lang))}"><title>{h(t(series["title"],lang))}</title><line x1="60" x2="650" y1="150" y2="150"/><polyline points="{points}"/>'
     for i, ((x,y), e) in enumerate(zip(xy,records)):
-        svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3"/><text x="{x:.1f}" y="{max(18,y-12):.1f}" text-anchor="middle">{h(format_number(e,lang))}</text><text x="{x:.1f}" y="180" text-anchor="middle">{h(e["period"]["label"])}</text>'
+        svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3"/><text x="{x:.1f}" y="{max(18,y-12):.1f}" text-anchor="middle">{h(format_number(e,lang))}</text><text x="{x:.1f}" y="180" text-anchor="middle">{h(period_label(e["period"]["label"],lang))}</text>'
     svg += '</svg>'
-    rows = ''.join(f'<tr><td>{h(e["period"]["label"])}</td><td class="numeric">{h(format_number(e,lang))}</td><td>{ref_buttons([e["id"]],lang)}</td></tr>' for e in records)
-    return f'<figure style="margin:20px 0"><div class="chart-wrap">{svg}</div><figcaption class="chart-caption">{h(t(series["title"],lang))} · {h(records[0]["basis"])}</figcaption></figure><details class="evidence-disclosure"><summary>{tr(lang,"Trend data & sources","Datele tendinței și sursele")}</summary><div class="table-wrap"><table><thead><tr><th>{tr(lang,"Period","Perioadă")}</th><th>{tr(lang,"Value","Valoare")}</th><th>{tr(lang,"Evidence","Dovezi")}</th></tr></thead><tbody>{rows}</tbody></table></div></details>'
+    rows = ''.join(f'<tr><td>{h(period_label(e["period"]["label"],lang))}</td><td class="numeric">{h(format_number(e,lang))}</td><td>{ref_buttons([e["id"]],lang)}</td></tr>' for e in records)
+    return f'<figure style="margin:20px 0"><div class="chart-wrap">{svg}</div><figcaption class="chart-caption">{h(t(series["title"],lang))} · {h(basis_label(records[0]["basis"],lang))}</figcaption></figure><details class="evidence-disclosure"><summary>{tr(lang,"Trend data & sources","Datele tendinței și sursele")}</summary><div class="table-wrap"><table><thead><tr><th>{tr(lang,"Period","Perioadă")}</th><th>{tr(lang,"Value","Valoare")}</th><th>{tr(lang,"Evidence","Dovezi")}</th></tr></thead><tbody>{rows}</tbody></table></div></details>'
 
 
 def evidence_table_html(table, ev, lang):
     out = '<div class="table-wrap"><table><caption>' + h(t(table['title'], lang)) + '</caption><thead><tr>'
     out += ''.join('<th scope="col">' + h(t(x, lang)) + '</th>' for x in table['columns']) + '</tr></thead><tbody>'
     for row in table['rows']:
-        out += '<tr><th scope="row">' + h(t(row['label'], lang)) + '</th>'
+        out += '<tr><th scope="row">' + h(cell_label(t(row['label'], lang), lang)) + '</th>'
         for cell in row['cells']:
             if 'evidence_ref' in cell:
                 e = ev[cell['evidence_ref']]
@@ -163,7 +164,7 @@ def tables_html(tables, ev, lang):
                     e = ev[cell['evidence_ref']]
                     content = cell_value(format_number(e, lang) if 'value' in e else t(e['state'], lang), [e['id']], lang, 'value' in e)
                 else:
-                    content = h(t(cell['text'], lang)) + ref_buttons(cell.get('evidence_refs', []), lang)
+                    content = h(cell_label(t(cell['text'], lang), lang)) + ref_buttons(cell.get('evidence_refs', []), lang)
                 out += '<td data-label="' + h(t(column, lang)) + '">' + content + '</td>'
             out += '</tr>'
         out += '</tbody></table></div>'
@@ -261,7 +262,7 @@ def evidence_html(data, lang):
         output += f'<article class="evidence-card" id="ev-{lang}-{h(e["id"])}" data-evidence-key="{h(e["id"])}" data-inputs="{h(json.dumps(dependencies))}"><div class="kicker">{h(e["id"])} · {h(e["kind"])}</div><h3>{h(t(e["label"],lang))}</h3><span class="value{"" if "value" in e else " value-text"}">{h(format_number(e,lang) if "value" in e else t(e["state"],lang))}</span><p>{h(e["definition"])}</p>'
         if e.get("period"):
             p = e["period"]
-            output += f'<p class="meta">{h(p["label"])} · {h(p.get("start", ""))} → {h(p["end"])} · {h(e.get("basis", ""))}{" · Forecast" if p["forecast"] else ""}</p>'
+            output += f'<p class="meta">{h(period_label(p["label"],lang))} · {h(p.get("start", ""))} → {h(p["end"])} · {h(basis_label(e.get("basis", ""),lang))}{(" · " + tr(lang,"Forecast","Prognoză")) if p["forecast"] else ""}</p>'
         if e.get("source_id"):
             s = sources[e["source_id"]]
             output += f'<p><a href="{h(s["url"])}" target="_blank" rel="noopener noreferrer">{h(t(s["title"],lang))}</a></p><p class="meta">{h(t(e["extraction"]["locator"],lang))} · {h(t(e["extraction"]["note"],lang))}</p><p class="meta">{tr(lang,"Retrieved","Accesat")}: {h(s["retrieved_at"])}</p>'
@@ -293,7 +294,7 @@ def review_html(data, baseline, ev, lang):
     old_ev = {e["id"]:e for e in baseline["evidence"]}
     old_watch = {w["id"]:w for w in baseline["watchlist"]}
     labels = [tr(lang,"Original check","Criteriul original"), tr(lang,"Previous value","Valoarea anterioară"), tr(lang,"New evidence","Date noi"), tr(lang,"Outcome","Rezultat"), tr(lang,"What changes","Ce se schimbă")]
-    out = f'<section class="section" id="{lang}-review"><div class="kicker">{tr(lang,"Results follow-up","Verificarea rezultatelor")} · {h(r["release"]["period"])}</div><h2>{tr(lang,"Did the results meet our original checks?","Rezultatele îndeplinesc criteriile salvate?")}</h2><p>{h(t(r["thesis_change"],lang))}</p><p class="notice">{h(t(r["coverage_note"],lang))}</p>'
+    out = f'<section class="section" id="{lang}-review"><div class="kicker">{tr(lang,"Results follow-up","Verificarea rezultatelor")} · {h(period_label(r["release"]["period"],lang))}</div><h2>{tr(lang,"Did the results meet our original checks?","Rezultatele îndeplinesc criteriile salvate?")}</h2><p>{h(t(r["thesis_change"],lang))}</p><p class="notice">{h(t(r["coverage_note"],lang))}</p>'
     if r["release"]["status"] == "pending":
         out += f'<p class="notice">{tr(lang,"Results not yet confirmed published. Original checks remain pending.","Publicarea rezultatelor nu este confirmată. Criteriile originale rămân în așteptare.")}</p>'
     out += '<div class="table-wrap"><table class="review-table"><thead><tr>' + ''.join(f'<th>{h(x)}</th>' for x in labels) + '</tr></thead><tbody>'
@@ -328,9 +329,9 @@ def watch_html(data, ev, sources, lang):
     if shared:
         out += f'<div class="impacts-shared"><p class="impacts-intro">{tr(lang,"How to read each result below","Cum interpretăm fiecare rezultat de mai jos")}</p>{impacts(data["watchlist"][0])}</div>'
     for i,w in enumerate(data["watchlist"],1):
-        baseline = '; '.join((format_number(ev[x],lang) if 'value' in ev[x] else t(ev[x]["state"],lang)) + ' · ' + ev[x].get('period',{}).get('label','') for x in w["baseline_refs"])
+        baseline = '; '.join((format_number(ev[x],lang) if 'value' in ev[x] else t(ev[x]["state"],lang)) + ' · ' + period_label(ev[x].get('period',{}).get('label',''),lang) for x in w["baseline_refs"])
         basis = {"management_guidance":tr(lang,"Management guidance","Estimarea conducerii"), "external_estimate":tr(lang,"External estimate","Estimare externă"), "analytical_test":tr(lang,"Our analytical test","Criteriul nostru de analiză")}[w["criterion"]["basis"]]
-        out += f'<article class="watch-item"><span class="index">{i:02d}</span><h3>{h(t(w["question"],lang))}</h3><p class="why"><strong>{tr(lang,"Why it matters","De ce contează")}: </strong>{h(t(w["why"],lang))}</p><p class="watch-check"><strong>{tr(lang,"What to check","Ce verificăm")}: </strong>{h(t(w["criterion"]["description"],lang))}</p><p class="meta watch-meta"><span>{basis}</span><i class="sep"> · </i><span>{h(w["due_period"])}</span>{('<i class="sep"> · </i><span>'+h(w["due_date"])+"</span>") if w.get("due_date") else ""}</p>'
+        out += f'<article class="watch-item"><span class="index">{i:02d}</span><h3>{h(t(w["question"],lang))}</h3><p class="why"><strong>{tr(lang,"Why it matters","De ce contează")}: </strong>{h(t(w["why"],lang))}</p><p class="watch-check"><strong>{tr(lang,"What to check","Ce verificăm")}: </strong>{h(t(w["criterion"]["description"],lang))}</p><p class="meta watch-meta"><span>{basis}</span><i class="sep"> · </i><span>{h(period_label(w["due_period"],lang))}</span>{('<i class="sep"> · </i><span>'+h(w["due_date"])+"</span>") if w.get("due_date") else ""}</p>'
         if not shared:
             out += impacts(w)
         out += f'<details class="deep-data"><summary>{tr(lang,"Saved rule and context","Criteriul salvat și contextul")}</summary><p class="meta">{h(w["id"])} · v{w["criterion_version"]}</p><dl class="watch-grid"><dt>{tr(lang,"Starting point","Punct de plecare")}</dt><dd>{h(baseline)}{ref_buttons(w["baseline_refs"],lang)}</dd><dt>{tr(lang,"Why this criterion","De ce acest criteriu")}</dt><dd>{h(t(w["criterion"]["rationale"],lang))}{ref_buttons(w["criterion"].get("evidence_refs",[]),lang)}</dd></dl><p><strong>{tr(lang,"If mixed","Dacă este mixt")}: </strong>{h(t(w["impact"]["mixed"],lang))}</p><p><strong>{tr(lang,"If unresolved","Dacă rămâne neclar")}: </strong>{h(t(w["impact"]["unresolved"],lang))}</p></details></article>'
@@ -356,7 +357,7 @@ def key_stats_html(data, ev, lang, preset=None):
         label = t(row.get('label', e['label'] if e else 'EPS'), lang)
         out += '<div class="key-stat"><dt>' + h(label) + '</dt><dd>'
         if e and 'value' in e:
-            out += '<strong class="stat-value">' + h(format_number(e,lang)) + '</strong><span class="stat-period">' + h(e['period']['label']) + ' · ' + h(e['basis'])
+            out += '<strong class="stat-value">' + h(format_number(e,lang)) + '</strong><span class="stat-period">' + h(period_label(e['period']['label'],lang)) + ' · ' + h(basis_label(e['basis'],lang))
             if e['period']['forecast']:
                 out += ' · ' + tr(lang, 'Forecast', 'Prognoză')
             out += '</span>' + ref_buttons([key],lang)
@@ -483,7 +484,7 @@ def compare(reports, spec):
                     roots.append(sources[item['source_id']])
                 todo.extend(item.get('inputs',[]))
             links = ' '.join(f'<a href="{h(s["url"])}">{h(t(s["title"],lang))}</a>' for s in {s['id']:s for s in roots}.values())
-            cells.append(f'<td><strong>{h(format_number(e,lang))}</strong><p class="meta">{h(e["period"]["label"])} · {h(e["basis"])} · {h(e["definition"])}</p>{links}</td>')
+            cells.append(f'<td><strong>{h(format_number(e,lang))}</strong><p class="meta">{h(period_label(e["period"]["label"],lang))} · {h(basis_label(e["basis"],lang))} · {h(e["definition"])}</p>{links}</td>')
         compatible = all(dimensions(e)==dimensions(records[0]) and period_key(e)==period_key(records[0]) and e['definition']==records[0]['definition'] for e in records)
         need(compatible or row.get('status') == 'Not comparable', "Incompatible comparison requires Not comparable status")
         need(row.get('status') in {'Comparable','Not comparable'}, "Comparison status required")

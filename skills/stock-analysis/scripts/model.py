@@ -254,6 +254,9 @@ def calculate(e, inputs):
     return answer / e["scale"]
 
 
+RO_SUFFIX = {"T": "mii mld.", "B": "mld.", "M": "mil.", "k": "mii"}
+
+
 def format_number(e, language="en"):
     """Never use author-supplied numeric display strings."""
     if "value" not in e:
@@ -273,6 +276,11 @@ def format_number(e, language="en"):
         result = f"{v:,.{e.get('precision', 2)}f}"
     if language == "ro":
         result = result.replace(",", "_").replace(".", ",").replace("_", ".")
+        # Romanian style: "2,89 mld. USD", "357 mil.", "11,71 mii"
+        if unit in {"currency", "shares", "count"} and suffix:
+            result = result[:-len(suffix)] + " " + RO_SUFFIX[suffix]
+        if unit in {"currency", "currency_per_share"}:
+            return result + " " + e["currency"]
     if unit in {"currency", "currency_per_share"}:
         result = e["currency"] + " " + result
     return result + ("%" if unit == "percent" else "×" if unit == "ratio" else "")

@@ -7,6 +7,7 @@ import re
 import statistics
 from datetime import date
 from urllib.parse import urlparse
+from labels import period as period_label
 
 NAMES = {
     'revenue': ('Revenue', 'Venituri'),
@@ -121,7 +122,10 @@ def validate_dashboard(d, identity=None):
     return d
 
 
-def fmt(v, unit='currency', scale=1, lang='en', compact=True, digits=2):
+RO_SUFFIX = {'T': 'mii mld.', 'B': 'mld.', 'M': 'mil.', 'K': 'mii'}
+
+
+def fmt(v, unit='currency', scale=1, lang='en', compact=True, digits=2, axis=False):
     if v is None:
         return tr(lang, 'N/A', 'N/D')
     n = v * scale
@@ -139,7 +143,13 @@ def fmt(v, unit='currency', scale=1, lang='en', compact=True, digits=2):
                         threshold, tag = units[i - 1]
                     n /= threshold; suffix = tag; break
         sign = '-' if n < 0 else ''
-        result = sign + ('$' if unit == 'currency' else '') + f'{abs(n):,.{digits}f}'.rstrip('0').rstrip('.') + suffix
+        amount = f'{abs(n):,.{digits}f}'.rstrip('0').rstrip('.')
+        if lang == 'ro':
+            # Romanian style: "2,76 mld. USD". Axis ticks and full-precision table cells drop the
+            # currency, which the card subtitle already names.
+            amount = sign + amount.replace(',', ' ').replace('.', ',') + (' ' + RO_SUFFIX[suffix] if suffix else '')
+            return amount + (' USD' if unit == 'currency' and compact and not axis else '')
+        result = sign + ('$' if unit == 'currency' else '') + amount + suffix
     return result.replace(',', ' ').replace('.', ',') if lang == 'ro' else result
 
 
@@ -224,12 +234,12 @@ def chart(d, keys, lang, style='bar', median=False):
     y = lambda v: y1 - (v - low) / span * (y1 - y0)
     chart_label = ' / '.join(name(k,lang) for k,_ in series)
     help_id = f'{lang}-viz-help-{keys[0]}'
-    initial_value = labels[-1] + ' · ' + ' · '.join(name(k,lang)+': '+fmt(row[-1],unit,lang=lang) for (k,_),row in zip(series,values))
+    initial_value = period_label(labels[-1],lang) + ' · ' + ' · '.join(name(k,lang)+': '+fmt(row[-1],unit,lang=lang) for (k,_),row in zip(series,values))
     svg = f'<svg class="viz-chart" viewBox="0 0 480 230" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="{h(chart_label)}" aria-describedby="{help_id}" aria-valuemin="0" aria-valuemax="{len(labels)-1}" aria-valuenow="{len(labels)-1}" aria-valuetext="{h(initial_value)}"><title>{h(chart_label)}</title>'
     svg += '<desc>' + tr(lang, 'Values and dates are available below in the data table.', 'Valorile și datele sunt disponibile în tabelul de mai jos.') + '</desc>'
     for v in sorted(set([low, low + span / 2, high] + ([] if restricted else [0]))):
         yy = y(v)
-        svg += f'<line class="viz-gridline" x1="{x0}" x2="{x1}" y1="{yy:.2f}" y2="{yy:.2f}"/><text x="{x0-9}" y="{yy+4:.2f}" text-anchor="end">{h(fmt(v,unit,lang=lang,digits=1))}</text>'
+        svg += f'<line class="viz-gridline" x1="{x0}" x2="{x1}" y1="{yy:.2f}" y2="{yy:.2f}"/><text x="{x0-9}" y="{yy+4:.2f}" text-anchor="end">{h(fmt(v,unit,lang=lang,digits=1,axis=True))}</text>'
     median_value = statistics.median(valid) if median and len(valid) >= 8 and len(series) == 1 else None
     if median_value is not None:
         yy = y(median_value)
@@ -245,7 +255,7 @@ def chart(d, keys, lang, style='bar', median=False):
             x = x0 + step * (i + .5)
             if v is None:
                 svg += flush(); segment = []; continue
-            label = f'{labels[i]} · {name(key,lang)}: {fmt(v,unit,lang=lang)}'
+            label = f'{period_label(labels[i],lang)} · {name(key,lang)}: {fmt(v,unit,lang=lang)}'
             point_attrs = f'data-viz-point="{i}" data-selected="{str(i == len(labels)-1).lower()}"'
             if style == 'bar':
                 bw = step * .76 / len(series)
@@ -262,13 +272,13 @@ def chart(d, keys, lang, style='bar', median=False):
     for i in label_indices:
         x = x0 + step * (i + .5)
         anchor = 'start' if i == 0 else ('end' if i == len(labels)-1 else 'middle')
-        svg += f'<text x="{x:.2f}" y="216" text-anchor="{anchor}">{h(labels[i].replace(" 20", " ’"))}</text>'
+        svg += f'<text x="{x:.2f}" y="216" text-anchor="{anchor}">{h(period_label(labels[i],lang).replace(" 20", " ’"))}</text>'
     # Full-height targets make small, negative and missing observations inspectable.
     for i, label in enumerate(labels):
-        tooltip = label + ' · ' + ' · '.join(name(k,lang)+': '+fmt(row[i],unit,lang=lang) for (k,_),row in zip(series,values))
+        tooltip = period_label(label,lang) + ' · ' + ' · '.join(name(k,lang)+': '+fmt(row[i],unit,lang=lang) for (k,_),row in zip(series,values))
         svg += f'<rect class="viz-hit" data-viz-hit="{i}" x="{x0+step*i}" y="{y0}" width="{step}" height="204" aria-hidden="true"><title>{h(tooltip)}</title></rect>'
     svg += '</svg>'
-    out = '<div class="viz-inspection"><p class="viz-selected-period">' + tr(lang, 'Values for ', 'Valori pentru ') + f'<strong data-viz-period-label>{h(labels[-1])}</strong><span class="viz-pinned" data-viz-pinned hidden>{tr(lang,"Pinned","Fixat")}</span></p><div class="viz-readout">'
+    out = '<div class="viz-inspection"><p class="viz-selected-period">' + tr(lang, 'Values for ', 'Valori pentru ') + f'<strong data-viz-period-label>{h(period_label(labels[-1],lang))}</strong><span class="viz-pinned" data-viz-pinned hidden>{tr(lang,"Pinned","Fixat")}</span></p><div class="viz-readout">'
     for j, ((key, _), row) in enumerate(zip(series, values)):
         out += f'<div><span><i style="background:{COLORS[j%3]}"></i>{h(name(key,lang))}</span><strong data-viz-value="{j}">{h(fmt(row[-1],unit,lang=lang))}</strong></div>'
     out += '</div></div>'
@@ -276,7 +286,7 @@ def chart(d, keys, lang, style='bar', median=False):
     if absent:
         out += '<p class="viz-footnote">' + h(', '.join(absent)) + ': ' + tr(lang,'not supplied separately.','nefurnizat separat.') + '</p>'
     out += f'<div class="viz-chart-box">{svg}</div><div class="viz-chart-controls"><span class="viz-pointer-hint">{tr(lang,"Hover to explore · Click or tap to pin","Treci peste grafic · Apasă pentru a fixa")}</span><span class="viz-keyboard-hint" id="{help_id}">{tr(lang,"← → Choose period · Home / End First / last · Esc Latest","← → Alege perioada · Home / End Prima / ultima · Esc Recentă")}</span><button type="button" class="viz-reset" data-viz-reset hidden>{tr(lang,"Latest","Recentă")}</button></div>'
-    payload = {'periods': labels, 'series': [name(k,lang) for k,_ in series], 'values': [[fmt(row[i], unit, lang=lang) for row in values] for i in range(len(labels))]}
+    payload = {'periods': [period_label(x,lang) for x in labels], 'series': [name(k,lang) for k,_ in series], 'values': [[fmt(row[i], unit, lang=lang) for row in values] for i in range(len(labels))]}
     out += '<script class="viz-values" type="application/json">' + json.dumps(payload).replace('<', '\\u003c') + '</script>'
     if median_value is not None:
         out += '<p class="viz-footnote">' + tr(lang, 'Dashed line: historical median ', 'Linie punctată: mediana istorică ') + h(fmt(median_value,unit,lang=lang)) + f' · {len(valid)} ' + tr(lang, 'valid observations.', 'observații valide.') + '</p>'
@@ -290,7 +300,7 @@ def chart(d, keys, lang, style='bar', median=False):
     out += '<details class="viz-data"><summary>' + tr(lang, 'View values & sources', 'Vezi valorile și sursele') + '</summary><div class="table-wrap"><table><caption>' + h(' / '.join(name(k,lang) for k,_ in series)) + '</caption><thead><tr><th>' + tr(lang,'Period','Perioadă') + '</th>'
     out += ''.join(f'<th>{h(name(k,lang))}</th>' for k,_ in series) + '</tr></thead><tbody>'
     for i, label in enumerate(labels):
-        out += f'<tr data-viz-row="{i}" data-selected="{str(i == len(labels)-1).lower()}"><th scope="row">' + h(label) + '</th>' + ''.join('<td>' + h(fmt(row[i],unit,lang=lang,compact=False)) + '</td>' for row in values) + '</tr>'
+        out += f'<tr data-viz-row="{i}" data-selected="{str(i == len(labels)-1).lower()}"><th scope="row">' + h(period_label(label,lang)) + '</th>' + ''.join('<td>' + h(fmt(row[i],unit,lang=lang,compact=False)) + '</td>' for row in values) + '</tr>'
     out += '</tbody></table></div><ul class="viz-sources">'
     for key, s in series:
         source = d['sources'][s['source_id']]
@@ -314,7 +324,7 @@ def financial_card(d, title, keys, lang, explanation_pair, style='bar', median=F
     result += chart(d,keys,lang,style,median)
     if keys==['cfo','fcf'] and d.get('cash_bridge'):
         b=d['cash_bridge'];value=lambda k:fmt(b[k],'currency',b['scale'],lang)
-        result += '<div class="viz-bridge"><strong>' + tr(lang,'Why the company reports a different figure','De ce compania raportează altă valoare') + '</strong><p>' + h(b['period']) + ': ' + h(fmt(b['cfo']-b['cash_capex'],'currency',b['scale'],lang)) + tr(lang,' before lease principal − ',' înainte de principalul leasingului − ') + h(value('lease_principal')) + ' = <strong>' + h(value('issuer_fcf')) + '</strong> ' + tr(lang,'company-defined free cash flow.','flux liber definit de companie.') + '</p>' + link(d,b['source_id'],lang) + '</div>'
+        result += '<div class="viz-bridge"><strong>' + tr(lang,'Why the company reports a different figure','De ce compania raportează altă valoare') + '</strong><p>' + h(period_label(b['period'],lang)) + ': ' + h(fmt(b['cfo']-b['cash_capex'],'currency',b['scale'],lang)) + tr(lang,' before lease principal − ',' înainte de principalul leasingului − ') + h(value('lease_principal')) + ' = <strong>' + h(value('issuer_fcf')) + '</strong> ' + tr(lang,'company-defined free cash flow.','flux liber definit de companie.') + '</p>' + link(d,b['source_id'],lang) + '</div>'
     return result + '</article>'
 
 
@@ -333,7 +343,7 @@ def price_card(d, lang):
     if not q or not r:
         return out + blank(lang) + '</article>'
     price=q['price']; low=r['low']; high=r['high']; pct=(price-low)/(high-low)*100
-    out += f'<div class="viz-price">{h(fmt(price,lang=lang))}</div><p class="viz-footnote">{h(q["observed_at"])} · {h(session_label(q["session"],lang))}</p>'
+    out += f'<div class="viz-price">{h(fmt(price,lang=lang))}</div><p class="viz-footnote">{h(period_label(q["observed_at"],lang))} · {h(session_label(q["session"],lang))}</p>'
     out += f'<div class="viz-range" role="img" aria-label="{h(tr(lang,"Position in range: ","Poziția în interval: ")+str(round(pct,1))+"%")}"><div class="viz-range-fill" style="width:{max(0,min(100,pct)):.2f}%"></div><i style="left:{max(0,min(100,pct)):.2f}%"></i></div>'
     out += '<div class="viz-range-labels"><span>'+tr(lang,'Low','Minim')+' <strong>'+h(fmt(low,lang=lang))+'</strong></span><span>'+tr(lang,'High','Maxim')+' <strong>'+h(fmt(high,lang=lang))+'</strong></span></div>'
     rows=[(tr(lang,'Position in range','Poziție în interval'),decimal(f'{pct:.1f}%',lang)),(tr(lang,'From the high','Față de maxim'),fmt((price/high-1)*100,'percent',lang=lang)),(tr(lang,'From the low','Față de minim'),fmt((price/low-1)*100,'percent',lang=lang))]
@@ -363,12 +373,12 @@ def consensus_card(d,lang):
         out+='<div class="viz-price">'+h(fmt(t['mean'],lang=lang))+'</div><p class="viz-footnote">'+tr(lang,'Average target','Țintă medie')
         if q:out+=' · '+h(fmt((t['mean']/q['price']-1)*100,'percent',lang=lang))+' '+tr(lang,'vs. quoted price','față de cotație')
         updated=d['sources'][t['source_id']].get('source_updated_at')
-        if updated:out+='<br>'+tr(lang,'Estimates updated ','Estimări actualizate la ')+h(updated)+(' · '+tr(lang,'quote ','cotație ')+h(q['observed_at']) if q else '')
+        if updated:out+='<br>'+tr(lang,'Estimates updated ','Estimări actualizate la ')+h(period_label(updated,lang))+(' · '+tr(lang,'quote ','cotație ')+h(period_label(q['observed_at'],lang)) if q else '')
         out+='</p>'+rows_html([(tr(lang,'Low / median / high','Minim / mediană / maxim'),' / '.join(fmt(t[k],lang=lang) for k in ('low','median','high'))),(tr(lang,'Target contributors','Analiști cu ținte'),str(c.get('target_analyst_count',tr(lang,'Not supplied','Nefurnizat'))))])
     else:out+=blank(lang)
     if r:
         names=RATINGS_RO if lang=='ro' else RATINGS
-        out+='<h4>'+tr(lang,'Recommendation distribution','Distribuția recomandărilor')+'</h4><p class="viz-footnote">'+h(str(r['total'])+' · '+r['period'])+'</p><div class="viz-rating-bar" role="img" aria-label="'+h(', '.join(f'{names[i]} {int(r["counts"][k])}' for i,k in enumerate(RATINGS)))+'">'
+        out+='<h4>'+tr(lang,'Recommendation distribution','Distribuția recomandărilor')+'</h4><p class="viz-footnote">'+h(str(r['total'])+' · '+period_label(r['period'],lang))+'</p><div class="viz-rating-bar" role="img" aria-label="'+h(', '.join(f'{names[i]} {int(r["counts"][k])}' for i,k in enumerate(RATINGS)))+'">'
         for i,k in enumerate(RATINGS):
             count=r['counts'][k]
             if count:out+=f'<span class="viz-rating-{i}" style="width:{100*count/r["total"]:.4f}%"></span>'

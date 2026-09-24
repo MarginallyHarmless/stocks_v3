@@ -386,3 +386,8 @@ dialog .evidence-disclosure{border-top:0}
 @media(max-width:760px){.lesson-pair{grid-template-columns:1fr}}
 @media(max-width:560px){.lesson-card{padding:18px 18px 14px}.lesson-concept{font-size:18px}.deeper>.claim{font-size:16.5px}}
 @media print{.lesson-card{box-shadow:none}}
+.scroll-hint{margin:14px 0 -10px;font-size:12px;color:var(--muted);text-align:right}
+.table-wrap.fade-right{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 48px),#0000);mask-image:linear-gradient(to right,#000 calc(100% - 48px),#0000)}
+.table-wrap.fade-left{-webkit-mask-image:linear-gradient(to left,#000 calc(100% - 48px),#0000);mask-image:linear-gradient(to left,#000 calc(100% - 48px),#0000)}
+.table-wrap.fade-left.fade-right{-webkit-mask-image:linear-gradient(to right,#0000,#000 48px,#000 calc(100% - 48px),#0000);mask-image:linear-gradient(to right,#0000,#000 48px,#000 calc(100% - 48px),#0000)}
+@media print{.scroll-hint{display:none!important}.table-wrap{-webkit-mask-image:none!important;mask-image:none!important}}
