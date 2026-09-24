@@ -167,6 +167,8 @@ def calculate(e, inputs):
             need(a['unit'] == b['unit'] == 'currency_per_share' and a.get('currency') == b.get('currency'), "P/E currency/per-share mismatch")
             need(a['basis'] == 'market' and a['period']['kind'] == 'instant' and b['period']['kind'] == 'duration' and vals[1] > 0, "P/E needs a quote and positive compatible EPS")
             need(e['unit'] == 'ratio' and e['basis'] == b['basis'] and period_key(e) == period_key(b), "P/E output must identify EPS period and basis")
+            need(350 <= (parse_date(b['period']['end'])-parse_date(b['period']['start'])).days <= 371, "P/E needs annual or trailing-twelve-month EPS")
+            need(b['period']['forecast'] or b['period']['end'] <= a['period']['end'], "Trailing EPS cannot end after the quote date")
             answer = vals[0]/vals[1]
         elif op == 'net_debt_to_fcf':
             need(a['unit'] == b['unit'] == 'currency' and dimensions(a)==dimensions(b) and vals[1]>0, "Net debt/FCF requires positive FCF and compatible currency/basis")
@@ -259,8 +261,12 @@ def format_number(e, language="en"):
     v = number(e)
     unit = e["unit"]
     if unit in {"currency", "shares", "count"}:
-        divisor, suffix = next(((n, s) for n, s in ((1e12, "T"), (1e9, "B"), (1e6, "M"), (1e3, "k"))
-                                if abs(v) >= n), (1, ""))
+        digits = e.get("precision", 2)
+        units = ((1e12, "T"), (1e9, "B"), (1e6, "M"), (1e3, "k"))
+        divisor, suffix = next(((n, s) for n, s in units if abs(v) >= n), (1, ""))
+        bigger = [u for u in units if u[0] > divisor]
+        if bigger and abs(round(v / divisor, digits)) >= 1000:
+            divisor, suffix = bigger[-1]
         value = f"{v/divisor:,.{e.get('precision', 2)}f}".rstrip("0").rstrip(".") if e.get("precision",2) else f"{v/divisor:,.0f}"
         result = value + suffix
     else:

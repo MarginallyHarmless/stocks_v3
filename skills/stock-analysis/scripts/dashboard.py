@@ -132,10 +132,14 @@ def fmt(v, unit='currency', scale=1, lang='en', compact=True):
     else:
         suffix = ''
         if compact:
-            for threshold, tag in [(1e12, 'T'), (1e9, 'B'), (1e6, 'M'), (1e3, 'K')]:
+            units = [(1e12, 'T'), (1e9, 'B'), (1e6, 'M'), (1e3, 'K')]
+            for i, (threshold, tag) in enumerate(units):
                 if abs(n) >= threshold:
+                    if i and abs(round(n / threshold, 2)) >= 1000:
+                        threshold, tag = units[i - 1]
                     n /= threshold; suffix = tag; break
-        result = ('$' if unit == 'currency' else '') + f'{n:,.2f}'.rstrip('0').rstrip('.') + suffix
+        sign = '-' if n < 0 else ''
+        result = sign + ('$' if unit == 'currency' else '') + f'{abs(n):,.2f}'.rstrip('0').rstrip('.') + suffix
     return result.replace(',', ' ').replace('.', ',') if lang == 'ro' else result
 
 

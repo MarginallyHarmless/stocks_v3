@@ -104,3 +104,43 @@ class ChartPeriods(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class NumbersAndMultiples(unittest.TestCase):
+    def quote(self, end='2026-09-17'):
+        return {'id': 'price', 'unit': 'currency_per_share', 'currency': 'USD', 'scale': 1, 'basis': 'market', 'value': 100,
+                'period': {'kind': 'instant', 'end': end, 'label': end, 'forecast': False}}
+
+    def eps(self, start, end, forecast=False):
+        return {'id': 'eps', 'unit': 'currency_per_share', 'currency': 'USD', 'scale': 1, 'basis': 'GAAP', 'value': 2,
+                'period': {'kind': 'duration', 'start': start, 'end': end, 'label': 'EPS', 'forecast': forecast}}
+
+    def pe(self, eps):
+        return {'operation': 'pe', 'unit': 'ratio', 'scale': 1, 'basis': eps['basis'], 'period': eps['period']}
+
+    def test_pe_needs_one_year_of_known_earnings(self):
+        from model import calculate
+        ttm = self.eps('2025-07-01', '2026-06-30')
+        self.assertEqual(calculate(self.pe(ttm), [self.quote(), ttm]), 50)
+        quarter = self.eps('2026-04-01', '2026-06-30')
+        with self.assertRaisesRegex(Invalid, 'twelve-month'):
+            calculate(self.pe(quarter), [self.quote(), quarter])
+        later = self.eps('2025-10-01', '2026-09-30')
+        with self.assertRaisesRegex(Invalid, 'after the quote'):
+            calculate(self.pe(later), [self.quote(), later])
+        forward = self.eps('2027-01-01', '2027-12-31', forecast=True)
+        self.assertEqual(calculate(self.pe(forward), [self.quote(), forward]), 50)
+
+    def test_rounding_moves_to_the_next_unit(self):
+        from model import format_number
+        from dashboard import fmt
+        e = {'unit': 'currency', 'currency': 'USD', 'scale': 1, 'value': 999_999}
+        self.assertEqual(format_number(e), 'USD 1M')
+        self.assertEqual(fmt(999_999), '$1M')
+        self.assertEqual(fmt(-10), '-$10')
+
+    def test_values_below_the_boundary_keep_their_precision(self):
+        from model import format_number
+        from dashboard import fmt
+        self.assertEqual(fmt(999.49e6), '$999.49M')
+        self.assertEqual(format_number({'unit': 'currency', 'currency': 'USD', 'scale': 1, 'value': 999.49e6}), 'USD 999.49M')

@@ -56,7 +56,7 @@ class Charts(unittest.TestCase):
     def test_negative_values_preserve_series_and_zero_baseline(self):
         d=fixture();d['series']={'cfo':series([('Q1 2025',-10)]),'fcf':series([('Q1 2025',-20)])}
         rendered=chart(d,['cfo','fcf'],'en')
-        self.assertIn('$-10',rendered);self.assertIn('$-20',rendered)
+        self.assertIn('-$10',rendered);self.assertIn('-$20',rendered)
         self.assertIn('fill="var(--plot-violet)"',rendered)
         self.assertIn('fill="var(--plot-mint)"',rendered)
         self.assertNotIn('fill="var(--plot-loss)"',rendered)
