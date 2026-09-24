@@ -1,0 +1,605 @@
+{
+ "base": "CEG-2026-09-18-v3",
+ "new_id": "CEG-2026-09-18-v3-r2",
+ "revision_note": {
+  "en": "Depth revision: adds plain-language explanations and concept lessons that interpret figures already in this report, plus twelve calculations derived from saved figures. No new sources or reported figures; the cutoff, conclusions and watch criteria are unchanged.",
+  "ro": "Revizie de aprofundare: adaugă explicații pe înțelesul tuturor și lecții despre concepte, care interpretează cifre deja prezente în raport, plus douăsprezece calcule derivate din cifrele salvate. Nu există surse sau cifre raportate noi; data-limită, concluziile și criteriile de verificare sunt neschimbate."
+ },
+ "evidence": [
+  {
+   "id": "power-share",
+   "kind": "calculation",
+   "label": {
+    "en": "Share of Q2 revenue from power sales",
+    "ro": "Ponderea vânzărilor de energie electrică în veniturile T2"
+   },
+   "definition": "Share of Q2 revenue from power sales",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q2 2026",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "percent_ratio",
+   "inputs": [
+    "power",
+    "revenue-q2"
+   ]
+  },
+  {
+   "id": "pjm-share",
+   "kind": "calculation",
+   "label": {
+    "en": "Share of Q2 revenue from PJM customers",
+    "ro": "Ponderea clienților din PJM în veniturile T2"
+   },
+   "definition": "Share of Q2 revenue from PJM customers",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q2 2026",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "percent_ratio",
+   "inputs": [
+    "pjm",
+    "revenue-q2"
+   ]
+  },
+  {
+   "id": "rev-growth-h1",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half revenue growth YoY",
+    "ro": "Creșterea anuală a veniturilor în primul semestru"
+   },
+   "definition": "First-half revenue growth YoY",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "revenue-h1",
+    "revenue-h1-old"
+   ]
+  },
+  {
+   "id": "eps-h1-growth",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half reported EPS growth YoY",
+    "ro": "Creșterea anuală a profitului raportat pe acțiune în primul semestru"
+   },
+   "definition": "First-half reported EPS growth YoY",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "eps-h1",
+    "eps-h1-old"
+   ]
+  },
+  {
+   "id": "capex-growth",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half capital spending growth YoY",
+    "ro": "Creșterea anuală a investițiilor în primul semestru"
+   },
+   "definition": "First-half capital spending growth YoY",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "capex-h1",
+    "capex-h1-old"
+   ]
+  },
+  {
+   "id": "cfo-growth",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half operating cash flow change YoY",
+    "ro": "Variația anuală a fluxului de numerar operațional în primul semestru"
+   },
+   "definition": "First-half operating cash flow change YoY",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "cfo-h1",
+    "cfo-h1-old"
+   ]
+  },
+  {
+   "id": "payouts",
+   "kind": "calculation",
+   "label": {
+    "en": "H1 buybacks plus dividends",
+    "ro": "Răscumpărări plus dividende în primul semestru"
+   },
+   "definition": "H1 buybacks plus dividends",
+   "unit": "currency",
+   "scale": 1000000,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "sum",
+   "inputs": [
+    "buybacks",
+    "dividends"
+   ],
+   "currency": "USD"
+  },
+  {
+   "id": "gap-after-payouts",
+   "kind": "calculation",
+   "label": {
+    "en": "H1 cash after capital spending, buybacks and dividends",
+    "ro": "Numerar în primul semestru după investiții, răscumpărări și dividende"
+   },
+   "definition": "H1 cash after capital spending, buybacks and dividends",
+   "unit": "currency",
+   "scale": 1000000,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "difference",
+   "inputs": [
+    "fcf-h1",
+    "payouts"
+   ],
+   "currency": "USD"
+  },
+  {
+   "id": "fcf-margin-ttm",
+   "kind": "calculation",
+   "label": {
+    "en": "TTM cash after capital spending / TTM revenue",
+    "ro": "Numerar după investiții / venituri, ultimele 12 luni"
+   },
+   "definition": "TTM cash after capital spending / TTM revenue",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "TTM June 2026",
+    "start": "2025-07-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "percent_ratio",
+   "inputs": [
+    "fcf-ttm",
+    "revenue-ttm"
+   ]
+  },
+  {
+   "id": "near-debt",
+   "kind": "calculation",
+   "label": {
+    "en": "Debt due within one year (short-term borrowings plus current long-term debt)",
+    "ro": "Datorii scadente într-un an (împrumuturi pe termen scurt plus rate curente din datoria pe termen lung)"
+   },
+   "definition": "Debt due within one year (short-term borrowings plus current long-term debt)",
+   "unit": "currency",
+   "scale": 1000000,
+   "basis": "GAAP",
+   "period": {
+    "kind": "instant",
+    "label": "June 30, 2026",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "sum",
+   "inputs": [
+    "short-debt",
+    "current-debt"
+   ],
+   "currency": "USD"
+  },
+  {
+   "id": "pe-guide-low",
+   "kind": "calculation",
+   "label": {
+    "en": "Price / FY2026 adjusted guidance low end",
+    "ro": "Preț / capătul de jos al prognozei ajustate FY2026"
+   },
+   "definition": "Price / FY2026 adjusted guidance low end",
+   "unit": "ratio",
+   "scale": 1,
+   "basis": "adjusted",
+   "period": {
+    "kind": "duration",
+    "label": "FY2026 guidance",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "forecast": true
+   },
+   "operation": "pe",
+   "inputs": [
+    "price",
+    "guidance-low"
+   ]
+  },
+  {
+   "id": "pe-guide-high",
+   "kind": "calculation",
+   "label": {
+    "en": "Price / FY2026 adjusted guidance high end",
+    "ro": "Preț / capătul de sus al prognozei ajustate FY2026"
+   },
+   "definition": "Price / FY2026 adjusted guidance high end",
+   "unit": "ratio",
+   "scale": 1,
+   "basis": "adjusted",
+   "period": {
+    "kind": "duration",
+    "label": "FY2026 guidance",
+    "start": "2026-01-01",
+    "end": "2026-12-31",
+    "forecast": true
+   },
+   "operation": "pe",
+   "inputs": [
+    "price",
+    "guidance-high"
+   ]
+  }
+ ],
+ "sections": {
+  "business": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "power-share",
+      "power",
+      "revenue-q2",
+      "gas"
+     ],
+     "text": {
+      "en": "Power sales were $5.36B of the $7.5B of operating revenue in Q2 2026, or 71.4%. Gas sales ($327M) were a small part. So what CEG earns depends mostly on how much electricity it sells and at what price.",
+      "ro": "Vânzările de energie electrică au reprezentat 5,36 mld. USD din veniturile operaționale de 7,5 mld. USD din T2 2026, adică 71,4%. Vânzările de gaze (327 mil. USD) au fost o parte mică. Așadar, câștigurile CEG depind în principal de câtă electricitate vinde și la ce preț."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "pjm-share",
+      "pjm",
+      "revenue-q2",
+      "regulation"
+     ],
+     "text": {
+      "en": "Revenue from customers in PJM, a large regional wholesale electricity market, was $2.87B in Q2 2026, or 38.2% of total revenue. That makes the prices and rules of one regional market especially important for CEG.",
+      "ro": "Veniturile de la clienții din PJM, o piață regională mare de energie electrică en-gros, au fost de 2,87 mld. USD în T2 2026, adică 38,2% din total. De aceea, prețurile și regulile unei singure piețe regionale contează în mod special pentru CEG."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "business",
+      "gross-margin"
+     ],
+     "text": {
+      "en": "Calpine added gas and geothermal plants in January 2026. A gas plant’s earnings depend largely on the gap between the power price and its fuel cost, and that gap can move either way. This report did not establish a comparable gross margin, and that gap on its own leaves out material operating costs.",
+      "ro": "Calpine a adus centrale pe gaze și geotermale în ianuarie 2026. Câștigurile unei centrale pe gaze depind în mare măsură de diferența dintre prețul energiei și costul combustibilului, iar această diferență se poate mișca în ambele direcții. Raportul nu a stabilit o marjă brută comparabilă, iar această diferență, luată singură, lasă deoparte costuri de operare importante."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A power producer can sell at whatever the market price is when the power is produced, or fix a price in advance through contracts or hedges (financial agreements that lock in a price). Fixing prices makes revenue steadier but gives up part of the gain if prices rise.",
+     "ro": "Un producător de energie poate vinde la prețul pieței din momentul producției sau poate fixa prețul dinainte prin contracte sau acoperiri (acorduri financiare care blochează un preț). Prețurile fixate fac veniturile mai stabile, dar renunță la o parte din câștig dacă prețurile cresc."
+    },
+    "example": {
+     "en": "Hypothetical: a plant sells 100 units of power and has fixed the price of 60 of them at $50. If the market price is $70, it earns $5,800 (60 × $50 + 40 × $70) instead of $7,000 without the hedge. If the price falls to $30, it earns $4,200 instead of $3,000.",
+     "ro": "Exemplu ipotetic: o centrală vinde 100 de unități de energie și a fixat prețul pentru 60 dintre ele la 50 USD. Dacă prețul pieței este 70 USD, încasează 5.800 USD (60 × 50 USD + 40 × 70 USD), în loc de 7.000 USD fără acoperire. Dacă prețul scade la 30 USD, încasează 4.200 USD, în loc de 3.000 USD."
+    },
+    "trap": {
+     "en": "Hedged does not mean risk-free. The other side of the contract must be able to pay, and price moves can force the company to post cash as collateral (a deposit guaranteeing it will meet its obligations).",
+     "ro": "Acoperit nu înseamnă fără risc. Partenerul de contract trebuie să poată plăti, iar mișcările de preț pot obliga compania să depună numerar drept garanție (un depozit care asigură că își va respecta obligațiile)."
+    }
+   }
+  },
+  "growth": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "rev-growth-h1",
+      "revenue-h1",
+      "revenue-h1-old",
+      "rev-growth",
+      "business"
+     ],
+     "text": {
+      "en": "First-half 2026 revenue was $18.63B versus $12.89B a year earlier, 44.5% higher. That is well above Q2’s 23.0%, so the first quarter grew even faster. Both quarters include Calpine, so neither figure shows how the original business grew on its own.",
+      "ro": "Veniturile din primul semestru din 2026 au fost de 18,63 mld. USD, față de 12,89 mld. USD cu un an înainte, adică 44,5% mai mari. Este mult peste cei 23,0% din T2, deci primul trimestru a crescut și mai repede. Ambele trimestre includ Calpine, așa că niciuna dintre cifre nu arată cum a crescut singură afacerea inițială."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "adj-growth",
+      "dilution",
+      "adj-q2",
+      "adj-q2-old",
+      "shares-q2",
+      "shares-q2-old"
+     ],
+     "text": {
+      "en": "Adjusted EPS rose 33.5% in Q2 2026, while the average diluted share count rose 14.7%. Because EPS divides profit by the number of shares, total adjusted profit had to grow faster than 33.5% to produce that per-share gain. For a shareholder, the per-share figure is the one that matters.",
+      "ro": "Profitul ajustat pe acțiune a crescut cu 33,5% în T2 2026, în timp ce numărul mediu diluat de acțiuni a crescut cu 14,7%. Pentru că profitul pe acțiune împarte profitul la numărul de acțiuni, profitul ajustat total a trebuit să crească cu mai mult de 33,5% ca să producă acest câștig pe acțiune. Pentru un acționar, cifra pe acțiune este cea care contează."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "eps-h1-growth",
+      "eps-h1",
+      "eps-h1-old",
+      "eps-q2",
+      "eps-q2-old",
+      "adjustments"
+     ],
+     "text": {
+      "en": "Reported (GAAP) EPS fell in Q2, from $2.67 to $1.42, yet for the first half it rose 92.8%, from $3.05 to $5.88. Swings this large fit the accounting items management excludes from adjusted profit, such as changes in hedge values. One quarter of reported EPS says little about the trend.",
+      "ro": "Profitul raportat (GAAP) pe acțiune a scăzut în T2, de la 2,67 la 1,42 USD, dar pe primul semestru a crescut cu 92,8%, de la 3,05 la 5,88 USD. Oscilații atât de mari se potrivesc cu elementele contabile pe care conducerea le exclude din profitul ajustat, cum ar fi schimbările de valoare ale acoperirilor. Un singur trimestru de profit raportat spune puțin despre tendință."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "contracts",
+      "capacity"
+     ],
+     "text": {
+      "en": "The new nuclear contracts cover about 920 MW (megawatts), against a fleet of 55 GW (gigawatts; 1 GW = 1,000 MW). They start between 2029 and 2031 and reach full volume by 2032. So they matter over the long term, but they barely change results before 2029.",
+      "ro": "Noile contracte nucleare acoperă aproximativ 920 MW (megawați), față de un parc de 55 GW (gigawați; 1 GW = 1.000 MW). Ele încep între 2029 și 2031 și ajung la volumul complet până în 2032. Așadar, contează pe termen lung, dar schimbă foarte puțin rezultatele de dinainte de 2029."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "When a company buys another business, its totals jump even if neither business grew. Organic growth compares like with like, leaving out what was bought, to show whether the original business is growing.",
+     "ro": "Când o companie cumpără o altă afacere, cifrele totale sar chiar dacă niciuna dintre afaceri nu a crescut. Creșterea organică compară lucruri comparabile, fără ce s-a cumpărat, ca să arate dacă afacerea inițială crește."
+    },
+    "example": {
+     "en": "Hypothetical: a company with $100 of revenue buys a business with $30, and its own sales rise to $105. Total revenue of $135 is 35% growth, but organic growth is only 5%.",
+     "ro": "Exemplu ipotetic: o companie cu venituri de 100 USD cumpără o afacere cu venituri de 30 USD, iar vânzările proprii cresc la 105 USD. Veniturile totale de 135 USD înseamnă o creștere de 35%, dar creșterea organică este de doar 5%."
+    },
+    "trap": {
+     "en": "If the purchase is paid for partly with new shares, total profit can rise while profit per share grows much less, because the profit is split among more shares.",
+     "ro": "Dacă achiziția este plătită parțial cu acțiuni noi, profitul total poate crește, în timp ce profitul pe acțiune crește mult mai puțin, pentru că profitul se împarte la mai multe acțiuni."
+    }
+   }
+  },
+  "cash": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "capex-growth",
+      "cfo-growth",
+      "capex-h1",
+      "capex-h1-old",
+      "cfo-h1",
+      "cfo-h1-old",
+      "fcf-h1",
+      "fcf-old"
+     ],
+     "text": {
+      "en": "First-half capital spending rose 60.3%, from $1.57B to $2.52B, while operating cash flow was almost unchanged ($1.55B versus $1.58B, down 2.0%). So the swing from $11M a year earlier to minus $968M came mainly from higher investment. The report does not split that spending into upkeep and growth.",
+      "ro": "Investițiile din primul semestru au crescut cu 60,3%, de la 1,57 la 2,52 mld. USD, în timp ce fluxul de numerar operațional a rămas aproape neschimbat (1,55 mld. USD față de 1,58 mld. USD, cu 2,0% mai puțin). Așadar, trecerea de la 11 mil. USD cu un an înainte la minus 968 mil. USD a venit în principal din investițiile mai mari. Raportul nu împarte aceste investiții între întreținere și creștere."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "payouts",
+      "gap-after-payouts",
+      "buybacks",
+      "dividends",
+      "fcf-h1"
+     ],
+     "text": {
+      "en": "Buybacks ($1.97B) and dividends ($309M) added up to $2.28B in the first half. Together with the $968M shortfall after capital spending, that is a $3.25B gap that had to be covered from other sources, for example borrowing or other cash inflows.",
+      "ro": "Răscumpărările de acțiuni (1,97 mld. USD) și dividendele (309 mil. USD) au însumat 2,28 mld. USD în primul semestru. Împreună cu deficitul de 968 mil. USD după investiții, rezultă un gol de 3,25 mld. USD, care a trebuit acoperit din alte surse, de exemplu împrumuturi sau alte încasări."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "fcf-margin-ttm",
+      "fcf-ttm",
+      "revenue-ttm"
+     ],
+     "text": {
+      "en": "Even the positive TTM figure is thin: $309M of cash after capital spending on $31.27B of revenue is 0.99%. Being positive does not mean there is a comfortable cash cushion, and the figure mixes months with and without Calpine.",
+      "ro": "Chiar și cifra pozitivă pe ultimele 12 luni este subțire: 309 mil. USD numerar după investiții, la venituri de 31,27 mld. USD, înseamnă 0,99%. Faptul că este pozitivă nu înseamnă o rezervă confortabilă de numerar, iar cifra amestecă luni cu și fără Calpine."
+     }
+    }
+   ]
+  },
+  "risk": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "near-debt",
+      "short-debt",
+      "current-debt",
+      "cash",
+      "liquidity-risk"
+     ],
+     "text": {
+      "en": "At June 30, $5.59B of debt was due within a year ($5.23B of short-term borrowings plus $363M of long-term debt coming due), against $697M of cash. Debt like this is usually repaid by borrowing again (refinancing), so continued access to lenders matters as much as the total owed.",
+      "ro": "La 30 iunie, datorii de 5,59 mld. USD erau scadente într-un an (5,23 mld. USD împrumuturi pe termen scurt plus 363 mil. USD din datoria pe termen lung ajunsă la scadență), față de un numerar de 697 mil. USD. Astfel de datorii sunt de obicei plătite printr-un nou împrumut (refinanțare), deci accesul în continuare la creditori contează la fel de mult ca suma totală datorată."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "credit",
+      "near-debt",
+      "liquidity-risk"
+     ],
+     "text": {
+      "en": "The $7B of available credit capacity is larger than that near-term debt, but it is room to borrow, not cash, and it includes facilities that can only be used for specific purposes. Drawing on it would replace one debt with another rather than reduce what CEG owes.",
+      "ro": "Capacitatea de credit disponibilă de 7 mld. USD este mai mare decât aceste datorii pe termen scurt, dar reprezintă loc de împrumut, nu numerar, și include facilități care pot fi folosite doar în anumite scopuri. Folosirea ei ar înlocui o datorie cu alta, fără să reducă ce datorează CEG."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "nuclear",
+      "forced"
+     ],
+     "text": {
+      "en": "The capacity factor compares what plants actually produced with what they could have produced running at full power all the time. At 93% in Q2 2026 (excluding Salem and STP), the nuclear plants ran close to, but below, their maximum, and there were 20 days of outages not related to refueling. When a plant is offline, sales can be lost and replacement power may have to be bought to meet contracts.",
+      "ro": "Factorul de capacitate compară ce au produs efectiv centralele cu ce ar fi putut produce funcționând tot timpul la putere maximă. La 93% în T2 2026 (fără Salem și STP), centralele nucleare au funcționat aproape de maxim, dar sub el, iar în trimestru au existat 20 de zile de opriri fără legătură cu realimentarea cu combustibil. Când o centrală este oprită, se pot pierde vânzări și poate fi nevoie de energie cumpărată în locul ei pentru a respecta contractele."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Liquidity is the ability to pay bills and debts when they fall due. A profitable company can still come under strain if a lot of debt matures at once, because repaying it usually means borrowing again at whatever terms lenders offer at that time.",
+     "ro": "Lichiditatea este capacitatea de a plăti facturile și datoriile la scadență. O companie profitabilă poate intra totuși sub presiune dacă multe datorii ajung la scadență deodată, pentru că plata lor presupune de obicei un nou împrumut, în condițiile oferite de creditori în acel moment."
+    },
+    "example": {
+     "en": "Hypothetical: a company holds $1 of cash, has $10 of unused credit lines and owes $6 due this year. It can pay the $6 by drawing on the lines, but it still owes $6, now to the banks behind those lines, and only $4 of unused lines remain.",
+     "ro": "Exemplu ipotetic: o companie are 1 USD numerar, linii de credit nefolosite de 10 USD și datorii de 6 USD scadente anul acesta. Poate plăti cei 6 USD folosind liniile de credit, dar datorează în continuare 6 USD, acum băncilor care oferă liniile, și îi mai rămân doar 4 USD de linii nefolosite."
+    },
+    "trap": {
+     "en": "The total amount of debt is not the only danger; timing matters too. A smaller debt due next month can be more pressing than a larger one due in ten years.",
+     "ro": "Suma totală a datoriilor nu este singurul pericol; contează și momentul scadenței. O datorie mai mică scadentă luna viitoare poate fi mai presantă decât una mai mare scadentă peste zece ani."
+    }
+   }
+  },
+  "valuation": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "pe-guide-low",
+      "pe-guide-high",
+      "guidance-low",
+      "guidance-high",
+      "price",
+      "pe-forward"
+     ],
+     "text": {
+      "en": "Management’s FY2026 adjusted EPS guidance is a range of $11.50 to $12.50. At the $262.80 close, that puts the forward multiple between 21.0× (high end) and 22.9× (low end). So the headline 21.9× does not depend much on which end of the range is reached.",
+      "ro": "Prognoza conducerii pentru profitul ajustat pe acțiune din 2026 este un interval de 11,50–12,50 USD. La prețul de închidere de 262,80 USD, multiplul estimat se situează între 21,0× (capătul de sus) și 22,9× (capătul de jos). Așadar, cifra principală de 21,9× nu depinde mult de capătul intervalului atins."
+     }
+    },
+    {
+     "type": "model",
+     "evidence_refs": [
+      "bear-eps",
+      "guide-mid",
+      "bear-multiple",
+      "pe-forward",
+      "bear-pv"
+     ],
+     "text": {
+      "en": "The bear case’s 2029 adjusted EPS of $12 equals management’s 2026 guidance midpoint ($12.00). It assumes profit per share stops growing, not that it collapses. Compared with today’s 21.9× on that same $12.00, the bear value of $140.34 comes from the lower 16× multiple and from discounting, not from lower earnings.",
+      "ro": "Profitul ajustat pe acțiune din scenariul pesimist pentru 2029, de 12 USD, este egal cu mijlocul prognozei conducerii pentru 2026 (12,00 USD). Scenariul presupune că profitul pe acțiune nu mai crește, nu că se prăbușește. Față de multiplul actual de 21,9× pe aceiași 12,00 USD, valoarea pesimistă de 140,34 USD provine din multiplul mai mic, de 16×, și din actualizare, nu dintr-un profit mai mic."
+     }
+    },
+    {
+     "type": "model",
+     "evidence_refs": [
+      "base-multiple",
+      "pe-forward",
+      "base-eps",
+      "guide-mid"
+     ],
+     "text": {
+      "en": "The base case’s exit multiple of 22× is close to today’s 21.9× forward multiple. So the base value depends mainly on adjusted EPS rising from the $12.00 guidance midpoint to the assumed $17 in 2029, not on investors paying a higher multiple.",
+      "ro": "Multiplul de ieșire din scenariul de bază, de 22×, este apropiat de multiplul estimat actual de 21,9×. Așadar, valoarea de bază depinde în principal de creșterea profitului ajustat pe acțiune de la mijlocul prognozei, de 12,00 USD, la cei 17 USD presupuși pentru 2029, nu de un multiplu mai mare plătit de investitori."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "equity-value",
+      "net-debt",
+      "shares-bs",
+      "price"
+     ],
+     "text": {
+      "en": "Using June shares, the share price implies an equity value (the market value of all shares) of about $93.29B. A buyer of the whole company would also take on its $24.0B of June net debt, so the whole business carries a larger price tag than the shares alone. The two figures come from different dates and are not added here.",
+      "ro": "Folosind numărul de acțiuni din iunie, prețul implică o valoare a capitalului propriu (valoarea de piață a tuturor acțiunilor) de aproximativ 93,29 mld. USD. Un cumpărător al întregii companii ar prelua și datoria netă de 24,0 mld. USD din iunie, deci afacerea în ansamblu are un preț mai mare decât acțiunile singure. Cele două cifre provin din date diferite și nu sunt adunate aici."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Money expected in the future is worth less today, because today’s money could earn a return in the meantime. Discounting turns a future value into today’s value by dividing it by one plus the required annual return, once for each year.",
+     "ro": "Banii așteptați în viitor valorează mai puțin astăzi, pentru că banii de azi ar putea aduce un randament între timp. Actualizarea transformă o valoare viitoare în valoare de azi, împărțind-o la unu plus randamentul anual cerut, o dată pentru fiecare an."
+    },
+    "example": {
+     "en": "Hypothetical: with a 10% required annual return, a share expected to be worth $121 in two years is worth $100 today ($121 ÷ 1.1 = $110, then $110 ÷ 1.1 = $100).",
+     "ro": "Exemplu ipotetic: cu un randament anual cerut de 10%, o acțiune care ar urma să valoreze 121 USD peste doi ani valorează astăzi 100 USD (121 USD ÷ 1,1 = 110 USD, apoi 110 USD ÷ 1,1 = 100 USD)."
+    },
+    "trap": {
+     "en": "A discounted scenario value above today’s price is not a forecast of a gain. Change the assumed profit, multiple or required return, and the value changes with it.",
+     "ro": "O valoare actualizată a unui scenariu peste prețul de azi nu este o prognoză de câștig. Dacă se schimbă profitul presupus, multiplul sau randamentul cerut, se schimbă și valoarea."
+    }
+   }
+  }
+ }
+}

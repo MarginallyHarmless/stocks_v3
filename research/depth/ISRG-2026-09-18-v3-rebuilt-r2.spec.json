@@ -1,0 +1,354 @@
+{
+ "base": "ISRG-2026-09-18-v3-rebuilt",
+ "new_id": "ISRG-2026-09-18-v3-rebuilt-r2",
+ "revision_note": {
+  "en": "Depth revision: adds plain-language explanations and concept lessons that interpret figures already in this report, plus five figures calculated from saved figures. No new sources or reported figures; the cutoff, conclusions and watch criteria are unchanged.",
+  "ro": "Revizie de aprofundare: adaugă explicații pe înțelesul tuturor și lecții despre concepte, care interpretează cifre deja prezente în raport, plus cinci cifre calculate din cifrele salvate. Nu există surse sau cifre raportate noi; data-limită, concluziile și criteriile de verificare sunt neschimbate."
+ },
+ "evidence": [
+  {
+   "id": "instr-share",
+   "kind": "calculation",
+   "label": {
+    "en": "Instruments and accessories share of revenue",
+    "ro": "Ponderea instrumentelor și accesoriilor în venituri"
+   },
+   "definition": "Instruments and accessories revenue divided by total revenue",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q2 2026",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "percent_ratio",
+   "inputs": [
+    "instruments",
+    "rev-q226"
+   ]
+  },
+  {
+   "id": "eps-ex-refund",
+   "kind": "calculation",
+   "label": {
+    "en": "Q2 diluted EPS excluding the tariff refund",
+    "ro": "Profitul diluat pe acțiune din T2, fără restituirea tarifelor"
+   },
+   "definition": "Reported diluted EPS less the disclosed tariff refund benefit per share",
+   "unit": "currency_per_share",
+   "currency": "USD",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q2 2026",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "difference",
+   "inputs": [
+    "eps-q226",
+    "refund-eps"
+   ]
+  },
+  {
+   "id": "rev-est-growth27",
+   "kind": "calculation",
+   "label": {
+    "en": "FY2027 consensus revenue growth over the FY2026 estimate",
+    "ro": "Creșterea veniturilor din consensul pentru 2027 față de estimarea pentru 2026"
+   },
+   "definition": "FY2027 consensus revenue versus FY2026 consensus revenue, both rounded estimates",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "FY2027",
+    "start": "2027-01-01",
+    "end": "2027-12-31",
+    "forecast": true
+   },
+   "operation": "growth",
+   "inputs": [
+    "rev-est2027",
+    "rev-est2026"
+   ]
+  },
+  {
+   "id": "sbc-fcf",
+   "kind": "calculation",
+   "label": {
+    "en": "Stock compensation relative to defined free cash flow",
+    "ro": "Remunerarea în acțiuni raportată la fluxul de numerar liber definit"
+   },
+   "definition": "Employee share compensation divided by operating cash flow less cash PP&E purchases",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "percent_ratio",
+   "inputs": [
+    "sbc",
+    "fcf-h126"
+   ]
+  },
+  {
+   "id": "h1-uses",
+   "kind": "calculation",
+   "label": {
+    "en": "Buybacks plus acquisitions and other investing outflow",
+    "ro": "Răscumpărări plus achiziții și alte ieșiri de investiții"
+   },
+   "definition": "Cash settled repurchases plus acquisitions and other investing cash outflow",
+   "unit": "currency",
+   "currency": "USD",
+   "scale": 1000000,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "sum",
+   "inputs": [
+    "buyback-cash",
+    "acquisition-cash"
+   ]
+  }
+ ],
+ "sections": {
+  "business": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "instr-share",
+      "instruments",
+      "rev-q226",
+      "business"
+     ],
+     "text": {
+      "en": "Instruments and accessories alone brought in $1.73B of the $2.89B revenue in Q2 2026, about 60%. Hospitals buy these again as surgeons operate, so the biggest revenue line follows how many operations are done, not how many robots are sold.",
+      "ro": "Doar instrumentele și accesoriile au adus 1,73 mld. USD din veniturile de 2,89 mld. USD din T2 2026, adică aproximativ 60%. Spitalele le cumpără din nou pe măsură ce chirurgii operează, deci cea mai mare linie de venituri urmează numărul de operații efectuate, nu numărul de roboți vânduți."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "placements",
+      "installed",
+      "recurring-share"
+     ],
+     "text": {
+      "en": "Intuitive placed 468 da Vinci systems in Q2 2026, against a fleet of about 11,710 installed at June 30. One quarter’s placements are small next to the robots already in use, which is why the existing fleet drives most of the business.",
+      "ro": "Intuitive a instalat 468 de sisteme da Vinci în T2 2026, față de o flotă de aproximativ 11.710 sisteme instalate la 30 iunie. Instalările dintr-un trimestru sunt puține față de roboții deja folosiți, de aceea flota existentă generează cea mai mare parte a afacerii."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "An installed base is the number of machines customers already use. When each machine keeps generating purchases of parts, supplies and service, the fleet in place can matter more than each year’s new sales.",
+     "ro": "Baza instalată este numărul de aparate pe care clienții le folosesc deja. Când fiecare aparat generează în continuare cumpărări de piese, consumabile și service, flota existentă poate conta mai mult decât vânzările noi din fiecare an."
+    },
+    "example": {
+     "en": "Hypothetical: a company has 1,000 machines in use, each bringing $1M a year in supplies and service, or $1B in total. Selling 100 new machines at $2M each adds $200M once, while those 100 machines then add $100M of repeat revenue every year.",
+     "ro": "Exemplu ipotetic: o companie are 1.000 de aparate în uz, fiecare aducând 1 mil. USD pe an din consumabile și service, adică 1 mld. USD în total. Vânzarea a 100 de aparate noi cu 2 mil. USD bucata aduce 200 mil. USD o singură dată, iar apoi cele 100 de aparate adaugă 100 mil. USD de venituri repetate în fiecare an."
+    },
+    "trap": {
+     "en": "More machines installed does not automatically mean more revenue. Repeat revenue depends on how much each machine is actually used.",
+     "ro": "Mai multe aparate instalate nu înseamnă automat venituri mai mari. Veniturile repetate depind de cât de mult este folosit efectiv fiecare aparat."
+    }
+   }
+  },
+  "growth": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "proc-q325",
+      "proc-q425",
+      "proc-q126",
+      "proc-q226",
+      "guidance"
+     ],
+     "text": {
+      "en": "Da Vinci procedure growth was 19% in Q3 2025, then 17%, 16% and 15% in the next three quarters. Management expects 13.5–15.5% for full-year 2026, closer to the midpoint, which is below the first half’s 16% and 15%. That points to further gradual slowing rather than a sudden drop.",
+      "ro": "Creșterea numărului de proceduri da Vinci a fost de 19% în T3 2025, apoi de 17%, 16% și 15% în următoarele trei trimestre. Conducerea estimează 13,5–15,5% pentru tot anul 2026, mai aproape de mijlocul intervalului, adică sub nivelurile de 16% și 15% din primul semestru. Asta indică o încetinire treptată în continuare, nu o scădere bruscă."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "eps-ex-refund",
+      "eps-q226",
+      "refund-eps",
+      "eps-q225"
+     ],
+     "text": {
+      "en": "Of the $2.29 diluted EPS in Q2 2026, $0.08 came from a refund of tariffs paid in earlier periods. Without it, EPS would have been $2.21, still well above $1.81 in Q2 2025, so the profit growth does not rest on the refund alone.",
+      "ro": "Din profitul diluat pe acțiune de 2,29 USD din T2 2026, 0,08 USD a provenit din restituirea unor tarife vamale plătite în perioade anterioare. Fără această sumă, profitul pe acțiune ar fi fost de 2,21 USD, tot cu mult peste cei 1,81 USD din T2 2025, deci creșterea profitului nu se bazează doar pe restituire."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "rev-est-growth27",
+      "rev-est2027",
+      "rev-est2026",
+      "rev-est-growth"
+     ],
+     "text": {
+      "en": "Analysts’ consensus revenue estimates are $11.76B for FY2026 and $13.26B for FY2027. That implies about 12.8% growth in 2027, after about 16.8% expected for 2026. These are forecasts from a data provider, not company guidance, and they assume growth keeps easing.",
+      "ro": "Estimările de consens ale analiștilor pentru venituri sunt de 11,76 mld. USD pentru 2026 și 13,26 mld. USD pentru 2027. Asta implică o creștere de aproximativ 12,8% în 2027, după circa 16,8% estimată pentru 2026. Acestea sunt prognoze de la un furnizor de date, nu estimări ale companiei, și presupun că ritmul de creștere continuă să se reducă."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Revenue growth comes from two parts: selling more units (here, more operations) and earning more per unit. When revenue grows faster than volume, something per unit changed, such as price, product mix or the way products are sold.",
+     "ro": "Creșterea veniturilor are două componente: mai multe unități vândute (aici, mai multe operații) și venit mai mare pe unitate. Când veniturile cresc mai repede decât volumul, s-a schimbat ceva pe unitate, de exemplu prețul, mixul de produse sau modul în care sunt vândute."
+    },
+    "example": {
+     "en": "Hypothetical: a company does 10% more operations and earns 5% more per operation. Revenue grows by about 15.5%, because 1.10 × 1.05 = 1.155.",
+     "ro": "Exemplu ipotetic: o companie face cu 10% mai multe operații și câștigă cu 5% mai mult pe operație. Veniturile cresc cu aproximativ 15,5%, pentru că 1,10 × 1,05 = 1,155."
+    },
+    "trap": {
+     "en": "Revenue growing faster than volume is not always a sign of price increases. Selling directly instead of through a distributor, or a different product mix, can raise revenue per unit without any price change.",
+     "ro": "Faptul că veniturile cresc mai repede decât volumul nu înseamnă mereu că prețurile au crescut. Vânzarea directă în locul unui distribuitor sau un alt mix de produse pot crește venitul pe unitate fără nicio schimbare de preț."
+    }
+   }
+  },
+  "cash": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "h1-uses",
+      "buyback-cash",
+      "acquisition-cash",
+      "fcf-h126",
+      "investments",
+      "liquid2025"
+     ],
+     "text": {
+      "en": "In the first half of 2026, buybacks ($1.44B) and acquisitions and other investing ($528.2M) together used about $1.97B, more than the $1.76B of defined free cash flow. Cash and investments fell from $9.03B at end-2025 to $8.63B at June 30, consistent with part of that spending coming from the existing reserve.",
+      "ro": "În primul semestru din 2026, răscumpărările de acțiuni (1,44 mld. USD) și achizițiile împreună cu alte investiții (528,2 mil. USD) au consumat în total aproximativ 1,97 mld. USD, mai mult decât fluxul de numerar liber definit, de 1,76 mld. USD. Numerarul și investițiile au scăzut de la 9,03 mld. USD la sfârșitul lui 2025 la 8,63 mld. USD la 30 iunie, ceea ce se potrivește cu finanțarea unei părți din aceste cheltuieli din rezerva existentă."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "sbc-fcf",
+      "sbc",
+      "fcf-h126"
+     ],
+     "text": {
+      "en": "Stock compensation for employees was $419.4M in the first half, equal to about 23.9% of that period’s defined free cash flow. It uses no cash, so it does not lower the free cash flow figure, but it still costs owners because new shares spread profit across more holders.",
+      "ro": "Remunerarea angajaților în acțiuni a fost de 419,4 mil. USD în primul semestru, echivalentul a aproximativ 23,9% din fluxul de numerar liber definit din aceeași perioadă. Nu consumă numerar, deci nu reduce cifra fluxului liber, dar tot îi costă pe acționari, pentru că acțiunile noi împart profitul între mai mulți proprietari."
+     }
+    }
+   ]
+  },
+  "risks": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "margin-q226",
+      "margin-q225",
+      "margin-q325",
+      "margin-q425",
+      "margin-q126",
+      "refund-eps"
+     ],
+     "text": {
+      "en": "Operating margin (operating profit as a share of revenue) was 33.6% in Q2 2026, above the 30.2% to 30.9% of the four quarters before. The same quarter's profit was helped by a refund of tariffs paid in earlier periods, and this report does not show how much of the margin jump that refund explains. Until later quarters show it, the earlier range is the safer reference for judging whether underlying margins weaken.",
+      "ro": "Marja operațională (profitul operațional ca pondere din venituri) a fost de 33,6% în T2 2026, peste nivelul de 30,2%–30,9% din cele patru trimestre anterioare. Profitul aceluiași trimestru a fost ajutat de o rambursare a taxelor vamale plătite în perioade anterioare, iar acest raport nu arată cât din saltul marjei se explică prin această rambursare. Până când trimestrele următoare o vor arăta, intervalul anterior este reperul mai sigur pentru a judeca dacă marjele de fond slăbesc."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "guidance",
+      "gross-margin"
+     ],
+     "text": {
+      "en": "Management’s 2026 outlook of 68–69% gross margin is on an adjusted basis, while the 67.8% Q2 2026 gross margin in this report is GAAP (the official accounting rules). Adjusted figures usually leave out some costs, so a GAAP figure below the range is not by itself a missed target.",
+      "ro": "Estimarea conducerii pentru 2026, o marjă brută de 68–69%, este pe bază ajustată, în timp ce marja brută de 67,8% din T2 2026 din acest raport este GAAP (regulile contabile oficiale). Cifrele ajustate exclud de obicei unele costuri, deci o cifră GAAP sub interval nu înseamnă în sine un obiectiv ratat."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A one-off item is a gain or cost that belongs to an earlier period or is not expected to repeat. Setting it aside shows what the business earns in a normal quarter.",
+     "ro": "Un element excepțional este un câștig sau un cost care ține de o perioadă anterioară sau nu se așteaptă să se repete. Dacă îl lași deoparte, vezi cât câștigă afacerea într-un trimestru obișnuit."
+    },
+    "example": {
+     "en": "Hypothetical: a company reports $10 of profit per share, including a $1 refund for past years. Normal profit is $9, and at 20 times profit that is worth $180 per share, not $200.",
+     "ro": "Exemplu ipotetic: o companie raportează un profit de 10 USD pe acțiune, inclusiv o restituire de 1 USD pentru anii trecuți. Profitul obișnuit este de 9 USD, iar la de 20 de ori profitul asta valorează 180 USD pe acțiune, nu 200 USD."
+    },
+    "trap": {
+     "en": "Not everything a company labels as excluded is truly one-off. Stock compensation, for example, is left out of many adjusted figures even though it recurs every year.",
+     "ro": "Nu tot ce exclude o companie este cu adevărat excepțional. Remunerarea în acțiuni, de exemplu, este scoasă din multe cifre ajustate, deși apare în fiecare an."
+    }
+   }
+  },
+  "valuation": {
+   "claims": [
+    {
+     "type": "model",
+     "evidence_refs": [
+      "bear-pv",
+      "base-pv",
+      "bull-pv",
+      "price"
+     ],
+     "text": {
+      "en": "Discounted to today, the scenario values are $182.74 (bear), $332.59 (base) and $526.29 (bull), against a close of $383.54. On this model the price sits between the base and bull values, so paying it means expecting outcomes better than the base assumptions. These values illustrate assumptions; they are not price targets.",
+      "ro": "Actualizate la valoarea de azi, valorile scenariilor sunt 182,74 USD (pesimist), 332,59 USD (de bază) și 526,29 USD (optimist), față de un preț de închidere de 383,54 USD. În acest model, prețul se află între valoarea de bază și cea optimistă, deci a-l plăti înseamnă a aștepta rezultate mai bune decât ipotezele de bază. Aceste valori ilustrează ipoteze; nu sunt ținte de preț."
+     }
+    },
+    {
+     "type": "model",
+     "evidence_refs": [
+      "base-eps",
+      "eps-ttm",
+      "base-pv",
+      "price"
+     ],
+     "text": {
+      "en": "The base scenario is not a gloomy one: it assumes FY2029 reported EPS of $13, against $8.73 over the last four quarters. Even with that growth built in, its discounted value is below the current price.",
+      "ro": "Scenariul de bază nu este unul sumbru: presupune un profit raportat pe acțiune de 13 USD în 2029, față de 8,73 USD în ultimele patru trimestre. Chiar și cu această creștere inclusă, valoarea sa actualizată este sub prețul actual."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Money expected in the future is worth less today, because you could earn a return on money you hold now. Discounting divides a future value by the return you require for each year of waiting.",
+     "ro": "Banii așteptați în viitor valorează mai puțin azi, pentru că banii pe care îi ai acum pot aduce un randament. Actualizarea împarte o valoare viitoare la randamentul pe care îl ceri pentru fiecare an de așteptare."
+    },
+    "example": {
+     "en": "Hypothetical: a share is expected to be worth $121 in two years and you require 10% a year. Today it is worth $100 to you, because $100 × 1.10 × 1.10 = $121.",
+     "ro": "Exemplu ipotetic: o acțiune ar urma să valoreze 121 USD peste doi ani, iar tu ceri un randament de 10% pe an. Azi valorează pentru tine 100 USD, pentru că 100 × 1,10 × 1,10 = 121 USD."
+    },
+    "trap": {
+     "en": "A future scenario price is not what the share is worth today. Comparing an end-2029 value directly with today’s price ignores the years of waiting.",
+     "ro": "Un preț dintr-un scenariu viitor nu este valoarea acțiunii de azi. Compararea directă a unei valori de la sfârșitul lui 2029 cu prețul de azi ignoră anii de așteptare."
+    }
+   }
+  }
+ }
+}

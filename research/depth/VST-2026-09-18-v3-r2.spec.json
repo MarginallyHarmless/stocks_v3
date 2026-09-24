@@ -1,0 +1,319 @@
+{
+ "base": "VST-2026-09-18-v3",
+ "new_id": "VST-2026-09-18-v3-r2",
+ "revision_note": {
+  "en": "Depth revision: adds plain-language explanations and concept lessons that interpret figures already in this report, plus two figures calculated from saved figures. No new sources or reported figures; the cutoff, conclusions and watch criteria are unchanged.",
+  "ro": "Revizie de aprofundare: adaugă explicații pe înțelesul tuturor și lecții despre concepte, care interpretează cifre deja prezente în raport, plus doi indicatori calculați din cifrele salvate. Nu există surse sau cifre raportate noi; data-limită, concluziile și criteriile de verificare sunt neschimbate."
+ },
+ "evidence": [
+  {
+   "id": "adj-h-growth",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half adjusted EBITDA growth YoY",
+    "ro": "Creșterea anuală a EBITDA ajustat în primul semestru"
+   },
+   "definition": "H1 2026 ongoing operations adjusted EBITDA versus H1 2025",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "adjusted",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "adj-h",
+    "adj-ph"
+   ]
+  },
+  {
+   "id": "payouts-h",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half buybacks plus common dividends",
+    "ro": "Răscumpărări plus dividende pentru acțiunile comune în primul semestru"
+   },
+   "definition": "H1 buybacks plus H1 common dividends",
+   "unit": "currency",
+   "currency": "USD",
+   "scale": 1000000,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "sum",
+   "inputs": [
+    "buybacks",
+    "common-div"
+   ]
+  }
+ ],
+ "sections": {
+  "business": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "segment-retail",
+      "segment-texas",
+      "segment-east",
+      "segment-west",
+      "segment-eliminations",
+      "segments-total",
+      "rev-q"
+     ],
+     "text": {
+      "en": "Retail, the business that supplies households and companies, reported $3.61B of Q2 2026 segment revenue, the largest segment (Texas $1.42B, East $954M, West $71M). Because the segments also sell to each other, $2.04B of internal sales is removed to reach the $4.02B total. Segment figures show relative size, not separate sales to outside customers.",
+      "ro": "Retail, activitatea care furnizează energie gospodăriilor și companiilor, a raportat venituri de segment de 3,61 mld. USD în T2 2026, cel mai mare dintre segmente (Texas 1,42 mld. USD, East 954 mil. USD, West 71 mil. USD). Pentru că segmentele își vând și unele altora, 2,04 mld. USD de vânzări interne sunt eliminate pentru a ajunge la totalul de 4,02 mld. USD. Cifrele pe segmente arată mărimea relativă, nu vânzări separate către clienți din afară."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "business",
+      "contracts"
+     ],
+     "text": {
+      "en": "The plants run on gas, nuclear, coal, solar and batteries. The AWS and Meta contracts are for nuclear power, and their deliveries and plant upgrades ramp over several years. Their contribution should therefore build gradually rather than appear in a single quarter.",
+      "ro": "Centralele funcționează pe gaz, energie nucleară, cărbune, energie solară și baterii. Contractele cu AWS și Meta sunt pentru energie nucleară, iar livrările și modernizările centralelor cresc treptat pe parcursul mai multor ani. Contribuția lor ar trebui deci să se acumuleze gradual, nu să apară într-un singur trimestru."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A regulated utility earns a return that regulators set on the money it has invested. A competitive power producer earns whatever market prices and its contracts pay, minus its costs, so its profit can move much more.",
+     "ro": "O companie de utilități reglementată câștigă un randament stabilit de autorități pentru banii pe care i-a investit. Un producător de energie care concurează pe piață câștigă cât plătesc prețurile pieței și contractele sale, minus costuri, deci profitul său poate varia mult mai mult."
+    },
+    "example": {
+     "en": "Hypothetical: a plant sells 1,000 MWh (megawatt-hours) and has $30,000 of fuel and staff costs. At $50 per MWh it earns $50,000 and keeps $20,000; at $40 it earns $40,000 and keeps $10,000. A 20% lower price halves the profit.",
+     "ro": "Exemplu ipotetic: o centrală vinde 1.000 MWh (megawați-oră) și are costuri cu combustibilul și personalul de 30.000 USD. La 50 USD pe MWh încasează 50.000 USD și îi rămân 20.000 USD; la 40 USD încasează 40.000 USD și îi rămân 10.000 USD. Un preț cu 20% mai mic înjumătățește profitul."
+    },
+    "trap": {
+     "en": "Being grouped with utilities does not mean a company earns steady, regulated returns. A power producer's results depend on prices it does not control.",
+     "ro": "Faptul că o companie este grupată cu utilitățile nu înseamnă că are randamente stabile, reglementate. Rezultatele unui producător de energie depind de prețuri pe care nu le controlează."
+    }
+   }
+  },
+  "growth": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "adj-h-growth",
+      "adj-h",
+      "adj-ph",
+      "rev-h-growth",
+      "rev-h",
+      "rev-ph",
+      "rev-growth"
+     ],
+     "text": {
+      "en": "Over the first half of 2026, adjusted EBITDA was $3.26B versus $2.59B a year earlier (26.0% higher), and reported revenue rose 18.0% to $9.66B from $8.18B. So the Q2 revenue decline did not erase first-half growth. Both figures cover six months, which smooths out a single quarter.",
+      "ro": "În primul semestru din 2026, EBITDA ajustat a fost de 3,26 mld. USD, față de 2,59 mld. USD cu un an înainte (cu 26,0% mai mare), iar veniturile raportate au crescut cu 18,0%, la 9,66 mld. USD de la 8,18 mld. USD. Așadar, scăderea veniturilor din T2 nu a anulat creșterea din primul semestru. Ambele cifre acoperă șase luni, ceea ce netezește efectul unui singur trimestru."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "guide-low",
+      "guide-high",
+      "adj-h"
+     ],
+     "text": {
+      "en": "Management's reaffirmed 2026 guidance for adjusted EBITDA is $6.8B to $7.6B. First-half adjusted EBITDA of $3.26B is less than half of even the low end, so the guidance assumes a stronger second half. Guidance is a company forecast, not a promise.",
+      "ro": "Prognoza reconfirmată a conducerii pentru EBITDA ajustat în 2026 este între 6,8 și 7,6 mld. USD. EBITDA ajustat de 3,26 mld. USD din primul semestru reprezintă mai puțin de jumătate chiar și din limita de jos, deci prognoza presupune un al doilea semestru mai puternic. Prognoza este o estimare a companiei, nu o promisiune."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "hedging"
+     ],
+     "text": {
+      "en": "As of August 3, about 100% of expected 2026 generation was hedged, falling to 94% for 2027 and 72% for 2028. The further out, the more of the output is still sold at prices not yet fixed. Later years therefore carry more exposure to market prices, both up and down.",
+      "ro": "La 3 august, aproximativ 100% din producția estimată pentru 2026 era acoperită prin contracte de hedging, procent care scade la 94% pentru 2027 și la 72% pentru 2028. Cu cât anul este mai îndepărtat, cu atât mai multă producție va fi vândută la prețuri încă nefixate. Anii următori sunt deci mai expuși la prețurile pieței, atât în sus, cât și în jos."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A hedge fixes the price of future output in advance. It protects against lower prices but also gives up the gain if prices rise.",
+     "ro": "Un contract de hedging fixează dinainte prețul producției viitoare. Protejează împotriva prețurilor mai mici, dar renunță și la câștig dacă prețurile cresc."
+    },
+    "example": {
+     "en": "Hypothetical: a producer sells 100 units of next year's power ahead of time at $60 each, locking in $6,000. If the market price later is $80, it still gets $6,000 instead of $8,000; if it is $40, it still gets $6,000 instead of $4,000.",
+     "ro": "Exemplu ipotetic: un producător vinde dinainte 100 de unități din energia de anul viitor la 60 USD fiecare, fixând 6.000 USD. Dacă prețul pieței ajunge apoi la 80 USD, primește tot 6.000 USD în loc de 8.000 USD; dacă ajunge la 40 USD, primește tot 6.000 USD în loc de 4.000 USD."
+    },
+    "trap": {
+     "en": "A high hedged share does not guarantee profit. The plants still have to run as planned, and costs can still change.",
+     "ro": "O pondere mare a producției acoperite prin hedging nu garantează profitul. Centralele trebuie în continuare să funcționeze conform planului, iar costurile se pot modifica."
+    }
+   }
+  },
+  "cash": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "cfo-h",
+      "cfo-ph",
+      "capex-h",
+      "capex-ph",
+      "fcf-h",
+      "fcf-ph"
+     ],
+     "text": {
+      "en": "In the first half of 2026, operating cash flow was $2.22B versus $1.17B a year earlier, while capital spending rose only from $1.46B to $1.57B. Cash after that spending therefore swung from −$287M to $650M. Half-year cash can move with timing, such as when bills are paid or collected, so one half-year is not a trend.",
+      "ro": "În primul semestru din 2026, fluxul de numerar operațional a fost de 2,22 mld. USD, față de 1,17 mld. USD cu un an înainte, în timp ce investițiile de capital au crescut doar de la 1,46 la 1,57 mld. USD. Numerarul rămas după aceste investiții a trecut astfel de la −287 mil. USD la 650 mil. USD. Numerarul pe o jumătate de an poate varia în funcție de momentul plăților și al încasărilor, deci un singur semestru nu este o tendință."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "payouts-h",
+      "buybacks",
+      "common-div",
+      "fcf-h"
+     ],
+     "text": {
+      "en": "In the same half-year, Vistra spent $709M on buybacks and $154M on common dividends, $863M in total. That is more than the $650M left after capital spending, so part of these payouts had to be funded from other sources, such as borrowing or cash on hand.",
+      "ro": "În același semestru, Vistra a cheltuit 709 mil. USD pe răscumpărări de acțiuni și 154 mil. USD pe dividende pentru acțiunile comune, 863 mil. USD în total. Suma depășește cele 650 mil. USD rămase după investițiile de capital, deci o parte din aceste plăți a trebuit finanțată din alte surse, cum ar fi împrumuturi sau numerarul existent."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "sbc",
+      "cfo-h"
+     ],
+     "text": {
+      "en": "Employee share compensation ($67M in the first half) is paid in shares, not cash, so it is added back when operating cash flow is calculated. It is still a real cost to owners, because new shares spread future profit across more holders.",
+      "ro": "Compensarea angajaților în acțiuni (67 mil. USD în primul semestru) se plătește în acțiuni, nu în numerar, așa că este adăugată înapoi la calculul fluxului de numerar operațional. Rămâne totuși un cost real pentru acționari, pentru că acțiunile noi împart profitul viitor între mai mulți deținători."
+     }
+    }
+   ]
+  },
+  "risks": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "cash",
+      "debt",
+      "net-debt",
+      "liquidity"
+     ],
+     "text": {
+      "en": "Unrestricted cash was only $435M at June 30, against $20.33B of defined financing, so net debt ($19.9B) is almost as large as the financing itself. The company therefore relies mainly on operating cash and the $6.29B of available liquidity, which includes borrowing capacity rather than only cash.",
+      "ro": "Numerarul nerestricționat era de doar 435 mil. USD la 30 iunie, față de 20,33 mld. USD de finanțări incluse în definiție, deci datoria netă (19,9 mld. USD) este aproape la fel de mare ca finanțările înseși. Prin urmare, compania se bazează în principal pe numerarul operațional și pe lichiditatea disponibilă de 6,29 mld. USD, care include capacitate de împrumut, nu doar numerar."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "coverage-interest",
+      "ebit-ttm",
+      "interest-ttm",
+      "ebit-h",
+      "ebit-ph"
+     ],
+     "text": {
+      "en": "Interest coverage of 3.15× compares trailing operating income ($3.56B) with interest charges ($1.13B). Operating income itself jumped from $395M in the first half of 2025 to $2.05B in the first half of 2026, so the ratio can move sharply whenever reported profit does. Interest is owed whatever profit turns out to be.",
+      "ro": "Acoperirea dobânzilor de 3,15× compară profitul operațional din ultimele 12 luni (3,56 mld. USD) cu cheltuielile cu dobânzile (1,13 mld. USD). Profitul operațional a sărit de la 395 mil. USD în primul semestru din 2025 la 2,05 mld. USD în primul semestru din 2026, deci raportul se poate schimba brusc ori de câte ori se schimbă profitul raportat. Dobânzile trebuie plătite indiferent de profit."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "cleanup",
+      "moss"
+     ],
+     "text": {
+      "en": "The $175M Moss Landing remediation estimate at June 30 covers cleanup only. The 300 MW and 100 MW facilities will not return, a 350 MW restart is uncertain, and litigation and further impairment (a write-down of the plant's recorded value) remain possible. The full cost is therefore not yet known.",
+      "ro": "Estimarea de 175 mil. USD pentru remedierea de la Moss Landing, la 30 iunie, acoperă doar curățarea. Instalațiile de 300 MW și 100 MW nu vor mai reveni în funcțiune, repornirea celei de 350 MW este incertă, iar litigiile și alte deprecieri (reduceri ale valorii contabile a centralei) rămân posibile. Costul total nu este deci încă cunoscut."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Interest coverage divides operating profit by interest charges: it shows how many times profit could pay the interest bill. The lower it is, the less room there is before a bad year makes interest hard to pay.",
+     "ro": "Acoperirea dobânzilor împarte profitul operațional la cheltuielile cu dobânzile: arată de câte ori ar putea profitul să plătească dobânzile. Cu cât este mai mică, cu atât este mai puțin spațiu până când un an prost face dobânzile greu de plătit."
+    },
+    "example": {
+     "en": "Hypothetical: a company earns $300 of operating profit and owes $100 of interest, so coverage is 3×. If profit falls by a third to $200 while interest stays at $100, coverage drops to 2×.",
+     "ro": "Exemplu ipotetic: o companie are un profit operațional de 300 USD și datorează dobânzi de 100 USD, deci acoperirea este de 3×. Dacă profitul scade cu o treime, la 200 USD, iar dobânzile rămân 100 USD, acoperirea scade la 2×."
+    },
+    "trap": {
+     "en": "Covering interest is not the same as repaying debt. Loans that mature still have to be repaid or refinanced, even when interest is comfortably covered.",
+     "ro": "Plata dobânzilor nu este același lucru cu rambursarea datoriei. Împrumuturile ajunse la scadență trebuie totuși rambursate sau refinanțate, chiar și atunci când dobânzile sunt acoperite confortabil."
+    }
+   }
+  },
+  "valuation": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "pe",
+      "pe25",
+      "eps-ttm-provider",
+      "eps-25",
+      "price"
+     ],
+     "text": {
+      "en": "Using FY2025 diluted EPS of $2.18, the $143.56 price is about 66 times earnings; using the provider's trailing $5.87, it is about 24 times. The two earnings figures differ that much even though their periods overlap by six months, so a single P/E says little about what the business normally earns.",
+      "ro": "Pe baza profitului diluat pe acțiune pentru anul fiscal 2025, de 2,18 USD, prețul de 143,56 USD reprezintă aproximativ 66 de ori profitul; pe baza valorii din ultimele 12 luni de la furnizor, de 5,87 USD, reprezintă aproximativ 24 de ori. Cele două cifre de profit diferă atât de mult deși perioadele lor se suprapun pe șase luni, deci un singur P/E spune puțin despre cât câștigă afacerea în mod normal."
+     }
+    },
+    {
+     "type": "model",
+     "evidence_refs": [
+      "base-pv",
+      "price",
+      "base-eps",
+      "base-multiple",
+      "eps-ttm-provider"
+     ],
+     "text": {
+      "en": "The illustrative base scenario's discounted value ($143.30) is almost exactly the price ($143.56). That scenario assumes normalized EPS of $9 at end-2027 and an 18× multiple, well above the provider's $5.87 trailing EPS. Buying at this price leaves little room if earnings fall short of that assumption.",
+      "ro": "Valoarea actualizată a scenariului de bază ilustrativ (143,30 USD) este aproape identică cu prețul (143,56 USD). Scenariul presupune un profit normalizat pe acțiune de 9 USD la sfârșitul lui 2027 și un multiplu de 18×, mult peste profitul pe acțiune din ultimele 12 luni de la furnizor, de 5,87 USD. Cumpărarea la acest preț lasă puțin spațiu dacă profitul rămâne sub această ipoteză."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "market-cap",
+      "net-debt",
+      "preferred"
+     ],
+     "text": {
+      "en": "The $48.23B equity value counts only the common shares. Valuing the whole business also means accounting for $19.9B of defined net debt and other claims such as $2.48B of preferred stock, which ranks ahead of common shareholders.",
+      "ro": "Valoarea capitalului propriu de 48,23 mld. USD include doar acțiunile comune. Evaluarea întregii afaceri trebuie să țină cont și de datoria netă de 19,9 mld. USD din definiție și de alte creanțe, precum acțiunile preferențiale de 2,48 mld. USD, care au prioritate față de acționarii comuni."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A discounted value converts a possible future price into today's money, using a required yearly return (the discount rate). Money expected later is worth less than the same money today.",
+     "ro": "O valoare actualizată transformă un posibil preț viitor în bani de astăzi, folosind un randament anual cerut (rata de actualizare). Banii așteptați mai târziu valorează mai puțin decât aceeași sumă astăzi."
+    },
+    "example": {
+     "en": "Hypothetical: a share assumed to be worth $110 in one year, discounted at 10% a year, is worth $100 today, because $100 growing 10% becomes $110.",
+     "ro": "Exemplu ipotetic: o acțiune presupusă să valoreze 110 USD peste un an, actualizată cu 10% pe an, valorează astăzi 100 USD, pentru că 100 USD care cresc cu 10% devin 110 USD."
+    },
+    "trap": {
+     "en": "A discounted scenario value is not a price target or a forecast. It only shows what the chosen earnings, multiple and discount rate would imply.",
+     "ro": "Valoarea actualizată a unui scenariu nu este un preț țintă și nici o prognoză. Arată doar ce ar rezulta din profitul, multiplul și rata de actualizare alese."
+    }
+   }
+  }
+ }
+}

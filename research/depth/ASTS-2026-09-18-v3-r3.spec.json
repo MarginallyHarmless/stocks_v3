@@ -1,0 +1,169 @@
+{
+ "base": "ASTS-2026-09-18-v3-r2",
+ "new_id": "ASTS-2026-09-18-v3-r3",
+ "revision_note": {
+  "en": "Depth revision: adds plain-language explanations and concept lessons that interpret figures already in this report, plus five values calculated from saved figures. No new sources or reported figures; the cutoff, conclusions and watch criteria are unchanged.",
+  "ro": "Revizie de aprofundare: adaugă explicații pe înțelesul tuturor și lecții despre concepte, care interpretează cifre deja prezente în raport, plus cinci valori calculate din cifrele salvate. Nu există surse sau cifre raportate noi; data-limită, concluziile și criteriile de verificare sunt neschimbate."
+ },
+ "evidence": [
+  {
+   "id": "product-spread",
+   "kind": "calculation",
+   "label": {"en": "Gateway product revenue less product cost", "ro": "Venituri din produse gateway minus costul produselor"},
+   "definition": "Gateway product revenue minus reported product cost",
+   "unit": "currency", "currency": "USD", "scale": 1000000, "basis": "GAAP",
+   "period": {"kind": "duration", "start": "2026-04-01", "end": "2026-06-30", "label": "Q2 2026", "forecast": false},
+   "operation": "difference", "inputs": ["products", "cost-products"]
+  },
+  {
+   "id": "product-margin",
+   "kind": "calculation",
+   "label": {"en": "Gateway product revenue kept after product cost", "ro": "Partea din veniturile din produse gateway rămasă după costul produselor"},
+   "definition": "Gateway product revenue minus product cost, divided by gateway product revenue",
+   "unit": "percent", "scale": 1, "basis": "GAAP",
+   "period": {"kind": "duration", "start": "2026-04-01", "end": "2026-06-30", "label": "Q2 2026", "forecast": false},
+   "operation": "percent_ratio", "inputs": ["product-spread", "products"]
+  },
+  {
+   "id": "products-share",
+   "kind": "calculation",
+   "label": {"en": "Gateway products share of quarterly revenue", "ro": "Ponderea produselor gateway în veniturile trimestriale"},
+   "definition": "Gateway product revenue divided by consolidated revenue",
+   "unit": "percent", "scale": 1, "basis": "GAAP",
+   "period": {"kind": "duration", "start": "2026-04-01", "end": "2026-06-30", "label": "Q2 2026", "forecast": false},
+   "operation": "percent_ratio", "inputs": ["products", "rev"]
+  },
+  {
+   "id": "capex-multiple",
+   "kind": "calculation",
+   "label": {"en": "Cash capital investment as a multiple of revenue", "ro": "Investițiile de capital în numerar ca multiplu al veniturilor"},
+   "definition": "Defined cash capital investment divided by consolidated revenue",
+   "unit": "ratio", "scale": 1, "basis": "GAAP",
+   "period": {"kind": "duration", "start": "2026-01-01", "end": "2026-06-30", "label": "H1 2026", "forecast": false},
+   "operation": "ratio", "inputs": ["capex", "rev-h1"]
+  },
+  {
+   "id": "classa-share",
+   "kind": "calculation",
+   "label": {"en": "Class A shares as a share of economic shares", "ro": "Acțiunile de clasă A ca pondere din acțiunile economice"},
+   "definition": "Class A shares outstanding divided by economic shares including exchangeable LLC units",
+   "unit": "percent", "scale": 1, "basis": "GAAP",
+   "period": {"kind": "instant", "end": "2026-08-06", "label": "2026-08-06", "forecast": false},
+   "operation": "percent_ratio", "inputs": ["shares-a", "economic-shares"]
+  }
+ ],
+ "sections": {
+  "own": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": ["product-margin", "product-spread", "products", "cost-products", "services", "cost-services", "business"],
+     "text": {
+      "en": "In Q2 2026, gateway products brought in $24.43M against $22.4M of product cost, keeping about 8.3% before other expenses. Services, mainly government milestones, brought in $7.09M against $1.17M of cost. Equipment sold close to its direct cost helps roll out the network, but the long-term case rests on service revenue shared with operators.",
+      "ro": "În T2 2026, produsele gateway au adus 24,43 mil. USD, față de un cost al produselor de 22,4 mil. USD, adică au păstrat circa 8,3% înainte de celelalte cheltuieli. Serviciile, în principal etape din contracte guvernamentale, au adus 7,09 mil. USD, la un cost de 1,17 mil. USD. Echipamentele vândute aproape de costul lor direct ajută la extinderea rețelei, dar argumentul pe termen lung se bazează pe veniturile din servicii împărțite cu operatorii."
+     }
+    }
+   ]
+  },
+  "growth": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": ["service", "products-share", "products", "rev", "services"],
+     "text": {
+      "en": "No SpaceMobile Service revenue had been recognized through June 30, 2026. Gateway equipment made up 77.5% of Q2 revenue ($24.43M of $31.52M), and the rest was services, mainly government milestones. So revenue growth so far tracks deliveries and contract milestones; it does not yet show how many phone users will pay.",
+      "ro": "Până la 30 iunie 2026 nu fuseseră recunoscute venituri din serviciul SpaceMobile. Echipamentele gateway au reprezentat 77,5% din veniturile din T2 (24,43 mil. din 31,52 mil. USD), iar restul au fost servicii, în principal etape din contracte guvernamentale. Așadar, creșterea veniturilor de până acum urmărește livrările și etapele contractuale; încă nu arată câți utilizatori de telefoane vor plăti."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Contracted revenue (backlog, called remaining performance obligations in accounting) is work customers have signed for but the company has not yet delivered. It becomes revenue only as the company delivers, which can take years.",
+     "ro": "Veniturile contractate (portofoliul de comenzi, numit în contabilitate obligații de executare rămase) reprezintă lucrări pe care clienții le-au semnat, dar pe care compania nu le-a livrat încă. Devin venituri doar pe măsură ce compania livrează, ceea ce poate dura ani."
+    },
+    "example": {
+     "en": "Hypothetical: a company signs a $1,000 contract to be delivered evenly over 10 years. On signing day its backlog rises by $1,000, but revenue in the first year is only $100, and after that year the backlog is $900.",
+     "ro": "Exemplu ipotetic: o companie semnează un contract de 1.000 USD, livrat în mod egal pe parcursul a 10 ani. În ziua semnării, portofoliul de comenzi crește cu 1.000 USD, dar veniturile din primul an sunt de doar 100 USD, iar după acel an portofoliul mai are 900 USD."
+    },
+    "trap": {
+     "en": "A large backlog is not this year’s sales or cash in the bank. Contracts can be delayed, changed or cancelled before they are delivered.",
+     "ro": "Un portofoliu mare de comenzi nu înseamnă vânzările din acest an și nici bani în bancă. Contractele pot fi amânate, modificate sau anulate înainte de livrare."
+    }
+   }
+  },
+  "cash": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": ["capex-multiple", "capex", "rev-h1"],
+     "text": {
+      "en": "In the first half of 2026, cash invested in property, equipment and spectrum ($901.32M) was about 19.5 times revenue ($46.26M). The company is building the network ahead of the service revenue it is meant to earn. The key later question is how much revenue each working satellite brings in.",
+      "ro": "În primul semestru din 2026, numerarul investit în imobilizări, echipamente și spectru (901,32 mil. USD) a fost de circa 19,5 ori mai mare decât veniturile (46,26 mil. USD). Compania construiește rețeaua înaintea veniturilor din servicii pe care ar trebui să le aducă. Întrebarea-cheie de mai târziu este câte venituri aduce fiecare satelit funcțional."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": ["cash", "fcf", "convertible", "funding"],
+     "text": {
+      "en": "“Runway” means how long cash would last at the current rate of use. June’s unrestricted cash of $2.29B was larger than the $1.05B used in the first half after capital investment. That is not a reliable countdown: spending moves with launch timing, and the July notes added both cash and debt.",
+      "ro": "„Autonomia financiară” înseamnă cât timp ar ajunge numerarul la ritmul actual de consum. Numerarul fără restricții de 2,29 mld. USD din iunie era mai mare decât cele 1,05 mld. USD consumate în primul semestru după investițiile de capital. Nu este însă o numărătoare inversă de încredere: cheltuielile variază cu momentul lansărilor, iar obligațiunile din iulie au adus atât numerar, cât și datorii."
+     }
+    }
+   ]
+  },
+  "risk": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": ["convertible", "price"],
+     "text": {
+      "en": "The July notes can turn into shares at an initial conversion price of $79.57, above the $58.41 snapshot price. While the share price stays below that level, holders would generally not convert, so the notes act mainly as debt to be repaid. If the share price rises well above it, conversion tends to become likely and adds shares.",
+      "ro": "Obligațiunile din iulie pot fi transformate în acțiuni la un preț inițial de conversie de 79,57 USD, peste prețul de 58,41 USD din instantaneu. Cât timp prețul acțiunii rămâne sub acest nivel, deținătorii în general nu convertesc, așa că obligațiunile funcționează mai ales ca o datorie de rambursat. Dacă prețul urcă mult peste acest nivel, conversia tinde să devină probabilă și adaugă acțiuni."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": ["restricted", "restricted-current", "restricted-long", "cash"],
+     "text": {
+      "en": "Restricted cash is money a company holds but cannot freely spend, because it is set aside for specific purposes. At June 30, restricted cash totaled $434.58M, separate from the $2.29B of unrestricted cash. Only the unrestricted figure measures cash available for day-to-day costs and the buildout.",
+      "ro": "Numerarul restricționat este bani pe care compania îi deține, dar nu îi poate cheltui liber, pentru că sunt puși deoparte pentru anumite scopuri. La 30 iunie, numerarul restricționat totaliza 434,58 mil. USD, separat de cele 2,29 mld. USD fără restricții. Doar a doua cifră măsoară numerarul disponibil pentru costurile curente și construirea rețelei."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Dilution happens when a company creates new shares, so each existing share owns a smaller slice of the business. Whether it hurts depends on what the company gets for the new shares and how well it uses that money.",
+     "ro": "Diluția apare când o companie emite acțiuni noi, astfel încât fiecare acțiune existentă deține o felie mai mică din afacere. Dacă dăunează sau nu depinde de ce primește compania pentru acțiunile noi și de cât de bine folosește banii."
+    },
+    "example": {
+     "en": "Hypothetical: a company worth $1,000 has 100 shares, and you own 10 (10%). It sells 25 new shares at $10 each, raising $250. You now own 8% of 125 shares, but the company is worth $1,250, so each share is still worth $10. If the $250 is later spent without creating value, each share ends up worth less.",
+     "ro": "Exemplu ipotetic: o companie care valorează 1.000 USD are 100 de acțiuni, iar tu deții 10 (10%). Compania vinde 25 de acțiuni noi cu 10 USD fiecare și strânge 250 USD. Acum deții 8% din 125 de acțiuni, dar compania valorează 1.250 USD, deci fiecare acțiune valorează tot 10 USD. Dacă cei 250 USD sunt cheltuiți ulterior fără să creeze valoare, fiecare acțiune ajunge să valoreze mai puțin."
+    },
+    "trap": {
+     "en": "Counting only today’s shares can understate dilution. Convertible notes and stock awards can create more shares later.",
+     "ro": "Dacă numeri doar acțiunile de azi, poți subestima diluția. Obligațiunile convertibile și acțiunile acordate ca remunerație pot crea mai multe acțiuni mai târziu."
+    }
+   }
+  },
+  "value": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": ["classa-share", "shares-a", "economic-shares", "units-b", "units-c", "equity"],
+     "text": {
+      "en": "Class A shares (299.79M) are only 77.0% of the 389.17M economic shares, because Class B and C holders own LLC units that can be exchanged into Class A. Multiplying the price by Class A shares alone would leave out almost a quarter of the ownership and understate the company’s equity value.",
+      "ro": "Acțiunile de clasă A (299,79 mil.) reprezintă doar 77,0% din cele 389,17 mil. de acțiuni economice, pentru că deținătorii claselor B și C au unități LLC care pot fi schimbate în acțiuni de clasă A. Dacă înmulțești prețul doar cu acțiunile de clasă A, lași deoparte aproape un sfert din proprietate și subestimezi valoarea capitalului companiei."
+     }
+    },
+    {
+     "type": "model",
+     "evidence_refs": ["bear-shares", "base-shares", "bull-shares", "economic-shares"],
+     "text": {
+      "en": "All three illustrative scenarios assume more economic shares in 2031 (425M to 500M) than the 389.17M counted in August 2026. The scenarios therefore already build in further share issuance. If dilution turned out larger than assumed, each share’s value in those scenarios would be lower.",
+      "ro": "Toate cele trei scenarii ilustrative presupun mai multe acțiuni economice în 2031 (între 425 mil. și 500 mil.) decât cele 389,17 mil. numărate în august 2026. Așadar, scenariile includ deja emiterea de acțiuni noi. Dacă diluția s-ar dovedi mai mare decât s-a presupus, valoarea fiecărei acțiuni în aceste scenarii ar fi mai mică."
+     }
+    }
+   ]
+  }
+ }
+}

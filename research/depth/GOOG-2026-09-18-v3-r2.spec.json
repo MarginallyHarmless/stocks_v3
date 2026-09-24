@@ -1,0 +1,289 @@
+{
+ "base": "GOOG-2026-09-18-v3",
+ "new_id": "GOOG-2026-09-18-v3-r2",
+ "revision_note": {
+  "en": "Depth revision: adds plain-language explanations and concept lessons that interpret figures already in this report, plus four ratios and growth rates calculated from saved figures. No new sources or reported figures; the cutoff, conclusions and watch criteria are unchanged.",
+  "ro": "Revizie de aprofundare: adaugă explicații pe înțelesul tuturor și lecții despre concepte, care interpretează cifre deja prezente în raport, plus patru rapoarte și rate de creștere calculate din cifrele salvate. Nu există surse sau cifre raportate noi; data-limită, concluziile și criteriile de verificare sunt neschimbate."
+ },
+ "evidence": [
+  {
+   "id": "capex-dep",
+   "kind": "calculation",
+   "label": {
+    "en": "Equipment spending versus depreciation",
+    "ro": "Investițiile în echipamente față de amortizare"
+   },
+   "definition": "Cash equipment and property purchases divided by depreciation of property and equipment",
+   "unit": "ratio",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q2 2026",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "ratio",
+   "inputs": [
+    "capex",
+    "depreciation"
+   ]
+  },
+  {
+   "id": "capex-h1-growth",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half equipment spending growth YoY",
+    "ro": "Creșterea anuală a investițiilor în echipamente în primul semestru"
+   },
+   "definition": "H1 2026 cash equipment and property purchases versus H1 2025",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "capex-h1",
+    "capex-h1old"
+   ]
+  },
+  {
+   "id": "cfo-h1-growth",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half operating cash flow growth YoY",
+    "ro": "Creșterea anuală a numerarului din exploatare în primul semestru"
+   },
+   "definition": "H1 2026 operating cash flow versus H1 2025",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "cfo-h1",
+    "cfo-h1old"
+   ]
+  },
+  {
+   "id": "other-op",
+   "kind": "calculation",
+   "label": {
+    "en": "Other income versus operating profit",
+    "ro": "Alte venituri față de profitul operațional"
+   },
+   "definition": "Other income, net divided by operating profit",
+   "unit": "ratio",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q2 2026",
+    "start": "2026-04-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "ratio",
+   "inputs": [
+    "other-income",
+    "op"
+   ]
+  }
+ ],
+ "sections": {
+  "business": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "services-op",
+      "cloud-op",
+      "bets-op",
+      "central-op",
+      "op"
+     ],
+     "text": {
+      "en": "Operating profit is built from separate pieces. In Q2 2026, Google Services earned $39.54B and Cloud $8.81B, while Other Bets lost $1.8B and Alphabet-level costs took $5.79B; together they add up to roughly the $40.77B total. The advertising-heavy Services segment still earns most of the profit, and some costs sit outside every segment.",
+      "ro": "Profitul operațional este format din mai multe bucăți. În T2 2026, Google Services a câștigat 39,54 mld. USD, iar Cloud 8,81 mld. USD, în timp ce Other Bets a pierdut 1,8 mld. USD, iar costurile de la nivelul Alphabet au fost de 5,79 mld. USD; împreună ajung la aproximativ totalul de 40,77 mld. USD. Segmentul Services, dependent în mare parte de publicitate, aduce în continuare cea mai mare parte a profitului, iar unele costuri nu aparțin niciunui segment."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "bets",
+      "bets-op",
+      "bets-share"
+     ],
+     "text": {
+      "en": "Other Bets are Alphabet’s smaller ventures outside Google. In Q2 2026 they brought in $382M of revenue (0.32% of the total) but lost $1.8B at the operating level. For now they are a cost carried by the profitable segments; any value depends on some of them succeeding later.",
+      "ro": "Other Bets sunt proiectele mai mici ale Alphabet, din afara Google. În T2 2026 au adus venituri de 382 mil. USD (0,32% din total), dar au avut o pierdere operațională de 1,8 mld. USD. Deocamdată sunt un cost suportat de segmentele profitabile; orice valoare depinde de reușita ulterioară a unora dintre ele."
+     }
+    }
+   ]
+  },
+  "growth": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "search",
+      "search-old",
+      "cloud",
+      "cloud-old",
+      "search-growth",
+      "cloud-growth"
+     ],
+     "text": {
+      "en": "Percentages and dollars tell different stories. In Q2 2026, Search & other revenue grew 16.76%, from $54.19B to $63.27B, while Cloud grew 81.80%, from $13.62B to $24.77B. Because Search starts from a much larger base, Cloud’s far faster rate added only moderately more dollars.",
+      "ro": "Procentele și dolarii spun povești diferite. În T2 2026, veniturile Search & other au crescut cu 16,76%, de la 54,19 mld. USD la 63,27 mld. USD, iar Cloud a crescut cu 81,80%, de la 13,62 mld. USD la 24,77 mld. USD. Pentru că Search pornește de la o bază mult mai mare, ritmul mult mai rapid al Cloud a adăugat doar ceva mai mulți dolari."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "rev-growth",
+      "op-growth",
+      "depreciation-growth"
+     ],
+     "text": {
+      "en": "In Q2 2026, revenue grew 24.23% and operating profit 30.38%. When profit grows faster than sales, costs are rising more slowly than revenue, which is called operating leverage. It can work in reverse: depreciation of equipment, one of those costs, grew 42.14%, faster than revenue.",
+      "ro": "În T2 2026, veniturile au crescut cu 24,23%, iar profitul operațional cu 30,38%. Când profitul crește mai repede decât vânzările, costurile cresc mai încet decât veniturile, iar acest efect se numește levier operațional. El poate funcționa și invers: amortizarea echipamentelor, unul dintre aceste costuri, a crescut cu 42,14%, mai repede decât veniturile."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A growth rate depends on the starting size. A small business can post a high percentage while adding fewer dollars than a large one growing slowly, so look at both the percentage and the dollar change.",
+     "ro": "O rată de creștere depinde de mărimea de pornire. O afacere mică poate avea un procent mare, dar poate adăuga mai puțini dolari decât una mare care crește încet, deci merită urmărite atât procentul, cât și schimbarea în dolari."
+    },
+    "example": {
+     "en": "Hypothetical: a unit with $100 of sales grows 10%, adding $10. A unit with $20 of sales grows 40%, adding $8. The faster grower added fewer dollars.",
+     "ro": "Exemplu ipotetic: o divizie cu vânzări de 100 USD crește cu 10%, adică adaugă 10 USD. O divizie cu vânzări de 20 USD crește cu 40%, adică adaugă 8 USD. Cea care crește mai repede a adăugat mai puțini dolari."
+    },
+    "trap": {
+     "en": "Assuming a very high growth rate will last. As a business gets bigger, each percentage point of growth needs more dollars, so the rate usually slows.",
+     "ro": "Presupunerea că o rată de creștere foarte mare va dura. Pe măsură ce o afacere devine mai mare, fiecare punct procentual de creștere cere mai mulți dolari, deci ritmul de obicei încetinește."
+    }
+   }
+  },
+  "cash": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "cfo-h1-growth",
+      "capex-h1-growth",
+      "cfo-h1",
+      "capex-h1",
+      "fcf-h1"
+     ],
+     "text": {
+      "en": "In the first half of 2026, operating cash flow rose 32.81% to $84.86B, but equipment spending rose 103.31% to $80.6B, roughly doubling. The business generated more cash than a year earlier, yet free cash flow was only $4.26B because investment grew much faster.",
+      "ro": "În primul semestru din 2026, numerarul din exploatare a crescut cu 32,81%, la 84,86 mld. USD, dar investițiile în echipamente au crescut cu 103,31%, la 80,6 mld. USD, adică s-au dublat aproximativ. Afacerea a generat mai mult numerar decât cu un an înainte, dar fluxul de numerar liber a fost de doar 4,26 mld. USD, pentru că investițiile au crescut mult mai repede."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "capex-dep",
+      "capex",
+      "depreciation",
+      "depreciation-growth"
+     ],
+     "text": {
+      "en": "Q2 2026 equipment spending ($44.92B) was 6.32 times depreciation ($7.1B). Depreciation spreads the cost of equipment over its useful life, so today’s profit carries only a small slice of today’s spending. As the new equipment goes into use, depreciation tends to rise (it already grew 42.14% year over year) and can weigh on margins unless revenue keeps pace.",
+      "ro": "Investițiile în echipamente din T2 2026 (44,92 mld. USD) au fost de 6,32 ori mai mari decât amortizarea (7,1 mld. USD). Amortizarea împarte costul echipamentelor pe durata lor de utilizare, deci profitul de azi suportă doar o mică parte din cheltuielile de azi. Pe măsură ce echipamentele noi intră în folosință, amortizarea tinde să crească (a crescut deja cu 42,14% față de anul trecut) și poate apăsa pe marje dacă veniturile nu țin pasul."
+     }
+    }
+   ]
+  },
+  "risks": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "common-raise",
+      "preferred-raise",
+      "buybacks",
+      "funding"
+     ],
+     "text": {
+      "en": "In the first half of 2026, Alphabet raised $30.5B by selling new common shares and $19.06B through mandatory convertible preferred stock, and bought back no shares. Mandatory convertible preferred stock is designed to turn into common shares later, so it can add to dilution beyond today’s share count.",
+      "ro": "În primul semestru din 2026, Alphabet a obținut 30,5 mld. USD din vânzarea de acțiuni comune noi și 19,06 mld. USD din acțiuni preferențiale convertibile obligatoriu, fără să răscumpere acțiuni. Acțiunile preferențiale convertibile obligatoriu sunt gândite să se transforme ulterior în acțiuni comune, deci pot adăuga diluare peste numărul actual de acțiuni."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "atm",
+      "funding"
+     ],
+     "text": {
+      "en": "An at-the-market program lets a company sell new shares gradually at market prices. Alphabet had $40B of such authorization unused at June 30. It makes more share sales possible, but it is not issuance until shares are actually sold.",
+      "ro": "Un program de tip at-the-market permite unei companii să vândă treptat acțiuni noi la prețul pieței. Alphabet avea o astfel de autorizare de 40 mld. USD nefolosită la 30 iunie. Ea face posibile noi vânzări de acțiuni, dar nu este o emisiune până când acțiunile nu sunt efectiv vândute."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Dilution happens when a company issues new shares: each existing share then owns a smaller slice of the profits. Company growth helps shareholders only if profit rises faster than the number of shares.",
+     "ro": "Diluarea apare când o companie emite acțiuni noi: fiecare acțiune existentă deține apoi o felie mai mică din profit. Creșterea companiei îi ajută pe acționari doar dacă profitul crește mai repede decât numărul de acțiuni."
+    },
+    "example": {
+     "en": "Hypothetical: a company earns $1,000 with 100 shares, or $10 per share. It sells 25 new shares and profit rises 20% to $1,200, but that is $1,200 / 125 = $9.60 per share, 4% less than before.",
+     "ro": "Exemplu ipotetic: o companie câștigă 1.000 USD și are 100 de acțiuni, adică 10 USD pe acțiune. Vinde 25 de acțiuni noi, iar profitul crește cu 20%, la 1.200 USD, dar asta înseamnă 1.200 / 125 = 9,60 USD pe acțiune, cu 4% mai puțin decât înainte."
+    },
+    "trap": {
+     "en": "Money raised by selling shares has no interest bill, but it is not free: the new owners share in all future profits.",
+     "ro": "Banii obținuți din vânzarea de acțiuni nu au dobândă, dar nu sunt gratuiți: noii proprietari primesc o parte din toate profiturile viitoare."
+    }
+   }
+  },
+  "valuation": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "pe2025",
+      "pe",
+      "price",
+      "eps2025",
+      "eps-ttm",
+      "eps-h1",
+      "other-income"
+     ],
+     "text": {
+      "en": "Dividing the same $343.68 price by 2025 reported EPS of $10.80 gives 31.82×, versus 17.26× on the rolling $19.91. The price is identical; only the earnings period changed, and the rolling figure includes the first half of 2026, when investment gains were large. A P/E is only as meaningful as the earnings under it.",
+      "ro": "Dacă împărțim același preț de 343,68 USD la profitul pe acțiune raportat pentru 2025, de 10,80 USD, obținem 31,82×, față de 17,26× pe baza valorii mobile de 19,91 USD. Prețul este același; s-a schimbat doar perioada profitului, iar valoarea mobilă include primul semestru din 2026, când câștigurile din investiții au fost mari. Un P/E este la fel de relevant ca profitul pe care se bazează."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "other-op",
+      "other-income",
+      "op",
+      "net-income"
+     ],
+     "text": {
+      "en": "In Q2 2026, other income, net (the line that holds the investment gains) was $97.98B, 2.40 times operating profit of $40.77B. That is why net income available to common holders ($112.11B) was far above operating profit. Operating profit is closer to what the businesses themselves earned from customers.",
+      "ro": "În T2 2026, rubrica „alte venituri, net” (unde apar câștigurile din investiții) a fost de 97,98 mld. USD, de 2,40 ori profitul operațional de 40,77 mld. USD. De aceea profitul net disponibil acționarilor comuni (112,11 mld. USD) a fost cu mult peste profitul operațional. Profitul operațional este mai aproape de ce au câștigat efectiv afacerile de la clienți."
+     }
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,367 @@
+{
+ "base": "APP-2026-09-18-v3",
+ "new_id": "APP-2026-09-18-v3-r2",
+ "revision_note": {
+  "en": "Depth revision: adds plain-language explanations and concept lessons that interpret figures already in this report, plus four ratios calculated from saved figures. No new sources or reported figures; the cutoff, conclusions and watch criteria are unchanged.",
+  "ro": "Revizie de aprofundare: adaugă explicații pe înțelesul tuturor și lecții despre concepte, care interpretează cifre deja prezente în raport, plus patru rapoarte calculate din cifrele salvate. Nu există surse sau cifre raportate noi; data-limită, concluziile și criteriile de verificare sunt neschimbate."
+ },
+ "evidence": [
+  {
+   "id": "rev-qoq-q4",
+   "kind": "calculation",
+   "label": {
+    "en": "Sequential revenue growth, Q4 2025",
+    "ro": "Creșterea veniturilor față de trimestrul anterior, T4 2025"
+   },
+   "definition": "Q4 2025 continuing revenue versus Q3 2025",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q4 2025",
+    "start": "2025-10-01",
+    "end": "2025-12-31",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "rev-q425",
+    "rev-q325"
+   ]
+  },
+  {
+   "id": "rev-qoq-q1",
+   "kind": "calculation",
+   "label": {
+    "en": "Sequential revenue growth, Q1 2026",
+    "ro": "Creșterea veniturilor față de trimestrul anterior, T1 2026"
+   },
+   "definition": "Q1 2026 continuing revenue versus Q4 2025",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "Q1 2026",
+    "start": "2026-01-01",
+    "end": "2026-03-31",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "rev-q126",
+    "rev-q425"
+   ]
+  },
+  {
+   "id": "fcf-h-growth",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half company FCF growth YoY",
+    "ro": "Creșterea anuală a FCF al companiei în primul semestru"
+   },
+   "definition": "H1 2026 company FCF versus H1 2025",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "growth",
+   "inputs": [
+    "fcf-h126",
+    "fcf-h125"
+   ]
+  },
+  {
+   "id": "buyback-fcf",
+   "kind": "calculation",
+   "label": {
+    "en": "First-half buybacks as a share of company FCF",
+    "ro": "Răscumpărările din primul semestru ca pondere din FCF al companiei"
+   },
+   "definition": "H1 2026 repurchases (excluding tax withholding) divided by H1 2026 company FCF",
+   "unit": "percent",
+   "scale": 1,
+   "basis": "GAAP",
+   "period": {
+    "kind": "duration",
+    "label": "H1 2026",
+    "start": "2026-01-01",
+    "end": "2026-06-30",
+    "forecast": false
+   },
+   "operation": "percent_ratio",
+   "inputs": [
+    "buybacks",
+    "fcf-h126"
+   ]
+  }
+ ],
+ "sections": {
+  "business": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "gross-margin",
+      "margin-q226",
+      "gross-q2",
+      "op-q226",
+      "rev-q226"
+     ],
+     "text": {
+      "en": "In Q2 2026, gross margin was 88.26% and operating margin 77.68%. Gross margin subtracts only the direct cost of delivering the service; operating margin also subtracts research, sales and administrative costs. Even after those, about 78 cents of each revenue dollar remained as operating profit, before interest and taxes.",
+      "ro": "În T2 2026, marja brută a fost de 88,26%, iar marja operațională de 77,68%. Marja brută scade doar costul direct al furnizării serviciului; marja operațională scade în plus costurile de cercetare, vânzări și administrație. Chiar și după acestea, circa 78 de cenți din fiecare dolar de venit au rămas profit operațional, înainte de dobânzi și impozite."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "scope",
+      "rev-2023",
+      "rev-2025",
+      "cfo-h125",
+      "fcf-growth"
+     ],
+     "text": {
+      "en": "Most figures in this report are for “continuing operations”. They leave out the games business sold in June 2025, so the revenue and profit history describes the advertising business alone, for example revenue of $1.84B in FY2023 and $5.48B in FY2025. Cash-flow figures are consolidated, so earlier periods such as the first half of 2025 still include the games business.",
+      "ro": "Majoritatea cifrelor din acest raport se referă la „activitățile continue”. Ele exclud divizia de jocuri vândută în iunie 2025, deci istoricul veniturilor și al profitului descrie doar afacerea de publicitate, de exemplu venituri de 1,84 mld. USD în 2023 și de 5,48 mld. USD în 2025. Cifrele de flux de numerar sunt consolidate, deci perioadele anterioare, cum ar fi primul semestru din 2025, includ încă divizia de jocuri."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "business",
+      "m-context",
+      "platform-risk"
+     ],
+     "text": {
+      "en": "Meta owns the consumer apps where its ads appear. AppLovin’s revenue is largely what advertisers pay minus what it passes on to app publishers, so it relies on other companies’ apps and on Apple and Google platform rules. Those relationships are part of what an owner is buying, and AppLovin does not fully control them.",
+      "ro": "Meta deține aplicațiile de consum în care apar reclamele sale. Veniturile AppLovin sunt în mare parte ce plătesc advertiserii minus ce transmite mai departe editorilor de aplicații, deci compania depinde de aplicațiile altor firme și de regulile platformelor Apple și Google. Aceste relații fac parte din ce cumpără un acționar, iar AppLovin nu le controlează complet."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "A company that sits between buyers and sellers may report as revenue only what it keeps after paying its partners (net), rather than everything customers spend (gross). Net reporting makes revenue smaller and margins higher than the same business would show if reported gross.",
+     "ro": "O companie care stă între cumpărători și vânzători poate raporta ca venit doar ce îi rămâne după ce își plătește partenerii (net), nu tot ce cheltuiesc clienții (brut). Raportarea netă face veniturile mai mici și marjele mai mari decât ar arăta aceeași afacere raportată brut."
+    },
+    "example": {
+     "en": "Hypothetical: advertisers spend $100, the platform pays app publishers $60 and reports $40 of revenue. With $10 of other costs, its margin is 75% of revenue ($30 of $40), but only 30% of what advertisers spent ($30 of $100).",
+     "ro": "Exemplu ipotetic: advertiserii cheltuiesc 100 USD, platforma plătește 60 USD editorilor de aplicații și raportează venituri de 40 USD. Cu alte costuri de 10 USD, marja sa este de 75% din venituri (30 din 40 USD), dar doar 30% din ce au cheltuit advertiserii (30 din 100 USD)."
+    },
+    "trap": {
+     "en": "Margins of a company that reports revenue net and one that reports it gross are not directly comparable. The higher margin may reflect how revenue is reported, not a better business.",
+     "ro": "Marjele unei companii care raportează veniturile net și ale uneia care le raportează brut nu sunt direct comparabile. Marja mai mare poate reflecta modul de raportare a veniturilor, nu o afacere mai bună."
+    }
+   }
+  },
+  "growth": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "install-growth",
+      "yield-growth",
+      "rev-growth"
+     ],
+     "text": {
+      "en": "Revenue can be split into volume and price: how many app installations advertisers received, and how much AppLovin earned per installation. In Q2 2026, installations fell 2% from a year earlier while net revenue per installation rose 58%. So the growth came from earning more per installation, which can last only while advertisers keep getting results worth paying for.",
+      "ro": "Veniturile pot fi împărțite în volum și preț: câte instalări de aplicații au primit advertiserii și cât a câștigat AppLovin pe fiecare instalare. În T2 2026, instalările au scăzut cu 2% față de anul anterior, iar venitul net pe instalare a crescut cu 58%. Deci creșterea a venit din câștigul mai mare pe instalare, care poate continua doar cât timp advertiserii obțin rezultate pentru care merită să plătească."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "rev-growth",
+      "rev-qoq-q4",
+      "rev-qoq-q1",
+      "rev-qoq",
+      "rev-q325",
+      "rev-q425",
+      "rev-q126",
+      "rev-q226"
+     ],
+     "text": {
+      "en": "Year-over-year growth (52.82% in Q2 2026) compares with Q2 2025, so it still includes the fast gains of the past year. Growth from one quarter to the next shows the recent path: 18.00% in Q4 2025, 11.13% in Q1 2026 and 4.41% in Q2 2026. Quarter-to-quarter figures can be affected by seasonal advertising patterns, so several quarters together say more than one step.",
+      "ro": "Creșterea de la an la an (52,82% în T2 2026) compară cu T2 2025, deci include încă câștigurile rapide din ultimul an. Creșterea de la un trimestru la altul arată drumul recent: 18,00% în T4 2025, 11,13% în T1 2026 și 4,41% în T2 2026. Cifrele de la un trimestru la altul pot fi influențate de tiparele sezoniere ale publicității, deci mai multe trimestre privite împreună spun mai mult decât un singur pas."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "rev-growth",
+      "m-growth",
+      "u-growth",
+      "t-growth",
+      "u-context",
+      "t-context",
+      "m-context"
+     ],
+     "text": {
+      "en": "In Q2 2026, AppLovin’s revenue grew 52.82% from a year earlier, against 28% at Meta, 24% at Unity and 3% at The Trade Desk. These companies sell different mixes of advertising and software, so the gap shows AppLovin’s current momentum rather than proving it has the better business.",
+      "ro": "În T2 2026, veniturile AppLovin au crescut cu 52,82% față de anul anterior, comparativ cu 28% la Meta, 24% la Unity și 3% la The Trade Desk. Aceste companii vând combinații diferite de publicitate și software, deci diferența arată avântul actual al AppLovin, fără să dovedească faptul că are afacerea mai bună."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Revenue equals volume times revenue per unit. Growth can come from selling more units, earning more per unit, or both, and each source has different limits.",
+     "ro": "Veniturile sunt egale cu volumul înmulțit cu venitul pe unitate. Creșterea poate veni din mai multe unități vândute, din câștig mai mare pe unitate sau din ambele, iar fiecare sursă are limite diferite."
+    },
+    "example": {
+     "en": "Hypothetical: a platform delivers 100 installations at $10 each, for $1,000 of revenue. A year later it delivers 98 at $15 each, for $1,470: revenue is 47% higher even though volume fell 2%.",
+     "ro": "Exemplu ipotetic: o platformă livrează 100 de instalări a câte 10 USD fiecare, adică venituri de 1.000 USD. Un an mai târziu livrează 98 de instalări a câte 15 USD, adică 1.470 USD: veniturile sunt cu 47% mai mari, deși volumul a scăzut cu 2%."
+    },
+    "trap": {
+     "en": "Rising revenue per unit does not by itself show why it rose. It can reflect better results for customers, higher prices or a different customer mix, and each of these lasts differently.",
+     "ro": "Un venit pe unitate în creștere nu arată singur de ce a crescut. Poate reflecta rezultate mai bune pentru clienți, prețuri mai mari sau o altă combinație de clienți, iar fiecare dintre acestea durează diferit."
+    }
+   }
+  },
+  "cash": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "cash-tax",
+      "tax-prior",
+      "cash-timing"
+     ],
+     "text": {
+      "en": "Cash taxes paid in the first half of 2026 were $639.82M, against $100.62M a year earlier. Tax expense is recorded as profit is earned, but the cash is paid on set dates, so a large payment can lower cash in one period without changing profit. Management attributes the weak Q2 cash conversion partly to this kind of timing.",
+      "ro": "Impozitele plătite în numerar în primul semestru din 2026 au fost de 639,82 mil. USD, față de 100,62 mil. USD cu un an înainte. Cheltuiala cu impozitul se înregistrează pe măsură ce se obține profitul, dar banii se plătesc la date fixe, deci o plată mare poate reduce numerarul într-o perioadă fără să schimbe profitul. Conducerea pune slaba conversie în numerar din T2 parțial pe seama acestui tip de decalaj."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "fcf-h-growth",
+      "fcf-h126",
+      "fcf-h125",
+      "fcf-growth"
+     ],
+     "text": {
+      "en": "Over the first half, company FCF was $2.15B against $1.59B a year earlier, 34.90% higher. That is well above Q2’s 12.40%, which means cash growth in Q1 2026 was stronger. Both prior-year figures still include the sold games business.",
+      "ro": "În primul semestru, FCF al companiei a fost de 2,15 mld. USD, față de 1,59 mld. USD cu un an înainte, adică 34,90% mai mare. Este mult peste cei 12,40% din T2, ceea ce înseamnă că numerarul a crescut mai puternic în T1 2026. Ambele cifre de anul trecut includ încă divizia de jocuri vândută."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "buyback-fcf",
+      "buybacks",
+      "fcf-h126"
+     ],
+     "text": {
+      "en": "Share repurchases in the first half ($1.53B, excluding tax withholding) equalled 71.30% of company FCF ($2.15B). FCF is cash the company could use, not cash that stays in the bank: most of it was already returned to shareholders by buying back shares.",
+      "ro": "Răscumpărările de acțiuni din primul semestru (1,53 mld. USD, fără reținerile fiscale) au echivalat cu 71,30% din FCF al companiei (2,15 mld. USD). FCF este numerar pe care compania îl poate folosi, nu numerar care rămâne în bancă: cea mai mare parte a fost deja returnată acționarilor prin răscumpărarea de acțiuni."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "fcf-q2",
+      "ebitda-q2",
+      "cash-timing"
+     ],
+     "text": {
+      "en": "Q2 FCF ($863.32M) was well below adjusted EBITDA ($1.61B). Adjusted EBITDA is a company-defined profit measure before interest, taxes, depreciation and some other items, so cash paid for taxes and interest is part of what separates it from FCF. Management’s expectation of roughly 75% FCF-to-adjusted-EBITDA for FY2026 is a forecast that later quarters must confirm.",
+      "ro": "FCF din T2 (863,32 mil. USD) a fost mult sub EBITDA ajustat (1,61 mld. USD). EBITDA ajustat este un indicator de profit definit de companie, calculat înainte de dobânzi, impozite, amortizare și alte câteva elemente, deci numerarul plătit pentru impozite și dobânzi face parte din ce îl separă de FCF. Așteptarea conducerii, un FCF de circa 75% din EBITDA ajustat pentru 2026, este o prognoză pe care trimestrele următoare trebuie să o confirme."
+     }
+    }
+   ]
+  },
+  "risks": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "coverage-interest",
+      "op-ttm",
+      "interest-ttm"
+     ],
+     "text": {
+      "en": "Over the 12 months to June 2026, operating profit ($5.29B) was 25.79 times gross interest expense ($205.03M). Profit would have to fall very sharply before paying interest became difficult. That is why the main risk sits in the advertising business itself rather than in the debt.",
+      "ro": "În cele 12 luni până în iunie 2026, profitul operațional (5,29 mld. USD) a fost de 25,79 ori mai mare decât cheltuiala brută cu dobânzile (205,03 mil. USD). Profitul ar trebui să scadă foarte puternic înainte ca plata dobânzilor să devină dificilă. De aceea riscul principal ține de afacerea de publicitate în sine, nu de datorie."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "votes",
+      "governance"
+     ],
+     "text": {
+      "en": "Voting power and economic ownership are different things. Founder CEO Adam Foroughi held 61.60% of the votes at March 31, 2026, a figure that differs from his share of the company’s economic ownership. A majority of the votes generally lets one holder decide shareholder votes, such as board elections, even if all other shareholders disagree.",
+      "ro": "Puterea de vot și proprietatea economică sunt lucruri diferite. Fondatorul și CEO-ul Adam Foroughi deținea 61,60% din voturi la 31 martie 2026, o cifră diferită de partea sa din proprietatea economică a companiei. O majoritate a voturilor permite de regulă unui singur deținător să decidă voturile acționarilor, cum ar fi alegerea consiliului de administrație, chiar dacă toți ceilalți acționari nu sunt de acord."
+     }
+    },
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "maturities",
+      "debt"
+     ],
+     "text": {
+      "en": "The notes carry fixed interest rates (coupons) of 5.125%–5.950%. So higher market interest rates do not raise the interest bill on this debt until it has to be refinanced, which for the first $1B is in 2029.",
+      "ro": "Obligațiunile au dobânzi fixe (cupoane) între 5,125% și 5,950%. Astfel, dobânzile mai mari din piață nu cresc costul acestei datorii până când ea trebuie refinanțată, ceea ce pentru prima tranșă de 1 mld. USD se întâmplă în 2029."
+     }
+    }
+   ],
+   "lesson": {
+    "concept": {
+     "en": "Interest coverage divides operating profit by interest expense. It shows how many times the business’s profit could pay its yearly interest bill.",
+     "ro": "Gradul de acoperire a dobânzilor împarte profitul operațional la cheltuiala cu dobânzile. Arată de câte ori ar putea profitul afacerii să plătească dobânzile anuale."
+    },
+    "example": {
+     "en": "Hypothetical: a company earns $500 of operating profit and pays $20 of interest, so coverage is 25×. If profit halves to $250, coverage is still 12.5×.",
+     "ro": "Exemplu ipotetic: o companie are un profit operațional de 500 USD și plătește dobânzi de 20 USD, deci acoperirea este de 25×. Dacă profitul se înjumătățește la 250 USD, acoperirea este încă de 12,5×."
+    },
+    "trap": {
+     "en": "High coverage shows the debt is affordable today. It does not protect against the business itself weakening, and it says nothing about when the debt must be repaid.",
+     "ro": "O acoperire mare arată că datoria este suportabilă astăzi. Nu protejează împotriva slăbirii afacerii în sine și nu spune nimic despre momentul în care datoria trebuie rambursată."
+    }
+   }
+  },
+  "valuation": {
+   "claims": [
+    {
+     "type": "interpretation",
+     "evidence_refs": [
+      "market-cap",
+      "price",
+      "shares-end",
+      "pfcf",
+      "fcf-ttm",
+      "pe"
+     ],
+     "text": {
+      "en": "At $321.60 a share and the June share count, the company’s shares were worth about $107.83B in total, or 23.92 times trailing company FCF ($4.51B). That is close to the 24.72× P/E, so over the past 12 months cash and reported earnings give a similar picture, even though Q2 cash lagged.",
+      "ro": "La 321,60 USD pe acțiune și numărul de acțiuni din iunie, acțiunile companiei valorau în total circa 107,83 mld. USD, adică de 23,92 ori FCF al companiei din ultimele 12 luni (4,51 mld. USD). Valoarea este apropiată de P/E-ul de 24,72×, deci în ultimele 12 luni numerarul și profitul raportat dau o imagine asemănătoare, chiar dacă numerarul din T2 a rămas în urmă."
+     }
+    },
+    {
+     "type": "model",
+     "evidence_refs": [
+      "bear-eps",
+      "eps-ttm",
+      "bear-multiple",
+      "pe",
+      "base-eps"
+     ],
+     "text": {
+      "en": "The bear scenario assumes FY2028 EPS of $13, about the same as trailing EPS of $13.01, and a P/E of 18× instead of today’s 24.72×. So it describes no earnings growth plus a lower multiple, not a collapse in profit. The base scenario assumes EPS rises to $21.",
+      "ro": "Scenariul pesimist presupune un EPS de 13 USD în 2028, aproape egal cu EPS-ul din ultimele 12 luni, de 13,01 USD, și un P/E de 18× în loc de 24,72× cât este astăzi. Deci descrie lipsa creșterii profitului plus un multiplu mai mic, nu o prăbușire a profitului. Scenariul central presupune că EPS crește la 21 USD."
+     }
+    }
+   ]
+  }
+ }
+}

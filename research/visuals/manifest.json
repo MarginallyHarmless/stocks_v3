@@ -66,5 +66,29 @@
   "HOOD-2026-09-18-v3-r2": {
     "path": "research/visuals/2026-09-24.json",
     "key": "HOOD"
+  },
+  "VST-2026-09-18-v3-r2": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "VST"
+  },
+  "APP-2026-09-18-v3-r2": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "APP"
+  },
+  "CEG-2026-09-18-v3-r2": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "CEG"
+  },
+  "ISRG-2026-09-18-v3-rebuilt-r2": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "ISRG"
+  },
+  "GOOG-2026-09-18-v3-r2": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "GOOG"
+  },
+  "ASTS-2026-09-18-v3-r3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "ASTS"
   }
 }
