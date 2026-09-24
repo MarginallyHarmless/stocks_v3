@@ -201,7 +201,10 @@ def chart(d, keys, lang, style='bar', median=False):
     x0, x1, y0, y1 = 64, 460, 20, 190
     step = (x1 - x0) / len(labels)
     y = lambda v: y1 - (v - low) / span * (y1 - y0)
-    svg = f'<svg class="viz-chart" viewBox="0 0 480 230" role="img" aria-label="{h(" / ".join(name(k,lang) for k,_ in series))}"><title>{h(" / ".join(name(k,lang) for k,_ in series))}</title>'
+    chart_label = ' / '.join(name(k,lang) for k,_ in series)
+    help_id = f'{lang}-viz-help-{keys[0]}'
+    initial_value = labels[-1] + ' · ' + ' · '.join(name(k,lang)+': '+fmt(row[-1],unit,lang=lang) for (k,_),row in zip(series,values))
+    svg = f'<svg class="viz-chart" viewBox="0 0 480 230" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="{h(chart_label)}" aria-describedby="{help_id}" aria-valuemin="0" aria-valuemax="{len(labels)-1}" aria-valuenow="{len(labels)-1}" aria-valuetext="{h(initial_value)}"><title>{h(chart_label)}</title>'
     svg += '<desc>' + tr(lang, 'Values and dates are available below in the data table.', 'Valorile și datele sunt disponibile în tabelul de mai jos.') + '</desc>'
     for v in sorted(set([low, low + span / 2, high] + ([] if restricted else [0]))):
         yy = y(v)
@@ -239,19 +242,20 @@ def chart(d, keys, lang, style='bar', median=False):
         x = x0 + step * (i + .5)
         anchor = 'start' if i == 0 else ('end' if i == len(labels)-1 else 'middle')
         svg += f'<text x="{x:.2f}" y="216" text-anchor="{anchor}">{h(labels[i].replace(" 20", " ’"))}</text>'
+    # Full-height targets make small, negative and missing observations inspectable.
+    for i, label in enumerate(labels):
+        tooltip = label + ' · ' + ' · '.join(name(k,lang)+': '+fmt(row[i],unit,lang=lang) for (k,_),row in zip(series,values))
+        svg += f'<rect class="viz-hit" data-viz-hit="{i}" x="{x0+step*i}" y="{y0}" width="{step}" height="204" aria-hidden="true"><title>{h(tooltip)}</title></rect>'
     svg += '</svg>'
-    out = '<div class="viz-inspection" aria-live="polite" aria-atomic="true"><p class="viz-selected-period">' + tr(lang, 'Values for ', 'Valori pentru ') + f'<strong data-viz-period-label>{h(labels[-1])}</strong></p><div class="viz-readout">'
+    out = '<div class="viz-inspection"><p class="viz-selected-period">' + tr(lang, 'Values for ', 'Valori pentru ') + f'<strong data-viz-period-label>{h(labels[-1])}</strong><span class="viz-pinned" data-viz-pinned hidden>{tr(lang,"Pinned","Fixat")}</span></p><div class="viz-readout">'
     for j, ((key, _), row) in enumerate(zip(series, values)):
         out += f'<div><span><i style="background:{COLORS[j%3]}"></i>{h(name(key,lang))}</span><strong data-viz-value="{j}">{h(fmt(row[-1],unit,lang=lang))}</strong></div>'
     out += '</div></div>'
     absent = [name(k,lang) for k in keys if k not in d['series']]
     if absent:
         out += '<p class="viz-footnote">' + h(', '.join(absent)) + ': ' + tr(lang,'not supplied separately.','nefurnizat separat.') + '</p>'
-    out += f'<div class="viz-chart-box">{svg}</div><div class="viz-period-row"><span>{tr(lang,"Highlight period","Evidențiază perioada")}</span><select class="viz-period" aria-label="{h(tr(lang,"Inspect period — ","Vezi perioada — ")+name(keys[0],lang))}">'
-    for i, label in enumerate(labels):
-        out += f'<option value="{i}"{" selected" if i==len(labels)-1 else ""}>{h(label)}</option>'
-    out += '</select></div>'
-    payload = [[fmt(row[i], unit, lang=lang) for row in values] for i in range(len(labels))]
+    out += f'<div class="viz-chart-box">{svg}</div><div class="viz-chart-controls"><span class="viz-pointer-hint">{tr(lang,"Hover to explore · Click or tap to pin","Treci peste grafic · Apasă pentru a fixa")}</span><span class="viz-keyboard-hint" id="{help_id}">{tr(lang,"← → Choose period · Home / End First / last · Esc Latest","← → Alege perioada · Home / End Prima / ultima · Esc Recentă")}</span><button type="button" class="viz-reset" data-viz-reset hidden>{tr(lang,"Latest","Recentă")}</button></div>'
+    payload = {'periods': labels, 'series': [name(k,lang) for k,_ in series], 'values': [[fmt(row[i], unit, lang=lang) for row in values] for i in range(len(labels))]}
     out += '<script class="viz-values" type="application/json">' + json.dumps(payload).replace('<', '\\u003c') + '</script>'
     if median_value is not None:
         out += '<p class="viz-footnote">' + tr(lang, 'Dashed line: historical median ', 'Linie punctată: mediana istorică ') + h(fmt(median_value,unit,lang=lang)) + f' · {len(valid)} ' + tr(lang, 'valid observations.', 'observații valide.') + '</p>'
@@ -339,7 +343,7 @@ def consensus_card(d,lang):
 def dashboard_html(d, data, lang):
     identity=data['company']['issuer_id']+'|'+data['company']['security_id']
     validate_dashboard(d,identity)
-    out=f'<section class="visual-dashboard" id="{lang}-visuals"><div class="viz-intro"><div class="kicker">{tr(lang,"The numbers, visually","Cifrele, vizual")}</div><h2>{tr(lang,"Financial performance","Evoluția financiară")}</h2><p>{tr(lang,"See how sales, profit and cash have changed. Select a period in any chart to inspect its values.","Vezi evoluția vânzărilor, profitului și numerarului. Selectează o perioadă în orice grafic pentru a vedea valorile.")}</p><p class="viz-date">{tr(lang,"Chart data collected","Datele graficelor colectate la")} {h(d["retrieved_at"])} · {tr(lang,"Original analysis","Analiza originală")}: {h(data["cutoff"][:10])}. {tr(lang,"Charts are a dated supplement; the original conclusions and watchlist have not been reassessed.","Graficele sunt un supliment datat; concluziile originale și lista de verificări nu au fost reevaluate.")}</p></div>'
+    out=f'<section class="visual-dashboard" id="{lang}-visuals"><div class="viz-intro"><div class="kicker">{tr(lang,"The numbers, visually","Cifrele, vizual")}</div><h2>{tr(lang,"Financial performance","Evoluția financiară")}</h2><p>{tr(lang,"See how sales, profit and cash have changed. Hover over a chart to explore. Click or tap a period to pin its values.","Vezi evoluția vânzărilor, profitului și numerarului. Treci peste grafic pentru a explora. Apasă pe o perioadă pentru a-i fixa valorile.")}</p><p class="viz-date">{tr(lang,"Chart data collected","Datele graficelor colectate la")} {h(d["retrieved_at"])} · {tr(lang,"Original analysis","Analiza originală")}: {h(data["cutoff"][:10])}. {tr(lang,"Charts are a dated supplement; the original conclusions and watchlist have not been reassessed.","Graficele sunt un supliment datat; concluziile originale și lista de verificări nu au fost reevaluate.")}</p></div>'
     if d['ticker'] in ('SOFI','HOOD'):
         out += explanation('Financial-company cash flows include lending and customer-funding movements. Do not interpret this free-cash-flow series like that of a software or industrial company.', 'Fluxurile companiilor financiare includ creditarea și mișcările fondurilor clienților. Nu interpreta seria fluxului liber ca la o companie software sau industrială.', lang)
     if d['ticker']=='NBIS':

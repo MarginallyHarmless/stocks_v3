@@ -32,6 +32,12 @@ class Charts(unittest.TestCase):
             self.assertEqual(len([a for _,a in tags if 'data-viz-focus' in a]),1)
             self.assertEqual(len([a for _,a in tags if 'data-viz-row' in a]),3)
             self.assertIn('data-viz-period-label>Q3 2025</strong>',rendered)
+            self.assertEqual(len([a for _,a in tags if 'data-viz-hit' in a]),3)
+            slider=[a for _,a in tags if a.get('role')=='slider'][0]
+            self.assertEqual(slider['tabindex'],'0')
+            self.assertEqual(slider['aria-valuemax'],'2')
+            self.assertIn('Q3 2025',slider['aria-valuetext'])
+            self.assertNotIn('<select',rendered)
 
     def test_period_alignment_and_missing_quarter(self):
         d=fixture();d['series']={'cfo':series([('Q1 2025',10),('Q3 2025',30)]),'fcf':series([('Q1 2025',5),('Q3 2025',20)])}
