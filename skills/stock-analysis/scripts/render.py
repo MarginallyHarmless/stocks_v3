@@ -136,12 +136,17 @@ def evidence_table_html(table, ev, lang):
             if 'evidence_ref' in cell:
                 e = ev[cell['evidence_ref']]
                 val = format_number(e, lang) if 'value' in e else t(e['state'], lang)
-                content = h(val) + ref_buttons([e['id']], lang)
+                content = cell_value(val, [e['id']], lang, 'value' in e)
             else:
                 content = claims([cell], lang, True)
             out += '<td>' + content + '</td>'
         out += '</tr>'
     return out + '</tbody></table></div>'
+
+
+def cell_value(text, ids, lang, numeric=True):
+    """A figure and its source button wrap as one unit, so narrow columns never split them."""
+    return f'<span class="cell-value{"" if numeric else " cell-text"}">{h(text)}{ref_buttons(ids, lang)}</span>'
 
 
 def tables_html(tables, ev, lang):
@@ -156,7 +161,7 @@ def tables_html(tables, ev, lang):
             for column, cell in zip(columns, row):
                 if 'evidence_ref' in cell:
                     e = ev[cell['evidence_ref']]
-                    content = h(format_number(e, lang) if 'value' in e else t(e['state'], lang)) + ref_buttons([e['id']], lang)
+                    content = cell_value(format_number(e, lang) if 'value' in e else t(e['state'], lang), [e['id']], lang, 'value' in e)
                 else:
                     content = h(t(cell['text'], lang)) + ref_buttons(cell.get('evidence_refs', []), lang)
                 out += '<td data-label="' + h(t(column, lang)) + '">' + content + '</td>'
@@ -405,15 +410,17 @@ def render(data, baseline=None, archive=None, visual_data=None, report_links=Non
         main += (f'<header class="summary" id="{lang}-summary">{revision_html(data, archive, lang, report_links, editorial=False)}<div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1>'
                  f'<div class="hero-meta"><span class="as-of">{tr(lang,"Information up to","Date până la")} <time datetime="{h(data["cutoff"])}">{h(friendly_date(data["cutoff"],lang))}</time></span>{about}</div>')
         main += f'<div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><div class="assess assess-business"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd></div><div class="assess assess-price"><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></div></dl><aside class="coverage-note"><h3>{tr(lang,"What we could and couldn’t check","Ce am putut și ce nu am putut verifica")}</h3><p>{h(t(data["evidence_gaps"],lang))}</p></aside>'
-        if data.get("next_event"):
-            main += event_html(data["next_event"], sources,lang,True)
         main += key_stats_html(data, ev, lang, key_stats) + '</header>'
         if visual_data:
             main += dashboard_html(visual_data, data, lang)
         if data.get("review"):
             main += review_html(data,baseline,ev,lang)
         main += ''.join(section_html(s,ev,lang,i,sources,len(data["sections"])) for i,s in enumerate(data["sections"],1))
-        main += watch_html(data,ev,sources,lang) + '</div>'
+        # The results date sits with the checks it schedules, near the end of the report.
+        watch = watch_html(data,ev,sources,lang)
+        if not watch and data.get("next_event"):
+            watch = f'<section class="section" id="{lang}-watch"><div class="kicker">{tr(lang,"Next checkpoint","Următoarea verificare")}</div>' + event_html(data["next_event"],sources,lang) + '</section>'
+        main += watch + '</div>'
         # Evidence IDs occur only once in the shared dialog; both language views share the same ledger.
     evidence = "".join(f'<div data-lang="{lang}"{(" hidden" if lang != default else "")}>{coverage_html(data,lang)}{evidence_html(data,lang)}</div>' for lang in data["languages"])
     if archive:

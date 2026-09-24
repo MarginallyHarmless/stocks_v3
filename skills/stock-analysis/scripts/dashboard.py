@@ -121,14 +121,14 @@ def validate_dashboard(d, identity=None):
     return d
 
 
-def fmt(v, unit='currency', scale=1, lang='en', compact=True):
+def fmt(v, unit='currency', scale=1, lang='en', compact=True, digits=2):
     if v is None:
-        return tr(lang, 'Not available', 'Indisponibil')
+        return tr(lang, 'N/A', 'N/D')
     n = v * scale
     if unit == 'percent':
         result = f'{n:+.1f}%'
     elif unit == 'ratio':
-        result = f'{n:,.2f}×'
+        result = f'{n:,.{digits}f}×'
     else:
         suffix = ''
         if compact:
@@ -139,8 +139,12 @@ def fmt(v, unit='currency', scale=1, lang='en', compact=True):
                         threshold, tag = units[i - 1]
                     n /= threshold; suffix = tag; break
         sign = '-' if n < 0 else ''
-        result = sign + ('$' if unit == 'currency' else '') + f'{abs(n):,.2f}'.rstrip('0').rstrip('.') + suffix
+        result = sign + ('$' if unit == 'currency' else '') + f'{abs(n):,.{digits}f}'.rstrip('0').rstrip('.') + suffix
     return result.replace(',', ' ').replace('.', ',') if lang == 'ro' else result
+
+
+def decimal(text, lang):
+    return text.replace('.', ',') if lang == 'ro' else text
 
 
 def link(d, key, lang):
@@ -215,7 +219,7 @@ def chart(d, keys, lang, style='bar', median=False):
         if high > 0: high += span * .12
         if low < 0: low -= span * .08
     span = high - low or 1
-    x0, x1, y0, y1 = 64, 460, 20, 190
+    x0, x1, y0, y1 = 80, 466, 20, 190
     step = (x1 - x0) / len(labels)
     y = lambda v: y1 - (v - low) / span * (y1 - y0)
     chart_label = ' / '.join(name(k,lang) for k,_ in series)
@@ -225,7 +229,7 @@ def chart(d, keys, lang, style='bar', median=False):
     svg += '<desc>' + tr(lang, 'Values and dates are available below in the data table.', 'Valorile și datele sunt disponibile în tabelul de mai jos.') + '</desc>'
     for v in sorted(set([low, low + span / 2, high] + ([] if restricted else [0]))):
         yy = y(v)
-        svg += f'<line class="viz-gridline" x1="{x0}" x2="{x1}" y1="{yy:.2f}" y2="{yy:.2f}"/><text x="{x0-9}" y="{yy+4:.2f}" text-anchor="end">{h(fmt(v,unit,lang=lang))}</text>'
+        svg += f'<line class="viz-gridline" x1="{x0}" x2="{x1}" y1="{yy:.2f}" y2="{yy:.2f}"/><text x="{x0-9}" y="{yy+4:.2f}" text-anchor="end">{h(fmt(v,unit,lang=lang,digits=1))}</text>'
     median_value = statistics.median(valid) if median and len(valid) >= 8 and len(series) == 1 else None
     if median_value is not None:
         yy = y(median_value)
@@ -332,7 +336,7 @@ def price_card(d, lang):
     out += f'<div class="viz-price">{h(fmt(price,lang=lang))}</div><p class="viz-footnote">{h(q["observed_at"])} · {h(session_label(q["session"],lang))}</p>'
     out += f'<div class="viz-range" role="img" aria-label="{h(tr(lang,"Position in range: ","Poziția în interval: ")+str(round(pct,1))+"%")}"><div class="viz-range-fill" style="width:{max(0,min(100,pct)):.2f}%"></div><i style="left:{max(0,min(100,pct)):.2f}%"></i></div>'
     out += '<div class="viz-range-labels"><span>'+tr(lang,'Low','Minim')+' <strong>'+h(fmt(low,lang=lang))+'</strong></span><span>'+tr(lang,'High','Maxim')+' <strong>'+h(fmt(high,lang=lang))+'</strong></span></div>'
-    rows=[(tr(lang,'Position in range','Poziție în interval'),f'{pct:.1f}%'),(tr(lang,'From the high','Față de maxim'),fmt((price/high-1)*100,'percent',lang=lang)),(tr(lang,'From the low','Față de minim'),fmt((price/low-1)*100,'percent',lang=lang))]
+    rows=[(tr(lang,'Position in range','Poziție în interval'),decimal(f'{pct:.1f}%',lang)),(tr(lang,'From the high','Față de maxim'),fmt((price/high-1)*100,'percent',lang=lang)),(tr(lang,'From the low','Față de minim'),fmt((price/low-1)*100,'percent',lang=lang))]
     ma=m.get('ma200'); sq=m.get('stats_quote')
     if ma:
         rows.append((tr(lang,'200-day average','Media de 200 de zile'),fmt(ma['value'],lang=lang)))
@@ -370,7 +374,7 @@ def consensus_card(d,lang):
             if count:out+=f'<span class="viz-rating-{i}" style="width:{100*count/r["total"]:.4f}%"></span>'
         out+='</div><ul class="viz-rating-legend">'
         for i,k in enumerate(RATINGS):out+=f'<li><i class="viz-rating-{i}"></i><span>{h(names[i])}</span><strong>{int(r["counts"][k])}</strong></li>'
-        out+='</ul><p class="viz-footnote">'+tr(lang,'Average score','Scor mediu')+f': {r["score"]:.2f}/5 · '+tr(lang,'1 = strong buy; 5 = strong sell.','1 = cumpărare fermă; 5 = vânzare fermă.')+'</p>'
+        out+='</ul><p class="viz-footnote">'+tr(lang,'Average score','Scor mediu')+': '+decimal(f'{r["score"]:.2f}',lang)+'/5 · '+tr(lang,'1 = strong buy; 5 = strong sell.','1 = cumpărare fermă; 5 = vânzare fermă.')+'</p>'
     else:out+=blank(lang,'Recommendation counts were not supplied.','Numărul recomandărilor nu a fost furnizat.')
     if t:out+='<p class="viz-footnote">'+link(d,t['source_id'],lang)+'</p>'
     return out+'</article>'
