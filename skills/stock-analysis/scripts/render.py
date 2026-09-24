@@ -4,6 +4,7 @@ import html
 import json
 from pathlib import Path
 from financial_terms import annotate, TERMS
+from dashboard import dashboard_html
 from archive import verify_archive
 from model import digest, format_number, number, validate, need, dimensions, period_key
 
@@ -267,7 +268,7 @@ def key_stats_html(data, ev, lang):
     return out + '</dl></section>'
 
 
-def render(data, baseline=None, archive=None):
+def render(data, baseline=None, archive=None, visual_data=None):
     validate(data, baseline)
     ev = {e["id"]:e for e in data["evidence"]}
     sources = {s["id"]:s for s in data["sources"]}
@@ -276,6 +277,8 @@ def render(data, baseline=None, archive=None):
     for lang in data["languages"]:
         hidden = ' hidden' if lang != default else ''
         nav += f'<nav aria-label="{tr(lang,"Sections","Secțiuni")}" data-lang="{lang}"{hidden}><a href="#{lang}-summary">{tr(lang,"At a glance","Pe scurt")}</a>'
+        if visual_data:
+            nav += f'<a href="#{lang}-visuals">{tr(lang,"Financial charts","Grafice financiare")}</a>'
         if data.get("review"):
             nav += f'<a href="#{lang}-review">{tr(lang,"Original checks","Criteriile originale")}</a>'
         nav += ''.join(f'<a href="#{lang}-{h(s["id"])}">{h(t(s.get("nav_label",s["question"]),lang))}</a>' for s in data["sections"])
@@ -287,6 +290,8 @@ def render(data, baseline=None, archive=None):
         if data.get("next_event"):
             main += event_html(data["next_event"], sources,lang,True)
         main += key_stats_html(data, ev, lang) + '</header>'
+        if visual_data:
+            main += dashboard_html(visual_data, data, lang)
         if data.get("review"):
             main += review_html(data,baseline,ev,lang)
         main += ''.join(section_html(s,ev,lang,i,sources) for i,s in enumerate(data["sections"],1))
@@ -302,15 +307,16 @@ def render(data, baseline=None, archive=None):
     package = {"schema_version":"3.0","kind":"company_archive","identity":data["company"]["issuer_id"]+'|'+data["company"]["security_id"],"snapshots":{d["report_id"]:{"sha256":digest(d),"research":d} for d in snapshot_list}}
     verify_archive(package)
     embedded = json.dumps(package, ensure_ascii=False, allow_nan=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
+    visual_embedded = json.dumps(visual_data, ensure_ascii=False).replace("<", "\\u003c") if visual_data else "null"
     opts = ''.join(f'<option value="{lang}"{" selected" if lang == default else ""}>{"English" if lang == "en" else "Română"}</option>' for lang in data["languages"])
-    css = (ASSETS / 'report.css').read_text()
-    js = (ASSETS / 'report.js').read_text() + '\n' + (ASSETS / 'financial-terms.js').read_text()
+    css = (ASSETS / 'report.css').read_text() + '\n' + (ASSETS / 'dashboard.css').read_text()
+    js = (ASSETS / 'dashboard.js').read_text() + '\n' + (ASSETS / 'report.js').read_text() + '\n' + (ASSETS / 'financial-terms.js').read_text()
     main = annotate(main, 'report')
     evidence = annotate(evidence, 'evidence')
     home_link = '<a class="brand home-link" href="../index.html"><span class="brand-name"><span class="brand-icon" aria-hidden="true">◒</span> Stock Analysis / 03</span><span class="back-label" data-lang="en">← All companies</span><span class="back-label" data-lang="ro" hidden>← Toate companiile</span></a>'
     if default == 'ro':
         home_link = home_link.replace('data-lang="en">', 'data-lang="en" hidden>').replace('data-lang="ro" hidden>', 'data-lang="ro">')
-    return f'''<!doctype html><html lang="{default}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{h(data["company"]["name"])} — Stock Analysis</title><style>{css}</style></head><body data-reading="beginner"><a class="skip" href="#main">Skip to report</a><div class="layout"><aside class="sidebar">{home_link}{nav}</aside><main id="main"><div class="toolbar"><label>Language / Limbă<select id="language">{opts}</select></label><label>Reading / Lectură<select id="reading"><option value="beginner">Guided / Ghidat</option><option value="experienced">Detailed / Detaliat</option></select></label><label>Theme / Temă<select id="theme"><option value="dark">Dark / Întunecată</option><option value="light">Light / Luminoasă</option></select></label><button id="expand-lessons" aria-expanded="false">Explain all / Explică tot</button><button id="open-sources">Evidence / Dovezi</button></div><noscript><p class="nojs">Interactive evidence and language controls require JavaScript. The main report remains readable.</p></noscript>{main}</main></div><dialog id="evidence-dialog" aria-label="Sources and calculations"><div class="dialog-head"><h2>Sources & calculation / Surse și calcul</h2><button id="close-sources" autofocus>Close / Închide</button></div><label for="evidence-search">Search evidence / Caută dovezi</label><input id="evidence-search" type="search">{evidence}</dialog><script type="application/json" id="research-package">{embedded}</script><script>{js}</script></body></html>'''
+    return f'''<!doctype html><html lang="{default}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{h(data["company"]["name"])} — Stock Analysis</title><style>{css}</style></head><body data-reading="beginner"><a class="skip" href="#main">Skip to report</a><div class="layout"><aside class="sidebar">{home_link}{nav}</aside><main id="main"><div class="toolbar"><label>Language / Limbă<select id="language">{opts}</select></label><label>Reading / Lectură<select id="reading"><option value="beginner">Guided / Ghidat</option><option value="experienced">Detailed / Detaliat</option></select></label><label>Theme / Temă<select id="theme"><option value="dark">Dark / Întunecată</option><option value="light">Light / Luminoasă</option></select></label><button id="expand-lessons" aria-expanded="false">Explain all / Explică tot</button><button id="open-sources">Evidence / Dovezi</button></div><noscript><p class="nojs">Interactive evidence and language controls require JavaScript. The main report remains readable.</p></noscript>{main}</main></div><dialog id="evidence-dialog" aria-label="Sources and calculations"><div class="dialog-head"><h2>Sources & calculation / Surse și calcul</h2><button id="close-sources" autofocus>Close / Închide</button></div><label for="evidence-search">Search evidence / Caută dovezi</label><input id="evidence-search" type="search">{evidence}</dialog><script type="application/json" id="visual-package">{visual_embedded}</script><script type="application/json" id="research-package">{embedded}</script><script>{js}</script></body></html>'''
 
 
 def compare(reports, spec):
