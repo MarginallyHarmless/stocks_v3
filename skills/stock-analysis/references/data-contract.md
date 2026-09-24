@@ -137,3 +137,7 @@ Structural/numerical checks do not establish source truth, economic appropriaten
 ### Key stats (optional presentation selection)
 
 `key_stats` is a list of `{ "concept": "eps", "evidence_ref": "eps-ttm" }` rows. `concept` refers to a definition ID in `assets/financial-terms.json`, or `price` / `revenue`. An optional localized `label` can clarify the basis without changing it. The referenced evidence supplies the value or unavailable state, period, accounting basis, forecast flag and source chain. For an explicitly missing figure, omit `evidence_ref` and provide localized `label` and `note`; no value is fabricated. Retain reported and adjusted/forecast figures as separate rows. Historic editorial selections live in `assets/key-stats.json`, keyed by exact report ID, without changing immutable research.
+
+## Visual supplement
+
+The separately dated `visual_research_supplement` is validated by `dashboard.py`; see [visual-reporting.md](visual-reporting.md). Pass it explicitly with `stock.py render --visuals`. Company data lives outside the skill, keyed by exact report ID and verified security identity. It never changes an immutable archived research record.

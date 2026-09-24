@@ -28,6 +28,8 @@ The essential conclusion, adverse evidence, material assumptions, forecast label
 
 ## Charts
 
+Use [visual-reporting.md](visual-reporting.md) for the ten-panel financial dashboard. Its charts remain visible in Guided mode. Use two columns with consistent titles, visible values and short explanations; reflow to one column on phones.
+
 Only plot comparable values already present in the ledger. Label value, period, unit and basis, with a data table and source references. Use a chart when it adds a trend/relationship; omit it for a single number or unsupported history. Revenue alone is not proof of demand quality. Use a reconciled cash-flow diagram only when components genuinely reconcile and improve comprehension; this release does not advertise the old disconnected flow-diagram feature.
 
 ## UI checks

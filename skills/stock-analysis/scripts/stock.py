@@ -18,6 +18,7 @@ def main():
         cmd.add_argument("--baseline")
         if name == "render":
             cmd.add_argument("--archive")
+            cmd.add_argument("--visuals", help="Dated visual supplement for this exact security")
         if name != "validate":
             cmd.add_argument("--out", required=True)
     cmd = sub.add_parser("register")
@@ -62,7 +63,7 @@ def main():
             result = validate(d,b)
             if args.command == "render":
                 Path(args.out).parent.mkdir(parents=True,exist_ok=True)
-                Path(args.out).write_text(render(d,b,load(args.archive) if args.archive else None),encoding="utf-8")
+                Path(args.out).write_text(render(d,b,load(args.archive) if args.archive else None,visual_data=load(args.visuals) if args.visuals else None),encoding="utf-8")
             elif args.command == "recompute":
                 write_json(args.out,d)
         elif args.command == "register":

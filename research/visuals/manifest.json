@@ -1,0 +1,62 @@
+{
+  "AVGO-2026-09-16-v3-final": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "AVGO"
+  },
+  "PLTR-2026-09-17-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "PLTR"
+  },
+  "NBIS-2026-09-17-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "NBIS"
+  },
+  "ONDS-2026-09-17-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "ONDS"
+  },
+  "HOOD-2026-09-18-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "HOOD"
+  },
+  "APP-2026-09-18-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "APP"
+  },
+  "GOOG-2026-09-18-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "GOOG"
+  },
+  "CEG-2026-09-18-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "CEG"
+  },
+  "ISRG-2026-09-18-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "ISRG"
+  },
+  "ISRG-2026-09-18-v3-rebuilt": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "ISRG"
+  },
+  "VST-2026-09-18-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "VST"
+  },
+  "SOFI-2026-09-18-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "SOFI"
+  },
+  "ASTS-2026-09-18-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "ASTS"
+  },
+  "META-2026-09-19-v3": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "META"
+  },
+  "META-2026-09-19-v3-r2": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "META"
+  }
+}
