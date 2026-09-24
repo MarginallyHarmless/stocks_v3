@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 import math
+import re
 import statistics
 from datetime import date
 from urllib.parse import urlparse
@@ -75,10 +76,18 @@ def validate_dashboard(d, identity=None):
         labels = [p['period'] for p in points]
         ensure(len(set(labels)) == len(labels), 'duplicate periods')
         ensure(all(x not in ('TTM', 'Current') for x in labels), 'TTM/current mixed into history')
+        pattern = r'Q[1-4] \d{4}' if series['period_kind'] == 'quarter' else r'FY \d{4}'
+        ensure(all(isinstance(x, str) and re.fullmatch(pattern, x) for x in labels), 'period label does not match cadence in ' + key)
+        order = [(int(x[-4:]), int(x[1]) if x.startswith('Q') else 0) for x in labels]
+        ensure(order == sorted(order), 'points must be chronological in ' + key)
         for p in points:
             ensure(p['value'] is None or finite(p['value']), 'invalid observation')
             if key in ('pe', 'ps'):
                 ensure(p['value'] is None or p['value'] > 0, 'nonpositive multiple')
+    def bilingual(value):
+        return isinstance(value, dict) and all(isinstance(value.get(x), str) and value[x].strip() for x in ('en', 'ro'))
+    ensure(isinstance(d.get('caveats', []), list) and all(bilingual(x) for x in d.get('caveats', [])), 'caveats need English and Romanian text')
+    ensure(all(bilingual(s['note']) for s in d['series'].values() if 'note' in s), 'series note needs English and Romanian text')
     m = d.get('market', {})
     for key in ('overview_quote', 'stats_quote', 'forecast_quote'):
         if key in m:
@@ -87,6 +96,9 @@ def validate_dashboard(d, identity=None):
     if m.get('range'):
         r = m['range']; sourced(r)
         ensure(finite(r['low']) and finite(r['high']) and 0 < r['low'] < r['high'], 'invalid range')
+        for k in ('low_date', 'high_date'):
+            if r.get(k) is not None:
+                date.fromisoformat(r[k])
     if m.get('ma200'):
         sourced(m['ma200']); ensure(finite(m['ma200']['value']) and m['ma200']['value'] > 0, 'invalid average')
     if d.get('cash_bridge'):
@@ -98,6 +110,7 @@ def validate_dashboard(d, identity=None):
         t = c['targets']; sourced(t)
         ensure(all(finite(t[k]) for k in ('low', 'mean', 'median', 'high')), 'invalid target')
         ensure(0 < t['low'] <= t['mean'] <= t['high'] and t['low'] <= t['median'] <= t['high'], 'target order')
+        ensure(t.get('horizon_months') is None or (isinstance(t['horizon_months'], int) and t['horizon_months'] > 0), 'invalid target horizon')
     if c.get('ratings'):
         r = c['ratings']; sourced(r)
         ensure(set(r['counts']) == set(RATINGS), 'incomplete recommendation categories')
@@ -119,10 +132,14 @@ def fmt(v, unit='currency', scale=1, lang='en', compact=True):
     else:
         suffix = ''
         if compact:
-            for threshold, tag in [(1e12, 'T'), (1e9, 'B'), (1e6, 'M'), (1e3, 'K')]:
+            units = [(1e12, 'T'), (1e9, 'B'), (1e6, 'M'), (1e3, 'K')]
+            for i, (threshold, tag) in enumerate(units):
                 if abs(n) >= threshold:
+                    if i and abs(round(n / threshold, 2)) >= 1000:
+                        threshold, tag = units[i - 1]
                     n /= threshold; suffix = tag; break
-        result = ('$' if unit == 'currency' else '') + f'{n:,.2f}'.rstrip('0').rstrip('.') + suffix
+        sign = '-' if n < 0 else ''
+        result = sign + ('$' if unit == 'currency' else '') + f'{abs(n):,.2f}'.rstrip('0').rstrip('.') + suffix
     return result.replace(',', ' ').replace('.', ',') if lang == 'ro' else result
 
 
@@ -289,8 +306,19 @@ def financial_card(d, title, keys, lang, explanation_pair, style='bar', median=F
     result = card_open(title, subtitle) + chart(d,keys,lang,style,median)
     if keys==['cfo','fcf'] and d.get('cash_bridge'):
         b=d['cash_bridge'];value=lambda k:fmt(b[k],'currency',b['scale'],lang)
-        result += '<div class="viz-bridge"><strong>' + tr(lang,'Why Meta reports a different figure','De ce Meta raportează altă valoare') + '</strong><p>' + h(b['period']) + ': ' + h(fmt(b['cfo']-b['cash_capex'],'currency',b['scale'],lang)) + tr(lang,' before lease principal − ',' înainte de principalul leasingului − ') + h(value('lease_principal')) + ' = <strong>' + h(value('issuer_fcf')) + '</strong> ' + tr(lang,'company-defined free cash flow.','flux liber definit de companie.') + '</p>' + link(d,b['source_id'],lang) + '</div>'
+        result += '<div class="viz-bridge"><strong>' + tr(lang,'Why the company reports a different figure','De ce compania raportează altă valoare') + '</strong><p>' + h(b['period']) + ': ' + h(fmt(b['cfo']-b['cash_capex'],'currency',b['scale'],lang)) + tr(lang,' before lease principal − ',' înainte de principalul leasingului − ') + h(value('lease_principal')) + ' = <strong>' + h(value('issuer_fcf')) + '</strong> ' + tr(lang,'company-defined free cash flow.','flux liber definit de companie.') + '</p>' + link(d,b['source_id'],lang) + '</div>'
+    for k in keys:
+        if d['series'].get(k, {}).get('note'):
+            result += '<p class="viz-note">' + h(d['series'][k]['note'][lang]) + '</p>'
     return result + explanation(*explanation_pair,lang) + '</article>'
+
+
+SESSIONS = {'regular_close': ('Regular close', 'Închiderea ședinței'), 'intraday': ('Intraday, delayed', 'În timpul ședinței, cu întârziere'),
+            'pre_market': ('Pre-market', 'Înainte de deschidere'), 'after_hours': ('After hours', 'După închidere')}
+
+
+def session_label(session, lang):
+    return SESSIONS[session][lang == 'ro'] if session in SESSIONS else session
 
 
 def price_card(d, lang):
@@ -299,7 +327,7 @@ def price_card(d, lang):
     if not q or not r:
         return out + blank(lang) + '</article>'
     price=q['price']; low=r['low']; high=r['high']; pct=(price-low)/(high-low)*100
-    out += f'<div class="viz-price">{h(fmt(price,lang=lang))}</div><p class="viz-footnote">{h(q["observed_at"])} · {tr(lang,"Regular close","Închiderea ședinței")}</p>'
+    out += f'<div class="viz-price">{h(fmt(price,lang=lang))}</div><p class="viz-footnote">{h(q["observed_at"])} · {h(session_label(q["session"],lang))}</p>'
     out += f'<div class="viz-range" role="img" aria-label="{h(tr(lang,"Position in range: ","Poziția în interval: ")+str(round(pct,1))+"%")}"><div class="viz-range-fill" style="width:{max(0,min(100,pct)):.2f}%"></div><i style="left:{max(0,min(100,pct)):.2f}%"></i></div>'
     out += '<div class="viz-range-labels"><span>'+tr(lang,'Low','Minim')+' <strong>'+h(fmt(low,lang=lang))+'</strong></span><span>'+tr(lang,'High','Maxim')+' <strong>'+h(fmt(high,lang=lang))+'</strong></span></div>'
     rows=[(tr(lang,'Position in range','Poziție în interval'),f'{pct:.1f}%'),(tr(lang,'From the high','Față de maxim'),fmt((price/high-1)*100,'percent',lang=lang)),(tr(lang,'From the low','Față de minim'),fmt((price/low-1)*100,'percent',lang=lang))]
@@ -308,7 +336,10 @@ def price_card(d, lang):
         rows.append((tr(lang,'200-day average','Media de 200 de zile'),fmt(ma['value'],lang=lang)))
         if sq and sq['observed_at']==q['observed_at']:
             rows.append((tr(lang,'From 200-day average','Față de media de 200 de zile'),fmt((price/ma['value']-1)*100,'percent',lang=lang)))
-    rows += [(tr(lang,'Low / high dates','Datele minimului / maximului'),tr(lang,'Not supplied','Nefurnizate'))]
+    not_supplied = tr(lang,'Not supplied','Nefurnizată')
+    rows += [(tr(lang,'Low / high dates','Datele minimului / maximului'),
+              (r.get('low_date') or not_supplied) + ' / ' + (r.get('high_date') or not_supplied)
+              if r.get('low_date') or r.get('high_date') else tr(lang,'Not supplied','Nefurnizate'))]
     out += rows_html(rows) + '<p class="viz-footnote">'+link(d,r['source_id'],lang)+' · '+(link(d,ma['source_id'],lang) if ma else '')+'</p>'
     out += explanation('Range uses the provider’s published high and low, not daily closing prices. Position and moving averages describe history; they do not identify a buying point.', 'Intervalul folosește minimul și maximul publicate de furnizor, nu închiderile zilnice. Poziția și media descriu trecutul; nu indică un moment de cumpărare.',lang)
     return out+'</article>'
@@ -316,13 +347,17 @@ def price_card(d, lang):
 
 def consensus_card(d,lang):
     c=d.get('consensus',{}); t=c.get('targets'); r=c.get('ratings'); q=d.get('market',{}).get('forecast_quote')
-    out=card_open(tr(lang,'Analyst consensus','Consensul analiștilor'),tr(lang,'12-month price targets · estimates','Ținte de preț pe 12 luni · estimări'))
+    months = (t or {}).get('horizon_months')
+    subtitle = tr(lang,f'{months}-month price targets · estimates',f'Ținte de preț pe {months} luni · estimări') if months else tr(lang,'Price targets · horizon not supplied · estimates','Ținte de preț · orizont nefurnizat · estimări')
+    out=card_open(tr(lang,'Analyst consensus','Consensul analiștilor'),subtitle)
     if c.get('label'):
         label = dict(zip(RATINGS, RATINGS_RO)).get(c['label'], c['label']) if lang == 'ro' else c['label']
         out += '<p class="viz-consensus-label">' + h(label) + '</p>'
     if t:
         out+='<div class="viz-price">'+h(fmt(t['mean'],lang=lang))+'</div><p class="viz-footnote">'+tr(lang,'Average target','Țintă medie')
         if q:out+=' · '+h(fmt((t['mean']/q['price']-1)*100,'percent',lang=lang))+' '+tr(lang,'vs. quoted price','față de cotație')
+        updated=d['sources'][t['source_id']].get('source_updated_at')
+        if updated:out+='<br>'+tr(lang,'Estimates updated ','Estimări actualizate la ')+h(updated)+(' · '+tr(lang,'quote ','cotație ')+h(q['observed_at']) if q else '')
         out+='</p>'+rows_html([(tr(lang,'Low / median / high','Minim / mediană / maxim'),' / '.join(fmt(t[k],lang=lang) for k in ('low','median','high'))),(tr(lang,'Target contributors','Analiști cu ținte'),str(c.get('target_analyst_count',tr(lang,'Not supplied','Nefurnizat'))))])
     else:out+=blank(lang)
     if r:
@@ -343,17 +378,16 @@ def consensus_card(d,lang):
 def dashboard_html(d, data, lang):
     identity=data['company']['issuer_id']+'|'+data['company']['security_id']
     validate_dashboard(d,identity)
-    out=f'<section class="visual-dashboard" id="{lang}-visuals"><div class="viz-intro"><div class="kicker">{tr(lang,"The numbers, visually","Cifrele, vizual")}</div><h2>{tr(lang,"Financial performance","Evoluția financiară")}</h2><p>{tr(lang,"See how sales, profit and cash have changed. Hover over a chart to explore. Click or tap a period to pin its values.","Vezi evoluția vânzărilor, profitului și numerarului. Treci peste grafic pentru a explora. Apasă pe o perioadă pentru a-i fixa valorile.")}</p><p class="viz-date">{tr(lang,"Chart data collected","Datele graficelor colectate la")} {h(d["retrieved_at"])} · {tr(lang,"Original analysis","Analiza originală")}: {h(data["cutoff"][:10])}. {tr(lang,"Charts are a dated supplement; the original conclusions and watchlist have not been reassessed.","Graficele sunt un supliment datat; concluziile originale și lista de verificări nu au fost reevaluate.")}</p></div>'
-    if d['ticker'] in ('SOFI','HOOD'):
-        out += explanation('Financial-company cash flows include lending and customer-funding movements. Do not interpret this free-cash-flow series like that of a software or industrial company.', 'Fluxurile companiilor financiare includ creditarea și mișcările fondurilor clienților. Nu interpreta seria fluxului liber ca la o companie software sau industrială.', lang)
-    if d['ticker']=='NBIS':
-        out += explanation('The history spans a major business restructuring. Earlier periods are not a like-for-like record of today’s Nebius business.', 'Istoricul include o restructurare majoră a afacerii. Perioadele anterioare nu sunt direct comparabile cu activitatea actuală Nebius.', lang)
+    later_note = tr(lang,"Charts are a dated supplement; the original conclusions and watchlist have not been reassessed.","Graficele sunt un supliment datat; concluziile originale și lista de verificări nu au fost reevaluate.") if d['retrieved_at'] > data['cutoff'][:10] else ''
+    out=f'<section class="visual-dashboard" id="{lang}-visuals"><div class="viz-intro"><div class="kicker">{tr(lang,"The numbers, visually","Cifrele, vizual")}</div><h2>{tr(lang,"Financial performance","Evoluția financiară")}</h2><p>{tr(lang,"See how sales, profit and cash have changed. Hover over a chart to explore. Click or tap a period to pin its values.","Vezi evoluția vânzărilor, profitului și numerarului. Treci peste grafic pentru a explora. Apasă pe o perioadă pentru a-i fixa valorile.")}</p><p class="viz-date">{tr(lang,"Chart data collected","Datele graficelor colectate la")} {h(d["retrieved_at"])} · {tr(lang,"Original analysis","Analiza originală")}: {h(data["cutoff"][:10])}. {later_note}</p></div>'
+    for caveat in d.get('caveats', []):
+        out += explanation(caveat['en'], caveat['ro'], lang)
     out+='<div class="viz-grid">'
     out+=financial_card(d,tr(lang,'Revenue','Venituri'),['revenue'],lang,('Money earned from selling products and services. Compare the same quarter a year apart to allow for seasonality.','Banii obținuți din vânzarea produselor și serviciilor. Compară același trimestru între ani pentru a ține cont de sezonalitate.'))
     out+=financial_card(d,tr(lang,'Net profit','Profit net'),['net_income'],lang,('Profit attributable to common shareholders after costs and taxes. Red bars show losses. One-off gains can lift profit without improving the core business.','Profitul acționarilor ordinari după costuri și taxe. Barele roșii indică pierderi. Câștigurile excepționale pot mări profitul fără îmbunătățirea activității.'))
     out+=financial_card(d,tr(lang,'Cash flow','Flux de numerar'),['cfo','fcf'],lang,('Operating cash is money generated by operations. Provider free cash flow subtracts cash capital spending; it may differ from the company’s definition.','Numerarul operațional este generat de activitate. Fluxul liber al furnizorului scade investițiile de capital plătite; poate diferi de definiția companiei.'))
     out+=financial_card(d,tr(lang,'Share count','Numărul de acțiuni'),['diluted_shares'],lang,('More diluted shares divide the business among more shares. This weighted average is not the number of shares outstanding on a single date.','Mai multe acțiuni diluate împart afacerea între mai multe acțiuni. Această medie ponderată nu este numărul de acțiuni în circulație la o anumită dată.'),'shares')
-    out+=financial_card(d,tr(lang,'Cash, investments & debt','Numerar, investiții și datorii'),['cash','investments','debt'],lang,('Balances at each period end. Provider total debt includes lease obligations. A missing component is not zero.','Solduri la finalul fiecărei perioade. Datoria furnizorului include obligațiile de leasing. O componentă lipsă nu înseamnă zero.'))
+    out+=financial_card(d,tr(lang,'Cash, investments & debt','Numerar, investiții și datorii'),['cash','investments','debt'],lang,('Balances at each period end. Provider total debt can include leases and other financing the company does not report as borrowing; see any note above. A missing component is not zero.','Solduri la finalul fiecărei perioade. Datoria totală a furnizorului poate include leasingul și alte finanțări pe care compania nu le raportează ca împrumuturi; vezi nota de mai sus, dacă există. O componentă lipsă nu înseamnă zero.'))
     expense_keys=['sga','rnd'] if 'rnd' in d['series'] else [k for k in ('payroll','service_costs','fuel','maintenance','opex') if k in d['series']][:2]
     if not expense_keys:expense_keys=['opex']
     out+=financial_card(d,tr(lang,'Operating expenses','Cheltuieli operaționale'),expense_keys,lang,('Follow the named cost categories alongside revenue. These categories may not add up to all operating costs.','Urmărește categoriile de costuri afișate alături de venituri. Aceste categorii pot să nu reprezinte toate cheltuielile operaționale.'),'line')

@@ -12,8 +12,10 @@ from render import render
 registry = load(ROOT / 'stock-analysis-registry.json')
 manifest_path = ROOT / 'research/visuals/manifest.json'
 manifest = load(manifest_path) if manifest_path.exists() else {}
+key_stats = load(ROOT / 'research/key-stats.json')
 for company in registry['companies'].values():
     archive = verify_archive(load(repository_file(ROOT, company['archive_path'])))
+    links = {r['report_id']: Path(r['html_path']).name for r in company['reports']}
     for report in company['reports']:
         data = archive['snapshots'][report['report_id']]['research']
         parent = data.get('parent_report_id')
@@ -21,5 +23,5 @@ for company in registry['companies'].values():
         entry = manifest.get(data['report_id'])
         visual_data = load(ROOT / entry['path'])[entry['key']] if entry else None
         path = repository_file(ROOT, report['html_path'])
-        path.write_text(render(data, baseline=baseline, archive=archive, visual_data=visual_data), encoding='utf-8')
+        path.write_text(render(data, baseline=baseline, archive=archive, visual_data=visual_data, report_links=links, key_stats=key_stats.get(data['report_id'])), encoding='utf-8')
         print('Rendered', report['html_path'])

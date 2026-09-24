@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate saved research and regenerate the repository index."""
+import re
 import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,5 +17,10 @@ for identity, company in registry["companies"].items():
     for report in company["reports"]:
         need(report["report_id"] in archive["snapshots"], "Report missing from archive")
         repository_file(ROOT, report["html_path"])
-(ROOT / "index.html").write_text(render_index(registry, repo_root=ROOT), encoding="utf-8")
+index = ROOT / "index.html"
+html = render_index(registry, repo_root=ROOT)
+stamp = re.compile(r'"generated_at": "[^"]*"')
+# Rebuilding unchanged research keeps the file, so the saved-at date only moves with content.
+if not (index.exists() and stamp.sub("", index.read_text(encoding="utf-8")) == stamp.sub("", html)):
+    index.write_text(html, encoding="utf-8")
 print(f"Built index for {len(registry['companies'])} companies.")

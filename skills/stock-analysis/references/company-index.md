@@ -11,7 +11,14 @@ Maintain `index.html` and `stock-analysis-registry.json` in `MarginallyHarmless/
 python3 scripts/stock.py catalog REPO/archives/company-archive.json --registry REPO/stock-analysis-registry.json --repo-root REPO --repository MarginallyHarmless/stocks_v3 --report-path reports/REPORT.html --card card.json
 ```
 
-3. Supply a succinct English/Romanian card with business, summary and risk, keyed to the latest report ID. Keep a verified logo and its provenance. Cataloging retains schedule checks newer than the ledger and unreviewed periods. Repeated cataloging is idempotent; it does not push changes.
+3. Supply a succinct English/Romanian card with business, summary and risk, keyed to the latest report ID. Keep a verified logo and its provenance. `card.json` has this shape; every text field is `{"en": …, "ro": …}`:
+
+```json
+{"report_id": "EXACT-LATEST-REPORT-ID", "summary": {"en": "…", "ro": "…"}, "business": {"en": "…", "ro": "…"},
+ "risk": {"en": "…", "ro": "…"}, "logo_url": "https://…", "logo_source_url": "https://…", "logo_data_uri": "data:image/png;base64,…"}
+```
+
+   Without `--card`, cataloging a newer report keeps only the logo fields and falls back to the report's first summary claim, dropping business and risk, so always pass a card for a new report. Cataloging retains schedule checks newer than the ledger and unreviewed periods. Repeated cataloging is idempotent; it does not push changes.
 4. Render links to actual reports. Missing files must fail the build:
 
 ```text

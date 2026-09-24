@@ -22,7 +22,7 @@ Resolve legal issuer, exchange, share class/ADR ratio, durable security identifi
 
 ## Research
 
-Read [research-method.md](references/research-method.md). For a full report, also read [checklist.md](references/checklist.md); preserve all original IDs and thresholds from [checklist.json](references/checklist.json), including preparation and optional indicators. They form the coverage audit, not the visible section order. The original PDF is included for fidelity checks.
+Read [research-method.md](references/research-method.md). For a full report, also read [checklist.md](references/checklist.md); preserve every original ID from [checklist.json](references/checklist.json), including preparation (`P*`) and optional (`O*`) indicators, and the thresholds stated in checklist.md. They form the coverage audit, not the visible section order. The original PDF is included for fidelity checks.
 
 Browse for every current company analysis, earnings date and follow-up. Open the underlying issuer release and applicable filings; a search snippet or remembered number is insufficient. Use dated market data for price. If sources are unavailable, retain unknowns explicitly and identify the report as partial. Do not claim an unread filing or transcript was reviewed.
 
@@ -32,12 +32,12 @@ Keep a single evidence ledger. Distinguish facts, estimates, assumptions, calcul
 
 ## Build the report
 
-Read [data-contract.md](references/data-contract.md) before writing JSON. Use bundled scripts rather than manually editing numbers into HTML. Python 3.10+ and its standard library suffice. Commands use paths relative to this skill directory; use absolute paths when working elsewhere.
+Read [data-contract.md](references/data-contract.md) before writing JSON. Use bundled scripts rather than manually editing numbers into HTML. Python 3.10+ and its standard library suffice. Commands use paths relative to this skill directory; use absolute paths when working elsewhere. The research repository also has its own root-level `scripts/` (`render_reports.py`, `build_index.py`); those commands run from the repository root.
 
 ```text
 python3 scripts/stock.py recompute research-draft.json --out research.json
 python3 scripts/stock.py validate research.json
-python3 scripts/stock.py render research.json --out report.html
+python3 scripts/stock.py render research.json --visuals visual-data.json --out report.html
 ```
 
 The renderer does not register, upload or publish anything. To obtain an authoring example with invented data, run `python3 scripts/demo.py --out <scratch-directory>`. Never use the demo's sources, prose or figures as company evidence. Start a real ledger with `synthetic: false` only after research, and replace all invented content.
@@ -62,7 +62,7 @@ Read [earnings-follow-up.md](references/earnings-follow-up.md) for every full re
 
 Show the next results release date in the header and closing section with Confirmed / Estimated / Not announced, period, source and schedule-check date. Keep results, call and filing events separate. Recheck the schedule when returning. A passed date is not proof of publication.
 
-Use [persistence.md](references/persistence.md) to save every report, immutable company archive, registry and index in **https://github.com/MarginallyHarmless/stocks_v3**, the user's canonical research repository. Read its current `AGENTS.md` and `stock-analysis-registry.json` first. Use the GitHub connector or a normal Git checkout; commit and push completed reports and index updates there. Do not publish on ChatGPT Sites or create parallel Library copies unless the user explicitly changes this preference. A local file alone is not a completed save. Preserve existing reports, identities and immutable snapshots.
+Use [persistence.md](references/persistence.md) to save every Full, Compare and Update report, and any Focused answer the user asks to keep, with its immutable company archive, registry and index in **https://github.com/MarginallyHarmless/stocks_v3**, the user's canonical research repository. A Focused answer given only in conversation is not saved or published. Read its current `AGENTS.md` and `stock-analysis-registry.json` first. Use the platform's GitHub integration or a normal Git checkout; commit and push completed reports and index updates there. Pushing to `main` deploys the public GitHub Pages site, so that push is the one publishing step; do not publish anywhere else or create parallel copies unless the user explicitly changes this preference. A local file alone is not a completed save. Preserve existing reports, identities and immutable snapshots.
 
 Maintain the shared `index.html` after every full report or earnings update, following [company-index.md](references/company-index.md). Use the same repository index and registry for all studied companies. Show a succinct beginner-readable card, real company logo, next results date with confidence, live countdown, and a minimal logo calendar. Keep overdue estimates distinct from verified publication. Clear a period's review flag only after its saved earnings comparison; editorial changes do not count. For editorial report changes, refresh the linked report without changing analysis dates or review state.
 
@@ -83,8 +83,8 @@ The archive preserves parent/report IDs and detects repeated reviews of the same
 - Reopen sources for the thesis, quote, valuation assumptions and major risks; distinguish source truth from successful arithmetic validation. Recheck for newer filings/corrections before finalizing.
 - Validate with the actual saved baseline. Read the Guided view with every accordion closed: can a beginner explain the business, opportunity, risks, price and next checks without decoding abbreviations? Inspect both languages and reading levels; check desktop and 320/390px phone layouts, explanation controls, nested evidence links, keyboard closing, export and the copied prompt. If visual preview is unavailable, disclose the unverified layout rather than claiming it passed.
 - Check the exported package with `verify-archive`. Confirm the durable save succeeded before saying later sessions can retrieve it.
-- Deliver the HTML link with a brief conclusion, cutoff and any material gap. Keep the archive accessible when useful. Do not generate PDFs, host a site or execute trades unless requested.
+- Deliver the HTML link with a brief conclusion, cutoff and any material gap. Keep the archive accessible when useful. Do not generate PDFs, publish outside the repository's GitHub Pages site, or execute trades unless requested.
 
 For v2 records, read [migration.md](references/migration.md). Preserve the original package and evidence; legacy compatibility does not qualify an old report as a new strict report.
 
-For implementation maintenance, run `python3 -m unittest discover -s scripts/tests -v`; when Node is available, also run `node scripts/tests/test_report_controls.js` for reading preferences and source navigation and `node scripts/tests/test_company_index.js` for earnings state transitions. These do not replace visual inspection. [evaluation-cases.md](references/evaluation-cases.md) defines analytical cases beyond code tests. [provenance.md](references/provenance.md) records inherited material and intentional changes.
+For implementation maintenance, run `python3 -m unittest discover -s scripts/tests -v`; when Node is available, also run `node scripts/tests/test_report_controls.js` for reading preferences and source navigation, `node scripts/tests/test_company_index.js` for earnings state transitions, `node scripts/tests/test_financial_terms.js` for term definitions and `node scripts/tests/test_dashboard_controls.js` for chart interaction. These do not replace visual inspection. [evaluation-cases.md](references/evaluation-cases.md) defines analytical cases beyond code tests. [provenance.md](references/provenance.md) records inherited material and intentional changes.

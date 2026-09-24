@@ -25,6 +25,7 @@ Use `scripts/demo.py --out <temporary-directory>` to create a complete bilingual
 | `coverage`, `checklist` | Module coverage and original checklist audit. |
 | `watchlist`, `next_event`, `related_events` | Closing checks and dated reporting events; watchlist required for full/update. |
 | `review` | Update-only original-criteria assessment. |
+| `editorial_revision_of`, `revision_note` | Optional. An editorial revision names the report ID it corrects and explains the change in a bilingual note; it keeps the original cutoff, so it must have a later `prepared_at`. The page shows the note, and the earlier report shows a banner pointing to the newest saved full/focused report. |
 
 Narrative text accepts a string for a single-language report or `{ "en": "…", "ro": "…" }`. Author both translations when both languages are listed. Preserve exact source titles, stable IDs and technical definitions rather than translating identifiers. Do not use arbitrary HTML in prose; the renderer escapes it. String definitions are normalization keys for calculations, not prose templates.
 
@@ -53,7 +54,7 @@ Units: `currency`, `currency_per_share`, `shares`, `percent`, `ratio`, `count`. 
 
 Basis: `GAAP`, `IFRS`, `adjusted`, `market`, `operating`, `model`. A derived standard FCF may use GAAP inputs, but explain that FCF itself is a non-GAAP measure. Preserve adjustments/reconciliations explicitly.
 
-Periods are `duration` with start/end, or `instant` with end only. Both require a label and forecast boolean. Facts cannot be forecasts. Numerical market evidence also needs `observed_at` and `session` (e.g. regular close); access time is not quote time. Non-numeric evidence uses `state` and a period, except unavailable records can omit the period.
+Periods are `duration` with start/end, or `instant` with end only, using `YYYY-MM-DD` dates. Both require a plain-string label (not a translation map, because labels match watch `due_period` and event periods) and a forecast boolean. Facts cannot be forecasts. Numerical market evidence also needs `observed_at` and `session` (e.g. regular close); access time is not quote time. Non-numeric evidence uses `state` and a period, except unavailable records can omit the period.
 
 Facts/estimates require `source_id` and `extraction` with locator and compact extraction note. Assumptions require `rationale`. Judgments require `evidence_refs`. Unavailable records explain the reason in `state`; never turn absence into zero.
 
@@ -110,6 +111,8 @@ Full reports require all module coverage keys: business, moat, growth, profitabi
 
 Optional `section.evidence_table` has an authored `title`, `columns`, and `rows`. Each row has a `label` and one `cells` entry per non-label column. Each cell is either `{evidence_ref: ID}` or a typed claim. Values render from the ledger; claims follow normal evidence and translation validation. The table appears in Detailed analysis and its references join the source navigation. Use it for peer matrices with explicit period and comparability limits.
 
+Optional `section.tables` is a list of further authored tables (scenarios, sensitivities, multi-column peer matrices). Each has a localized `title`, localized `columns`, and `rows`; every row is a list with exactly one cell per column, each `{evidence_ref: ID}` (numeric or unavailable evidence) or a typed claim. They render after the section's sources inside Detailed analysis. For guided sections whose metrics show a `model`-basis result, the renderer also keeps the section's `model` claims about those inputs visible under “Assumptions behind the displayed scenario”.
+
 See earnings-follow-up.md for meaning. Each item has id, positive criterion_version, question, why, baseline_refs, due_period, optional due_date, criterion and impact. `impact` has favorable/adverse/mixed/unresolved text.
 
 `criterion`: kind numeric/qualitative, basis management_guidance/external_estimate/analytical_test, description, rationale. External or management criteria require evidence_refs. Numeric criteria also have operator gt/gte/lt/lte/between, value, optional upper, unit, scale, accounting_basis, definition, and currency when applicable. Numeric actual comparisons use base units; percent thresholds are percentages, not decimal ratios.
@@ -136,7 +139,7 @@ Structural/numerical checks do not establish source truth, economic appropriaten
 
 ### Key stats (optional presentation selection)
 
-`key_stats` is a list of `{ "concept": "eps", "evidence_ref": "eps-ttm" }` rows. `concept` refers to a definition ID in `assets/financial-terms.json`, or `price` / `revenue`. An optional localized `label` can clarify the basis without changing it. The referenced evidence supplies the value or unavailable state, period, accounting basis, forecast flag and source chain. For an explicitly missing figure, omit `evidence_ref` and provide localized `label` and `note`; no value is fabricated. Retain reported and adjusted/forecast figures as separate rows. Historic editorial selections live in `assets/key-stats.json`, keyed by exact report ID, without changing immutable research.
+`key_stats` is a list of `{ "concept": "eps", "evidence_ref": "eps-ttm" }` rows. `concept` refers to a definition ID in `assets/financial-terms.json`, or `price` / `revenue`. An optional localized `label` can clarify the basis without changing it. The referenced evidence supplies the value or unavailable state, period, accounting basis, forecast flag and source chain. For an explicitly missing figure, omit `evidence_ref` and provide localized `label` and `note`; no value is fabricated. Retain reported and adjusted/forecast figures as separate rows. Historic editorial selections live in the repository's `research/key-stats.json`, keyed by exact report ID and passed to the renderer by `scripts/render_reports.py`, without changing immutable research.
 
 ## Visual supplement
 

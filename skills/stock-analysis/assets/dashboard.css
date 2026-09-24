@@ -39,3 +39,4 @@ body[data-theme=light]{--plot-violet:#6a52be;--plot-mint:#207c66;--plot-gold:#97
 .viz-consensus-label{font-size:13px;color:var(--accent);margin-bottom:12px}.viz-bridge{border-left:2px solid var(--plot-gold);font-size:13px;line-height:1.6;padding:2px 0 2px 12px;margin-top:16px}.viz-bridge>strong{display:block;margin-bottom:5px;font-size:12px}.viz-bridge p{margin:0}.viz-bridge a{font-size:12px}.viz-export{font-size:12px;margin-top:20px}
 @media(max-width:560px){.viz-chart text{font-size:17px}}
 @media(max-width:420px){.viz-chart text{font-size:21px}}
+.viz-note{font-size:13px;line-height:1.6;margin:12px 0 0;padding:8px 12px;border-left:2px solid var(--warn)}

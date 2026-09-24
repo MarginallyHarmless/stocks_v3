@@ -1,6 +1,6 @@
 # Durable research packages
 
-The user chose **https://github.com/MarginallyHarmless/stocks_v3** for the index, AVGO report and all future reports. Use this repository as the source of truth. Do not use ChatGPT Sites or save duplicate Library copies. If GitHub is unavailable, retain local work and report the blocked save; do not substitute another publishing service.
+The user chose **https://github.com/MarginallyHarmless/stocks_v3** for the index and every report. Use this repository as the source of truth. Do not use ChatGPT Sites or save duplicate Library copies. If GitHub is unavailable, retain local work and report the blocked save; do not substitute another publishing service.
 
 ## Repository layout
 
@@ -16,14 +16,14 @@ The user chose **https://github.com/MarginallyHarmless/stocks_v3** for the index
 2. Validate and render the new ledger; register it explicitly in the same company archive. Preserve the original archive and use an expected hash when updating one previously read.
 
 ```text
-python3 scripts/stock.py register research.json --archive REPO/archives/company-archive.json
+python3 scripts/stock.py register research.json --archive REPO/archives/company-archive.json --expected-hash ARCHIVE_SHA256_WHEN_READ
 python3 scripts/stock.py catalog REPO/archives/company-archive.json --registry REPO/stock-analysis-registry.json --repo-root REPO --repository MarginallyHarmless/stocks_v3 --report-path reports/REPORT.html --card card.json
 python3 scripts/stock.py index REPO/stock-analysis-registry.json --repo-root REPO --out REPO/index.html
 ```
 
 3. Follow [company-index.md](company-index.md) for cards, schedule provenance and review states. Verify report links resolve within the repository and all archived snapshots still validate.
-4. Commit and push report, archive, registry and generated index together. Include generator/template changes when needed. Use the GitHub connector when available; preserve concurrent changes and never force-push. Inspect the actual remote tree/commit after writing. A local commit or a rendered HTML file alone is not success.
-5. Every push to `main` runs the repository's `.github/workflows/pages.yml` to validate, build and deploy through GitHub Pages using GitHub's built-in credentials. Monitor the Actions run for the exact pushed commit, inspect failed job logs and fix or retry actionable failures. Check the index and changed report URLs under `https://marginallyharmless.github.io/stocks_v3/` before claiming they are live. The connected GitHub app can push without a browser login; keep using it when shell Git lacks credentials. The one-time repository setting is Settings → Pages → Source: GitHub Actions. The connector cannot change that administration setting: complete and push the workflow first, then request only that exact account action if still missing. Do not ask for personal tokens or repeat browser sign-in for routine updates. Keep this preference in the repository's `AGENTS.md` for future sessions.
+4. Commit and push report, archive, registry and generated index together. Include generator/template changes when needed. Use shell Git, or the platform's GitHub integration when the shell lacks credentials; preserve concurrent changes and never force-push. Inspect the actual remote tree/commit after writing. A local commit or a rendered HTML file alone is not success.
+5. Every push to `main` runs the repository's `.github/workflows/pages.yml` to validate, build and deploy through GitHub Pages using GitHub's built-in credentials. Monitor the Actions run for the exact pushed commit, inspect failed job logs and fix or retry actionable failures. Check the index and changed report URLs under `https://marginallyharmless.github.io/stocks_v3/` before claiming they are live. The one-time repository setting is Settings → Pages → Source: GitHub Actions. An assistant integration normally cannot change that administration setting: complete and push the workflow first, then request only that exact account action if still missing. Do not ask for personal tokens or repeat browser sign-in for routine updates. Keep this preference in the repository's `AGENTS.md` for future sessions.
 
 ## Fresh session
 

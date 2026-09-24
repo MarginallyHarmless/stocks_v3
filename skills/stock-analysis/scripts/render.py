@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from financial_terms import annotate, TERMS
 from dashboard import dashboard_html
-from archive import verify_archive
+from archive import snapshot_order, verify_archive
 from model import digest, format_number, number, validate, need, dimensions, period_key
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
@@ -110,6 +110,43 @@ def evidence_table_html(table, ev, lang):
     return out + '</tbody></table></div>'
 
 
+def tables_html(tables, ev, lang):
+    """Authored section tables: each row is one cell per column, backed by evidence or a typed claim."""
+    out = ''
+    for table in tables:
+        columns = table['columns']
+        out += '<div class="table-wrap"><table class="research-table"><caption>' + h(t(table['title'], lang)) + '</caption><thead><tr>'
+        out += ''.join('<th scope="col">' + h(t(c, lang)) + '</th>' for c in columns) + '</tr></thead><tbody>'
+        for row in table.get('rows', []):
+            out += '<tr>'
+            for column, cell in zip(columns, row):
+                if 'evidence_ref' in cell:
+                    e = ev[cell['evidence_ref']]
+                    content = h(format_number(e, lang) if 'value' in e else t(e['state'], lang)) + ref_buttons([e['id']], lang)
+                else:
+                    content = h(t(cell['text'], lang)) + ref_buttons(cell.get('evidence_refs', []), lang)
+                out += '<td data-label="' + h(t(column, lang)) + '">' + content + '</td>'
+            out += '</tr>'
+        out += '</tbody></table></div>'
+    return out
+
+
+def scenario_assumptions_html(s, ev, lang):
+    """Keep the authored model claims visible beside a guided model result."""
+    model_inputs, pending = set(), [m['evidence_ref'] for m in s.get('guide', {}).get('metrics', [])
+                                    if ev[m['evidence_ref']].get('basis') == 'model']
+    while pending:
+        key = pending.pop()
+        if key not in model_inputs:
+            model_inputs.add(key)
+            pending.extend(ev[key].get('inputs', []))
+    assumptions = [c for c in s['claims'] if c['type'] == 'model' and model_inputs.intersection(c.get('evidence_refs', []))]
+    if not assumptions:
+        return ''
+    return (f'<aside class="scenario-assumptions"><h3>{tr(lang,"Assumptions behind the displayed scenario","Ipotezele scenariului afișat")}</h3>'
+            + claims(assumptions, lang) + '</aside>')
+
+
 def section_html(s, ev, lang, index, sources):
     output = f'<section class="section" id="{h(lang)}-{h(s["id"])}"><div class="section-no">{index:02d}</div><h2>{h(t(s["question"],lang))}</h2>'
     guide = s.get('guide')
@@ -128,6 +165,7 @@ def section_html(s, ev, lang, index, sources):
     if lesson:
         output += f'<details class="lesson"><summary>{tr(lang,"Explain this","Explică-mi conceptul")}</summary><div class="lesson-content"><p>{h(t(lesson["concept"],lang))}</p><p class="example"><strong>{tr(lang,"Hypothetical example","Exemplu ipotetic")}: </strong>{h(t(lesson["example"],lang))}</p><p><strong>{tr(lang,"Common trap","Confuzie frecventă")}: </strong>{h(t(lesson["trap"],lang))}</p></div></details>'
     if guide:
+        output += scenario_assumptions_html(s, ev, lang)
         output += f'<details class="deep-data"><summary>{tr(lang,"Detailed analysis","Analiza detaliată")}</summary><div class="detail-content">' + claims(s['claims'],lang)
         if s.get('metrics'):
             output += metrics_html(s['metrics'],ev,lang)
@@ -154,6 +192,7 @@ def section_html(s, ev, lang, index, sources):
         todo.extend(e.get('inputs',[]));todo.extend(e.get('evidence_refs',[]))
     links=''.join(f'<p><a href="{h(source["url"])}" target="_blank" rel="noopener noreferrer">{h(t(source["title"],lang))}</a></p>' for source in roots.values())
     output += f'<details class="evidence-disclosure"><summary>{tr(lang,"Sources & calculation","Surse și calcul")}</summary><p class="meta">{tr(lang,"Open a reference to inspect its source, definition and inputs.","Deschide o referință pentru sursă, definiție și datele de intrare.")}</p>{ref_buttons(ids,lang)}{links}</details>'
+    output += tables_html(s.get('tables', []), ev, lang)
     if guide:
         output += '</div></details>'
     return output + '</section>'
@@ -238,10 +277,9 @@ def watch_html(data, ev, sources, lang):
     return out
 
 
-def key_stats_html(data, ev, lang):
-    # Presentation-only mappings keep historic research snapshots immutable.
-    presets = json.loads((ASSETS / 'key-stats.json').read_text())
-    rows = data.get('key_stats', presets.get(data['report_id'], []))
+def key_stats_html(data, ev, lang, preset=None):
+    # A repository-supplied preset selects evidence for older immutable snapshots.
+    rows = data.get('key_stats', preset or [])
     if not rows:
         return ''
     meanings = {term['id']: term[lang] for term in TERMS}
@@ -268,7 +306,23 @@ def key_stats_html(data, ev, lang):
     return out + '</dl></section>'
 
 
-def render(data, baseline=None, archive=None, visual_data=None):
+def revision_html(data, archive, lang, report_links):
+    """Make editorial revisions and replaced reports traceable from the page itself."""
+    def named(rid):
+        href = (report_links or {}).get(rid)
+        return f'<a href="{h(href)}">{h(rid)}</a>' if href else h(rid)
+    out = ''
+    if data.get('revision_note'):
+        out += f'<p class="notice">{tr(lang,"Editorial revision of","Revizie editorială a")} {named(data.get("editorial_revision_of", ""))}: {h(t(data["revision_note"],lang))}</p>'
+    later = [d for d in (v['research'] for v in (archive or {}).get('snapshots', {}).values())
+             if d['mode'] != 'update' and snapshot_order(d) > snapshot_order(data)]
+    if later:
+        newest = max(later, key=snapshot_order)['report_id']
+        out += f'<p class="notice">{tr(lang,"A newer saved report replaces this one:","Un raport salvat mai nou îl înlocuiește pe acesta:")} {named(newest)}. {tr(lang,"This page is kept unchanged for the record.","Pagina este păstrată neschimbată pentru istoric.")}</p>'
+    return out
+
+
+def render(data, baseline=None, archive=None, visual_data=None, report_links=None, key_stats=None):
     validate(data, baseline)
     ev = {e["id"]:e for e in data["evidence"]}
     sources = {s["id"]:s for s in data["sources"]}
@@ -286,10 +340,10 @@ def render(data, baseline=None, archive=None, visual_data=None):
         main += f'<div data-lang="{lang}"{hidden}>'
         if data["synthetic"]:
             main += f'<div class="synthetic">{tr(lang,"ILLUSTRATIVE DEMO · Fictional company and invented numbers. This is a workflow example, not company research.","DEMONSTRAȚIE · Companie fictivă și valori inventate. Exemplu de funcționare, nu analiză a unei companii reale.")}</div>'
-        main += f'<header class="summary" id="{lang}-summary"><div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1><p class="meta">{tr(lang,"Information cutoff","Date disponibile până la")}: {h(data["cutoff"])} · {h(data["report_id"])}</p><div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></dl><p class="notice">{h(t(data["evidence_gaps"],lang))}</p>'
+        main += f'<header class="summary" id="{lang}-summary">{revision_html(data, archive, lang, report_links)}<div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1><p class="meta">{tr(lang,"Information cutoff","Date disponibile până la")}: {h(data["cutoff"])} · {h(data["report_id"])}</p><div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></dl><p class="notice">{h(t(data["evidence_gaps"],lang))}</p>'
         if data.get("next_event"):
             main += event_html(data["next_event"], sources,lang,True)
-        main += key_stats_html(data, ev, lang) + '</header>'
+        main += key_stats_html(data, ev, lang, key_stats) + '</header>'
         if visual_data:
             main += dashboard_html(visual_data, data, lang)
         if data.get("review"):

@@ -31,6 +31,12 @@ jobs:
           node skills/stock-analysis/scripts/tests/test_company_index.js
           node skills/stock-analysis/scripts/tests/test_report_controls.js
           node skills/stock-analysis/scripts/tests/test_financial_terms.js
+          node skills/stock-analysis/scripts/tests/test_dashboard_controls.js
+
+      - name: Check published reports match their archives
+        run: |
+          python3 scripts/render_reports.py
+          git diff --exit-code -- reports/ || { echo "::error::reports/ is out of date; run python3 scripts/render_reports.py and commit"; exit 1; }
 
       - name: Validate archives and build the index
         run: python3 scripts/build_index.py

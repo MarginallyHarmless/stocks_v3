@@ -58,5 +58,9 @@
   "META-2026-09-19-v3-r2": {
     "path": "research/visuals/2026-09-24.json",
     "key": "META"
+  },
+  "ASTS-2026-09-18-v3-r2": {
+    "path": "research/visuals/2026-09-24.json",
+    "key": "ASTS"
   }
 }

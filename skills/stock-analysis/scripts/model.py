@@ -43,6 +43,9 @@ def load(path):
 
 
 def parse_date(value):
+    # Only the extended form, so ISO strings also compare correctly as text.
+    if not (isinstance(value, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", value)):
+        raise Invalid(f"Invalid ISO date: {value!r}")
     try:
         return date.fromisoformat(value)
     except (ValueError, TypeError):
@@ -56,6 +59,11 @@ def timestamp(value):
         return result
     except (ValueError, TypeError, AttributeError):
         raise Invalid(f"Invalid timestamp: {value!r}") from None
+
+
+def key_text(value):
+    """Period labels and IDs match across records, so they are plain strings, not translations."""
+    return isinstance(value, str) and bool(value.strip())
 
 
 def text_ok(value):
@@ -78,7 +86,7 @@ def period(value):
     need(isinstance(value, dict), "Typed period required")
     need(value.get("kind") in {"instant", "duration"}, "period.kind must be instant or duration")
     end = parse_date(value.get("end"))
-    need(text_ok(value.get("label")), "period.label required")
+    need(key_text(value.get("label")), "period.label must be a plain string")
     need(isinstance(value.get("forecast"), bool), "period.forecast boolean required")
     if value["kind"] == "duration":
         need(parse_date(value.get("start")) <= end, "Period starts after its end")
@@ -159,6 +167,8 @@ def calculate(e, inputs):
             need(a['unit'] == b['unit'] == 'currency_per_share' and a.get('currency') == b.get('currency'), "P/E currency/per-share mismatch")
             need(a['basis'] == 'market' and a['period']['kind'] == 'instant' and b['period']['kind'] == 'duration' and vals[1] > 0, "P/E needs a quote and positive compatible EPS")
             need(e['unit'] == 'ratio' and e['basis'] == b['basis'] and period_key(e) == period_key(b), "P/E output must identify EPS period and basis")
+            need(350 <= (parse_date(b['period']['end'])-parse_date(b['period']['start'])).days <= 371, "P/E needs annual or trailing-twelve-month EPS")
+            need(b['period']['forecast'] or b['period']['end'] <= a['period']['end'], "Trailing EPS cannot end after the quote date")
             answer = vals[0]/vals[1]
         elif op == 'net_debt_to_fcf':
             need(a['unit'] == b['unit'] == 'currency' and dimensions(a)==dimensions(b) and vals[1]>0, "Net debt/FCF requires positive FCF and compatible currency/basis")
@@ -251,8 +261,12 @@ def format_number(e, language="en"):
     v = number(e)
     unit = e["unit"]
     if unit in {"currency", "shares", "count"}:
-        divisor, suffix = next(((n, s) for n, s in ((1e12, "T"), (1e9, "B"), (1e6, "M"), (1e3, "k"))
-                                if abs(v) >= n), (1, ""))
+        digits = e.get("precision", 2)
+        units = ((1e12, "T"), (1e9, "B"), (1e6, "M"), (1e3, "k"))
+        divisor, suffix = next(((n, s) for n, s in units if abs(v) >= n), (1, ""))
+        bigger = [u for u in units if u[0] > divisor]
+        if bigger and abs(round(v / divisor, digits)) >= 1000:
+            divisor, suffix = bigger[-1]
         value = f"{v/divisor:,.{e.get('precision', 2)}f}".rstrip("0").rstrip(".") if e.get("precision",2) else f"{v/divisor:,.0f}"
         result = value + suffix
     else:
@@ -292,7 +306,7 @@ def claim(c, evidence):
 def event(ev, sources):
     need(ev.get("confidence") in {"Confirmed", "Estimated", "Not announced"}, "Invalid event confidence")
     for k in ("id", "period", "kind"):
-        need(text_ok(ev.get(k)), f"event.{k} required")
+        need(key_text(ev.get(k)), f"event.{k} must be a plain string")
     need(ev["kind"] in {"results", "call", "filing"}, "Keep event types separate")
     parse_date(ev.get("checked_at"))
     if ev["confidence"] == "Not announced":
@@ -312,8 +326,10 @@ def event(ev, sources):
 
 
 def watch(w, evidence):
-    for key in ("id", "question", "why", "due_period"):
+    for key in ("question", "why"):
         need(text_ok(w.get(key)), f"watch.{key} required")
+    for key in ("id", "due_period"):
+        need(key_text(w.get(key)), f"watch.{key} must be a plain string")
     need(isinstance(w.get("criterion_version"), int) and w["criterion_version"] > 0, "Positive criterion version required")
     refs(w.get("baseline_refs"), evidence, "watch baseline", required=False)
     need(bool(w.get("baseline_refs")), "Watch baseline needs an evidence record, including unavailable where necessary")
@@ -444,6 +460,8 @@ def validate(data, baseline=None):
         need(isinstance(data.get(key),dict), f'{key} requires a typed claim')
         claim(data[key],evidence)
     need(text_ok(data.get('evidence_gaps')), 'evidence_gaps required')
+    if 'revision_note' in data:
+        need(text_ok(data['revision_note']) and isinstance(data.get('editorial_revision_of'), str), 'Revision note needs the revised report ID')
     sections = data.get("sections", [])
     need(bool(sections), "At least one question-led section required")
     need(data.get("presentation") in {None, "guided"}, "Unknown presentation")
@@ -465,7 +483,19 @@ def validate(data, baseline=None):
                 need(text_ok(row.get('label')) and len(row.get('cells', [])) == len(table['columns']) - 1, 'Evidence table row width mismatch')
                 for cell in row['cells']:
                     if 'evidence_ref' in cell:
-                        refs([cell['evidence_ref']], evidence, 'Evidence table cell')
+                        refs([cell['evidence_ref']], evidence, 'Evidence table cell', required=False)
+                    else:
+                        claim(cell, evidence)
+        need(isinstance(s.get('tables', []), list), 'Section tables must be a list')
+        for table in s.get('tables', []):
+            columns = table.get('columns', [])
+            need(text_ok(table.get('title')), 'Section table title required')
+            need(bool(columns) and all(text_ok(x) for x in columns), 'Section table column label missing')
+            for row in table.get('rows', []):
+                need(isinstance(row, list) and len(row) == len(columns), 'Section table row width mismatch')
+                for cell in row:
+                    if 'evidence_ref' in cell:
+                        need(cell['evidence_ref'] in evidence, 'Section table cell: unknown evidence reference')
                     else:
                         claim(cell, evidence)
         guide = s.get("guide")
@@ -495,6 +525,24 @@ def validate(data, baseline=None):
             need(len(metric_ids) == len(set(metric_ids)), "Duplicate guide metric")
         if s.get("lesson"):
             need(all(text_ok(s["lesson"].get(k)) for k in ("concept", "example", "trap")), "Lesson needs concept, hypothetical example, common misunderstanding")
+        if s.get("series"):
+            series = s["series"]
+            need(text_ok(series.get("title")), "Trend title required")
+            refs(series.get("evidence_refs"), evidence, "trend", required=False)
+            records = [evidence[x] for x in series["evidence_refs"]]
+            need(len(records) >= 2 and all("value" in x for x in records), "Trend needs at least two numeric observations")
+            need(all(dimensions(x) == dimensions(records[0]) and x["definition"] == records[0]["definition"] for x in records),
+                 "Trend definitions/units/basis differ")
+            need(all(parse_date(a["period"]["end"]) < parse_date(b["period"]["end"]) for a, b in zip(records, records[1:])),
+                 "Trend observations must be in chronological order")
+    stat_concepts = {term["id"] for term in json.loads((Path(__file__).resolve().parent.parent / "assets/financial-terms.json").read_text())} | {"price", "revenue"}
+    need(isinstance(data.get("key_stats", []), list), "key_stats must be a list")
+    for row in data.get("key_stats", []):
+        need(row.get("concept") in stat_concepts, "Unknown key-stat concept")
+        if row.get("evidence_ref") is None:
+            need(text_ok(row.get("label")) and text_ok(row.get("note")), "A missing key stat needs a label and note")
+        else:
+            need(row["evidence_ref"] in evidence, "Unknown key-stat evidence")
     coverage = data.get("coverage", {})
     if data["mode"] == "full":
         need(set(coverage) == set(COVERAGE), "Full report requires 14 coverage items")
@@ -543,7 +591,7 @@ def validate_review(data, baseline, evidence, sources):
     need(review.get("baseline_sha256") == digest(baseline), "Baseline hash mismatch; original expectations changed")
     release = review.get("release", {})
     for k in ("id", "period"):
-        need(text_ok(release.get(k)), f"Release {k} required")
+        need(key_text(release.get(k)), f"Release {k} must be a plain string")
     need(release.get("status") in {"published", "pending"}, "Verify release publication explicitly")
     need(text_ok(review.get("thesis_change")), "Explain what changes in the thesis")
     need(review.get("thesis_status") in {"strengthened", "weakened", "broadly_unchanged", "unresolved"}, "Invalid thesis status")
