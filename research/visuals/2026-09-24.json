@@ -4653,7 +4653,13 @@
     "basis_note": {
       "en": "Provider-standardized history; amounts are rounded. The original report uses the issuer’s definitions and precision.",
       "ro": "Istoric standardizat de furnizor; valorile sunt rotunjite. Analiza originală folosește definițiile și precizia emitentului."
-    }
+    },
+    "caveats": [
+      {
+        "en": "The history spans a major business restructuring. Earlier periods are not a like-for-like record of today’s Nebius business.",
+        "ro": "Istoricul include o restructurare majoră a afacerii. Perioadele anterioare nu sunt direct comparabile cu activitatea actuală Nebius."
+      }
+    ]
   },
   "ONDS": {
     "schema_version": "1.0",
@@ -6555,7 +6561,11 @@
             "value": 22925.0,
             "state": "reported"
           }
-        ]
+        ],
+        "note": {
+          "en": "Not comparable with corporate borrowing. The provider’s Total Debt ($22.9B at Q2 2026) is about seven times the borrowings in the original analysis: $2.2B of convertible notes plus $0.96B of credit-card trust debt. The provider row probably also counts brokerage funding liabilities such as securities lending; this composition is not verified.",
+          "ro": "Nu este comparabilă cu împrumuturile companiei. Datoria totală a furnizorului (22,9 mld. USD în T2 2026) este de circa șapte ori mai mare decât împrumuturile din analiza originală: 2,2 mld. USD în obligațiuni convertibile plus 0,96 mld. USD datorii ale trustului pentru carduri de credit. Rândul furnizorului include probabil și obligații de finanțare ale activității de brokeraj, precum împrumutul de titluri; această componență nu este verificată."
+        }
       },
       "pe": {
         "unit": "ratio",
@@ -6883,7 +6893,13 @@
     "basis_note": {
       "en": "Provider-standardized history; amounts are rounded. The original report uses the issuer’s definitions and precision.",
       "ro": "Istoric standardizat de furnizor; valorile sunt rotunjite. Analiza originală folosește definițiile și precizia emitentului."
-    }
+    },
+    "caveats": [
+      {
+        "en": "Financial-company cash flows include lending and customer-funding movements. Do not interpret this free-cash-flow series like that of a software or industrial company.",
+        "ro": "Fluxurile companiilor financiare includ creditarea și mișcările fondurilor clienților. Nu interpreta seria fluxului liber ca la o companie software sau industrială."
+      }
+    ]
   },
   "APP": {
     "schema_version": "1.0",
@@ -15358,7 +15374,13 @@
     "basis_note": {
       "en": "Provider-standardized history; amounts are rounded. The original report uses the issuer’s definitions and precision.",
       "ro": "Istoric standardizat de furnizor; valorile sunt rotunjite. Analiza originală folosește definițiile și precizia emitentului."
-    }
+    },
+    "caveats": [
+      {
+        "en": "Financial-company cash flows include lending and customer-funding movements. Do not interpret this free-cash-flow series like that of a software or industrial company.",
+        "ro": "Fluxurile companiilor financiare includ creditarea și mișcările fondurilor clienților. Nu interpreta seria fluxului liber ca la o companie software sau industrială."
+      }
+    ]
   },
   "ASTS": {
     "schema_version": "1.0",

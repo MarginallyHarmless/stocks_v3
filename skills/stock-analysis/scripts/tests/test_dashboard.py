@@ -5,7 +5,7 @@ import unittest
 from html.parser import HTMLParser
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from dashboard import chart, chart_data, validate_dashboard
+from dashboard import chart, chart_data, consensus_card, financial_card, price_card, validate_dashboard
 
 
 def fixture():
@@ -74,6 +74,37 @@ class Charts(unittest.TestCase):
         self.assertIn('viz-median',chart(d,['pe'],'en','line',True))
         d['series']['pe']['points'][2]['value']=None
         self.assertNotIn('class="viz-median"',chart(d,['pe'],'en','line',True))
+
+
+class DataDrivenText(unittest.TestCase):
+    def market(self):
+        d=fixture()
+        d['market']={'overview_quote':{'price':50,'observed_at':'2026-09-23','session':'after_hours','source_id':'s'},
+                     'range':{'low':40,'high':60,'low_date':'2026-01-05','high_date':None,'method':'m','source_id':'s'}}
+        d['consensus']={'targets':{'low':40,'mean':55,'median':55,'high':70,'horizon_months':6,'source_id':'s'}}
+        return validate_dashboard(d)
+
+    def test_quote_session_and_extrema_dates_come_from_data(self):
+        out=price_card(self.market(),'en')
+        self.assertIn('After hours',out)
+        self.assertNotIn('Regular close',out)
+        self.assertIn('2026-01-05 / Not supplied',out)
+
+    def test_target_horizon_comes_from_data(self):
+        d=self.market()
+        self.assertIn('6-month price targets',consensus_card(d,'en'))
+        del d['consensus']['targets']['horizon_months']
+        self.assertIn('horizon not supplied',consensus_card(d,'en'))
+
+    def test_series_note_and_caveats_need_both_languages(self):
+        d=fixture();d['series']={'debt':series([('Q1 2025',10),('Q2 2025',12)])}
+        d['series']['debt']['note']={'en':'Includes brokerage funding.','ro':'Include finanțarea brokerajului.'}
+        validate_dashboard(d)
+        self.assertIn('Include finanțarea brokerajului.',financial_card(d,'Debt',['cash','investments','debt'],'ro',('a','b')))
+        d['series']['debt']['note']={'en':'Only English'}
+        with self.assertRaises(ValueError):validate_dashboard(d)
+        d['series']['debt'].pop('note');d['caveats']=[{'en':'Only English'}]
+        with self.assertRaises(ValueError):validate_dashboard(d)
 
 
 if __name__=='__main__':unittest.main()
