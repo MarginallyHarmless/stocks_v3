@@ -1,6 +1,6 @@
 # Durable research packages
 
-The user chose **https://github.com/MarginallyHarmless/stocks_v3** for the index, AVGO report and all future reports. Use this repository as the source of truth. Do not use ChatGPT Sites or save duplicate Library copies. If GitHub is unavailable, retain local work and report the blocked save; do not substitute another publishing service.
+The user chose **https://github.com/MarginallyHarmless/stocks_v3** for the index and every report. Use this repository as the source of truth. Do not use ChatGPT Sites or save duplicate Library copies. If GitHub is unavailable, retain local work and report the blocked save; do not substitute another publishing service.
 
 ## Repository layout
 

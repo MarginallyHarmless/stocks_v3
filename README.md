@@ -3,7 +3,8 @@
 Company research, saved earnings watchlists and a shared earnings calendar.
 
 - **Index:** [`index.html`](index.html), with company cards, logos, countdowns and review states.
-- **AVGO report:** [`reports/AVGO-stock-analysis-v3-2026-09-16.html`](reports/AVGO-stock-analysis-v3-2026-09-16.html).
+- **Reports:** [`reports/`](reports/), one standalone HTML file per saved analysis. Earlier reports are kept; a replaced report links to its successor.
+- **Chart data:** [`research/visuals/`](research/visuals/), dated supplements selected per report by `manifest.json`.
 - **Registry:** [`stock-analysis-registry.json`](stock-analysis-registry.json).
 - **Research archives:** [`archives/`](archives/), preserving immutable evidence and watchlist snapshots.
 - **Research workflow and generator:** [`skills/stock-analysis/`](skills/stock-analysis/SKILL.md).
@@ -36,4 +37,4 @@ Commit the report, archive, registry and index together. All future reports belo
 
 Countdowns update while the index is open. Research and scheduled dates change only when a research update is committed. An overdue estimated date asks for a publication check; it does not claim that results are published. A confirmed release or verified publication stays flagged until a saved review covers that reporting period. Editorial changes do not clear the flag.
 
-AVGO's next results date is currently an **estimate**, with its source and last check recorded in the index. The report retains its original 16 September 2026 research cutoff.
+Each company's next results date shows whether it is confirmed or estimated, with its source and last check recorded in the index. Reports keep their original research cutoff.

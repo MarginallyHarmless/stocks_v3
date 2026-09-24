@@ -16,6 +16,9 @@ Before committing, run the generator and verify the archive. For generator chang
 python3 -m unittest discover -s skills/stock-analysis/scripts/tests
 node skills/stock-analysis/scripts/tests/test_company_index.js
 node skills/stock-analysis/scripts/tests/test_report_controls.js
+node skills/stock-analysis/scripts/tests/test_financial_terms.js
+node skills/stock-analysis/scripts/tests/test_dashboard_controls.js
+python3 scripts/render_reports.py   # CI fails if reports/ differs afterwards
 ```
 
 Commit and push the report, archive, registry and index together. Never force-push. Inspect the remote commit after saving. The connected GitHub app can write to this repository; use its native tools when the shell has no push credentials. A local browser login is not needed for routine updates.

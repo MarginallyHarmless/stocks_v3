@@ -37,7 +37,7 @@ Read [data-contract.md](references/data-contract.md) before writing JSON. Use bu
 ```text
 python3 scripts/stock.py recompute research-draft.json --out research.json
 python3 scripts/stock.py validate research.json
-python3 scripts/stock.py render research.json --out report.html
+python3 scripts/stock.py render research.json --visuals visual-data.json --out report.html
 ```
 
 The renderer does not register, upload or publish anything. To obtain an authoring example with invented data, run `python3 scripts/demo.py --out <scratch-directory>`. Never use the demo's sources, prose or figures as company evidence. Start a real ledger with `synthetic: false` only after research, and replace all invented content.
@@ -87,4 +87,4 @@ The archive preserves parent/report IDs and detects repeated reviews of the same
 
 For v2 records, read [migration.md](references/migration.md). Preserve the original package and evidence; legacy compatibility does not qualify an old report as a new strict report.
 
-For implementation maintenance, run `python3 -m unittest discover -s scripts/tests -v`; when Node is available, also run `node scripts/tests/test_report_controls.js` for reading preferences and source navigation and `node scripts/tests/test_company_index.js` for earnings state transitions. These do not replace visual inspection. [evaluation-cases.md](references/evaluation-cases.md) defines analytical cases beyond code tests. [provenance.md](references/provenance.md) records inherited material and intentional changes.
+For implementation maintenance, run `python3 -m unittest discover -s scripts/tests -v`; when Node is available, also run `node scripts/tests/test_report_controls.js` for reading preferences and source navigation, `node scripts/tests/test_company_index.js` for earnings state transitions, `node scripts/tests/test_financial_terms.js` for term definitions and `node scripts/tests/test_dashboard_controls.js` for chart interaction. These do not replace visual inspection. [evaluation-cases.md](references/evaluation-cases.md) defines analytical cases beyond code tests. [provenance.md](references/provenance.md) records inherited material and intentional changes.

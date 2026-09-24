@@ -27,9 +27,11 @@ Pass one explicit `visual_research_supplement` via:
 
 ```sh
 python3 scripts/stock.py render research.json --visuals visual-data.json --out report.html
+# a repository file holding several supplements keyed by ticker:
+python3 scripts/stock.py render research.json --visuals REPO/research/visuals/2026-09-24.json --visuals-key META --out report.html
 ```
 
-The record has `kind`, `schema_version`, `ticker`, `identity` (`issuer_id|security_id`), `retrieved_at`, `sources`, `series`, `market`, `consensus`, and bilingual `basis_note`. Security identity must match the research. Persist company data under repository `research/visuals/`; never put it inside the reusable skill. The repository renderer uses `research/visuals/manifest.json` to select data by exact report ID. Add new reports to that manifest. Never silently attach a supplement using the ticker alone. Optional `caveats` is a list of bilingual `{en, ro}` notes shown above the charts, e.g. financial-company cash-flow or restructuring comparability; the renderer never infers them from the ticker.
+The record has `kind`, `schema_version`, `ticker`, `identity` (`issuer_id|security_id`), `retrieved_at`, `sources`, `series`, `market`, `consensus`, and bilingual `basis_note`. Security identity must match the research. Persist company data under repository `research/visuals/`; never put it inside the reusable skill. A dated repository file such as `research/visuals/2026-09-24.json` may hold several supplements keyed by ticker. `research/visuals/manifest.json` maps each exact report ID to `{"path": "research/visuals/<file>.json", "key": "<entry>"}`, and `scripts/render_reports.py` uses it; a report missing from the manifest is rendered without charts. Add every new report to the manifest. Never silently attach a supplement using the ticker alone. Optional `caveats` is a list of bilingual `{en, ro}` notes shown above the charts, e.g. financial-company cash-flow or restructuring comparability; the renderer never infers them from the ticker.
 
 A source has HTTP(S) `url`, `status: read`, `retrieved_at`, provider name, source update date when supplied, extraction note and the exact numeric row transcribed. Source artifacts can be consulted to audit extraction; do not save entire copyrighted webpages in the report.
 

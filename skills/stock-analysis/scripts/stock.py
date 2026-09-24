@@ -9,6 +9,13 @@ from model import Invalid, digest, load, recompute, validate
 from render import render, compare
 
 
+def visuals(args):
+    if not args.visuals:
+        return None
+    data = load(args.visuals)
+    return data[args.visuals_key] if args.visuals_key else data
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     sub = p.add_subparsers(dest="command", required=True)
@@ -19,6 +26,7 @@ def main():
         if name == "render":
             cmd.add_argument("--archive")
             cmd.add_argument("--visuals", help="Dated visual supplement for this exact security")
+            cmd.add_argument("--visuals-key", help="Entry to use when the visuals file holds several supplements, e.g. research/visuals/<date>.json keyed by ticker")
         if name != "validate":
             cmd.add_argument("--out", required=True)
     cmd = sub.add_parser("register")
@@ -63,7 +71,7 @@ def main():
             result = validate(d,b)
             if args.command == "render":
                 Path(args.out).parent.mkdir(parents=True,exist_ok=True)
-                Path(args.out).write_text(render(d,b,load(args.archive) if args.archive else None,visual_data=load(args.visuals) if args.visuals else None),encoding="utf-8")
+                Path(args.out).write_text(render(d,b,load(args.archive) if args.archive else None,visual_data=visuals(args)),encoding="utf-8")
             elif args.command == "recompute":
                 write_json(args.out,d)
         elif args.command == "register":
