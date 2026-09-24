@@ -43,6 +43,9 @@ def load(path):
 
 
 def parse_date(value):
+    # Only the extended form, so ISO strings also compare correctly as text.
+    if not (isinstance(value, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", value)):
+        raise Invalid(f"Invalid ISO date: {value!r}")
     try:
         return date.fromisoformat(value)
     except (ValueError, TypeError):
@@ -56,6 +59,11 @@ def timestamp(value):
         return result
     except (ValueError, TypeError, AttributeError):
         raise Invalid(f"Invalid timestamp: {value!r}") from None
+
+
+def key_text(value):
+    """Period labels and IDs match across records, so they are plain strings, not translations."""
+    return isinstance(value, str) and bool(value.strip())
 
 
 def text_ok(value):
@@ -78,7 +86,7 @@ def period(value):
     need(isinstance(value, dict), "Typed period required")
     need(value.get("kind") in {"instant", "duration"}, "period.kind must be instant or duration")
     end = parse_date(value.get("end"))
-    need(text_ok(value.get("label")), "period.label required")
+    need(key_text(value.get("label")), "period.label must be a plain string")
     need(isinstance(value.get("forecast"), bool), "period.forecast boolean required")
     if value["kind"] == "duration":
         need(parse_date(value.get("start")) <= end, "Period starts after its end")
@@ -292,7 +300,7 @@ def claim(c, evidence):
 def event(ev, sources):
     need(ev.get("confidence") in {"Confirmed", "Estimated", "Not announced"}, "Invalid event confidence")
     for k in ("id", "period", "kind"):
-        need(text_ok(ev.get(k)), f"event.{k} required")
+        need(key_text(ev.get(k)), f"event.{k} must be a plain string")
     need(ev["kind"] in {"results", "call", "filing"}, "Keep event types separate")
     parse_date(ev.get("checked_at"))
     if ev["confidence"] == "Not announced":
@@ -312,8 +320,10 @@ def event(ev, sources):
 
 
 def watch(w, evidence):
-    for key in ("id", "question", "why", "due_period"):
+    for key in ("question", "why"):
         need(text_ok(w.get(key)), f"watch.{key} required")
+    for key in ("id", "due_period"):
+        need(key_text(w.get(key)), f"watch.{key} must be a plain string")
     need(isinstance(w.get("criterion_version"), int) and w["criterion_version"] > 0, "Positive criterion version required")
     refs(w.get("baseline_refs"), evidence, "watch baseline", required=False)
     need(bool(w.get("baseline_refs")), "Watch baseline needs an evidence record, including unavailable where necessary")
@@ -557,7 +567,7 @@ def validate_review(data, baseline, evidence, sources):
     need(review.get("baseline_sha256") == digest(baseline), "Baseline hash mismatch; original expectations changed")
     release = review.get("release", {})
     for k in ("id", "period"):
-        need(text_ok(release.get(k)), f"Release {k} required")
+        need(key_text(release.get(k)), f"Release {k} must be a plain string")
     need(release.get("status") in {"published", "pending"}, "Verify release publication explicitly")
     need(text_ok(review.get("thesis_change")), "Explain what changes in the thesis")
     need(review.get("thesis_status") in {"strengthened", "weakened", "broadly_unchanged", "unresolved"}, "Invalid thesis status")

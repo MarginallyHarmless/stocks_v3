@@ -22,6 +22,9 @@ def repository_file(root, name):
     return path
 
 
+EVENT_FIELDS = {'confidence', 'date', 'time', 'timezone', 'checked_at', 'source_id', 'basis'}
+
+
 def enrich_entry(previous, reports):
     """Retain schedules by financial period, including unreviewed older periods."""
     entry = copy.deepcopy(previous)
@@ -32,8 +35,11 @@ def enrich_entry(previous, reports):
             old = events.get(event['period'], {})
             # A fresh standalone calendar check must survive an older ledger.
             if event.get('checked_at', '') >= old.get('checked_at', ''):
-                if event.get('date') != old.get('date') and 'scheduled_at' not in event:
+                if 'scheduled_at' not in event and (event.get('date') != old.get('date') or event.get('confidence') != 'Confirmed'):
                     old.pop('scheduled_at', None)
+                # Schedule fields the newer event omits are stale; registry-owned keys stay.
+                for key in EVENT_FIELDS - set(event):
+                    old.pop(key, None)
                 old.update(copy.deepcopy(event))
                 source = next((s for s in report['sources'] if s['id'] == event.get('source_id')), {})
                 old['source_url'] = source.get('url')

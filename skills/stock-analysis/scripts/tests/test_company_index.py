@@ -81,3 +81,17 @@ class CompanyIndex(unittest.TestCase):
         b['next_event'].update(date='2026-09-01',checked_at='2026-08-01')
         new=enrich_entry(old,[b])
         self.assertNotIn('scheduled_at',new['earnings_events'][0])
+
+    def test_newer_event_does_not_keep_stale_schedule_fields(self):
+        b=fixture()
+        b['next_event'].update(confidence='Estimated',basis='Provider estimate',time='16:05',timezone='America/New_York')
+        old=enrich_entry({},[b])
+        old['earnings_events'][0]['issuer_calendar_url']='https://example.com/calendar'
+        confirmed=copy.deepcopy(b)
+        confirmed['next_event']={k:v for k,v in b['next_event'].items() if k not in ('basis','time','timezone')}
+        confirmed['next_event'].update(confidence='Confirmed',checked_at='2026-08-01')
+        event=enrich_entry(old,[confirmed])['earnings_events'][0]
+        for key in ('basis','time','timezone'):
+            self.assertNotIn(key,event)
+        self.assertEqual(event['confidence'],'Confirmed')
+        self.assertEqual(event['issuer_calendar_url'],'https://example.com/calendar')

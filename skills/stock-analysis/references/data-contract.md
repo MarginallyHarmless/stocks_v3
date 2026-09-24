@@ -54,7 +54,7 @@ Units: `currency`, `currency_per_share`, `shares`, `percent`, `ratio`, `count`. 
 
 Basis: `GAAP`, `IFRS`, `adjusted`, `market`, `operating`, `model`. A derived standard FCF may use GAAP inputs, but explain that FCF itself is a non-GAAP measure. Preserve adjustments/reconciliations explicitly.
 
-Periods are `duration` with start/end, or `instant` with end only. Both require a label and forecast boolean. Facts cannot be forecasts. Numerical market evidence also needs `observed_at` and `session` (e.g. regular close); access time is not quote time. Non-numeric evidence uses `state` and a period, except unavailable records can omit the period.
+Periods are `duration` with start/end, or `instant` with end only, using `YYYY-MM-DD` dates. Both require a plain-string label (not a translation map, because labels match watch `due_period` and event periods) and a forecast boolean. Facts cannot be forecasts. Numerical market evidence also needs `observed_at` and `session` (e.g. regular close); access time is not quote time. Non-numeric evidence uses `state` and a period, except unavailable records can omit the period.
 
 Facts/estimates require `source_id` and `extraction` with locator and compact extraction note. Assumptions require `rationale`. Judgments require `evidence_refs`. Unavailable records explain the reason in `state`; never turn absence into zero.
 
