@@ -1,18 +1,25 @@
 <!doctype html>
-<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><title>Company index · Stock Analysis</title><style>/*INDEX_CSS*/</style></head>
+<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><title>Company index · Stock Analysis</title><style>/*INDEX_FONTS*/</style><style>/*INDEX_CSS*/</style></head>
 <body>
 <div class="shell">
-<header class="top"><div class="brand"><span class="brand-icon" aria-hidden="true">◒</span> <span>STOCK ANALYSIS <span class="version">/ 03</span></span></div><div class="settings"><button id="language" aria-label="Switch to Romanian">RO</button><button id="theme" aria-label="Switch theme">◐</button></div></header>
+<header class="top"><div class="brand"><span class="brand-icon" aria-hidden="true">◒</span><span>Stock Analysis <span class="version">/ 03</span></span></div><div class="settings"><button id="language" aria-label="Switch to Romanian">RO</button><button id="theme" aria-label="Switch theme"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 2a6 6 0 0 1 0 12Z" fill="currentColor"/></svg></button></div></header>
 <main>
-<h1 class="sr-only" data-t="title">Company index</h1>
+<section class="hero" aria-labelledby="index-title">
+<span class="hero-kicker" data-t="collection">Your research collection</span>
+<h1 id="index-title" data-t="title">Company index</h1>
+<p class="hero-lead" data-t="lead">The companies you understand. The results to watch next.</p>
 <div id="stats" class="stats"></div>
+</section>
 <div class="index-layout">
-<section aria-labelledby="companies-title"><div class="section-head companies-heading"><h2 id="companies-title" data-t="companies">Companies</h2><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a company or ticker" aria-label="Find a company or ticker"></label></div><div class="filters"><button data-filter="all" aria-pressed="true" data-t="all">All companies</button><button data-filter="attention" aria-pressed="false" data-t="attention">Needs attention</button></div><div id="cards" class="cards"></div></section>
+<section class="companies" aria-labelledby="companies-title">
+<div class="companies-head"><h2 id="companies-title" data-t="companies">Companies</h2><div class="tools"><div class="filters" role="group"><button data-filter="all" aria-pressed="true" data-t="all">All</button><button data-filter="attention" aria-pressed="false" data-t="attention">Needs attention</button></div><label class="search"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="search" type="search" placeholder="Find a company or ticker" aria-label="Find a company or ticker"></label></div></div>
+<div id="cards" class="cards"></div>
+</section>
 <aside class="schedule" aria-labelledby="timeline-title">
-<div class="section-head"><h2 id="timeline-title" data-t="timeline">Earnings ahead</h2><span id="timeline-range" class="timeline-range"></span></div>
+<div class="schedule-head"><h2 id="timeline-title" data-t="timeline">Earnings ahead</h2><span id="timeline-range" class="timeline-range"></span></div>
 <div id="timeline" class="timeline"></div>
-<div id="timeline-notes" class="timeline-notes" hidden></div>
 <div id="selected-event" class="selected-event" hidden></div>
+<div id="timeline-notes" class="timeline-notes" hidden></div>
 </aside>
 </div>
 <footer><p data-t="foot">Countdowns update when this file is open. Research and earnings dates are refreshed when we run the skill.</p><div><span id="saved-at"></span><button id="export" class="text-button" data-t="export">Export index data ↓</button></div></footer>

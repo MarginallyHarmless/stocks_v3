@@ -123,4 +123,5 @@ def render_index(registry, reports_dir=None, repo_root=None):
                 embedded[key] = base64.b64encode(path.read_bytes()).decode('ascii')
     payload['embedded_reports'] = embedded
     safe = json.dumps(payload, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
-    return (ASSETS / 'company-index.html').read_text().replace('/*INDEX_CSS*/', (ASSETS / 'company-index.css').read_text()).replace('/*INDEX_LOGIC*/', (ASSETS / 'company-index-state.js').read_text()).replace('/*INDEX_UI*/', (ASSETS / 'company-index.js').read_text()).replace('"__INDEX_DATA__"', safe)
+    from render import fonts_css  # same embedded fonts as the reports; imported late to avoid a cycle
+    return (ASSETS / 'company-index.html').read_text().replace('/*INDEX_FONTS*/', fonts_css()).replace('/*INDEX_CSS*/', (ASSETS / 'company-index.css').read_text()).replace('/*INDEX_LOGIC*/', (ASSETS / 'company-index-state.js').read_text()).replace('/*INDEX_UI*/', (ASSETS / 'company-index.js').read_text()).replace('"__INDEX_DATA__"', safe)
