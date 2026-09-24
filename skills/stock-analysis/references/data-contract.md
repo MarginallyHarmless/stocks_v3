@@ -25,6 +25,7 @@ Use `scripts/demo.py --out <temporary-directory>` to create a complete bilingual
 | `coverage`, `checklist` | Module coverage and original checklist audit. |
 | `watchlist`, `next_event`, `related_events` | Closing checks and dated reporting events; watchlist required for full/update. |
 | `review` | Update-only original-criteria assessment. |
+| `editorial_revision_of`, `revision_note` | Optional. An editorial revision names the report ID it corrects and explains the change in a bilingual note; it keeps the original cutoff, so it must have a later `prepared_at`. The page shows the note, and the earlier report shows a banner pointing to the newest saved full/focused report. |
 
 Narrative text accepts a string for a single-language report or `{ "en": "…", "ro": "…" }`. Author both translations when both languages are listed. Preserve exact source titles, stable IDs and technical definitions rather than translating identifiers. Do not use arbitrary HTML in prose; the renderer escapes it. String definitions are normalization keys for calculations, not prose templates.
 

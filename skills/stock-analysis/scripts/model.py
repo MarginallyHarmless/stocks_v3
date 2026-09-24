@@ -444,6 +444,8 @@ def validate(data, baseline=None):
         need(isinstance(data.get(key),dict), f'{key} requires a typed claim')
         claim(data[key],evidence)
     need(text_ok(data.get('evidence_gaps')), 'evidence_gaps required')
+    if 'revision_note' in data:
+        need(text_ok(data['revision_note']) and isinstance(data.get('editorial_revision_of'), str), 'Revision note needs the revised report ID')
     sections = data.get("sections", [])
     need(bool(sections), "At least one question-led section required")
     need(data.get("presentation") in {None, "guided"}, "Unknown presentation")

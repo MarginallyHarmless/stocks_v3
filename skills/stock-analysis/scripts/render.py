@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from financial_terms import annotate, TERMS
 from dashboard import dashboard_html
-from archive import verify_archive
+from archive import snapshot_order, verify_archive
 from model import digest, format_number, number, validate, need, dimensions, period_key
 
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
@@ -307,7 +307,23 @@ def key_stats_html(data, ev, lang):
     return out + '</dl></section>'
 
 
-def render(data, baseline=None, archive=None, visual_data=None):
+def revision_html(data, archive, lang, report_links):
+    """Make editorial revisions and replaced reports traceable from the page itself."""
+    def named(rid):
+        href = (report_links or {}).get(rid)
+        return f'<a href="{h(href)}">{h(rid)}</a>' if href else h(rid)
+    out = ''
+    if data.get('revision_note'):
+        out += f'<p class="notice">{tr(lang,"Editorial revision of","Revizie editorială a")} {named(data.get("editorial_revision_of", ""))}: {h(t(data["revision_note"],lang))}</p>'
+    later = [d for d in (v['research'] for v in (archive or {}).get('snapshots', {}).values())
+             if d['mode'] != 'update' and snapshot_order(d) > snapshot_order(data)]
+    if later:
+        newest = max(later, key=snapshot_order)['report_id']
+        out += f'<p class="notice">{tr(lang,"A newer saved report replaces this one:","Un raport salvat mai nou îl înlocuiește pe acesta:")} {named(newest)}. {tr(lang,"This page is kept unchanged for the record.","Pagina este păstrată neschimbată pentru istoric.")}</p>'
+    return out
+
+
+def render(data, baseline=None, archive=None, visual_data=None, report_links=None):
     validate(data, baseline)
     ev = {e["id"]:e for e in data["evidence"]}
     sources = {s["id"]:s for s in data["sources"]}
@@ -325,7 +341,7 @@ def render(data, baseline=None, archive=None, visual_data=None):
         main += f'<div data-lang="{lang}"{hidden}>'
         if data["synthetic"]:
             main += f'<div class="synthetic">{tr(lang,"ILLUSTRATIVE DEMO · Fictional company and invented numbers. This is a workflow example, not company research.","DEMONSTRAȚIE · Companie fictivă și valori inventate. Exemplu de funcționare, nu analiză a unei companii reale.")}</div>'
-        main += f'<header class="summary" id="{lang}-summary"><div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1><p class="meta">{tr(lang,"Information cutoff","Date disponibile până la")}: {h(data["cutoff"])} · {h(data["report_id"])}</p><div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></dl><p class="notice">{h(t(data["evidence_gaps"],lang))}</p>'
+        main += f'<header class="summary" id="{lang}-summary">{revision_html(data, archive, lang, report_links)}<div class="kicker">{h(data["company"]["ticker"])} · {h(data["company"]["exchange"])} · {h(data["company"]["share_class"])}</div><h1>{h(data["company"]["name"])}</h1><p class="meta">{tr(lang,"Information cutoff","Date disponibile până la")}: {h(data["cutoff"])} · {h(data["report_id"])}</p><div class="lead">{claims(data["summary"][:1],lang)}</div>{claims(data["summary"][1:],lang)}<dl class="assessment"><dt>{tr(lang,"Business quality","Calitatea afacerii")}</dt><dd>{claims([data["business_assessment"]],lang)}</dd><dt>{tr(lang,"Price attractiveness","Atractivitatea prețului")}</dt><dd>{claims([data["price_assessment"]],lang)}</dd></dl><p class="notice">{h(t(data["evidence_gaps"],lang))}</p>'
         if data.get("next_event"):
             main += event_html(data["next_event"], sources,lang,True)
         main += key_stats_html(data, ev, lang) + '</header>'
