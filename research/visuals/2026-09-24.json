@@ -15779,7 +15779,11 @@
             "value": 1205.0,
             "state": "reported"
           }
-        ]
+        ],
+        "note": {
+          "en": "Provider revenue runs about 1% below SoFi’s reported GAAP net revenue: $1.205B versus $1.219B for Q2 2026. The original analysis uses the company’s figure.",
+          "ro": "Veniturile furnizorului sunt cu circa 1% sub veniturile nete GAAP raportate de SoFi: 1,205 mld. USD față de 1,219 mld. USD în T2 2026. Analiza originală folosește valoarea companiei."
+        }
       },
       "net_income": {
         "unit": "currency",

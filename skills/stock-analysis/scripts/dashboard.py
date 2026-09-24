@@ -356,6 +356,8 @@ def consensus_card(d,lang):
     if t:
         out+='<div class="viz-price">'+h(fmt(t['mean'],lang=lang))+'</div><p class="viz-footnote">'+tr(lang,'Average target','Țintă medie')
         if q:out+=' · '+h(fmt((t['mean']/q['price']-1)*100,'percent',lang=lang))+' '+tr(lang,'vs. quoted price','față de cotație')
+        updated=d['sources'][t['source_id']].get('source_updated_at')
+        if updated:out+='<br>'+tr(lang,'Estimates updated ','Estimări actualizate la ')+h(updated)+(' · '+tr(lang,'quote ','cotație ')+h(q['observed_at']) if q else '')
         out+='</p>'+rows_html([(tr(lang,'Low / median / high','Minim / mediană / maxim'),' / '.join(fmt(t[k],lang=lang) for k in ('low','median','high'))),(tr(lang,'Target contributors','Analiști cu ținte'),str(c.get('target_analyst_count',tr(lang,'Not supplied','Nefurnizat'))))])
     else:out+=blank(lang)
     if r:
