@@ -110,6 +110,43 @@ def evidence_table_html(table, ev, lang):
     return out + '</tbody></table></div>'
 
 
+def tables_html(tables, ev, lang):
+    """Authored section tables: each row is one cell per column, backed by evidence or a typed claim."""
+    out = ''
+    for table in tables:
+        columns = table['columns']
+        out += '<div class="table-wrap"><table class="research-table"><caption>' + h(t(table['title'], lang)) + '</caption><thead><tr>'
+        out += ''.join('<th scope="col">' + h(t(c, lang)) + '</th>' for c in columns) + '</tr></thead><tbody>'
+        for row in table.get('rows', []):
+            out += '<tr>'
+            for column, cell in zip(columns, row):
+                if 'evidence_ref' in cell:
+                    e = ev[cell['evidence_ref']]
+                    content = h(format_number(e, lang) if 'value' in e else t(e['state'], lang)) + ref_buttons([e['id']], lang)
+                else:
+                    content = h(t(cell['text'], lang)) + ref_buttons(cell.get('evidence_refs', []), lang)
+                out += '<td data-label="' + h(t(column, lang)) + '">' + content + '</td>'
+            out += '</tr>'
+        out += '</tbody></table></div>'
+    return out
+
+
+def scenario_assumptions_html(s, ev, lang):
+    """Keep the authored model claims visible beside a guided model result."""
+    model_inputs, pending = set(), [m['evidence_ref'] for m in s.get('guide', {}).get('metrics', [])
+                                    if ev[m['evidence_ref']].get('basis') == 'model']
+    while pending:
+        key = pending.pop()
+        if key not in model_inputs:
+            model_inputs.add(key)
+            pending.extend(ev[key].get('inputs', []))
+    assumptions = [c for c in s['claims'] if c['type'] == 'model' and model_inputs.intersection(c.get('evidence_refs', []))]
+    if not assumptions:
+        return ''
+    return (f'<aside class="scenario-assumptions"><h3>{tr(lang,"Assumptions behind the displayed scenario","Ipotezele scenariului afișat")}</h3>'
+            + claims(assumptions, lang) + '</aside>')
+
+
 def section_html(s, ev, lang, index, sources):
     output = f'<section class="section" id="{h(lang)}-{h(s["id"])}"><div class="section-no">{index:02d}</div><h2>{h(t(s["question"],lang))}</h2>'
     guide = s.get('guide')
@@ -128,6 +165,7 @@ def section_html(s, ev, lang, index, sources):
     if lesson:
         output += f'<details class="lesson"><summary>{tr(lang,"Explain this","Explică-mi conceptul")}</summary><div class="lesson-content"><p>{h(t(lesson["concept"],lang))}</p><p class="example"><strong>{tr(lang,"Hypothetical example","Exemplu ipotetic")}: </strong>{h(t(lesson["example"],lang))}</p><p><strong>{tr(lang,"Common trap","Confuzie frecventă")}: </strong>{h(t(lesson["trap"],lang))}</p></div></details>'
     if guide:
+        output += scenario_assumptions_html(s, ev, lang)
         output += f'<details class="deep-data"><summary>{tr(lang,"Detailed analysis","Analiza detaliată")}</summary><div class="detail-content">' + claims(s['claims'],lang)
         if s.get('metrics'):
             output += metrics_html(s['metrics'],ev,lang)
@@ -154,6 +192,7 @@ def section_html(s, ev, lang, index, sources):
         todo.extend(e.get('inputs',[]));todo.extend(e.get('evidence_refs',[]))
     links=''.join(f'<p><a href="{h(source["url"])}" target="_blank" rel="noopener noreferrer">{h(t(source["title"],lang))}</a></p>' for source in roots.values())
     output += f'<details class="evidence-disclosure"><summary>{tr(lang,"Sources & calculation","Surse și calcul")}</summary><p class="meta">{tr(lang,"Open a reference to inspect its source, definition and inputs.","Deschide o referință pentru sursă, definiție și datele de intrare.")}</p>{ref_buttons(ids,lang)}{links}</details>'
+    output += tables_html(s.get('tables', []), ev, lang)
     if guide:
         output += '</div></details>'
     return output + '</section>'

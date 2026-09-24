@@ -110,6 +110,8 @@ Full reports require all module coverage keys: business, moat, growth, profitabi
 
 Optional `section.evidence_table` has an authored `title`, `columns`, and `rows`. Each row has a `label` and one `cells` entry per non-label column. Each cell is either `{evidence_ref: ID}` or a typed claim. Values render from the ledger; claims follow normal evidence and translation validation. The table appears in Detailed analysis and its references join the source navigation. Use it for peer matrices with explicit period and comparability limits.
 
+Optional `section.tables` is a list of further authored tables (scenarios, sensitivities, multi-column peer matrices). Each has a localized `title`, localized `columns`, and `rows`; every row is a list with exactly one cell per column, each `{evidence_ref: ID}` (numeric or unavailable evidence) or a typed claim. They render after the section's sources inside Detailed analysis. For guided sections whose metrics show a `model`-basis result, the renderer also keeps the section's `model` claims about those inputs visible under “Assumptions behind the displayed scenario”.
+
 See earnings-follow-up.md for meaning. Each item has id, positive criterion_version, question, why, baseline_refs, due_period, optional due_date, criterion and impact. `impact` has favorable/adverse/mixed/unresolved text.
 
 `criterion`: kind numeric/qualitative, basis management_guidance/external_estimate/analytical_test, description, rationale. External or management criteria require evidence_refs. Numeric criteria also have operator gt/gte/lt/lte/between, value, optional upper, unit, scale, accounting_basis, definition, and currency when applicable. Numeric actual comparisons use base units; percent thresholds are percentages, not decimal ratios.

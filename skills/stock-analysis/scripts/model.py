@@ -468,6 +468,18 @@ def validate(data, baseline=None):
                         refs([cell['evidence_ref']], evidence, 'Evidence table cell')
                     else:
                         claim(cell, evidence)
+        need(isinstance(s.get('tables', []), list), 'Section tables must be a list')
+        for table in s.get('tables', []):
+            columns = table.get('columns', [])
+            need(text_ok(table.get('title')), 'Section table title required')
+            need(bool(columns) and all(text_ok(x) for x in columns), 'Section table column label missing')
+            for row in table.get('rows', []):
+                need(isinstance(row, list) and len(row) == len(columns), 'Section table row width mismatch')
+                for cell in row:
+                    if 'evidence_ref' in cell:
+                        need(cell['evidence_ref'] in evidence, 'Section table cell: unknown evidence reference')
+                    else:
+                        claim(cell, evidence)
         guide = s.get("guide")
         if data.get("presentation") == "guided":
             need(isinstance(guide, dict), "Guided reports require a guide for every section")
