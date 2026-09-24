@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 import math
+import re
 import statistics
 from datetime import date
 from urllib.parse import urlparse
@@ -75,6 +76,10 @@ def validate_dashboard(d, identity=None):
         labels = [p['period'] for p in points]
         ensure(len(set(labels)) == len(labels), 'duplicate periods')
         ensure(all(x not in ('TTM', 'Current') for x in labels), 'TTM/current mixed into history')
+        pattern = r'Q[1-4] \d{4}' if series['period_kind'] == 'quarter' else r'FY \d{4}'
+        ensure(all(isinstance(x, str) and re.fullmatch(pattern, x) for x in labels), 'period label does not match cadence in ' + key)
+        order = [(int(x[-4:]), int(x[1]) if x.startswith('Q') else 0) for x in labels]
+        ensure(order == sorted(order), 'points must be chronological in ' + key)
         for p in points:
             ensure(p['value'] is None or finite(p['value']), 'invalid observation')
             if key in ('pe', 'ps'):

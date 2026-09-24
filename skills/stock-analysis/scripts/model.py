@@ -477,7 +477,7 @@ def validate(data, baseline=None):
                 need(text_ok(row.get('label')) and len(row.get('cells', [])) == len(table['columns']) - 1, 'Evidence table row width mismatch')
                 for cell in row['cells']:
                     if 'evidence_ref' in cell:
-                        refs([cell['evidence_ref']], evidence, 'Evidence table cell')
+                        refs([cell['evidence_ref']], evidence, 'Evidence table cell', required=False)
                     else:
                         claim(cell, evidence)
         need(isinstance(s.get('tables', []), list), 'Section tables must be a list')
@@ -519,6 +519,24 @@ def validate(data, baseline=None):
             need(len(metric_ids) == len(set(metric_ids)), "Duplicate guide metric")
         if s.get("lesson"):
             need(all(text_ok(s["lesson"].get(k)) for k in ("concept", "example", "trap")), "Lesson needs concept, hypothetical example, common misunderstanding")
+        if s.get("series"):
+            series = s["series"]
+            need(text_ok(series.get("title")), "Trend title required")
+            refs(series.get("evidence_refs"), evidence, "trend", required=False)
+            records = [evidence[x] for x in series["evidence_refs"]]
+            need(len(records) >= 2 and all("value" in x for x in records), "Trend needs at least two numeric observations")
+            need(all(dimensions(x) == dimensions(records[0]) and x["definition"] == records[0]["definition"] for x in records),
+                 "Trend definitions/units/basis differ")
+            need(all(parse_date(a["period"]["end"]) < parse_date(b["period"]["end"]) for a, b in zip(records, records[1:])),
+                 "Trend observations must be in chronological order")
+    stat_concepts = {term["id"] for term in json.loads((Path(__file__).resolve().parent.parent / "assets/financial-terms.json").read_text())} | {"price", "revenue"}
+    need(isinstance(data.get("key_stats", []), list), "key_stats must be a list")
+    for row in data.get("key_stats", []):
+        need(row.get("concept") in stat_concepts, "Unknown key-stat concept")
+        if row.get("evidence_ref") is None:
+            need(text_ok(row.get("label")) and text_ok(row.get("note")), "A missing key stat needs a label and note")
+        else:
+            need(row["evidence_ref"] in evidence, "Unknown key-stat evidence")
     coverage = data.get("coverage", {})
     if data["mode"] == "full":
         need(set(coverage) == set(COVERAGE), "Full report requires 14 coverage items")

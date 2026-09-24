@@ -42,6 +42,17 @@ def verify_archive(archive):
         if d["mode"] == "update":
             need(parent is not None, "Archive missing original baseline")
         validate(d, parent)
+    # One review per release, unless each later one explicitly supersedes the previous.
+    reviews = {}
+    for entry in snapshots.values():
+        d = entry["research"]
+        if d["mode"] == "update" and d["review"]["release"]["status"] == "published":
+            reviews.setdefault(review_key(d), []).append(d)
+    for chain in reviews.values():
+        chain.sort(key=snapshot_order)
+        for old, new in zip(chain, chain[1:]):
+            need(new.get("supersedes_report_id") == old["report_id"] and timestamp(new["cutoff"]) > timestamp(old["cutoff"]),
+                 f"Release reviewed twice without an explicit supersedes link: {new['report_id']}")
     return archive
 
 
@@ -71,6 +82,8 @@ def register(archive_path, research, expected_hash=None):
             if research.get("supersedes_report_id") != old["report_id"]:
                 raise Invalid(f"Release already reviewed as {old['report_id']}; reuse it or explicitly supersede it with new evidence")
             need(timestamp(research["cutoff"]) > timestamp(old["cutoff"]), "Revision needs a later cutoff")
+        else:
+            need(not research.get("supersedes_report_id"), "supersedes_report_id must name an earlier review of this release")
     snapshots[rid] = {"sha256": digest(research), "research": copy.deepcopy(research)}
     write_json(path, archive)
     return {"status": "saved", "report_id": rid, "archive_sha256": digest(archive)}
