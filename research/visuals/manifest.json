@@ -90,5 +90,9 @@
   "ASTS-2026-09-18-v3-r3": {
     "path": "research/visuals/2026-09-24.json",
     "key": "ASTS"
+  },
+  "LEU-2026-09-24-v3": {
+    "path": "research/visuals/LEU-2026-09-24.json",
+    "key": "LEU"
   }
 }

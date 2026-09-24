@@ -988,6 +988,75 @@
       ],
       "archive_path": "archives/stock-analysis-meta-class-a-archive.json",
       "archive_filename": "stock-analysis-meta-class-a-archive.json"
+    },
+    "CIK:0001065059|NYSE:LEU:CLASS-A": {
+      "earnings_events": [
+        {
+          "id": "leu-q3-2026-results",
+          "kind": "results",
+          "period": "Q3 2026",
+          "confidence": "Estimated",
+          "date": "2026-11-04",
+          "checked_at": "2026-09-24",
+          "source_id": "statistics",
+          "basis": {
+            "en": "Stock Analysis estimates November 4. Centrus’s official calendar showed no announced upcoming results event when checked. Timing remains unconfirmed.",
+            "ro": "Stock Analysis estimează 4 noiembrie. Calendarul oficial Centrus nu anunța următoarele rezultate la verificare. Ora rămâne neconfirmată."
+          },
+          "source_url": "https://stockanalysis.com/stocks/leu/statistics/",
+          "source_title": "LEU statistics: dated quote, moving average and estimated earnings date",
+          "baseline_report_id": "LEU-2026-09-24-v3",
+          "reviewed_report_id": null
+        }
+      ],
+      "latest_report_id": "LEU-2026-09-24-v3",
+      "latest_cutoff": "2026-09-24T18:22:36+00:00",
+      "watch_count": 7,
+      "card": {
+        "report_id": "LEU-2026-09-24-v3",
+        "summary": {
+          "en": "A real U.S. enrichment opportunity, with demanding expectations for construction, funding and profit per share.",
+          "ro": "O oportunitate reală de îmbogățire în SUA, cu așteptări ridicate privind construcția, finanțarea și profitul pe acțiune."
+        },
+        "business": {
+          "en": "Nuclear-fuel supply today, with domestic enrichment capacity under development.",
+          "ro": "Furnizare de combustibil nuclear astăzi, cu îmbogățire americană în dezvoltare."
+        },
+        "risk": {
+          "en": "Conditional backlog, Russian supply, project costs and dilution before new capacity targeted for 2029.",
+          "ro": "Contracte condiționate, aprovizionare rusească, costuri și diluție înaintea capacității țintite pentru 2029."
+        },
+        "logo_url": "https://investors.centrusenergy.com/sites/g/files/knoqqb98016/themes/site/nir_pid211/client/images/logo-light-bg.png",
+        "logo_source_url": "https://investors.centrusenergy.com/",
+        "logo_data_uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKkAAABeCAYAAABYQjSOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowRThFNTAzNEU3MDUxMUU1OTg4OUU4QkQ4NTNBQTI3QyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowRThFNTAzNUU3MDUxMUU1OTg4OUU4QkQ4NTNBQTI3QyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBFOEU1MDMyRTcwNTExRTU5ODg5RThCRDg1M0FBMjdDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBFOEU1MDMzRTcwNTExRTU5ODg5RThCRDg1M0FBMjdDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+JueG1AAAHnRJREFUeNrsXQmYFMXZ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"
+      },
+      "company": {
+        "issuer_id": "CIK:0001065059",
+        "security_id": "NYSE:LEU:CLASS-A",
+        "name": "Centrus Energy Corp.",
+        "ticker": "LEU",
+        "exchange": "NYSE",
+        "share_class": "Class A common stock",
+        "reporting_currency": "USD",
+        "trading_currency": "USD",
+        "fiscal_year_end": "12-31"
+      },
+      "ticker_aliases": [
+        "LEU"
+      ],
+      "archive_sha256": "1288836a15d170a69654aca6e48da3bbc33c2fac784c8b709aad48714de807fc",
+      "reports": [
+        {
+          "report_id": "LEU-2026-09-24-v3",
+          "cutoff": "2026-09-24T18:22:36+00:00",
+          "parent_report_id": null,
+          "watch_count": 7,
+          "html_path": "reports/LEU-stock-analysis-v3-2026-09-24.html",
+          "html_filename": "LEU-stock-analysis-v3-2026-09-24.html"
+        }
+      ],
+      "archive_path": "archives/stock-analysis-leu-class-a-archive.json",
+      "archive_filename": "stock-analysis-leu-class-a-archive.json"
     }
   },
   "storage": {

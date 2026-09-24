@@ -1,0 +1,2756 @@
+{
+  "LEU": {
+    "kind": "visual_research_supplement",
+    "schema_version": "1.0",
+    "ticker": "LEU",
+    "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+    "retrieved_at": "2026-09-24",
+    "sources": {
+      "income": {
+        "url": "https://stockanalysis.com/stocks/leu/financials/income-statement/?p=quarterly",
+        "status": "read",
+        "retrieved_at": "2026-09-24",
+        "provider": "Stock Analysis / S&P Global Market Intelligence",
+        "extraction_note": "Exact embedded numeric arrays transcribed, matched by fiscal date. Raw figures normalized into millions; no interpolation.",
+        "extracted_rows": {
+          "Revenue": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 176100000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 76700000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 146200000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 74900000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 154500000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 73100000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 151600000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": 57700000
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 189000000
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 43700000
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 103600000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 51300000
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 98400000
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 66900000.00000001
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 126200000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 33200000.000000004
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 99100000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": 35300000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 89000000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 91300000
+            }
+          ],
+          "Net Income to Common": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 16800000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 10000000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 17800000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 3900000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 28900000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 27200000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 53700000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": -5000000
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 30600000
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": -6100000
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 56300000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 8199999.999999999
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 12700000
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 7200000
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 19800000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": -6100000
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 37400000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": -400000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 85200000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 41400000
+            }
+          ],
+          "Shares Outstanding (Diluted)": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 21891000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 22446000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 22527000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 20677000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 18121000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 17048000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 16778000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": 16422000
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 16226000
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 15906000
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 15732000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 15626000
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 15369000
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 15241000
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 15029000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 14623000
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 14876000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": 14547000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 14278000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 14056000
+            }
+          ],
+          "Selling, General & Administrative": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 27200000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 11000000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 14200000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 9900000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 14400000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 9200000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 11100000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": 10400000
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": -9200000
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 8199999.999999999
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": -15200000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 8900000
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 8199999.999999999
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 10600000
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 14000000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 4200000
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 4900000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": 4200000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": -43700000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 4700000
+            }
+          ],
+          "Research & Development": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 10800000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 18900000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 8900000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 1700000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 3300000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 3000000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 3300000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": 4099999.999999999
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 4099999.999999999
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 5700000
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 3400000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 3300000
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 4099999.999999999
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 3400000
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 4800000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 5400000
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 3500000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": 1100000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 800000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 600000
+            }
+          ]
+        }
+      },
+      "cashflow": {
+        "url": "https://stockanalysis.com/stocks/leu/financials/cash-flow-statement/?p=quarterly",
+        "status": "read",
+        "retrieved_at": "2026-09-24",
+        "provider": "Stock Analysis / S&P Global Market Intelligence",
+        "extraction_note": "Exact embedded numeric arrays transcribed, matched by fiscal date. Raw figures normalized into millions; no interpolation.",
+        "extracted_rows": {
+          "Operating Cash Flow": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 18400000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": -35100000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": -48400000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 10100000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 52800000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 36500000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 57900000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": -33200000.000000004
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 7000000
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 5300000
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 17900000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": -24000000
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 24900000
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": -9700000
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 55700000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 21100000
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": -43600000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": -12600000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 49200000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": -2100000
+            }
+          ],
+          "Free Cash Flow": [
+            {
+              "date": "2026-06-30",
+              "raw_value": -53200000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": -58300000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": -58000000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 5700000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 49200000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 34400000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 57200000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": -34200000
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 6100000
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 3800000
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 17400000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": -24400000
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 24500000
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": -10000000
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 55600000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 21000000
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": -44000000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": -12700000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 48700000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": -2100000
+            }
+          ]
+        }
+      },
+      "balance": {
+        "url": "https://stockanalysis.com/stocks/leu/financials/balance-sheet/?p=quarterly",
+        "status": "read",
+        "retrieved_at": "2026-09-24",
+        "provider": "Stock Analysis / S&P Global Market Intelligence",
+        "extraction_note": "Exact embedded numeric arrays transcribed, matched by fiscal date. Raw figures normalized into millions; no interpolation.",
+        "extracted_rows": {
+          "Cash & Equivalents": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 1868500000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 1868200000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 1957200000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 1631800000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 833000000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 653000000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 671400000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": 194300000
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 227000000
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 209300000
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 201200000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 183300000
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 212500000
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 188800000
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 179900000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 131700000
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 115600000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": 168500000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 193800000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 171000000
+            }
+          ],
+          "Short-Term Investments": [
+            {
+              "date": "2026-06-30",
+              "raw_value": null
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": null
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": null
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": null
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": null
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": null
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": null
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": null
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": null
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": null
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": null
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": null
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": null
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": null
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": null
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": null
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": null
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": null
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": null
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": null
+            }
+          ],
+          "Total Debt": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 1177500000
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 1178600000
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 1216200000
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 1213800000
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 429800000
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 457600000
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 547200000
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": 170700000
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 171800000
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 170300000
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 177100000
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 180300000
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 182700000
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 172000000
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 169800000
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 147600000
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 150700000
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": 136700000
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 134200000
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 107900000
+            }
+          ]
+        }
+      },
+      "ratios": {
+        "url": "https://stockanalysis.com/stocks/leu/financials/ratios/?p=quarterly",
+        "status": "read",
+        "retrieved_at": "2026-09-24",
+        "provider": "Stock Analysis / S&P Global Market Intelligence",
+        "extraction_note": "Exact embedded numeric arrays transcribed, matched by fiscal date. Raw figures normalized into millions; no interpolation.",
+        "extracted_rows": {
+          "PE Ratio": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 68.092
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 56.33
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 56.827
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 49.654
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 29.779
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 9.793
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 14.92
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": null
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 7.684
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": null
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 10.106
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 18.397
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 15.002
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 8.085
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 9.315
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": null
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 2.192
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": null
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 5.171
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 22.711
+            }
+          ],
+          "PS Ratio": [
+            {
+              "date": "2026-06-30",
+              "raw_value": 6.969
+            },
+            {
+              "date": "2026-03-31",
+              "raw_value": 7.547
+            },
+            {
+              "date": "2025-12-31",
+              "raw_value": 9.853
+            },
+            {
+              "date": "2025-09-30",
+              "raw_value": 12.433
+            },
+            {
+              "date": "2025-06-30",
+              "raw_value": 7.143
+            },
+            {
+              "date": "2025-03-31",
+              "raw_value": 2.212
+            },
+            {
+              "date": "2024-12-31",
+              "raw_value": 2.471
+            },
+            {
+              "date": "2024-09-30",
+              "raw_value": 2.266
+            },
+            {
+              "date": "2024-06-30",
+              "raw_value": 1.764
+            },
+            {
+              "date": "2024-03-31",
+              "raw_value": 2.192
+            },
+            {
+              "date": "2023-12-31",
+              "raw_value": 2.664
+            },
+            {
+              "date": "2023-09-30",
+              "raw_value": 2.571
+            },
+            {
+              "date": "2023-06-30",
+              "raw_value": 1.552
+            },
+            {
+              "date": "2023-03-31",
+              "raw_value": 1.449
+            },
+            {
+              "date": "2022-12-31",
+              "raw_value": 1.607
+            },
+            {
+              "date": "2022-09-30",
+              "raw_value": 2.314
+            },
+            {
+              "date": "2022-06-30",
+              "raw_value": 1.139
+            },
+            {
+              "date": "2022-03-31",
+              "raw_value": 1.745
+            },
+            {
+              "date": "2021-12-31",
+              "raw_value": 2.345
+            },
+            {
+              "date": "2021-09-30",
+              "raw_value": 1.789
+            }
+          ]
+        }
+      },
+      "forecast": {
+        "url": "https://stockanalysis.com/stocks/leu/forecast/",
+        "status": "read",
+        "retrieved_at": "2026-09-24",
+        "provider": "Stock Analysis / S&P Global Market Intelligence",
+        "extraction_note": "September24 snapshot: quote147.99 at13:44EDT; 12-month targets low168.77, mean247.40, median218, high340; 19 target analysts. September recommendations:10/2/7/0/0, total19. Financial estimate contributor count can differ.",
+        "extracted_rows": {}
+      },
+      "stats": {
+        "url": "https://stockanalysis.com/stocks/leu/statistics/",
+        "status": "read",
+        "retrieved_at": "2026-09-24",
+        "provider": "Stock Analysis / S&P Global Market Intelligence",
+        "source_updated_at": "2026-09-24",
+        "extraction_note": "Stats snapshot at 13:53 EDT: price148.20, 200-day average204.03, 20-day volume757391."
+      },
+      "overview": {
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/LEU?range=1y&interval=1d",
+        "status": "read",
+        "retrieved_at": "2026-09-24",
+        "provider": "Yahoo Finance",
+        "extraction_note": "regularMarketPrice148.20; regularMarketTime2026-09-24T17:53:38Z."
+      },
+      "range": {
+        "url": "https://stockanalysis.com/stocks/leu/",
+        "status": "read",
+        "retrieved_at": "2026-09-24",
+        "provider": "Stock Analysis",
+        "extraction_note": "52-week intraday range135.85–464.25. Low September16 corroborated by dated price-history row; high date not established."
+      }
+    },
+    "series": {
+      "revenue": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Revenue",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 91.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 89.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": 35.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 99.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 33.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 126.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 66.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 98.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 51.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 103.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 43.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 189.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 57.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 151.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 73.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 154.5,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 74.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 146.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 76.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 176.1,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "Latest Q2 revenue $176.1m agrees with the issuer. Quarterly contracts are uneven; 2025 full-year sales were $448.7m.",
+          "ro": "Veniturile T2 de 176,1 mil. USD coincid cu emitentul. Contractele trimestriale sunt neregulate; vânzările anuale 2025 au fost 448,7 mil."
+        }
+      },
+      "net_income": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Net Income to Common",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 41.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 85.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": -0.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 37.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": -6.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 19.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 7.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 12.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 8.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 56.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": -6.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 30.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": -5.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 53.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 27.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 28.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 3.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 17.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 10.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 16.8,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "Net income to common shareholders. Latest Q2 $16.8m agrees with the issuer. Investment income, taxes and historic preferred allocations can affect comparability.",
+          "ro": "Profit net aferent acțiunilor ordinare. T2 de 16,8 mil. USD coincide cu emitentul. Plasamentele, taxele și alocările preferențiale istorice afectează comparabilitatea."
+        }
+      },
+      "diluted_shares": {
+        "unit": "shares",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Shares Outstanding (Diluted)",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 14.056,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 14.278,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": 14.547,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 14.876,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 14.623,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 15.029,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 15.241,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 15.369,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 15.626,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 15.732,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 15.906,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 16.226,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 16.422,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 16.778,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 17.048,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 18.121,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 20.677,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 22.527,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 22.446,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 21.891,
+            "state": "provider reported"
+          }
+        ]
+      },
+      "cfo": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "cashflow",
+        "source_row": "Operating Cash Flow",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": -2.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 49.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": -12.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": -43.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 21.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 55.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": -9.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 24.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": -24.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 17.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 5.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 7.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": -33.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 57.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 36.5,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 52.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 10.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": -48.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": -35.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 18.4,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "Q2 CFO $18.4m plus Q1 −$35.1m equals reported H1 −$16.7m. A positive quarter does not mean the half-year generated cash.",
+          "ro": "CFO T2 de 18,4 mil. USD plus T1 de −35,1 mil. egalizează H1 raportat de −16,7 mil. Un trimestru pozitiv nu înseamnă că semestrul a generat numerar."
+        }
+      },
+      "fcf": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "cashflow",
+        "source_row": "Free Cash Flow",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": -2.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 48.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": -12.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": -44.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 21.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 55.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": -10.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 24.5,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": -24.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 17.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 3.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 6.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": -34.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 57.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 34.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 49.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 5.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": -58.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": -58.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": -53.2,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "FCF = operating cash flow − cash capital expenditure. Q2: $18.4m − $71.6m = −$53.2m. Financing proceeds are not included.",
+          "ro": "FCF = numerar operațional − investiții de capital în numerar. T2: 18,4 − 71,6 = −53,2 mil. USD. Încasările din finanțare nu sunt incluse."
+        }
+      },
+      "cash": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "balance",
+        "source_row": "Cash & Equivalents",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 171.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 193.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": 168.5,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 115.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 131.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 179.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 188.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 212.5,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 183.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 201.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 209.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 227.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 194.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 671.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 653.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 833.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 1631.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 1957.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 1868.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 1868.5,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "June cash $1,868.5m agrees with the issuer and excludes $33.4m restricted cash. It predates the September offering and subsequent spending.",
+          "ro": "Numerarul din iunie de 1.868,5 mil. USD coincide cu emitentul și exclude 33,4 mil. restricționate. Este anterior ofertei din septembrie și cheltuielilor ulterioare."
+        }
+      },
+      "investments": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "balance",
+        "source_row": "Short-Term Investments",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": null,
+            "state": "not separately supplied"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": null,
+            "state": "not separately supplied"
+          }
+        ],
+        "note": {
+          "en": "No separate short-term-investment series was supplied. Missing values are not zero; no value is added to cash.",
+          "ro": "Nu a fost furnizată o serie separată a plasamentelor pe termen scurt. Valorile lipsă nu sunt zero; nu se adaugă nimic la numerar."
+        }
+      },
+      "debt": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "balance",
+        "source_row": "Total Debt",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 107.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 134.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": 136.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 150.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 147.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 169.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 172.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 182.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 180.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 177.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 170.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 171.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 170.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 547.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 457.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 429.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 1213.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 1216.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 1178.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 1177.5,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "Provider total debt includes historical inventory-loan/other debt classifications. June $1,177.5m equals issuer carrying debt; contractual note principal is $1,207.5m. Lease treatment is not independently reconciled throughout the history; retirement liabilities are separate.",
+          "ro": "Datoria furnizorului include clasificări istorice pentru împrumuturi de stoc/alte datorii. Iunie 1.177,5 mil. USD coincide cu datoria contabilă; principalul este 1.207,5 mil. Tratamentul leasingului nu este reconciliat independent pe tot istoricul; pensiile sunt separate."
+        }
+      },
+      "sga": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Selling, General & Administrative",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 4.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": -43.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": 4.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 4.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 4.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 14.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 10.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 8.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 8.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": -15.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 8.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": -9.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 10.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 11.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 9.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 14.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 9.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 14.2,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 11.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 27.2,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "Provider-standardized SG&A includes benefit-cost reclassification: Q2 $27.2m versus issuer $26.2m. Negative historical values include credits/reclassifications, not negative cash payroll. These categories do not equal all operating costs.",
+          "ro": "SG&A standardizat include reclasificarea beneficiilor: T2 de 27,2 mil. USD față de 26,2 mil. raportat. Valorile negative includ credite/reclasificări, nu salarii negative. Categoriile nu cuprind toate costurile operaționale."
+        }
+      },
+      "rnd": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000.0,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Research & Development",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 0.6,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 0.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": 1.1,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 3.5,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 5.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 4.8,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 3.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 4.099999999999999,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 3.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 3.4,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 5.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 4.099999999999999,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 4.099999999999999,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 3.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 3.0,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 3.3,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 1.7,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 8.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 18.9,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 10.8,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "The provider R&D row corresponds to Centrus advanced technology costs, including manufacturing readiness and expansion work. Q2 $10.8m agrees with the issuer; it is broader than pure laboratory R&D.",
+          "ro": "Rândul R&D al furnizorului corespunde costurilor de tehnologie avansată Centrus, inclusiv pregătire de fabricație și extindere. T2 de 10,8 mil. USD coincide cu emitentul; este mai larg decât cercetarea de laborator."
+        }
+      },
+      "pe": {
+        "unit": "ratio",
+        "currency": "USD",
+        "scale": 1,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "ratios",
+        "source_row": "PE Ratio",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 22.711,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 5.171,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": null,
+            "state": "unavailable / not meaningful"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 2.192,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": null,
+            "state": "unavailable / not meaningful"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 9.315,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 8.085,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 15.002,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 18.397,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 10.106,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": null,
+            "state": "unavailable / not meaningful"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 7.684,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": null,
+            "state": "unavailable / not meaningful"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 14.92,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 9.793,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 29.779,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 49.654,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 56.827,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 56.33,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 68.092,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "Provider period-end trailing P/E, not filing-date ratios. Negative or unavailable earnings multiples remain gaps. Current report P/E uses summed quarterly GAAP EPS; share-weighting and provider restatements can differ. A historical median is not a price target.",
+          "ro": "P/E retrospectiv la sfârșit de perioadă al furnizorului, nu la data depunerii raportului. Multiplii negativi/indisponibili rămân goluri. Raportul actual însumează EPS GAAP trimestriale; ponderarea și retratările pot diferi. Mediana nu este țintă de preț."
+        }
+      },
+      "ps": {
+        "unit": "ratio",
+        "currency": "USD",
+        "scale": 1,
+        "basis": "provider-standardized",
+        "period_kind": "quarter",
+        "source_id": "ratios",
+        "source_row": "PS Ratio",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 1.789,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 2.345,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": 1.745,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 1.139,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 2.314,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 1.607,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 1.449,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 1.552,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 2.571,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 2.664,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 2.192,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 1.764,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 2.266,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 2.471,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 2.212,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 7.143,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 12.433,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 9.853,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 7.547,
+            "state": "provider reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 6.969,
+            "state": "provider reported"
+          }
+        ],
+        "note": {
+          "en": "Provider period-end equity market value / trailing revenue. It uses provider share counts, not our September economic-share scenario including pre-funded warrants. This is P/S, not EV/sales.",
+          "ro": "Capitalizare bursieră la sfârșit de perioadă / venituri retrospective. Folosește acțiunile furnizorului, nu scenariul economic din septembrie cu warranturi prefinanțate. Este P/S, nu EV/venituri."
+        }
+      }
+    },
+    "market": {
+      "overview_quote": {
+        "price": 148.2,
+        "observed_at": "2026-09-24 13:53:38 EDT",
+        "session": "intraday",
+        "source_id": "overview"
+      },
+      "stats_quote": {
+        "price": 148.2,
+        "observed_at": "2026-09-24 13:53 EDT",
+        "session": "intraday",
+        "source_id": "stats"
+      },
+      "forecast_quote": {
+        "price": 147.99,
+        "observed_at": "2026-09-24 13:44 EDT",
+        "session": "intraday",
+        "source_id": "forecast"
+      },
+      "range": {
+        "low": 135.85,
+        "high": 464.25,
+        "low_date": "2026-09-16",
+        "high_date": null,
+        "method": "provider_published_52_week_intraday_range",
+        "source_id": "range"
+      },
+      "ma200": {
+        "value": 204.03,
+        "method": "provider_published_200_day_average",
+        "source_id": "stats"
+      }
+    },
+    "consensus": {
+      "targets": {
+        "low": 168.77,
+        "mean": 247.4,
+        "median": 218,
+        "high": 340,
+        "horizon_months": 12,
+        "source_id": "forecast"
+      },
+      "target_analyst_count": 19,
+      "label": "Buy",
+      "ratings": {
+        "counts": {
+          "Strong Buy": 10,
+          "Buy": 2,
+          "Hold": 7,
+          "Sell": 0,
+          "Strong Sell": 0
+        },
+        "total": 19,
+        "period": "Sep 2026",
+        "source_id": "forecast",
+        "score": 1.8421052631578947,
+        "score_scale": "1=Strong Buy; 5=Strong Sell"
+      }
+    },
+    "basis_note": {
+      "en": "Quarterly financial history is provider-standardized, in USD millions except shares and ratios. Latest-period comparisons were checked against issuer filings. Market observations are separate intraday snapshots on September 24, 2026.",
+      "ro": "Istoricul trimestrial este standardizat de furnizor, în milioane USD, exceptând acțiunile și rapoartele. Ultimele perioade au fost verificate cu raportările emitentului. Cotațiile sunt observații separate în ședința din 24 septembrie 2026."
+    },
+    "caveats": [
+      {
+        "en": "Centrus is moving from fuel supply toward capital-intensive production. Historical small-company margins and P/E multiples need not describe the future expanded business.",
+        "ro": "Centrus trece de la furnizare la producție intensivă în capital. Marjele și multiplii istorici ai companiei mici nu descriu neapărat afacerea extinsă."
+      },
+      {
+        "en": "The chart share series is diluted weighted-average shares per quarter. It is not a current capitalization table and does not capture September pre-funded warrants as if they had existed in June.",
+        "ro": "Seria acțiunilor reprezintă media ponderată diluată pe trimestru. Nu este capitalizarea actuală și nu include warranturile prefinanțate din septembrie ca și cum ar fi existat în iunie."
+      },
+      {
+        "en": "Quarterly revenue and cash vary with large deliveries and customer advances. Financial charts are actual quarters, not annualized or TTM values.",
+        "ro": "Veniturile și numerarul trimestrial variază cu livrările mari și avansurile clienților. Graficele reprezintă trimestre efective, nu valori anualizate sau TTM."
+      }
+    ]
+  }
+}
