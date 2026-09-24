@@ -238,6 +238,17 @@ class Workflow(unittest.TestCase):
             self.assertEqual(d['report_id'],self.base['report_id'])
             with self.assertRaisesRegex(Invalid,'Wrong company'):baseline(a,'wrong|security',report_id=self.base['report_id'])
 
+    def test_editorial_revision_with_same_cutoff_is_selected_as_baseline(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp)/'archive.json';register(p,self.base)
+            revised=copy.deepcopy(self.base);revised.update(report_id=self.base['report_id']+'-r2',prepared_at='2026-08-04T12:00:00Z')
+            register(p,revised)
+            a=json.loads(p.read_text())
+            d=baseline(a,identity(self.base['company']),before='2026-08-05T12:00:00Z')
+            self.assertEqual(d['report_id'],revised['report_id'])
+            reg=Path(tmp)/'registry.json';catalog(reg,p,'file-1','archive.json')
+            self.assertEqual(next(iter(load(reg)['companies'].values()))['latest_report_id'],revised['report_id'])
+
     def test_archive_tamper_detected(self):
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp)/'archive.json';register(p,self.base);a=load(p)

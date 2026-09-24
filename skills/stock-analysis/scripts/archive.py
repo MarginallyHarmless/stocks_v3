@@ -8,6 +8,11 @@ from pathlib import Path
 from model import VERSION, Invalid, digest, identity, load, need, timestamp, validate
 
 
+def snapshot_order(research):
+    """Chronological order of snapshots; an editorial revision keeps its cutoff but is prepared later."""
+    return timestamp(research["cutoff"]), timestamp(research["prepared_at"])
+
+
 def write_json(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -62,7 +67,7 @@ def register(archive_path, research, expected_hash=None):
         previous = [entry['research'] for entry in snapshots.values() if entry['research']['mode']=='update'
                     and entry['research']['review']['release']['status']=='published' and review_key(entry['research'])==key]
         if previous:
-            old=max(previous,key=lambda d: timestamp(d['cutoff']))
+            old=max(previous,key=snapshot_order)
             if research.get("supersedes_report_id") != old["report_id"]:
                 raise Invalid(f"Release already reviewed as {old['report_id']}; reuse it or explicitly supersede it with new evidence")
             need(timestamp(research["cutoff"]) > timestamp(old["cutoff"]), "Revision needs a later cutoff")
@@ -88,7 +93,7 @@ def baseline(archive, security_identity, report_id=None, before=None):
         matches = [d for d in entries if timestamp(d["cutoff"]) < limit and d.get("watchlist")
                    and not (d["mode"] == "update" and d["review"]["release"]["status"] == "pending")]
     need(bool(matches), "No saved applicable baseline; retrieve the original package")
-    return max(matches, key=lambda d: timestamp(d["cutoff"]))
+    return max(matches, key=snapshot_order)
 
 
 def catalog(registry_path, archive_path, library_file_id=None, filename=None, report_file_id=None, report_filename=None, card=None, *, repo_root=None, repository=None, report_path=None):
@@ -106,7 +111,7 @@ def catalog(registry_path, archive_path, library_file_id=None, filename=None, re
     path = Path(registry_path)
     registry = load(path) if path.exists() else {"schema_version": VERSION, "kind": "company_registry", "companies": {}}
     need(registry.get("kind") == "company_registry", "Invalid company registry")
-    reports = sorted((v["research"] for v in archive["snapshots"].values()), key=lambda d: timestamp(d["cutoff"]))
+    reports = sorted((v["research"] for v in archive["snapshots"].values()), key=snapshot_order)
     need(bool(reports), "Cannot catalog an empty archive")
     latest = reports[-1]
     from company_index import enrich_entry
