@@ -94,5 +94,9 @@
   "LEU-2026-09-24-v3": {
     "path": "research/visuals/LEU-2026-09-24.json",
     "key": "LEU"
+  },
+  "NOW-2026-09-25-v3": {
+    "path": "research/visuals/NOW-2026-09-25.json",
+    "key": "NOW"
   }
 }
