@@ -1126,6 +1126,74 @@
       ],
       "archive_path": "archives/stock-analysis-now-common-archive.json",
       "archive_filename": "stock-analysis-now-common-archive.json"
+    },
+    "CIK:0001018724|NASDAQ:AMZN:COMMON": {
+      "earnings_events": [
+        {
+          "id": "amzn-q3-2026-results",
+          "kind": "results",
+          "period": "Q3 2026",
+          "confidence": "Estimated",
+          "date": "2026-10-29",
+          "checked_at": "2026-09-27",
+          "source_id": "stats",
+          "basis": {
+            "en": "Stock Analysis estimate; issuer confirmation not found. Release, call and filing are separate events.",
+            "ro": "Estimare Stock Analysis; confirmarea emitentului nu a fost găsită. Rezultatele, apelul și depunerea sunt evenimente separate."
+          },
+          "source_url": "https://stockanalysis.com/stocks/amzn/statistics/",
+          "source_title": "Stock Analysis / S&P Global: AMZN stats",
+          "baseline_report_id": "AMZN-2026-09-27-v3",
+          "reviewed_report_id": null
+        }
+      ],
+      "latest_report_id": "AMZN-2026-09-27-v3",
+      "latest_cutoff": "2026-09-27T17:00:00Z",
+      "watch_count": 6,
+      "card": {
+        "report_id": "AMZN-2026-09-27-v3",
+        "summary": {
+          "en": "Strong cloud growth; the AI investment bill makes cash returns decisive.",
+          "ro": "Creștere cloud puternică; investițiile AI fac randamentul cash decisiv."
+        },
+        "business": {
+          "en": "Commerce, marketplace services, advertising and AWS cloud infrastructure.",
+          "ro": "Comerț, servicii pentru comercianți, publicitate și infrastructură cloud AWS."
+        },
+        "risk": {
+          "en": "Heavy capital spending, investment-gain distortion and regulatory scrutiny.",
+          "ro": "Investiții mari, distorsiuni din câștiguri investiționale și presiune de reglementare."
+        },
+        "logo_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amazon_logo.jpg",
+        "logo_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm"
+      },
+      "company": {
+        "issuer_id": "CIK:0001018724",
+        "security_id": "NASDAQ:AMZN:COMMON",
+        "name": "Amazon.com, Inc.",
+        "ticker": "AMZN",
+        "exchange": "NASDAQ",
+        "share_class": "Common stock",
+        "reporting_currency": "USD",
+        "trading_currency": "USD",
+        "fiscal_year_end": "December 31"
+      },
+      "ticker_aliases": [
+        "AMZN"
+      ],
+      "archive_sha256": "2c84fa6d31172557f8c474e274bb14705c81e9c67212feaedfdbfa04735c2c22",
+      "reports": [
+        {
+          "report_id": "AMZN-2026-09-27-v3",
+          "cutoff": "2026-09-27T17:00:00Z",
+          "parent_report_id": null,
+          "watch_count": 6,
+          "html_path": "reports/AMZN-stock-analysis-2026-09-27.html",
+          "html_filename": "AMZN-stock-analysis-2026-09-27.html"
+        }
+      ],
+      "archive_path": "archives/stock-analysis-amzn-common-archive.json",
+      "archive_filename": "stock-analysis-amzn-common-archive.json"
     }
   },
   "storage": {

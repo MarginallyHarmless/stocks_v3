@@ -1,0 +1,1399 @@
+{
+  "AMZN": {
+    "kind": "visual_research_supplement",
+    "schema_version": "1.0",
+    "ticker": "AMZN",
+    "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+    "retrieved_at": "2026-09-27",
+    "sources": {
+      "income": {
+        "url": "https://stockanalysis.com/stocks/amzn/financials/income-statement/?p=quarterly",
+        "status": "read",
+        "retrieved_at": "2026-09-27",
+        "provider": "Stock Analysis / S&P Global",
+        "source_updated_at": null,
+        "extraction_note": "Read public numeric tables; transcribed row retained in series.",
+        "source_row": ""
+      },
+      "cashhist": {
+        "url": "https://stockanalysis.com/stocks/amzn/financials/cash-flow-statement/?p=quarterly",
+        "status": "read",
+        "retrieved_at": "2026-09-27",
+        "provider": "Stock Analysis / S&P Global",
+        "source_updated_at": null,
+        "extraction_note": "Read public numeric tables; transcribed row retained in series.",
+        "source_row": ""
+      },
+      "balance": {
+        "url": "https://stockanalysis.com/stocks/amzn/financials/balance-sheet/?p=quarterly",
+        "status": "read",
+        "retrieved_at": "2026-09-27",
+        "provider": "Stock Analysis / S&P Global",
+        "source_updated_at": null,
+        "extraction_note": "Read public numeric tables; transcribed row retained in series.",
+        "source_row": ""
+      },
+      "ratios": {
+        "url": "https://stockanalysis.com/stocks/amzn/financials/ratios/?p=quarterly",
+        "status": "read",
+        "retrieved_at": "2026-09-27",
+        "provider": "Stock Analysis / S&P Global",
+        "source_updated_at": null,
+        "extraction_note": "Read public numeric tables; transcribed row retained in series.",
+        "source_row": ""
+      },
+      "stats": {
+        "url": "https://stockanalysis.com/stocks/amzn/statistics/",
+        "status": "read",
+        "retrieved_at": "2026-09-27",
+        "provider": "Stock Analysis / S&P Global",
+        "source_updated_at": null,
+        "extraction_note": "Read public numeric tables; transcribed row retained in series.",
+        "source_row": "Sep 25 regular close 249.67 USD; MA200 240.85; estimated earnings Oct 29."
+      },
+      "forecast": {
+        "url": "https://stockanalysis.com/stocks/amzn/forecast/",
+        "status": "read",
+        "retrieved_at": "2026-09-27",
+        "provider": "Stock Analysis / S&P Global",
+        "source_updated_at": null,
+        "extraction_note": "Read public numeric tables; transcribed row retained in series.",
+        "source_row": "Targets low/mean/median/high 230/329.54/330/405; target contributors 59; recommendations 43/15/2/0/0, total 60; updated Sep 21."
+      },
+      "history": {
+        "url": "https://stockanalysis.com/stocks/amzn/history/",
+        "status": "read",
+        "retrieved_at": "2026-09-27",
+        "provider": "Stock Analysis / S&P Global",
+        "source_updated_at": null,
+        "extraction_note": "Read public numeric tables; transcribed row retained in series.",
+        "source_row": ""
+      },
+      "overview": {
+        "url": "https://stockanalysis.com/stocks/amzn/",
+        "status": "read",
+        "retrieved_at": "2026-09-27",
+        "provider": "Stock Analysis / S&P Global",
+        "source_updated_at": null,
+        "extraction_note": "Read public numeric tables; transcribed row retained in series.",
+        "source_row": "Sep 25 regular close 249.67 USD; 52-week intraday range 196.00–287.20."
+      }
+    },
+    "series": {
+      "revenue": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Revenue | 200,606 | 181,519 | 213,386 | 180,169 | 167,702 | 155,667 | 187,792 | 158,877 | 147,977 | 143,313 | 169,961 | 143,083 | 134,383 | 127,358 | 149,204 | 127,101",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 127101.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 149204.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 127358.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 134383.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 143083.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 169961.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 143313.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 147977.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 158877.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 187792.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 155667.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 167702.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 180169.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 213386.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 181519.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 200606.0,
+            "state": "reported"
+          }
+        ]
+      },
+      "net_income": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Net Income to Common | 62,647 | 30,255 | 21,192 | 21,187 | 18,164 | 17,127 | 20,004 | 15,328 | 13,485 | 10,431 | 10,624 | 9,879 | 6,750 | 3,172 | 278 | 2,872",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 2872.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 278.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 3172.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 6750.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 9879.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 10624.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 10431.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 13485.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 15328.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 20004.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 17127.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 18164.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 21187.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 21192.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 30255.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 62647.0,
+            "state": "reported"
+          }
+        ]
+      },
+      "diluted_shares": {
+        "unit": "shares",
+        "currency": null,
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Shares Outstanding (Diluted) | 10,903 | 10,874 | 10,863 | 10,845 | 10,806 | 10,793 | 10,771 | 10,735 | 10,708 | 10,670 | 10,610 | 10,558 | 10,449 | 10,347 | 10,308 | 10,331",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 10331.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 10308.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 10347.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 10449.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 10558.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 10610.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 10670.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 10708.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 10735.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 10771.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 10793.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 10806.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 10845.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 10863.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 10874.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 10903.0,
+            "state": "reported"
+          }
+        ]
+      },
+      "opex": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "income",
+        "source_row": "Operating Expenses | 77,367 | 70,204 | 80,950 | 71,577 | 67,722 | 60,286 | 67,696 | 60,489 | 59,520 | 55,373 | 64,199 | 56,873 | 57,329 | 54,793 | 60,077 | 54,308",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 54308.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 60077.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 54793.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 57329.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 56873.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 64199.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 55373.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 59520.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 60489.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 67696.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 60286.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 67722.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 71577.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 80950.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 70204.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 77367.0,
+            "state": "reported"
+          }
+        ],
+        "note": {
+          "en": "Excludes cost of sales. Provider classifications differ from issuer categories.",
+          "ro": "Exclude costul vânzărilor. Clasificările diferă de emitent."
+        }
+      },
+      "cfo": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "cashhist",
+        "source_row": "Operating Cash Flow | 45,387 | 26,032 | 54,459 | 35,525 | 32,515 | 17,015 | 45,636 | 25,971 | 25,281 | 18,989 | 42,465 | 21,217 | 16,476 | 4,788 | 29,173 | 11,404",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 11404.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 29173.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 4788.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 16476.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 21217.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 42465.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 18989.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 25281.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 25971.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 45636.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 17015.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 32515.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 35525.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 54459.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 26032.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 45387.0,
+            "state": "reported"
+          }
+        ]
+      },
+      "fcf": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "cashhist",
+        "source_row": "Free Cash Flow | -8,821 | -18,171 | 14,937 | 430 | 332 | -8,004 | 17,802 | 3,351 | 7,661 | 4,064 | 27,877 | 8,738 | 5,021 | -9,419 | 12,581 | -4,974",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": -4974.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 12581.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": -9419.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 5021.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 8738.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 27877.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 4064.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 7661.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 3351.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 17802.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": -8004.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 332.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 430.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 14937.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": -18171.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": -8821.0,
+            "state": "reported"
+          }
+        ],
+        "note": {
+          "en": "Gross equipment-purchase definition; Amazon adds proceeds and incentives.",
+          "ro": "Definiție cu echipamente brute; Amazon adaugă încasări și stimulente."
+        }
+      },
+      "cash": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "balance",
+        "source_row": "Cash & Equivalents | 78,213 | 101,816 | 86,810 | 66,922 | 57,741 | 66,207 | 78,779 | 75,091 | 71,178 | 72,852 | 73,387 | 49,605 | 49,529 | 49,343 | 53,888 | 34,947",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 34947.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 53888.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 49343.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 49529.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 49605.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 73387.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 72852.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 71178.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 75091.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 78779.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 66207.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 57741.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 66922.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 86810.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 101816.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 78213.0,
+            "state": "reported"
+          }
+        ]
+      },
+      "investments": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "balance",
+        "source_row": "Short-Term Investments | 44,775 | 41,273 | 36,219 | 27,275 | 35,439 | 28,358 | 22,423 | 12,960 | 17,914 | 12,222 | 13,393 | 14,564 | 14,441 | 15,062 | 16,138 | 23,715",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 23715.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 16138.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 15062.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 14441.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 14564.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 13393.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 12222.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 17914.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 12960.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 22423.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 28358.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 35439.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 27275.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 36219.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 41273.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 44775.0,
+            "state": "reported"
+          }
+        ]
+      },
+      "debt": {
+        "unit": "currency",
+        "currency": "USD",
+        "scale": 1000000,
+        "basis": "Provider-standardized GAAP",
+        "period_kind": "quarter",
+        "source_id": "balance",
+        "source_row": "Total Debt | 251,635 | 235,540 | 178,547 | 160,438 | 159,570 | 157,953 | 155,401 | 158,535 | 157,842 | 160,560 | 161,574 | 166,065 | 174,286 | 178,547 | 169,938 | 164,334",
+        "points": [
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 164334.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 169938.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 178547.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 174286.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 166065.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 161574.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 160560.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 157842.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 158535.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 155401.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 157953.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 159570.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 160438.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 178547.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 235540.0,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 251635.0,
+            "state": "reported"
+          }
+        ],
+        "note": {
+          "en": "Includes operating/finance leases and financing obligations; not borrowings alone.",
+          "ro": "Include leasing operațional/financiar și obligații de finanțare; nu doar împrumuturi."
+        }
+      },
+      "pe": {
+        "unit": "ratio",
+        "currency": null,
+        "scale": 1,
+        "basis": "Provider period-end trailing multiple; not filing-date valuation",
+        "period_kind": "quarter",
+        "source_id": "ratios",
+        "source_row": "PE Ratio | 20.08 | 18.95 | 24.62 | 31.77 | 30.62 | 32.98 | 30.58 | 38.94 | 39.22 | 45.28 | 49.72 | 51.61 | 65.32 | 102.32 | 246.49 | -314.82 | 101.67 | - | - | 50.68 | 63.35",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 63.35,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 50.68,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": null,
+            "state": "unavailable"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": null,
+            "state": "unavailable"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 101.67,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": null,
+            "state": "unavailable"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 246.49,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 102.32,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 65.32,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 51.61,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 49.72,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 45.28,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 39.22,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 38.94,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 30.58,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 32.98,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 30.62,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 31.77,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 24.62,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 18.95,
+            "state": "reported"
+          }
+        ]
+      },
+      "ps": {
+        "unit": "ratio",
+        "currency": null,
+        "scale": 1,
+        "basis": "Provider period-end trailing multiple; not filing-date valuation",
+        "period_kind": "quarter",
+        "source_id": "ratios",
+        "source_row": "PS Ratio | 3.47 | 3.31 | 3.01 | 3.44 | 3.39 | 3.48 | 3.10 | 3.62 | 3.15 | 3.33 | 3.17 | 2.73 | 2.37 | 2.49 | 2.02 | 1.67 | 2.29 | 2.22 | 3.47 | 3.60 | 3.63",
+        "points": [
+          {
+            "period": "Q3 2021",
+            "period_ending": "2021-09-30",
+            "value": 3.63,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2021",
+            "period_ending": "2021-12-31",
+            "value": 3.6,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2022",
+            "period_ending": "2022-03-31",
+            "value": 3.47,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2022",
+            "period_ending": "2022-06-30",
+            "value": 2.22,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2022",
+            "period_ending": "2022-09-30",
+            "value": 2.29,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2022",
+            "period_ending": "2022-12-31",
+            "value": 1.67,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2023",
+            "period_ending": "2023-03-31",
+            "value": 2.02,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2023",
+            "period_ending": "2023-06-30",
+            "value": 2.49,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2023",
+            "period_ending": "2023-09-30",
+            "value": 2.37,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2023",
+            "period_ending": "2023-12-31",
+            "value": 2.73,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2024",
+            "period_ending": "2024-03-31",
+            "value": 3.17,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2024",
+            "period_ending": "2024-06-30",
+            "value": 3.33,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2024",
+            "period_ending": "2024-09-30",
+            "value": 3.15,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-12-31",
+            "value": 3.62,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2025-03-31",
+            "value": 3.1,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-06-30",
+            "value": 3.48,
+            "state": "reported"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-09-30",
+            "value": 3.39,
+            "state": "reported"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-12-31",
+            "value": 3.44,
+            "state": "reported"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2026-03-31",
+            "value": 3.01,
+            "state": "reported"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-06-30",
+            "value": 3.31,
+            "state": "reported"
+          }
+        ]
+      }
+    },
+    "market": {
+      "overview_quote": {
+        "price": 249.67,
+        "observed_at": "2026-09-25T16:00:00-04:00",
+        "session": "regular close",
+        "source_id": "overview"
+      },
+      "stats_quote": {
+        "price": 249.67,
+        "observed_at": "2026-09-25T16:00:00-04:00",
+        "session": "regular close",
+        "source_id": "stats"
+      },
+      "forecast_quote": {
+        "price": 249.67,
+        "observed_at": "2026-09-25T16:00:00-04:00",
+        "session": "regular close",
+        "source_id": "forecast"
+      },
+      "range": {
+        "low": 196,
+        "high": 287.2,
+        "low_date": null,
+        "high_date": null,
+        "method": "Provider 52-week intraday extremes; dates not exposed.",
+        "source_id": "overview"
+      },
+      "ma200": {
+        "value": 240.85,
+        "method": "Provider 200-day average associated with September 25 closing statistics; not independently reconstructed.",
+        "source_id": "stats"
+      }
+    },
+    "consensus": {
+      "targets": {
+        "low": 230,
+        "mean": 329.54,
+        "median": 330,
+        "high": 405,
+        "horizon_months": 12,
+        "source_id": "forecast"
+      },
+      "target_analyst_count": 59,
+      "target_count_label": "59 analysts in target consensus; 60 recommendation contributors",
+      "ratings": {
+        "counts": {
+          "Strong Buy": 43,
+          "Buy": 15,
+          "Hold": 2,
+          "Sell": 0,
+          "Strong Sell": 0
+        },
+        "total": 60,
+        "period": "September 2026",
+        "source_id": "forecast",
+        "score": 1.3166666666666667,
+        "score_scale": "1 = Strong Buy; 5 = Strong Sell"
+      }
+    },
+    "basis_note": {
+      "en": "16 quarters of provider-standardized financial history; latest revenue, profit, shares, cash and cash flow checked against Amazon’s Q2 filing. Multiples use 20 quarter-end observations.",
+      "ro": "16 trimestre de istoric standardizat; ultimele venituri, profit, acțiuni, numerar și flux cash verificate cu raportarea T2. Multiplii folosesc 20 observații trimestriale."
+    },
+    "caveats": [
+      {
+        "en": "Free cash flow = CFO minus gross equipment purchases, excluding proceeds/incentives. Trailing −$11.625bn reconciles to Amazon’s −$7.604bn after $4.021bn proceeds/incentives. Debt history includes leases and financing obligations: $251.635bn latest versus $132.224bn borrowings in the narrative.",
+        "ro": "FCF = CFO minus echipamente brute, fără încasări/stimulente. −11,625 mld. se reconciliază cu −7,604 mld. Amazon prin 4,021 mld. încasări/stimulente. Datoria grafică include leasing și finanțări: 251,635 mld. versus împrumuturi de 132,224 mld. în text."
+      },
+      {
+        "en": "Operating-expense chart uses provider expenses excluding cost of sales. Provider quarterly classifications differ from Amazon, including Q3/Q4 2025 settlement allocation; this is not the issuer’s total operating-cost series. Latest $77.367bn + $95.778bn cost of sales = $173.145bn issuer total.",
+        "ro": "Graficul costurilor folosește cheltuieli fără costul vânzărilor. Clasificarea trimestrială diferă de Amazon, inclusiv alocarea tranzacției juridice T3/T4 2025; nu este seria totală a emitentului. Ultimul trimestru: 77,367 + 95,778 = 173,145 mld. USD."
+      },
+      {
+        "en": "Large investment gains distort net profit and historical P/E. Historical ratios use provider denominator conventions and are not independently reconstructed. Negative or missing P/E is shown unavailable, never as a bargain.",
+        "ro": "Câștigurile investiționale distorsionează profitul net și P/E. Multiplii folosesc convențiile furnizorului, fără reconstrucție independentă. P/E negativ sau lipsă este indisponibil, nu chilipir."
+      }
+    ]
+  }
+}
