@@ -1,0 +1,21 @@
+{
+  "schema_version": "market-sweep-registry-1",
+  "kind": "market_sweep_registry",
+  "invocation": "user_triggered_only",
+  "latest_run_id": "MARKET-2026-09-27-r1",
+  "reports": [
+    {
+      "run_id": "MARKET-2026-09-27-r1",
+      "cutoff": "2026-09-27T23:11:06+03:00",
+      "window_start": "2026-09-21T00:00:00+03:00",
+      "html_path": "reports/market-landscape-2026-09-27.html",
+      "data_path": "research/market-sweeps/2026-09-27-r1/report.json",
+      "manifest_path": "research/market-sweeps/2026-09-27-r1/manifest.json",
+      "data_sha256": "ef64b2cb57cb77e8092e24a05320c784dc76a20be78024c50cd3668de2a5bdbb",
+      "manifest_sha256": "012d6f14a791b4b5244c9dbafda94c052debc292dc572d1652de5aaada3ee615",
+      "coverage_status": "published_with_explicit_gaps",
+      "company_count": 16,
+      "question_count": 108
+    }
+  ]
+}

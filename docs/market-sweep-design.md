@@ -1,6 +1,6 @@
 # Free-source market and company sweep
 
-Status: design and collection pilot, 27 September 2026. Dynamic scope preparation is implemented; recurring collection and report delivery are not scheduled yet.
+Status: on-demand workflow implemented, 27 September 2026. The user triggers each run. There is no recurring schedule, background monitoring or automatic delivery. The first completed landscape covers all 16 current companies and 108 saved questions, with explicit source gaps.
 
 ## Scope comes from the project
 
@@ -30,9 +30,9 @@ No paid data subscriptions are required. Execution, storage and model usage are 
 | Company disclosures | [SEC submissions JSON](https://www.sec.gov/search-filings/edgar-application-programming-interfaces), issuer investor relations releases, earnings presentations | Primary facts. SEC recent-submissions metadata worked for all 16 pilot companies. Issuer indexes varied; individual releases sometimes worked when the index did not. |
 | Company ecosystem | Customer, supplier and partner releases; regulator and court records | Identify developments omitted from the issuer's own news feed. Verify the relationship and distinguish counterparty claims from independent confirmation. |
 | Broad news discovery | [GDELT](https://www.gdeltproject.org/), public publisher feeds and web search | Discover leads, then read the underlying article. The pilot GDELT request received HTTP 429; this is an unresolved reliability issue, not a working collection dependency. |
-| US macro | [FRED](https://fred.stlouisfed.org/), [BLS releases](https://www.bls.gov/bls/news-release/), [BEA releases](https://www.bea.gov/news), [Federal Reserve RSS](https://www.federalreserve.gov/feeds/feeds.htm) | Observation data, release calendars and policy statements. Fed RSS and one FRED public CSV series were tested; the full macro basket remains to be validated. |
-| International macro | [ECB data portal](https://data.ecb.europa.eu/), [Eurostat](https://ec.europa.eu/eurostat), [World Bank data](https://data.worldbank.org/) | Add according to documented revenue, funding and supply-chain exposures. Candidate sources, not completed pilot integrations. |
-| Geopolitics and policy | [US Treasury](https://home.treasury.gov/news/press-releases), [OFAC](https://ofac.treasury.gov/), [BIS](https://www.bis.gov/), [European Commission](https://ec.europa.eu/commission/presscorner/home/en), relevant national agencies and public original reporting | Sanctions, trade restrictions, tariffs, energy policy, conflict and shipping disruptions. Official notices establish policy; independent reporting provides context. A full geopolitical sweep was not completed in this collection pilot. |
+| US macro | [FRED](https://fred.stlouisfed.org/), [BLS releases](https://www.bls.gov/bls/news-release/), [BEA releases](https://www.bea.gov/news), [Federal Reserve RSS](https://www.federalreserve.gov/feeds/feeds.htm) | Observation data, release calendars and policy statements. Fed RSS, BLS/BEA releases and calendars, and three government-origin FRED CSV series were verified in the first landscape. |
+| International macro | [ECB data portal](https://data.ecb.europa.eu/), [Eurostat](https://ec.europa.eu/eurostat), [World Bank data](https://data.worldbank.org/) | Add according to documented revenue, funding and supply-chain exposures. ECB RSS and the latest policy release were verified. Eurostat and World Bank remain optional sources, not implemented integrations. |
+| Geopolitics and policy | [US Treasury](https://home.treasury.gov/news/press-releases), [OFAC](https://ofac.treasury.gov/), [BIS](https://www.bis.gov/), [European Commission](https://ec.europa.eu/commission/presscorner/home/en), relevant national agencies and public original reporting | Sanctions, trade restrictions, tariffs, energy policy, conflict and shipping disruptions. Official notices establish policy; independent reporting provides context. The first landscape verifies EIA energy/shipping context, EU sanctions and a Treasury release. BIS discovery remains partial; this is not comprehensive worldwide conflict coverage. |
 
 Prefer documented APIs and feeds. Respect provider access policies, cache shared requests, identify the client where required, and use rate-limited queues. A free key, if a future source requires one, belongs in private configuration. Do not depend on paywall workarounds or a proprietary news API's temporary free trial.
 
@@ -55,7 +55,7 @@ Report three separate denominators: companies included, sources successfully che
 
 As the universe grows, retain one coverage row per company and one assessment row per active question. Batch shared feeds, cache documents by URL/hash, queue issuer-specific work, and divide date ranges or page through results when a provider truncates responses. No silent top-N company or headline cap. If a time budget is exhausted, publish an incomplete coverage section and resume pending work.
 
-For a future recurring collector, keep per-source watermarks only after successful retrieval. Use an overlap window (initially 48 hours), deduplicate, and backfill after outages. Rate limits require bounded backoff and later retry; missing pages remain a visible gap. Content hashes detect revisions, but preserve the earlier evidence used by an already published report.
+For each manually initiated run, retain successful source checkpoints. Use a 48-hour overlap with the previous completed landscape, deduplicate, and backfill after outages. Rate limits require bounded backoff and later retry; missing pages remain a visible gap. Content hashes detect revisions, but preserve the earlier evidence used by an already published report.
 
 Each completed run should produce:
 
@@ -64,22 +64,55 @@ Each completed run should produce:
 - A question ledger: evidence changes, unresolved questions and proposed new follow-ups.
 - An audit appendix: exact scope, dates, source failures, unresolved leads and changes since the prior run.
 
-## Implemented preparation step
+## Run on request
 
-From the repository root:
+A request such as **“Run the market sweep”** initiates the workflow. Fetch the latest main branch and start from a clean, pinned revision. Read this document and both registries; do not reuse a fixed company list from an earlier prompt.
+
+From the repository root, choose a new run directory:
 
 ```sh
-python3 scripts/prepare_market_sweep.py \
-  --start 2026-09-21T00:00:00+03:00 \
-  --cutoff 2026-09-27T22:44:06+03:00 \
-  --run-id MARKET-PILOT-2026-09-27 \
-  --out research/market-sweeps/2026-09-27/manifest.json
+python3 scripts/start_market_sweep.py \
+  --out research/market-sweeps/YYYY-MM-DD-r1
+
+python3 scripts/collect_market_sources.py \
+  --manifest research/market-sweeps/YYYY-MM-DD-r1/manifest.json \
+  --out research/market-sweeps/YYYY-MM-DD-r1/collection.json
 ```
 
-Use new timestamps, run ID and output path for subsequent runs. Add `--previous path/to/prior/manifest.json` to obtain the scope diff. Output creation is exclusive: an existing manifest is not overwritten. Exit status 2 means partial scope; retain the file and resolve the blocked entries before claiming full preparation.
+Replace the example date with the actual run date and increment the suffix if needed. The starter defaults to now in Europe/Bucharest and the previous completed landscape cutoff minus 48 hours. With no previous landscape it uses seven days. Optional `--start` and `--cutoff` accept timezone-aware ISO timestamps. An irregular gap of several weeks remains several weeks of research; it is never silently shortened to the last seven days. Split long date ranges, paginate historical submissions and search past releases where current RSS feeds are too short. Deduplicate overlapping evidence by accession, canonical URL and event identity. New material about an earlier event is labelled as a correction or late discovery.
 
-The loader records the repository commit, registry hash, report hashes and whether registry/archive inputs have local modifications. Production runs should begin from a clean, pinned revision. Running against today's questions for a past week is retrospective research, not a point-in-time backtest. The pilot marks reports whose research cutoff falls inside the collection window. A true backtest must use the registry and reports available at its historical cutoff; the loader rejects research newer than the sweep cutoff.
+The starter compares against the previous completed manifest and captures all additions, removals, revised questions and source-report changes. Exit status 2 means blocked scope: retain the manifest, explain the errors and resolve them before claiming full coverage. Newly tracked companies receive a baseline from their current archive and an explicit source backfill where needed; do not invent a previous assessment. The earlier pilot is retained as research history, not used as the completed-landscape watermark.
 
-The loader currently prepares scope and search briefs only. Network collection, question adjudication, report rendering and scheduling remain separate work. The next implementation gate is to validate the macro/geopolitical source basket and issuer fallbacks, then build a collector that preserves these coverage guarantees. Frequency and delivery can be chosen after that trial.
+The collector performs bounded, rate-limited discovery once: SEC submissions metadata (including overlapping historical pages), Fed/ECB feeds and three FRED series. Metadata is not a read filing. Collectors preserve failures and refuse to overwrite earlier attempts. Read originals for every selected claim, and separately search each company's general news and question subjects. Useful issuer fallbacks verified in this run include Intuitive's regional newsroom, Constellation's corporate releases, regulator originals for Meta and free original reporting for Palantir. ASTS issuer-feed and BIS discovery gaps remain visible.
 
-See the [first pilot](../research/market-sweeps/2026-09-27/pilot.md).
+Public access and redistribution are separate. The public payload currently includes government-origin Treasury yield (`DGS10`), Brent spot (`DCOILBRENTEU`) and dollars per euro (`DEXUSEU`) data. FRED's S&P 500 and Nasdaq series state that reproduction requires prior approval; their histories are excluded from the public report. Check each added series' source notes before embedding data. Do not publish full news articles.
+
+## Author, validate and publish
+
+After collecting, read sources and author `report.json` beside the manifest, using the first completed report's schema as the reference. This is a research step, not an unattended summary generator. It must include:
+
+- A bilingual market overview and themes, separating pre-window starting conditions from new developments, with dated observations and cited mechanisms.
+- Selected event records with source facts, analytical interpretation, limitations and question links. Keep company-announced aspirations, proposals, litigation allegations and completed actions distinct.
+- Every current company and its exact frozen questions/criteria, including companies with no selected event. Use `context_added`, `unverified_lead` or `no_decisive_new_evidence`; keep `criterion_outcome` null. A landscape is not an earnings adjudication.
+- A coverage section explaining what was checked, failures, unresolved leads, changed scope and proposed new questions. Proposals never automatically edit the company watchlists. Compare events with both the previous landscape and the company's latest research cutoff; an old event is not new merely because it was selected again.
+- The source ledger, available response hashes/retrieval dates, permitted market series with actual observation dates and future release checks. Sources inside frozen company archives are baseline references, not automatically reread evidence.
+
+Append a record to `market-sweep-registry.json` with the new run ID, dates, repository-relative report/data/manifest paths, counts and SHA-256 hashes of the exact data and manifest bytes. Set `latest_run_id` to the new completed report. Never remove prior entries or overwrite earlier research snapshots. Then run:
+
+```sh
+python3 scripts/render_market_sweep.py --all
+python3 scripts/build_index.py
+python3 -m unittest discover -s scripts/tests
+```
+
+The renderer rejects missing companies, changed questions or criteria, changed manifest/data hashes, unresolved source references, future observations and attempts to grade earnings outcomes. Inspect the report in English/Romanian and at desktop/mobile sizes. Run the repository's remaining AGENTS.md validation gates, commit all related changes together, push without force, inspect the exact commit's Actions deployment and check the live index and report URLs.
+
+The index links to the latest landscape. Each report provides a reusable next-run prompt. The user may also say “Run the market sweep”; project instructions carry the dynamic scope and free-source requirements.
+
+## Time and interpretation limits
+
+The loader records the repository revision, registry hash, report hashes and local input changes. Current saved questions applied to a historical window are retrospective research, not a point-in-time backtest. Reports whose company research cutoff falls inside the window are labelled accordingly. A true backtest must use the registry and reports available at its historical cutoff; the loader rejects company research newer than the sweep cutoff. Market observations are retrieved vintages and can later be revised.
+
+Full company/question inclusion is a scope guarantee, not a claim that every published article or every geopolitical issue has been reviewed. Preserve the three denominators: scope included, sources checked, and questions with decisive evidence. No result may clear an earnings-review flag unless a separate, matching earnings review is saved through the existing process.
+
+See the [first completed landscape](../reports/market-landscape-2026-09-27.html), its [evidence ledger](../research/market-sweeps/2026-09-27-r1/report.json), and the earlier [collection pilot](../research/market-sweeps/2026-09-27/pilot.md).

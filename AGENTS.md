@@ -10,6 +10,8 @@ Before researching or updating a company:
 
 To make an existing report explain more ("deepen it like HOOD"), follow `skills/stock-analysis/references/depth-revisions.md` and the tools in `scripts/depth/`; the worked example is `research/depth/HOOD-2026-09-18-v3-r2.spec.json`.
 
+For a market/news/macro/geopolitical sweep, read `docs/market-sweep-design.md` and `market-sweep-registry.json`. Runs are initiated by the user; never create a recurring schedule. Use `scripts/start_market_sweep.py` to freeze all current companies and their exact latest questions, then `scripts/collect_market_sources.py` for free discovery. Read originals and author the bilingual landscape ledger before rendering with `scripts/render_market_sweep.py`. Preserve prior run files; append to the market-sweep registry, regenerate the index, and publish in this repository. A landscape adds context and proposed questions; it cannot silently rewrite company watchlists or clear earnings-review flags.
+
 Save report HTML under `reports/` and immutable research snapshots in the same company archive. Use a new report ID/file for new research; preserve earlier reports. Editorial-only changes keep the research cutoff and archived facts unchanged. Catalog repository-relative paths, update the company card and earnings schedule with sources, then run `python3 scripts/build_index.py`. Preserve other companies and unreviewed past periods. Only a saved earnings review of the matching period can clear its flag.
 
 Before committing, run the generator and verify the archive. For generator changes also run:

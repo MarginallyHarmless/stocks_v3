@@ -122,7 +122,7 @@ def prepare(repo, start, cutoff, run_id, previous=None):
         'schema_version': 'market-sweep-manifest-1', 'kind': 'market_sweep_manifest',
         'run_id': run_id, 'window_start': start, 'cutoff': cutoff,
         'selection_policy': 'all_current_registry_entries_latest_report_id',
-        'purpose': 'collection_pilot_using_current_questions_not_a_point_in_time_backtest',
+        'purpose': 'on_demand_market_landscape_using_frozen_questions_not_a_point_in_time_backtest',
         'repository': 'MarginallyHarmless/stocks_v3', 'repository_commit': commit,
         'research_inputs_dirty': dirty, 'registry_sha256': hashlib.sha256(raw).hexdigest(),
         'status': 'ready' if all(v['status'] == 'ready' for v in companies.values()) and companies else 'partial',

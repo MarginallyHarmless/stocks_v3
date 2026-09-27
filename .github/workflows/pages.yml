@@ -37,6 +37,7 @@ jobs:
       - name: Check published reports match their archives
         run: |
           python3 scripts/render_reports.py
+          python3 scripts/render_market_sweep.py --all
           git diff --exit-code -- reports/ || { echo "::error::reports/ is out of date; run python3 scripts/render_reports.py and commit"; exit 1; }
 
       - name: Validate archives and build the index
