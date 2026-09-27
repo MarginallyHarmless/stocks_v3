@@ -2,6 +2,7 @@
 """Validate saved research and regenerate the repository index."""
 import re
 import html as html_module
+from datetime import datetime
 import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,14 +24,38 @@ html = render_index(registry, repo_root=ROOT)
 market_path = ROOT / 'market-sweep-registry.json'
 if market_path.exists():
     market = load(market_path)
-    latest = next(x for x in market['reports'] if x['run_id'] == market['latest_run_id'])
-    repository_file(ROOT, latest['html_path'])
-    repository_file(ROOT, latest['data_path'])
-    link = html_module.escape(latest['html_path'], quote=True)
-    day = html_module.escape(latest['cutoff'][:10])
-    nav = f'''<nav class="market-entry" aria-label="Market landscape"><a href="{link}"><span class="market-en">Market landscape</span><span class="market-ro">Contextul pieței</span> ↗</a><span>{day}</span></nav>'''
-    css = '<style>.market-entry{display:flex;justify-content:space-between;gap:12px;margin:22px 0 8px;font-size:13px;color:var(--muted,#999)}.market-entry a{color:inherit;text-decoration:none}.market-ro{display:none}html[lang="ro"] .market-en{display:none}html[lang="ro"] .market-ro{display:inline}</style>'
-    html = html.replace('</head>', css + '</head>').replace('<main>', '<main>' + nav, 1)
+    reports = sorted(market['reports'], key=lambda r: datetime.fromisoformat(r['cutoff']), reverse=True)
+    need(len({r['run_id'] for r in reports}) == len(reports), 'Duplicate market report')
+    need(market['latest_run_id'] in {r['run_id'] for r in reports}, 'Latest market report missing')
+    esc = html_module.escape
+    def bilingual(en, ro):
+        return f'<span class="reports-en">{esc(en)}</span><span class="reports-ro">{esc(ro)}</span>'
+    cards = []
+    for report in reports:
+        repository_file(ROOT, report['html_path'])
+        data = load(repository_file(ROOT, report['data_path']))
+        need(data['run_id'] == report['run_id'], 'Market report identity mismatch')
+        link = esc(report['html_path'], quote=True)
+        day = esc(report['cutoff'][:10])
+        start = esc(report['window_start'][:10])
+        latest = report['run_id'] == market['latest_run_id']
+        badge = '<span class="report-latest">' + bilingual('Latest', 'Cel mai recent') + '</span>' if latest else ''
+        counts = bilingual(f"{report['company_count']} companies · {report['question_count']} saved questions",
+                           f"{report['company_count']} companii · {report['question_count']} întrebări salvate")
+        cards.append(f'''<article class="landscape-card">
+<div class="landscape-card-meta"><span>{bilingual('Market landscape', 'Contextul pieței')}</span>{badge}<time datetime="{esc(report['cutoff'], quote=True)}">{day}</time></div>
+<h3><a href="{link}">{bilingual(data['title']['en'], data['title']['ro'])}<span aria-hidden="true"> ↗</span></a></h3>
+<p class="landscape-summary">{bilingual(data['summary']['en'], data['summary']['ro'])}</p>
+<div class="landscape-card-foot"><span>{counts}</span><span>{bilingual('Review window', 'Interval analizat')}: {start} → {day}</span></div>
+</article>''')
+    section = f'''<section id="reports" class="landscape-reports" aria-labelledby="reports-title">
+<div class="reports-heading"><div><h2 id="reports-title">{bilingual('Reports', 'Rapoarte')}</h2><p>{bilingual('Market news, macroeconomics and geopolitics across the companies we follow.', 'Știri de piață, macroeconomie și geopolitică pentru companiile urmărite.')}</p></div><span class="reports-cadence">{bilingual('Updated on request', 'Actualizate la cerere')}</span></div>
+<div class="landscape-report-list">{''.join(cards)}</div>
+</section>'''
+    css = '<style>' + (ROOT / 'assets/market-index.css').read_text() + '</style>'
+    marker = '<div class="index-layout">'
+    need(marker in html, 'Company index layout marker missing')
+    html = html.replace('</head>', css + '</head>').replace(marker, section + marker, 1)
 stamp = re.compile(r'"generated_at": "[^"]*"')
 # Rebuilding unchanged research keeps the file, so the saved-at date only moves with content.
 if not (index.exists() and stamp.sub("", index.read_text(encoding="utf-8")) == stamp.sub("", html)):

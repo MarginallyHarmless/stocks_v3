@@ -107,7 +107,7 @@ python3 -m unittest discover -s scripts/tests
 
 The renderer rejects missing companies, changed questions or criteria, changed manifest/data hashes, unresolved source references, future observations and attempts to grade earnings outcomes. Inspect the report in English/Romanian and at desktop/mobile sizes. Run the repository's remaining AGENTS.md validation gates, commit all related changes together, push without force, inspect the exact commit's Actions deployment and check the live index and report URLs.
 
-The index links to the latest landscape. Each report provides a reusable next-run prompt. The user may also say “Run the market sweep”; project instructions carry the dynamic scope and free-source requirements.
+The index’s Reports section lists every completed landscape, newest first, with its coverage window and company/question counts. Adding a completed run to the registry automatically adds its card when the index is rebuilt. Each report provides a reusable next-run prompt. The user may also say “Run the market sweep”; project instructions carry the dynamic scope and free-source requirements.
 
 ## Time and interpretation limits
 
