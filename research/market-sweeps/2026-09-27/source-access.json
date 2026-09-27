@@ -1,0 +1,30 @@
+{
+  "run_id": "MARKET-PILOT-2026-09-27",
+  "sec": {
+    "companies_checked": 16,
+    "status": "metadata_available"
+  },
+  "fed_rss": {
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "http_status": 200,
+    "retrieved_at": "2026-09-27T19:52:57.272023+00:00",
+    "response_sha256": "cba4b3d8cca629d28524aec8aed9dfc25c41fc40b3a0b01bd4d96849efa60d82",
+    "content_type": "text/xml"
+  },
+  "fred_csv": {
+    "name": "fred_csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-09-01&coed=2026-09-27",
+    "http_status": 200,
+    "content_type": "application/csv",
+    "retrieved_at": "2026-09-27T19:54:38.530520+00:00"
+  },
+  "gdelt": {
+    "source": "gdelt",
+    "url": "https://api.gdeltproject.org/api/v2/doc/doc?query=%22Broadcom%22&mode=artlist&format=json&maxrecords=10&startdatetime=20260921000000&enddatetime=20260927194406",
+    "error": "HTTP Error 429: Too Many Requests",
+    "elapsed": 16.54,
+    "tested_on": "2026-09-27",
+    "retry_status": "not_retried_in_pilot"
+  },
+  "macro_geopolitical_coverage": "source feasibility sampled; complete landscape sweep not performed"
+}

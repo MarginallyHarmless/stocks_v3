@@ -1,0 +1,510 @@
+{
+  "window_start": "2026-09-21T00:00:00+03:00",
+  "cutoff": "2026-09-27T22:44:06+03:00",
+  "companies": [
+    {
+      "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+      "ticker": "AMZN",
+      "filings": [
+        {
+          "accession": "0001354457-26-000910",
+          "form": "CERT",
+          "filed": "2026-09-24",
+          "accepted_at": "2026-09-24T20:05:28.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000135445726000910/AMZN_8A_Cert_1018724.pdf",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001104659-26-110227",
+          "form": "8-A12B",
+          "filed": "2026-09-24",
+          "accepted_at": "2026-09-24T12:30:49.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926110227/tm2625860d1_8a12b.htm",
+          "document_review_status": "read_for_pilot"
+        }
+      ],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001018724.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:10.375507+00:00",
+        "response_sha256": "97fcbd4fa5ee692a974ddd4569d01c225734e1f3b11c889c35f8795de25bd680",
+        "content_type": "application/json"
+      },
+      "sec_name": "AMAZON COM INC",
+      "latest_listed_filing_date": "2026-09-24",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001035267|NASDAQ:ISRG:COMMON",
+      "ticker": "ISRG",
+      "filings": [],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001035267.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:10.477655+00:00",
+        "response_sha256": "52d52a776fd52b461a48cfc56a7b9b173a85208708d9216904aaa46d51d82eb5",
+        "content_type": "application/json"
+      },
+      "sec_name": "INTUITIVE SURGICAL INC",
+      "latest_listed_filing_date": "2026-09-16",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "filings": [],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001065059.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:16.894423+00:00",
+        "response_sha256": "fb798a6cabfa4fdb9f03c559f3c5ca3899aa9aedeee7b40336c9e397b92b2ec3",
+        "content_type": "application/json"
+      },
+      "sec_name": "CENTRUS ENERGY CORP",
+      "latest_listed_filing_date": "2026-09-17",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "filings": [],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001321655.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:16.911822+00:00",
+        "response_sha256": "c524083c491e7ed64c60d41096601f7a2ac1b06653cfdbe44f8d4c5a44f03a68",
+        "content_type": "application/json"
+      },
+      "sec_name": "Palantir Technologies Inc.",
+      "latest_listed_filing_date": "2026-09-17",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "filings": [
+        {
+          "accession": "0001921094-26-001050",
+          "form": "144",
+          "filed": "2026-09-24",
+          "accepted_at": "2026-09-24T20:59:21.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000192109426001050/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0000950103-26-014403",
+          "form": "4",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-23T22:15:10.000Z",
+          "report_date": "2026-09-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326014403/xslF345X06/ownership.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0000950103-26-014402",
+          "form": "4",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-23T22:14:54.000Z",
+          "report_date": "2026-09-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326014402/xslF345X06/ownership.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001921094-26-001042",
+          "form": "144",
+          "filed": "2026-09-21",
+          "accepted_at": "2026-09-21T20:34:11.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000192109426001042/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001921094-26-001039",
+          "form": "144",
+          "filed": "2026-09-21",
+          "accepted_at": "2026-09-21T20:18:42.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000192109426001039/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        }
+      ],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001326801.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:22.242689+00:00",
+        "response_sha256": "7627db9dbf44d398db1726ca661ff7222dcbd76bc768ddec13815ab9b9fbd07e",
+        "content_type": "application/json"
+      },
+      "sec_name": "Meta Platforms, Inc.",
+      "latest_listed_filing_date": "2026-09-24",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+      "ticker": "NOW",
+      "filings": [],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001373715.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:22.269696+00:00",
+        "response_sha256": "769b8a73b436233500337cb865b00713b436f179155f8c68c7525e4ffc9111df",
+        "content_type": "application/json"
+      },
+      "sec_name": "ServiceNow, Inc.",
+      "latest_listed_filing_date": "2026-09-01",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "filings": [
+        {
+          "accession": "0001513845-26-000116",
+          "form": "4",
+          "filed": "2026-09-21",
+          "accepted_at": "2026-09-21T21:17:14.000Z",
+          "report_date": "2026-06-15",
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000151384526000116/xslF345X06/form4.xml",
+          "document_review_status": "discovered_not_read"
+        }
+      ],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001513845.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:27.873496+00:00",
+        "response_sha256": "95b055faba021d37054af95853a7190195a5f4649e82da05370deefabf595a69",
+        "content_type": "application/json"
+      },
+      "sec_name": "Nebius Group N.V.",
+      "latest_listed_filing_date": "2026-09-21",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "filings": [
+        {
+          "accession": "0001213900-26-103173",
+          "form": "4",
+          "filed": "2026-09-24",
+          "accepted_at": "2026-09-25T00:33:13.000Z",
+          "report_date": "2026-09-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026103173/xslF345X06/ownership.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001213900-26-103171",
+          "form": "144",
+          "filed": "2026-09-24",
+          "accepted_at": "2026-09-25T00:29:48.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026103171/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001213900-26-102458",
+          "form": "8-K",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-23T14:42:31.000Z",
+          "report_date": "2026-09-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026102458/ea0306273-8k_ondas.htm",
+          "document_review_status": "read_for_pilot"
+        },
+        {
+          "accession": "0001213900-26-102451",
+          "form": "424B7",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-23T14:11:23.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026102451/ea0302266-424b7_ondas.htm",
+          "document_review_status": "discovered_not_read"
+        }
+      ],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001646188.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:28.007136+00:00",
+        "response_sha256": "e665863f841edaa4c51618780c89d249afc71633b68e82acff3caea3378762ba",
+        "content_type": "application/json"
+      },
+      "sec_name": "Ondas Inc.",
+      "latest_listed_filing_date": "2026-09-24",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "filings": [],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001652044.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:34.113821+00:00",
+        "response_sha256": "9624fe558574d3c33ca6a6a0f9451a2fdba6e11e465de1d5a822d2e3d70042bc",
+        "content_type": "application/json"
+      },
+      "sec_name": "Alphabet Inc.",
+      "latest_listed_filing_date": "2026-09-16",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "filings": [
+        {
+          "accession": "0001104659-26-110983",
+          "form": "4",
+          "filed": "2026-09-25",
+          "accepted_at": "2026-09-25T20:15:18.000Z",
+          "report_date": "2026-09-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/1730168/000110465926110983/xslF345X06/tm2626134-1_4seq1.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001973727-26-000059",
+          "form": "144",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-24T00:11:09.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1730168/000197372726000059/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001973727-26-000058",
+          "form": "144",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-24T00:00:49.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1730168/000197372726000058/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001973727-26-000057",
+          "form": "144",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-23T23:53:54.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1730168/000197372726000057/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "9999999995-26-003011",
+          "form": "EFFECT",
+          "filed": "2026-09-18",
+          "accepted_at": "2026-09-21T04:15:12.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1730168/999999999526003011/xslEFFECTX01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        }
+      ],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001730168.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:34.166688+00:00",
+        "response_sha256": "57b5829cb3d3156e3d76d75b4810d76ee3a67e162168e9e9750514050617c4e9",
+        "content_type": "application/json"
+      },
+      "sec_name": "Broadcom Inc.",
+      "latest_listed_filing_date": "2026-09-25",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "filings": [],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001751008.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:40.595156+00:00",
+        "response_sha256": "622a27d3a1fce9089ddd1fac7012531dcc39b2c177d754e7463227dd4da9ac22",
+        "content_type": "application/json"
+      },
+      "sec_name": "AppLovin Corp",
+      "latest_listed_filing_date": "2026-08-21",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "filings": [],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001780312.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:40.614768+00:00",
+        "response_sha256": "e3559c3344810fb6bc043b06dd1f0c717d2c08ff0153abe40c56a8c4e7d39875",
+        "content_type": "application/json"
+      },
+      "sec_name": "AST SpaceMobile, Inc.",
+      "latest_listed_filing_date": "2026-09-17",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "filings": [
+        {
+          "accession": "0001871006-26-000010",
+          "form": "4",
+          "filed": "2026-09-24",
+          "accepted_at": "2026-09-24T20:33:07.000Z",
+          "report_date": "2026-09-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/1783879/000187100626000010/xslF345X06/wk-form4_1790281984.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001871006-26-000008",
+          "form": "4",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-23T12:08:43.000Z",
+          "report_date": "2026-09-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/1783879/000187100626000008/xslF345X06/wk-form4_1790165319.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001950047-26-009743",
+          "form": "144",
+          "filed": "2026-09-22",
+          "accepted_at": "2026-09-22T20:13:41.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1783879/000195004726009743/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001950047-26-009702",
+          "form": "144",
+          "filed": "2026-09-21",
+          "accepted_at": "2026-09-21T20:27:52.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1783879/000195004726009702/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        }
+      ],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001783879.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:45.983039+00:00",
+        "response_sha256": "ce64dd2f1e1ab0f2463733d78ea658bebce93fef9d6e5ce33a30411b7162d29b",
+        "content_type": "application/json"
+      },
+      "sec_name": "Robinhood Markets, Inc.",
+      "latest_listed_filing_date": "2026-09-24",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "filings": [
+        {
+          "accession": "0002032458-26-000028",
+          "form": "4",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-24T00:12:06.000Z",
+          "report_date": "2026-09-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/1818874/000203245826000028/xslF345X06/wk-form4_1790208724.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001934200-26-000011",
+          "form": "4",
+          "filed": "2026-09-23",
+          "accepted_at": "2026-09-24T00:10:47.000Z",
+          "report_date": "2026-09-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/1818874/000193420026000011/xslF345X06/wk-form4_1790208644.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001968582-26-000998",
+          "form": "144",
+          "filed": "2026-09-21",
+          "accepted_at": "2026-09-21T21:10:24.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1818874/000196858226000998/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        },
+        {
+          "accession": "0001959173-26-007049",
+          "form": "144",
+          "filed": "2026-09-21",
+          "accepted_at": "2026-09-21T15:58:09.000Z",
+          "report_date": "",
+          "url": "https://www.sec.gov/Archives/edgar/data/1818874/000195917326007049/xsl144X01/primary_doc.xml",
+          "document_review_status": "discovered_not_read"
+        }
+      ],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001818874.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:46.040415+00:00",
+        "response_sha256": "c59ee9870b2e4e7db6b0396f79afbac05e4b9e2d6e459007f1b80c57ae5d0d94",
+        "content_type": "application/json"
+      },
+      "sec_name": "SoFi Technologies, Inc.",
+      "latest_listed_filing_date": "2026-09-23",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "filings": [],
+      "status": "checked",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001868275.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:52:51.613410+00:00",
+        "response_sha256": "cd6ed3167c5261e16c2439851c252840ca389340ab2f40e7476a861d7aaac391",
+        "content_type": "application/json"
+      },
+      "sec_name": "Constellation Energy Corp",
+      "latest_listed_filing_date": "2026-09-17",
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment"
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "filings": [
+        {
+          "accession": "0001140361-26-037577",
+          "form": "8-K",
+          "filed": "2026-09-24",
+          "accepted_at": "2026-09-24T21:13:57.000Z",
+          "report_date": "2026-09-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000114036126037577/ef20082680_8k.htm",
+          "document_review_status": "read_for_pilot"
+        }
+      ],
+      "status": "checked",
+      "sec_name": "Vistra Corp.",
+      "source": {
+        "url": "https://data.sec.gov/submissions/CIK0001692819.json",
+        "http_status": 200,
+        "retrieved_at": "2026-09-27T19:55:51.287864+00:00",
+        "response_sha256": "de0bb3f02fb64a450601bab85972244edc92de3693f907868137f2ec51f97c2b"
+      },
+      "identifier_resolution": {
+        "cik": "0001692819",
+        "source_url": "https://www.sec.gov/files/company_tickers.json",
+        "verified_ticker": "VST",
+        "verified_sec_file_number": "001-38086",
+        "registry_identity_preserved": true
+      },
+      "coverage": "recent submissions metadata only; selected documents read; no historical pagination or exhaustive filing-content assessment",
+      "latest_listed_filing_date": "2026-09-24"
+    }
+  ]
+}

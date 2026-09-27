@@ -8,6 +8,7 @@ Company research, saved earnings watchlists and a shared earnings calendar.
 - **Registry:** [`stock-analysis-registry.json`](stock-analysis-registry.json).
 - **Research archives:** [`archives/`](archives/), preserving immutable evidence and watchlist snapshots.
 - **Research workflow and generator:** [`skills/stock-analysis/`](skills/stock-analysis/SKILL.md).
+- **Free-source market sweep:** [design and dynamic company/question scope](docs/market-sweep-design.md), with the [first collection pilot](research/market-sweeps/2026-09-27/pilot.md). Preparation is implemented; recurring collection is not yet scheduled.
 
 ## Read locally
 

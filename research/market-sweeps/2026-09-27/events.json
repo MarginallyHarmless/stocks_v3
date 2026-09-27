@@ -1,0 +1,346 @@
+{
+  "run_id": "MARKET-PILOT-2026-09-27",
+  "selection": "Illustrative manually reviewed sample, not an exhaustive event inventory",
+  "events": [
+    {
+      "id": "E01",
+      "title": "Ondas acquisitions and share registration",
+      "published_date": "2026-09-23",
+      "event_date_or_timing": "2026-09-23",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "Ondas announced three defense-technology acquisitions. Its 8-K distinguishes acquisition-issued shares from registration for their resale.",
+      "analytical_inference": "Include the new consideration, contingent obligations and shares in the next cash/dilution bridge; separate acquired from organic activity.",
+      "limitation": "The complete quarterly liquidity and share bridges remain untested. A resale registration must not be counted as a second issuance.",
+      "sources": [
+        {
+          "url": "https://ir.ondas.com/press-releases/detail/329/ondas-acquires-three-defense-technology-businesses-to",
+          "publisher": "Ondas",
+          "locator": "acquisition terms"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026102458/ea0306273-8k_ondas.htm",
+          "publisher": "SEC / Ondas",
+          "locator": "share issuance and resale registration"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+          "ticker": "ONDS",
+          "report_id": "ONDS-2026-09-17-v3",
+          "question_id": "onds-capital-bridge",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        },
+        {
+          "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+          "ticker": "ONDS",
+          "report_id": "ONDS-2026-09-17-v3",
+          "question_id": "onds-organic",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        },
+        {
+          "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+          "ticker": "ONDS",
+          "report_id": "ONDS-2026-09-17-v3",
+          "question_id": "onds-backlog",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot"
+    },
+    {
+      "id": "E02",
+      "title": "SoFi stablecoin settlement launch",
+      "published_date": "2026-09-22",
+      "event_date_or_timing": "2026-09-22",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "SoFi and Mastercard announced live stablecoin settlement and plans to migrate SoFi card settlement.",
+      "analytical_inference": "Track evidence of commercial adoption and revenue contribution in subsequent disclosures.",
+      "limitation": "Transaction volume is not revenue. This issuer claim does not establish the quarterly growth or Technology Platform result.",
+      "sources": [
+        {
+          "url": "https://investors.sofi.com/news/news-details/2026/SoFi-Becomes-First-National-Bank-to-Go-Live-with-Stablecoin-Settlement-across-Mastercards-Global-Payments-Network/default.aspx",
+          "publisher": "SoFi / Mastercard",
+          "locator": "launch announcement"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+          "ticker": "SOFI",
+          "report_id": "SOFI-2026-09-18-v3",
+          "question_id": "technology",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        },
+        {
+          "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+          "ticker": "SOFI",
+          "report_id": "SOFI-2026-09-18-v3",
+          "question_id": "revenue-growth",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot"
+    },
+    {
+      "id": "E03",
+      "title": "Fed proposed stablecoin framework",
+      "published_date": "2026-09-24",
+      "event_date_or_timing": "2026-09-24",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "The Federal Reserve requested comment on two proposals for Board-supervised payment stablecoin issuers.",
+      "analytical_inference": "Track sector policy and separately verify the relevant supervisor and legal entity before assigning a direct company effect.",
+      "limitation": "Proposals are not final rules. The release does not establish direct applicability to SoFi or Robinhood; SoFi Bank has a different primary supervisor.",
+      "sources": [
+        {
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260924a.htm",
+          "publisher": "Federal Reserve",
+          "locator": "summary of proposed rules"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+          "ticker": "HOOD",
+          "report_id": "HOOD-2026-09-18-v3-r2",
+          "question_id": "hood-regulation",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot",
+      "new_issue_candidates": [
+        {
+          "ticker": "SOFI",
+          "topic": "Stablecoin supervision and economics; verify applicable jurisdiction before adding a company question."
+        }
+      ]
+    },
+    {
+      "id": "E04",
+      "title": "New Era announces Vistra power agreement",
+      "published_date": "2026-09-21",
+      "event_date_or_timing": "2026-09-21",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "New Era Energy & Digital announced a 20-year power agreement with Luminant, a Vistra subsidiary, with supply expected in Q3 2027.",
+      "analytical_inference": "Follow execution and contract economics as additional context for Vistra power demand.",
+      "limitation": "Counterparty announcement. Future supply is not current revenue; it does not answer the saved Meta/AWS delivery milestones.",
+      "sources": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/09/21/3365358/0/en/new-era-energy-digital-secures-20-year-207-mw-ppa-with-vistra.html",
+          "publisher": "New Era Energy & Digital via GlobeNewswire",
+          "locator": "contract and expected delivery timing"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+          "ticker": "VST",
+          "report_id": "VST-2026-09-18-v3-r2",
+          "question_id": "contracts",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot"
+    },
+    {
+      "id": "E05",
+      "title": "Vistra completes subordinated debt offering",
+      "published_date": "2026-09-24",
+      "event_date_or_timing": "2026-09-24",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "Vistra disclosed completion of $1.5 billion of junior subordinated notes in two series on September 24.",
+      "analytical_inference": "Add the financing to the next debt/cash reconciliation and check its use and cost.",
+      "limitation": "The filing alone does not establish the complete financing criterion, acquisition funding or maturity coverage.",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1692819/000114036126037577/ef20082680_8k.htm",
+          "publisher": "SEC / Vistra",
+          "locator": "Item 1.01"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+          "ticker": "VST",
+          "report_id": "VST-2026-09-18-v3-r2",
+          "question_id": "financing",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot"
+    },
+    {
+      "id": "E06",
+      "title": "INRY ServiceNow deployment case study",
+      "published_date": "2026-09-23",
+      "event_date_or_timing": "Purchase March 2026; implementation six weeks later; exact date unspecified",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "INRY published a ServiceNow EmployeeWorks deployment case study, describing a March purchase and subsequent six-week implementation.",
+      "analytical_inference": "Useful qualitative adoption context; seek broader disclosure for subscription growth and contracted demand.",
+      "limitation": "Partner-reported benefits, not independently measured. Publication this week does not make the implementation a new September sale.",
+      "sources": [
+        {
+          "url": "https://www.businesswire.com/news/home/20260923916632/en/INRY-deploys-ServiceNow-EmployeeWorks-in-six-weeks-replacing-its-legacy-portal-with-an-AI-front-door-to-work",
+          "publisher": "INRY via Business Wire",
+          "locator": "purchase and implementation chronology"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+          "ticker": "NOW",
+          "report_id": "NOW-2026-09-25-v3",
+          "question_id": "now-sub",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        },
+        {
+          "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+          "ticker": "NOW",
+          "report_id": "NOW-2026-09-25-v3",
+          "question_id": "now-crpo",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot"
+    },
+    {
+      "id": "E07",
+      "title": "Amazon registration refers to earlier financing",
+      "published_date": "2026-09-24",
+      "event_date_or_timing": "Related financing closed 2026-09-14, outside pilot window",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "Amazon filed an 8-A debt registration referring to a September 9 prospectus and September 14 financing closing.",
+      "analytical_inference": "Link this document to the earlier financing event to avoid counting new funding twice.",
+      "limitation": "The September 24 filing date is not proof of new cash raised that day.",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926110227/tm2625860d1_8a12b.htm",
+          "publisher": "SEC / Amazon",
+          "locator": "description of securities and incorporated prospectus"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+          "ticker": "AMZN",
+          "report_id": "AMZN-2026-09-27-v3",
+          "question_id": "amzn-funding",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot"
+    },
+    {
+      "id": "E08",
+      "title": "Kuehne+Nagel announces Amazon collaboration",
+      "published_date": "2026-09-21",
+      "event_date_or_timing": "2026-09-21",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "Kuehne+Nagel announced an expanded long-term Amazon collaboration including logistics through the AWS infrastructure lifecycle.",
+      "analytical_inference": "Monitor infrastructure delivery and supply-chain capacity as context for AWS growth.",
+      "limitation": "Counterparty announcement does not quantify Amazon revenue, cash returns or the outcome of the saved quarterly criterion.",
+      "sources": [
+        {
+          "url": "https://newsroom.kuehne-nagel.com/kuehnenagel-announces-long-term-strategic-collaboration-with-amazon/",
+          "publisher": "Kuehne+Nagel",
+          "locator": "AWS infrastructure lifecycle scope"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+          "ticker": "AMZN",
+          "report_id": "AMZN-2026-09-27-v3",
+          "question_id": "amzn-aws",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot"
+    },
+    {
+      "id": "E09",
+      "title": "Google discusses planned orbital AI test",
+      "published_date": "2026-09-24",
+      "event_date_or_timing": "2026-09-24",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_read",
+      "source_fact": "Google described a planned prototype satellite test for Project Suncatcher, a long-term research project.",
+      "analytical_inference": "Track as an emerging research topic; seek cost and commercial evidence before changing investment assumptions.",
+      "limitation": "The publication describes a planned test, not a completed launch or an established revenue stream. No implication for ASTS is established.",
+      "sources": [
+        {
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
+          "publisher": "Google",
+          "locator": "planned first orbital test and research limitations"
+        }
+      ],
+      "question_links": [],
+      "question_outcome": "not_adjudicated_collection_pilot",
+      "new_issue_candidates": [
+        {
+          "ticker": "GOOG",
+          "topic": "Orbital AI research; monitor only if material costs or commercial commitments emerge."
+        }
+      ]
+    },
+    {
+      "id": "E10",
+      "title": "AppLovin legal notice needs primary verification",
+      "published_date": "2026-09-24",
+      "event_date_or_timing": "2026-09-24",
+      "reviewed_on": "2026-09-27",
+      "retrieval_precision": "date",
+      "review_status": "original_notice_read_underlying_allegations_unverified",
+      "source_fact": "A plaintiff law firm published a notice stating that a securities lawsuit had been filed.",
+      "analytical_inference": "Retrieve the complaint and court status before linking any substantiated issue to platform access or business assumptions.",
+      "limitation": "The court complaint was not reviewed. A law-firm advertisement is not a finding of misconduct; repeated notices should be deduplicated.",
+      "sources": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/09/24/3368436/0/en/shareholder-alert-bernstein-liebhard-llp-announces-a-securities-fraud-class-action-lawsuit-has-been-filed-against-applovin-corporation-app.html",
+          "publisher": "Bernstein Liebhard via GlobeNewswire",
+          "locator": "law-firm notice only"
+        }
+      ],
+      "question_links": [
+        {
+          "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+          "ticker": "APP",
+          "report_id": "APP-2026-09-18-v3-r2",
+          "question_id": "APP-Q3-ACCESS",
+          "criterion_version": 1,
+          "relation": "context_only_not_criterion_resolution"
+        }
+      ],
+      "question_outcome": "not_adjudicated_collection_pilot"
+    }
+  ]
+}

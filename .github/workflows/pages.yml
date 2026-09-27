@@ -28,6 +28,7 @@ jobs:
       - name: Test research and earnings states
         run: |
           python3 -m unittest discover -s skills/stock-analysis/scripts/tests
+          python3 -m unittest discover -s scripts/tests
           node skills/stock-analysis/scripts/tests/test_company_index.js
           node skills/stock-analysis/scripts/tests/test_report_controls.js
           node skills/stock-analysis/scripts/tests/test_financial_terms.js

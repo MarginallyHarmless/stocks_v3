@@ -1,0 +1,1230 @@
+{
+  "run_id": "MARKET-PILOT-2026-09-27",
+  "companies": [
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 5,
+      "issuer_index_status": "readable_index",
+      "issuer_index_url": "https://investors.broadcom.com/financial-information/financial-news-releases",
+      "observation": "No in-window financial release visible on the reviewed index; broader product coverage remains partial.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 0,
+      "issuer_index_status": "index_not_extractable",
+      "issuer_index_url": "https://investors.palantir.com/news-events/news-releases",
+      "observation": "News index yielded little usable content; discovery leads need original-source confirmation.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 1,
+      "issuer_index_status": "readable_index",
+      "issuer_index_url": "https://nebius.com/newsroom",
+      "observation": "Latest visible release was September 8; no in-window item selected from this index.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 4,
+      "issuer_index_status": "readable_index",
+      "issuer_index_url": "https://ir.ondas.com/press-releases",
+      "observation": "Acquisition release and associated 8-K read; update cash/dilution evidence at the next review.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 4,
+      "issuer_index_status": "readable_index",
+      "issuer_index_url": "https://investors.robinhood.com/press-releases",
+      "observation": "Latest visible IR release was September 10; Fed proposal is sector context only.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 0,
+      "issuer_index_status": "index_not_extractable",
+      "issuer_index_url": "https://investors.applovin.com/news/default.aspx",
+      "observation": "Legal advertisement read as an unverified lead; complaint not reviewed.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 0,
+      "issuer_index_status": "index_not_extractable",
+      "issuer_index_url": "https://abc.xyz/investor/",
+      "observation": "Separate Google blog original read: planned orbital AI test; no financial criterion resolved.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 0,
+      "issuer_index_status": "index_unavailable",
+      "issuer_index_url": "https://investors.constellationenergy.com/news-releases",
+      "observation": "No primary in-window event selected; source gap prevents a no-news conclusion.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001035267|NASDAQ:ISRG:COMMON",
+      "ticker": "ISRG",
+      "question_count": 6,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 0,
+      "issuer_index_status": "index_unavailable",
+      "issuer_index_url": "https://investor.intuitivesurgical.com/news-releases",
+      "observation": "No primary in-window event selected; index fallback still needed.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 1,
+      "issuer_index_status": "readable_index",
+      "issuer_index_url": "https://investor.vistracorp.com/news",
+      "observation": "Counterparty power agreement and September 24 debt completion filing read.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 4,
+      "issuer_index_status": "index_not_extractable",
+      "issuer_index_url": "https://investors.sofi.com/news/default.aspx",
+      "observation": "Individual stablecoin settlement release read despite weak index extraction.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 0,
+      "issuer_index_status": "index_not_extractable",
+      "issuer_index_url": "https://investors.ast-science.com/press-releases",
+      "observation": "No deployment/funding outcome adjudicated; issuer feed extraction still needs validation.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 5,
+      "issuer_index_status": "index_not_extractable",
+      "issuer_index_url": "https://investor.atmeta.com/investor-news/default.aspx",
+      "observation": "Discovery leads remain unverified in this sample; no saved question outcome changed.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "question_count": 7,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 0,
+      "issuer_index_status": "readable_index",
+      "issuer_index_url": "https://investors.centrusenergy.com/news-releases",
+      "observation": "Visible September 17 and September 9 partnership news predates this window.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+      "ticker": "NOW",
+      "question_count": 5,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 0,
+      "issuer_index_status": "index_not_extractable",
+      "issuer_index_url": "https://www.servicenow.com/company/media/press-room.html",
+      "observation": "Partner case study read; underlying implementation predates its publication.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    },
+    {
+      "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+      "ticker": "AMZN",
+      "question_count": 6,
+      "scope_status": "ready",
+      "company_discovery_search_attempted": true,
+      "sec_metadata_status": "checked",
+      "sec_items_discovered": 2,
+      "issuer_index_status": "index_not_extractable",
+      "issuer_index_url": "https://ir.aboutamazon.com/news-release/default.aspx",
+      "observation": "Debt registration and logistics-counterparty original read; distinguish publication from event date.",
+      "overall_news_coverage": "partial_manual_pilot",
+      "all_questions_adjudicated": false
+    }
+  ],
+  "questions": [
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "report_id": "AVGO-2026-09-16-v3-final",
+      "question_id": "W1-revenue",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "report_id": "AVGO-2026-09-16-v3-final",
+      "question_id": "W2-ai",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "report_id": "AVGO-2026-09-16-v3-final",
+      "question_id": "W3-margin",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "report_id": "AVGO-2026-09-16-v3-final",
+      "question_id": "W4-cash",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "report_id": "AVGO-2026-09-16-v3-final",
+      "question_id": "W5-software",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "report_id": "AVGO-2026-09-16-v3-final",
+      "question_id": "W6-dilution",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001730168|NASDAQ:AVGO:COMMON",
+      "ticker": "AVGO",
+      "report_id": "AVGO-2026-09-16-v3-final",
+      "question_id": "W7-financing",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "report_id": "PLTR-2026-09-17-v3",
+      "question_id": "PLTR-Q3-REVENUE",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "report_id": "PLTR-2026-09-17-v3",
+      "question_id": "PLTR-US-COMMERCIAL",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "report_id": "PLTR-2026-09-17-v3",
+      "question_id": "PLTR-OPERATING-MARGIN",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "report_id": "PLTR-2026-09-17-v3",
+      "question_id": "PLTR-CASH",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "report_id": "PLTR-2026-09-17-v3",
+      "question_id": "PLTR-SHARE-COST",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "report_id": "PLTR-2026-09-17-v3",
+      "question_id": "PLTR-COLLECTIONS",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001321655|NASDAQ:PLTR:CLASS-A",
+      "ticker": "PLTR",
+      "report_id": "PLTR-2026-09-17-v3",
+      "question_id": "PLTR-ANNUAL-OUTLOOK",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "report_id": "NBIS-2026-09-17-v3",
+      "question_id": "nbis-q3-revenue",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "report_id": "NBIS-2026-09-17-v3",
+      "question_id": "nbis-cloud-margin",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "report_id": "NBIS-2026-09-17-v3",
+      "question_id": "nbis-funding",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "report_id": "NBIS-2026-09-17-v3",
+      "question_id": "nbis-delivery",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "report_id": "NBIS-2026-09-17-v3",
+      "question_id": "nbis-dilution",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "report_id": "NBIS-2026-09-17-v3",
+      "question_id": "nbis-cash-quality",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001513845|NASDAQ:NBIS:CLASS-A",
+      "ticker": "NBIS",
+      "report_id": "NBIS-2026-09-17-v3",
+      "question_id": "nbis-year-end-arr",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "report_id": "ONDS-2026-09-17-v3",
+      "question_id": "onds-q3-revenue",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "report_id": "ONDS-2026-09-17-v3",
+      "question_id": "onds-organic",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E01"
+      ]
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "report_id": "ONDS-2026-09-17-v3",
+      "question_id": "onds-loss",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "report_id": "ONDS-2026-09-17-v3",
+      "question_id": "onds-cash",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "report_id": "ONDS-2026-09-17-v3",
+      "question_id": "onds-capital-bridge",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E01"
+      ]
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "report_id": "ONDS-2026-09-17-v3",
+      "question_id": "onds-backlog",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E01"
+      ]
+    },
+    {
+      "identity": "CIK:0001646188|NASDAQ:ONDS:COMMON",
+      "ticker": "ONDS",
+      "report_id": "ONDS-2026-09-17-v3",
+      "question_id": "onds-fy-revenue",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "report_id": "HOOD-2026-09-18-v3-r2",
+      "question_id": "hood-deposits",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "report_id": "HOOD-2026-09-18-v3-r2",
+      "question_id": "hood-gold",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "report_id": "HOOD-2026-09-18-v3-r2",
+      "question_id": "hood-margin",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "report_id": "HOOD-2026-09-18-v3-r2",
+      "question_id": "hood-credit",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "report_id": "HOOD-2026-09-18-v3-r2",
+      "question_id": "hood-capital",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "report_id": "HOOD-2026-09-18-v3-r2",
+      "question_id": "hood-earnings-quality",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001783879|NASDAQ:HOOD:CLASS-A",
+      "ticker": "HOOD",
+      "report_id": "HOOD-2026-09-18-v3-r2",
+      "question_id": "hood-regulation",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E03"
+      ]
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "report_id": "APP-2026-09-18-v3-r2",
+      "question_id": "APP-Q3-REVENUE",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "report_id": "APP-2026-09-18-v3-r2",
+      "question_id": "APP-Q3-EBITDA",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "report_id": "APP-2026-09-18-v3-r2",
+      "question_id": "APP-Q3-CASH",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "report_id": "APP-2026-09-18-v3-r2",
+      "question_id": "APP-Q3-SHARES",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "report_id": "APP-2026-09-18-v3-r2",
+      "question_id": "APP-Q3-MODELS",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "report_id": "APP-2026-09-18-v3-r2",
+      "question_id": "APP-Q3-CONSUMER",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001751008|NASDAQ:APP:CLASS-A",
+      "ticker": "APP",
+      "report_id": "APP-2026-09-18-v3-r2",
+      "question_id": "APP-Q3-ACCESS",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E10"
+      ]
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "report_id": "GOOG-2026-09-18-v3-r2",
+      "question_id": "GOOG-search-growth",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "report_id": "GOOG-2026-09-18-v3-r2",
+      "question_id": "GOOG-cloud-economics",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "report_id": "GOOG-2026-09-18-v3-r2",
+      "question_id": "GOOG-cash-recovery",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "report_id": "GOOG-2026-09-18-v3-r2",
+      "question_id": "GOOG-dilution",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "report_id": "GOOG-2026-09-18-v3-r2",
+      "question_id": "GOOG-backlog-quality",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "report_id": "GOOG-2026-09-18-v3-r2",
+      "question_id": "GOOG-capital-plan",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001652044|NASDAQ:GOOG:CLASS-C",
+      "ticker": "GOOG",
+      "report_id": "GOOG-2026-09-18-v3-r2",
+      "question_id": "GOOG-regulation",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "report_id": "CEG-2026-09-18-v3-r2",
+      "question_id": "ceg-guidance",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "report_id": "CEG-2026-09-18-v3-r2",
+      "question_id": "ceg-cash",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "report_id": "CEG-2026-09-18-v3-r2",
+      "question_id": "ceg-debt",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "report_id": "CEG-2026-09-18-v3-r2",
+      "question_id": "ceg-nuclear",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "report_id": "CEG-2026-09-18-v3-r2",
+      "question_id": "ceg-contracts",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "report_id": "CEG-2026-09-18-v3-r2",
+      "question_id": "ceg-shares",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001868275|NASDAQ:CEG:COMMON",
+      "ticker": "CEG",
+      "report_id": "CEG-2026-09-18-v3-r2",
+      "question_id": "ceg-divestitures",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001035267|NASDAQ:ISRG:COMMON",
+      "ticker": "ISRG",
+      "report_id": "ISRG-2026-09-18-v3-rebuilt-r2",
+      "question_id": "isrg-procedures",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001035267|NASDAQ:ISRG:COMMON",
+      "ticker": "ISRG",
+      "report_id": "ISRG-2026-09-18-v3-rebuilt-r2",
+      "question_id": "isrg-instruments",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001035267|NASDAQ:ISRG:COMMON",
+      "ticker": "ISRG",
+      "report_id": "ISRG-2026-09-18-v3-rebuilt-r2",
+      "question_id": "isrg-shares",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001035267|NASDAQ:ISRG:COMMON",
+      "ticker": "ISRG",
+      "report_id": "ISRG-2026-09-18-v3-rebuilt-r2",
+      "question_id": "isrg-cash-margin",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001035267|NASDAQ:ISRG:COMMON",
+      "ticker": "ISRG",
+      "report_id": "ISRG-2026-09-18-v3-rebuilt-r2",
+      "question_id": "isrg-guidance",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001035267|NASDAQ:ISRG:COMMON",
+      "ticker": "ISRG",
+      "report_id": "ISRG-2026-09-18-v3-rebuilt-r2",
+      "question_id": "isrg-margin-quality",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "report_id": "VST-2026-09-18-v3-r2",
+      "question_id": "guidance",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "report_id": "VST-2026-09-18-v3-r2",
+      "question_id": "cash",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "report_id": "VST-2026-09-18-v3-r2",
+      "question_id": "financing",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E05"
+      ]
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "report_id": "VST-2026-09-18-v3-r2",
+      "question_id": "helix",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "report_id": "VST-2026-09-18-v3-r2",
+      "question_id": "moss",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "report_id": "VST-2026-09-18-v3-r2",
+      "question_id": "contracts",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E04"
+      ]
+    },
+    {
+      "identity": "SEC-FILE:001-38086|NYSE:VST:COMMON",
+      "ticker": "VST",
+      "report_id": "VST-2026-09-18-v3-r2",
+      "question_id": "shares",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "report_id": "SOFI-2026-09-18-v3",
+      "question_id": "revenue-growth",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E02"
+      ]
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "report_id": "SOFI-2026-09-18-v3",
+      "question_id": "earnings-guide",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "report_id": "SOFI-2026-09-18-v3",
+      "question_id": "credit-loss",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "report_id": "SOFI-2026-09-18-v3",
+      "question_id": "technology",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E02"
+      ]
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "report_id": "SOFI-2026-09-18-v3",
+      "question_id": "capital-cushion",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "report_id": "SOFI-2026-09-18-v3",
+      "question_id": "dilution",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001818874|NASDAQ:SOFI:COMMON",
+      "ticker": "SOFI",
+      "report_id": "SOFI-2026-09-18-v3",
+      "question_id": "october-notes",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "report_id": "ASTS-2026-09-18-v3-r3",
+      "question_id": "deployment",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "report_id": "ASTS-2026-09-18-v3-r3",
+      "question_id": "service",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "report_id": "ASTS-2026-09-18-v3-r3",
+      "question_id": "guidance",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "report_id": "ASTS-2026-09-18-v3-r3",
+      "question_id": "funding",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "report_id": "ASTS-2026-09-18-v3-r3",
+      "question_id": "cash-spend",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "report_id": "ASTS-2026-09-18-v3-r3",
+      "question_id": "dilution",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001780312|NASDAQ:ASTS:CLASS-A",
+      "ticker": "ASTS",
+      "report_id": "ASTS-2026-09-18-v3-r3",
+      "question_id": "backlog",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "report_id": "META-2026-09-19-v3-r2",
+      "question_id": "revenue-floor",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "report_id": "META-2026-09-19-v3-r2",
+      "question_id": "margin-recovery",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "report_id": "META-2026-09-19-v3-r2",
+      "question_id": "cash-after-investment",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "report_id": "META-2026-09-19-v3-r2",
+      "question_id": "spending-ceiling",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "report_id": "META-2026-09-19-v3-r2",
+      "question_id": "reality-labs",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "report_id": "META-2026-09-19-v3-r2",
+      "question_id": "dilution",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001326801|NASDAQ:META:CLASS-A",
+      "ticker": "META",
+      "report_id": "META-2026-09-19-v3-r2",
+      "question_id": "commitments-funding",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "report_id": "LEU-2026-09-24-v3",
+      "question_id": "leu-economics",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "report_id": "LEU-2026-09-24-v3",
+      "question_id": "cash-funding",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "report_id": "LEU-2026-09-24-v3",
+      "question_id": "dilution-bridge",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "report_id": "LEU-2026-09-24-v3",
+      "question_id": "cascade-doe",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "report_id": "LEU-2026-09-24-v3",
+      "question_id": "backlog-conversion",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "report_id": "LEU-2026-09-24-v3",
+      "question_id": "supply-bridge",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001065059|NYSE:LEU:CLASS-A",
+      "ticker": "LEU",
+      "report_id": "LEU-2026-09-24-v3",
+      "question_id": "first-centrifuge",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+      "ticker": "NOW",
+      "report_id": "NOW-2026-09-25-v3",
+      "question_id": "now-sub",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E06"
+      ]
+    },
+    {
+      "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+      "ticker": "NOW",
+      "report_id": "NOW-2026-09-25-v3",
+      "question_id": "now-crpo",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E06"
+      ]
+    },
+    {
+      "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+      "ticker": "NOW",
+      "report_id": "NOW-2026-09-25-v3",
+      "question_id": "now-margin",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+      "ticker": "NOW",
+      "report_id": "NOW-2026-09-25-v3",
+      "question_id": "now-cash",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001373715|NYSE:NOW:COMMON",
+      "ticker": "NOW",
+      "report_id": "NOW-2026-09-25-v3",
+      "question_id": "now-debt",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+      "ticker": "AMZN",
+      "report_id": "AMZN-2026-09-27-v3",
+      "question_id": "amzn-sales",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+      "ticker": "AMZN",
+      "report_id": "AMZN-2026-09-27-v3",
+      "question_id": "amzn-op",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+      "ticker": "AMZN",
+      "report_id": "AMZN-2026-09-27-v3",
+      "question_id": "amzn-aws",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E08"
+      ]
+    },
+    {
+      "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+      "ticker": "AMZN",
+      "report_id": "AMZN-2026-09-27-v3",
+      "question_id": "amzn-ad",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+      "ticker": "AMZN",
+      "report_id": "AMZN-2026-09-27-v3",
+      "question_id": "amzn-cash",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": []
+    },
+    {
+      "identity": "CIK:0001018724|NASDAQ:AMZN:COMMON",
+      "ticker": "AMZN",
+      "report_id": "AMZN-2026-09-27-v3",
+      "question_id": "amzn-funding",
+      "criterion_version": 1,
+      "assessment_status": "not_adjudicated_collection_pilot",
+      "related_event_ids": [
+        "E07"
+      ]
+    }
+  ],
+  "note": "All current companies/questions are represented. Discovery and metadata checks do not establish exhaustive news coverage or question answers."
+}
