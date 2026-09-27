@@ -89,6 +89,12 @@ Public access and redistribution are separate. The public payload currently incl
 
 ## Author, validate and publish
 
+Write for a first-time investor. For each selected news item, aim for roughly 100–170 words across the factual summary, a plain-language explanation, the company implication and the next observable check. Use judgment rather than padding to a word count. Explain unfamiliar terms where they appear: for example, what settlement does, how issuing shares differs from resale, or why a court finding is separate from a penalty. Say who announced the development, which step has actually happened and what remains conditional. Retain material uncertainty in the visible text. Avoid procedural shorthand such as “funding bridge” without explaining the cash available, money needed and repayment commitments it refers to.
+
+For new research ledgers, set `news_reading_standard` to `beginner-news-1`. Author bilingual `context`, `meaning` and `watch` on every event and theme, alongside the factual summary. Add `market_pulse_guide` with bilingual `paragraphs` and existing `source_ids`; these explanations are included in the standalone HTML.
+
+Give macro themes and market indicators comparable teaching depth. Explain the route from the event to borrowing costs, customer spending, company cash or valuation. A conditional mechanism is not a stock-price prediction. Keep essential explanations visible; saved-question criteria and source detail may remain expandable. Author natural English and Romanian. Do not add unsupported company details to make an explanation sound fuller.
+
 After collecting, read sources and author `report.json` beside the manifest, using the first completed report's schema as the reference. This is a research step, not an unattended summary generator. It must include:
 
 - A bilingual market overview and themes, separating pre-window starting conditions from new developments, with dated observations and cited mechanisms.
@@ -107,6 +113,8 @@ python3 -m unittest discover -s scripts/tests
 
 The renderer rejects missing companies, changed questions or criteria, changed manifest/data hashes, unresolved source references, future observations and attempts to grade earnings outcomes. Inspect the report in English/Romanian and at desktop/mobile sizes. Run the repository's remaining AGENTS.md validation gates, commit all related changes together, push without force, inspect the exact commit's Actions deployment and check the live index and report URLs.
 
+For an explanation-only revision, preserve the original `report.json`, manifest, cutoff, findings and question criteria. Save a new `reading-guide-rN.json` with the existing run ID, cutoff and base-data hash; author a context/meaning/watch explanation for every selected event and macro theme, plus an indicator guide. All source references must come from the corresponding original items. Register its hash and a new HTML filename under the run’s `presentation_revisions`, retaining `original_html_path` and pointing the run’s `html_path` to the latest edition. The renderer checks the guide against the original scope, embeds both in a standalone HTML export and links the earlier edition to the expanded one. This does not create a new research run or advance the collection watermark. A true factual update needs a new dated run.
+
 The index’s Reports section lists every completed landscape, newest first, with its coverage window and company/question counts. Adding a completed run to the registry automatically adds its card when the index is rebuilt. Each report provides a reusable next-run prompt. The user may also say “Run the market sweep”; project instructions carry the dynamic scope and free-source requirements.
 
 ## Time and interpretation limits
@@ -115,4 +123,4 @@ The loader records the repository revision, registry hash, report hashes and loc
 
 Full company/question inclusion is a scope guarantee, not a claim that every published article or every geopolitical issue has been reviewed. Preserve the three denominators: scope included, sources checked, and questions with decisive evidence. No result may clear an earnings-review flag unless a separate, matching earnings review is saved through the existing process.
 
-See the [first completed landscape](../reports/market-landscape-2026-09-27.html), its [evidence ledger](../research/market-sweeps/2026-09-27-r1/report.json), and the earlier [collection pilot](../research/market-sweeps/2026-09-27/pilot.md).
+See the [first completed landscape](../reports/market-landscape-2026-09-27-r2.html), its [evidence ledger](../research/market-sweeps/2026-09-27-r1/report.json), and the earlier [collection pilot](../research/market-sweeps/2026-09-27/pilot.md).

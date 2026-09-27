@@ -8,7 +8,7 @@ Company research, saved earnings watchlists and a shared earnings calendar.
 - **Registry:** [`stock-analysis-registry.json`](stock-analysis-registry.json).
 - **Research archives:** [`archives/`](archives/), preserving immutable evidence and watchlist snapshots.
 - **Research workflow and generator:** [`skills/stock-analysis/`](skills/stock-analysis/SKILL.md).
-- **On-demand market landscape:** [latest report](reports/market-landscape-2026-09-27.html), [workflow and free sources](docs/market-sweep-design.md), and [saved runs](market-sweep-registry.json). Say “Run the market sweep” to begin a new session; there is no recurring schedule.
+- **On-demand market landscape:** [latest report](reports/market-landscape-2026-09-27-r2.html), [workflow and free sources](docs/market-sweep-design.md), and [saved runs](market-sweep-registry.json). Say “Run the market sweep” to begin a new session; there is no recurring schedule.
 
 ## Read locally
 

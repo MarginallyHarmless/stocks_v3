@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from collect_market_sources import select_filings
 from prepare_market_sweep import instant
-from render_market_sweep import validate
+from render_market_sweep import validate, validate_guide, render
 from start_market_sweep import select_window
 
 
@@ -19,6 +19,25 @@ class LandscapeTests(unittest.TestCase):
         run = ROOT / 'research/market-sweeps/2026-09-27-r1'
         cls.data = json.loads((run / 'report.json').read_text())
         cls.manifest = json.loads((run / 'manifest.json').read_text())
+        cls.guide = json.loads((run / 'reading-guide-r2.json').read_text())
+
+    def test_editorial_guide_keeps_original_ledger_and_all_questions(self):
+        data = copy.deepcopy(self.data)
+        html = render(data, self.manifest, guide=self.guide)
+        self.assertEqual(data, self.data)
+        self.assertIn('market-reading-guide-1', html)
+        self.assertIn('What to watch next', html)
+
+    def test_editorial_guide_cannot_change_cutoff_or_add_sources(self):
+        for mutation in ('cutoff', 'source', 'missing_event', 'translation'):
+            with self.subTest(mutation=mutation):
+                guide = copy.deepcopy(self.guide)
+                if mutation == 'cutoff': guide['cutoff'] = '2026-09-28T00:00:00Z'
+                elif mutation == 'source': guide['events']['E01']['source_ids'].append('new-source')
+                elif mutation == 'missing_event': del guide['events']['E01']
+                else: guide['events']['E01']['context']['ro'] = ''
+                with self.assertRaises(AssertionError):
+                    validate_guide(guide, self.data)
 
     def test_complete_frozen_report_is_valid(self):
         validate(self.data, self.manifest)

@@ -1,0 +1,371 @@
+{
+  "schema_version": "market-reading-guide-1",
+  "revision_id": "MARKET-2026-09-27-r1-editorial-r2",
+  "run_id": "MARKET-2026-09-27-r1",
+  "cutoff": "2026-09-27T23:11:06+03:00",
+  "base_data_sha256": "ef64b2cb57cb77e8092e24a05320c784dc76a20be78024c50cd3668de2a5bdbb",
+  "editorial_only": true,
+  "revision_note": {
+    "en": "Expanded beginner explanations. Research cutoff, source findings and saved company questions are unchanged.",
+    "ro": "Explicații extinse pentru începători. Limita informațională, constatările din surse și întrebările salvate ale companiilor sunt neschimbate."
+  },
+  "events": {
+    "E01": {
+      "context": {
+        "en": "Ondas is buying businesses rather than relying only on growth from its existing operations. An acquisition can be paid for with cash, shares or payments due if certain conditions are met. Issuing more shares spreads ownership across more pieces; registering those same shares for resale lets their holders sell them and is not another issuance.",
+        "ro": "Ondas cumpără afaceri, în loc să se bazeze doar pe creșterea operațiunilor existente. O achiziție poate fi plătită în numerar, prin acțiuni sau prin plăți datorate dacă sunt îndeplinite anumite condiții. Emiterea de acțiuni împarte proprietatea în mai multe părți; înregistrarea acelorași acțiuni pentru revânzare permite deținătorilor să le vândă și nu reprezintă o nouă emisiune."
+      },
+      "meaning": {
+        "en": "The purchases could add capabilities and sales, but also consume cash and reduce each existing share’s ownership percentage. We still need a complete account of cash spent, possible future payments and shares issued. Sales added by buying another business should be separated from growth in the business Ondas already owned.",
+        "ro": "Achizițiile pot aduce capacități și vânzări, dar pot consuma numerar și reduce procentul de proprietate reprezentat de fiecare acțiune existentă. Mai trebuie să vedem situația completă a numerarului cheltuit, a posibilelor plăți viitoare și a acțiunilor emise. Vânzările adăugate prin cumpărarea unei afaceri trebuie separate de creșterea afacerii pe care Ondas o deținea deja."
+      },
+      "watch": {
+        "en": "The next disclosure’s acquisition costs, remaining cash, share count and sales from existing versus acquired businesses.",
+        "ro": "Costurile achizițiilor, numerarul rămas, numărul de acțiuni și vânzările afacerilor existente față de cele cumpărate, în următoarea raportare."
+      },
+      "source_ids": [
+        "E01S1",
+        "E01S2"
+      ]
+    },
+    "E02": {
+      "context": {
+        "en": "Settlement is the actual transfer of money that completes a payment. A stablecoin is a digital token designed to track a reference value, often a currency; that design does not make it risk-free. The announcement says the payment process is live, with plans to move SoFi card settlement onto it.",
+        "ro": "Decontarea este transferul efectiv al banilor care încheie o plată. Un stablecoin este un token digital conceput să urmărească o valoare de referință, adesea o monedă; asta nu îl face lipsit de risc. Anunțul spune că procesul de plată funcționează deja și că există planuri de a muta decontarea cardurilor SoFi pe acesta."
+      },
+      "meaning": {
+        "en": "A working payment feature is a step toward commercial use, but the amount of money passing through it is not SoFi’s revenue. SoFi would need to earn fees or another economic benefit after costs. The issuer’s announcement does not yet establish that benefit or answer the saved quarterly growth and Technology Platform questions.",
+        "ro": "O funcție de plată operațională este un pas spre utilizarea comercială, dar banii care trec prin ea nu reprezintă veniturile SoFi. Compania ar trebui să obțină comisioane sau alt beneficiu economic după costuri. Anunțul emitentului nu demonstrează încă acel beneficiu și nu răspunde întrebărilor salvate despre creșterea trimestrială și Technology Platform."
+      },
+      "watch": {
+        "en": "Customer adoption, disclosed fees or revenue, operating costs and the actual migration of card settlement.",
+        "ro": "Adopția de către clienți, comisioanele sau veniturile publicate, costurile și mutarea efectivă a decontării cardurilor."
+      },
+      "source_ids": [
+        "E02S1"
+      ]
+    },
+    "E03": {
+      "context": {
+        "en": "A proposal starts a consultation: the regulator is asking for feedback before deciding the final rules. It is not a rule that already applies unchanged. The proposals concern payment-stablecoin issuers supervised by the Federal Reserve Board, so identifying the exact legal entity and its supervisor is essential.",
+        "ro": "O propunere deschide o consultare: autoritatea cere opinii înainte să decidă regulile finale. Nu este o regulă care se aplică deja în forma respectivă. Propunerile privesc emitenții de stablecoins pentru plăți supravegheați de Consiliul Fed, deci trebuie identificată exact entitatea juridică și autoritatea care o supraveghează."
+      },
+      "meaning": {
+        "en": "Rules can affect the cost and practical requirements of offering these products. This is useful context for SoFi and Robinhood, but the release does not prove either is directly covered. SoFi Bank has a different primary supervisor. It would be premature to treat the proposal as an approval, a ban or a known earnings impact.",
+        "ro": "Regulile pot afecta costurile și cerințele practice ale acestor produse. Este context util pentru SoFi și Robinhood, dar comunicatul nu demonstrează că vreuna este vizată direct. SoFi Bank are altă autoritate principală de supraveghere. Ar fi prematur să tratăm propunerea drept aprobare, interdicție sau impact financiar deja cunoscut."
+      },
+      "watch": {
+        "en": "The final text, effective date and which specific company entities it covers.",
+        "ro": "Textul final, data aplicării și entitățile concrete ale companiilor pe care le acoperă."
+      },
+      "source_ids": [
+        "E03S1"
+      ]
+    },
+    "E04": {
+      "context": {
+        "en": "A power agreement sets terms for supplying electricity over time. Its long duration can provide a supplier with more visibility over future demand. Here, the announcement comes from New Era, the other party to the deal, and electricity supply is expected to start in Q3 2027 rather than during the current reporting period.",
+        "ro": "Un contract de energie stabilește condițiile furnizării electricității în timp. Durata lungă îi poate oferi furnizorului mai multă vizibilitate asupra cererii viitoare. Aici, anunțul vine de la New Era, cealaltă parte a contractului, iar livrările sunt așteptate în T3 2027, nu în perioada raportată acum."
+      },
+      "meaning": {
+        "en": "This adds a potential source of future demand for Vistra’s Luminant business. The financial value still depends on delivery, pricing, costs and contract conditions. A signed agreement is not current revenue or guaranteed profit, and this separate deal does not answer the saved delivery questions about Meta and AWS.",
+        "ro": "Contractul adaugă o posibilă sursă de cerere viitoare pentru Luminant, afacerea Vistra. Valoarea financiară depinde în continuare de livrare, preț, costuri și condițiile contractuale. Un contract semnat nu este venit curent sau profit garantat, iar această înțelegere separată nu răspunde întrebărilor salvate despre livrările pentru Meta și AWS."
+      },
+      "watch": {
+        "en": "Confirmation of contract economics and progress toward the expected supply start.",
+        "ro": "Confirmarea condițiilor economice și progresul către începerea livrărilor la data așteptată."
+      },
+      "source_ids": [
+        "E04S1"
+      ]
+    },
+    "E05": {
+      "context": {
+        "en": "Vistra has completed a borrowing transaction: investors supplied money in exchange for debt securities called notes. “Junior subordinated” means these creditors rank behind more senior creditors in the repayment order. This is funding that comes with obligations, not money earned by selling electricity.",
+        "ro": "Vistra a încheiat un împrumut: investitorii au furnizat bani în schimbul unor titluri de datorie. „Junior subordinated” înseamnă că acești creditori au prioritate mai mică la rambursare decât creditorii de rang superior. Este finanțare care vine cu obligații, nu bani câștigați din vânzarea electricității."
+      },
+      "meaning": {
+        "en": "The completed $1.5 billion offering is more concrete than an intention to raise money. It adds funding, but does not show how much remains after planned uses or whether all future cash needs are covered. We need the borrowing terms and a full account of cash available, spending commitments and repayments before judging the financing position.",
+        "ro": "Oferta finalizată de 1,5 mld. USD este mai concretă decât intenția de a atrage bani. Aduce finanțare, dar nu arată cât rămâne după utilizările planificate sau dacă toate nevoile viitoare sunt acoperite. Avem nevoie de condițiile împrumutului și de situația completă a numerarului disponibil, cheltuielilor asumate și rambursărilor pentru a evalua finanțarea."
+      },
+      "watch": {
+        "en": "The cost and use of the new debt, upcoming repayments and the next cash/debt reconciliation.",
+        "ro": "Costul și utilizarea noii datorii, rambursările viitoare și următoarea reconciliere a numerarului și datoriilor."
+      },
+      "source_ids": [
+        "E05S1"
+      ]
+    },
+    "E06": {
+      "context": {
+        "en": "A deployment case study describes software being put into use at a customer, rather than just being sold. INRY’s account connects a March purchase with a six-week implementation. Its September publication date is the date the story was shared; it does not make the original purchase a new September contract.",
+        "ro": "Un studiu de implementare descrie punerea software-ului în funcțiune la un client, nu doar vânzarea lui. Relatarea INRY leagă o achiziție din martie de o implementare de șase săptămâni. Publicarea în septembrie arată când a fost împărtășită povestea; nu transformă achiziția inițială într-un contract nou din septembrie."
+      },
+      "meaning": {
+        "en": "This is an example of adoption, which can help us understand how customers use ServiceNow. However, benefits reported by a partner have not been independently measured here. One customer story cannot establish company-wide subscription growth or future contracted sales. It also predates the latest saved ServiceNow analysis.",
+        "ro": "Este un exemplu de adopție, util pentru a înțelege cum folosesc clienții ServiceNow. Beneficiile prezentate de partener nu au fost însă măsurate independent aici. Povestea unui client nu demonstrează creșterea abonamentelor sau vânzările viitoare contractate la nivelul întregii companii. De asemenea, precede ultima analiză ServiceNow salvată."
+      },
+      "watch": {
+        "en": "Broader subscription results, renewals and disclosed contracted demand, rather than repeating the case study as new sales.",
+        "ro": "Rezultatele generale ale abonamentelor, reînnoirile și cererea contractată publicată, fără a număra studiul drept vânzări noi."
+      },
+      "source_ids": [
+        "E06S1"
+      ]
+    },
+    "E07": {
+      "context": {
+        "en": "Companies can file several documents for the same borrowing transaction. This registration points back to an earlier prospectus—the document describing the securities—and an earlier financing closing. A later paperwork date should not be mistaken for another round of money arriving in the company’s bank account.",
+        "ro": "Companiile pot depune mai multe documente pentru același împrumut. Această înregistrare trimite la un prospect anterior, documentul care descrie titlurile, și la încheierea anterioară a finanțării. Data mai târzie a unui document nu trebuie confundată cu o nouă rundă de bani care intră în contul companiei."
+      },
+      "meaning": {
+        "en": "The useful information is the connection to Amazon’s existing financing. Counting the September 24 filing as fresh borrowing would exaggerate the funds raised. The selected financing documents also predate the latest September 27 Amazon report, so they provide background rather than a new development after that analysis.",
+        "ro": "Informația utilă este legătura cu finanțarea existentă a Amazon. Dacă am număra documentul din 24 septembrie ca împrumut nou, am exagera banii atrași. Documentele selectate preced și ultimul raport Amazon din 27 septembrie, deci oferă context, nu o evoluție nouă după acea analiză."
+      },
+      "watch": {
+        "en": "The original debt terms, actual cash proceeds and their use, counted once for the underlying transaction.",
+        "ro": "Condițiile inițiale ale datoriei, numerarul efectiv primit și utilizarea lui, numărate o singură dată pentru tranzacție."
+      },
+      "source_ids": [
+        "E07S1"
+      ]
+    },
+    "E08": {
+      "context": {
+        "en": "The collaboration concerns logistics supporting AWS infrastructure through its lifecycle. Cloud services depend on physical equipment and facilities as well as software; equipment has to reach the right place and be handled through its useful life. The announcement comes from Amazon’s logistics counterparty, Kuehne+Nagel.",
+        "ro": "Colaborarea privește logistica necesară infrastructurii AWS pe parcursul ciclului său de viață. Serviciile cloud depind de echipamente și clădiri fizice, nu doar de software; echipamentele trebuie să ajungă unde este nevoie și să fie gestionate pe durata utilizării. Anunțul vine de la partenerul logistic al Amazon, Kuehne+Nagel."
+      },
+      "meaning": {
+        "en": "Better logistics could help infrastructure projects run to plan, but the announcement does not quantify faster delivery, extra Amazon sales or investment returns. It is an execution development to follow, not proof that AWS growth or cash generation has improved. This story was already published before the latest saved Amazon analysis.",
+        "ro": "O logistică mai bună ar putea ajuta proiectele de infrastructură să respecte planul, dar anunțul nu cuantifică livrări mai rapide, vânzări suplimentare Amazon sau randamentul investițiilor. Urmărim execuția, fără să considerăm știrea dovada îmbunătățirii creșterii AWS sau a numerarului generat. Povestea precede ultima analiză Amazon salvată."
+      },
+      "watch": {
+        "en": "Disclosed infrastructure progress, spending and the sales or cash those investments eventually produce.",
+        "ro": "Progresul infrastructurii, cheltuielile și vânzările sau numerarul produse în timp de aceste investiții."
+      },
+      "source_ids": [
+        "E08S1"
+      ]
+    },
+    "E09": {
+      "context": {
+        "en": "A prototype is an early version used to test whether an idea works. Google is describing a planned satellite test within a long-term AI research project. Planning a test, launching it successfully and building a commercially useful service are different stages; this announcement establishes only the planned-test stage.",
+        "ro": "Un prototip este o versiune timpurie folosită pentru a testa dacă o idee funcționează. Google descrie un test planificat cu sateliți într-un proiect de cercetare AI pe termen lung. Planificarea, lansarea reușită și construirea unui serviciu comercial util sunt etape diferite; anunțul stabilește doar etapa testului planificat."
+      },
+      "meaning": {
+        "en": "The project may be worth watching as research, but it gives us no established revenue stream or evidence of an attractive return on spending. It should not be used to justify current earnings expectations. A satellite-related headline also does not establish a commercial connection or financial effect for AST SpaceMobile.",
+        "ro": "Proiectul poate merita urmărit ca cercetare, dar nu oferă un flux de venituri demonstrat sau dovada unui randament atractiv al cheltuielilor. Nu trebuie folosit pentru a justifica așteptări despre profitul curent. Nici faptul că știrea implică sateliți nu demonstrează o legătură comercială sau un efect financiar pentru AST SpaceMobile."
+      },
+      "watch": {
+        "en": "Whether the test happens, what it demonstrates, its cost and any disclosed path toward commercial use.",
+        "ro": "Dacă testul are loc, ce demonstrează, cât costă și dacă este publicată o cale către utilizarea comercială."
+      },
+      "source_ids": [
+        "E09S1"
+      ]
+    },
+    "E10": {
+      "context": {
+        "en": "The source is a law firm representing potential claimants, not a court judgment. Its notice says a securities lawsuit has been filed. Such a notice can identify something to investigate, but it does not tell us that the allegations are correct or what a court will decide.",
+        "ro": "Sursa este o firmă de avocatură care reprezintă potențiali reclamanți, nu o hotărâre a instanței. Anunțul spune că a fost intentat un proces privind valori mobiliare. Poate semnala ceva de investigat, dar nu demonstrează că acuzațiile sunt corecte sau ce va decide instanța."
+      },
+      "meaning": {
+        "en": "The complaint and court status were not reviewed, so this remains an unverified lead. We cannot infer misconduct, a financial loss or damage to AppLovin’s business from the notice. Several firms repeating a similar advertisement would not necessarily mean several independent problems.",
+        "ro": "Cererea de chemare în judecată și stadiul procesului nu au fost verificate, deci aceasta rămâne o pistă neverificată. Nu putem deduce o abatere, o pierdere financiară sau afectarea afacerii AppLovin din anunț. Reclame similare repetate de mai multe firme nu înseamnă neapărat mai multe probleme independente."
+      },
+      "watch": {
+        "en": "The actual complaint, court record, company response and any supported financial implications.",
+        "ro": "Cererea efectivă, dosarul instanței, răspunsul companiei și eventualele implicații financiare susținute de dovezi."
+      },
+      "source_ids": [
+        "E10S1"
+      ]
+    },
+    "E11": {
+      "context": {
+        "en": "A finding of liability and the amount of a penalty are separate questions. The state’s account says the jury found against Facebook, while the judge will determine civil penalties later. A theoretical maximum penalty is therefore not the same as a bill Meta has already been ordered to pay.",
+        "ro": "Stabilirea răspunderii și valoarea penalității sunt întrebări separate. Potrivit relatării autorității statale, juriul s-a pronunțat împotriva Facebook, iar judecătorul va stabili ulterior penalitățile civile. O penalitate maximă teoretică nu este, așadar, echivalentă cu o sumă pe care Meta a fost deja obligată să o plătească."
+      },
+      "meaning": {
+        "en": "This introduces a legal uncertainty to track alongside Meta’s investment spending. The eventual financial effect depends on the actual judgment and subsequent proceedings. Our source is the state litigant’s account; Meta’s response and the full court record were not reviewed. We cannot yet assign a payable fine or a cash-flow impact.",
+        "ro": "Apare o incertitudine juridică de urmărit alături de cheltuielile de investiții Meta. Efectul financiar depinde de hotărârea efectivă și de procedurile ulterioare. Sursa noastră este relatarea autorității care este parte în litigiu; răspunsul Meta și dosarul complet nu au fost verificate. Nu putem stabili încă o amendă de plată sau un impact asupra numerarului."
+      },
+      "watch": {
+        "en": "The ordered penalty or remedy, any appeal and whether Meta records an expected cost in its financial statements.",
+        "ro": "Penalitatea sau măsura dispusă, eventualele căi de atac și dacă Meta înregistrează un cost estimat în situațiile financiare."
+      },
+      "source_ids": [
+        "E11S1"
+      ]
+    },
+    "E12": {
+      "context": {
+        "en": "The CE marking covers specified adult cardiac uses of da Vinci 5 in Europe. It is a regulatory step allowing those uses within the stated scope. It does not mean that hospitals immediately buy or use the system widely. The announced rollout starts with a limited number of centres.",
+        "ro": "Marcajul CE acoperă anumite utilizări ale da Vinci 5 în chirurgia cardiacă pentru adulți în Europa. Este o etapă de reglementare care permite acele utilizări în limitele precizate. Nu înseamnă că spitalele cumpără sau folosesc imediat sistemul pe scară largă. Lansarea anunțată începe cu un număr limitat de centre."
+      },
+      "meaning": {
+        "en": "A broader set of permitted procedures could create more opportunities for Intuitive, but the opportunity must become actual use. Training, procedure volumes and instrument use matter for commercial results. Clearance alone establishes neither clinical superiority nor a better quarterly revenue or margin result.",
+        "ro": "O gamă mai largă de proceduri permise poate crea oportunități pentru Intuitive, dar acestea trebuie transformate în utilizare efectivă. Instruirea, numărul de proceduri și utilizarea instrumentelor contează pentru rezultate. Autorizarea singură nu demonstrează superioritate clinică sau venituri și marje trimestriale mai bune."
+      },
+      "watch": {
+        "en": "Rollout progress, trained centres, actual cardiac procedures and related instrument use.",
+        "ro": "Progresul lansării, centrele instruite, procedurile cardiace efective și utilizarea instrumentelor aferente."
+      },
+      "source_ids": [
+        "E12S1"
+      ]
+    },
+    "E13": {
+      "context": {
+        "en": "A pilot is a limited trial that helps a customer decide whether to continue or expand a service. City AM reports that the East Midlands police pilot will end following funding and project assessment. A separate pilot in eastern England continues, so the decision should be read at the level of the specific project.",
+        "ro": "Un proiect-pilot este un test limitat care ajută clientul să decidă dacă va continua sau extinde un serviciu. City AM relatează că proiectul poliției din East Midlands se va încheia după evaluarea finanțării și a proiectului. Un pilot separat din estul Angliei continuă, deci decizia trebuie interpretată la nivelul proiectului respectiv."
+      },
+      "meaning": {
+        "en": "This is a reminder that a trial does not automatically become a durable paying contract. It is worth watching for similar decisions and their reasons, but contract economics here are unquantified. It does not establish the loss of Palantir’s whole UK business or a missed growth target for US commercial customers.",
+        "ro": "Este un exemplu că un test nu se transformă automat într-un contract plătit de durată. Merită urmărite decizii similare și motivele lor, dar valoarea economică a contractului nu este cuantificată aici. Nu rezultă pierderea întregii afaceri britanice Palantir sau ratarea unei ținte de creștere pentru clienții comerciali din SUA."
+      },
+      "watch": {
+        "en": "Whether other pilots convert into paid contracts or renew, and whether the company changes its disclosed outlook.",
+        "ro": "Dacă alte proiecte-pilot devin contracte plătite sau sunt reînnoite și dacă firma își modifică perspectiva publicată."
+      },
+      "source_ids": [
+        "E13S1"
+      ]
+    },
+    "E14": {
+      "context": {
+        "en": "Renewable-energy certificates represent the renewable attributes of electricity generation. Buying them is different from receiving a dedicated physical delivery of that electricity. Constellation’s announcement describes a certificate agreement with Toyota and a separate power-purchase agreement linked to the solar project; neither arrangement by itself establishes ownership of the project.",
+        "ro": "Certificatele de energie regenerabilă reprezintă atributele regenerabile ale electricității produse. Cumpărarea lor este diferită de primirea unei livrări fizice dedicate a acelei electricități. Anunțul Constellation descrie un contract de certificate cu Toyota și un contract separat de cumpărare a energiei legat de proiectul solar; niciunul nu dovedește, singur, proprietatea asupra proiectului."
+      },
+      "meaning": {
+        "en": "The arrangement shows customer demand for an energy solution, but it depends on future project delivery and the economics of both agreements. September 2027 is an expected operating date, not a completed milestone. No new near-term profit contribution was quantified, so contract duration alone is not enough to value the deal.",
+        "ro": "Aranjamentul arată cerere pentru o soluție energetică, dar depinde de finalizarea viitoare a proiectului și de condițiile economice ale ambelor contracte. Septembrie 2027 este o dată estimată de intrare în funcțiune, nu o etapă deja îndeplinită. Nu a fost cuantificat un profit nou pe termen scurt, deci durata contractului nu este suficientă pentru evaluarea înțelegerii."
+      },
+      "watch": {
+        "en": "The solar project’s progress, delivery dates and disclosed costs and earnings from the arrangements.",
+        "ro": "Progresul proiectului solar, termenele de livrare și costurile și rezultatele financiare publicate pentru aceste contracte."
+      },
+      "source_ids": [
+        "E14S1"
+      ]
+    }
+  },
+  "themes": {
+    "rates": {
+      "context": {
+        "en": "The Fed and the ECB influence short-term borrowing conditions in dollars and euros. A policy-rate increase can work its way into the rates banks and companies charge for loans. The US 10-year Treasury yield shown above is a separate, market-set rate for longer-term government borrowing; the two do not have to move by the same amount.",
+        "ro": "Fed și BCE influențează condițiile împrumuturilor pe termen scurt în dolari și euro. O majorare a dobânzii de politică monetară se poate transmite în dobânzile cerute la împrumuturi. Randamentul titlurilor SUA pe zece ani, prezentat mai sus, este o rată separată, stabilită de piață pentru împrumuturi guvernamentale pe termen mai lung; cele două nu trebuie să se miște identic."
+      },
+      "meaning": {
+        "en": "A company that needs new money may face a more expensive loan, leaving less cash after interest. Existing fixed-rate debt usually keeps its agreed rate until it must be replaced or repaid. For shares, a more rewarding safer alternative can make investors demand a lower purchase price for uncertain future profits. These are pressures, not automatic stock-price predictions.",
+        "ro": "O companie care are nevoie de bani noi poate întâlni un împrumut mai scump, rămânând cu mai puțin numerar după dobândă. Datoria existentă cu dobândă fixă păstrează de regulă rata convenită până când trebuie înlocuită sau rambursată. Pentru acțiuni, o alternativă mai sigură și mai rentabilă îi poate face pe investitori să ceară un preț de cumpărare mai mic pentru profituri viitoare incerte. Sunt presiuni, nu predicții automate despre bursă."
+      },
+      "watch": {
+        "en": "For each funding-heavy company, compare available cash with planned spending, debt repayment dates and the cost of new borrowing.",
+        "ro": "Pentru fiecare companie cu nevoi mari de finanțare, comparăm numerarul disponibil cu investițiile planificate, scadențele și costul împrumuturilor noi."
+      },
+      "source_ids": [
+        "M1",
+        "M8"
+      ]
+    },
+    "demand": {
+      "context": {
+        "en": "GDP measures the economy’s output; “real” GDP removes the effect of price changes. The annualised quarterly figure describes a quarter’s pace expressed as if it continued for a year, not actual growth over the past year. Inflation tracks price increases, while inflation-adjusted spending asks whether people bought more after allowing for higher prices.",
+        "ro": "PIB-ul măsoară producția economiei; PIB-ul „real” elimină efectul modificării prețurilor. Cifra trimestrială anualizată exprimă ritmul unui trimestru ca și cum ar continua un an, nu creșterea efectivă din ultimul an. Inflația urmărește creșterea prețurilor, iar consumul ajustat cu inflația arată dacă oamenii au cumpărat mai mult după eliminarea scumpirilor."
+      },
+      "meaning": {
+        "en": "Growth and continued hiring can support customer demand, while higher prices leave less room in household and business budgets. These signals can coexist. For our companies, look for evidence in advertising spending, software renewals, loan repayments and hospital investment. The releases cover different periods, so they should not be treated as one real-time reading.",
+        "ro": "Creșterea economiei și angajările pot susține cererea, în timp ce scumpirile lasă mai puțin spațiu în bugetele familiilor și firmelor. Semnalele pot coexista. Pentru companiile urmărite, căutăm dovezi în publicitate, reînnoiri software, rambursarea creditelor și investițiile spitalelor. Comunicatele acoperă perioade diferite, deci nu formează o singură măsurare în timp real."
+      },
+      "watch": {
+        "en": "The scheduled GDP and spending updates, followed by company evidence showing whether customers are buying, renewing and paying on time.",
+        "ro": "Actualizările programate pentru PIB și consum, apoi dovezi de la companii despre cumpărări, reînnoiri și plata la timp."
+      },
+      "source_ids": [
+        "M2",
+        "M3",
+        "M4",
+        "M5"
+      ]
+    },
+    "energy": {
+      "context": {
+        "en": "When oil cannot move easily along its usual routes, alternatives can take longer or cost more. That can affect fuel and transport costs beyond the disrupted region. EIA, the US energy information agency, describes such constraints in its September outlook. Its forecast is a dated scenario, not confirmation that every assumption remains true today.",
+        "ro": "Când petrolul nu poate circula ușor pe rutele obișnuite, alternativele pot dura mai mult sau costa mai mult. Efectele asupra combustibilului și transportului pot ajunge dincolo de regiunea perturbată. EIA, agenția americană de informare în energie, descrie asemenea constrângeri în prognoza din septembrie. Prognoza este un scenariu datat, nu confirmarea că toate ipotezele rămân valabile astăzi."
+      },
+      "meaning": {
+        "en": "A business may pay more to move goods or run facilities, and customers may have less left to spend. Electricity producers are not automatic beneficiaries of a higher oil price: electricity prices, fuel costs and contracts differ. Price hedges—arrangements used to limit price changes—can also delay or reduce the effect on what a company actually earns.",
+        "ro": "O firmă poate plăti mai mult pentru transport sau funcționarea facilităților, iar clienților le pot rămâne mai puțini bani. Producătorii de electricitate nu beneficiază automat de petrolul mai scump: prețurile electricității, combustibilii și contractele diferă. Protecțiile de preț, aranjamente folosite pentru a limita variațiile prețurilor, pot întârzia sau reduce efectul asupra câștigurilor efective."
+      },
+      "watch": {
+        "en": "Actual selling prices, energy costs and contract protections in company disclosures, alongside updated shipping and oil evidence.",
+        "ro": "Prețurile efective de vânzare, costurile energiei și protecțiile contractuale publicate de companii, alături de date noi despre transport și petrol."
+      },
+      "source_ids": [
+        "M6"
+      ]
+    },
+    "policy": {
+      "context": {
+        "en": "Sanctions restrict specified people, entities or activities; their exact scope matters. Extending an existing list generally continues restrictions rather than creating every kind of new trade ban. BIS is the US agency responsible for many export controls, including rules that can require permission before certain goods or technology are supplied abroad.",
+        "ro": "Sancțiunile restricționează persoane, entități sau activități precizate; domeniul exact de aplicare contează. Prelungirea unei liste existente continuă în general restricțiile, fără a crea orice tip de interdicție comercială nouă. BIS este agenția SUA responsabilă de numeroase controale de export, inclusiv reguli care pot cere permisiune înaintea furnizării anumitor bunuri sau tehnologii în străinătate."
+      },
+      "meaning": {
+        "en": "To connect policy to a company, we need a named supplier, customer, product or permit that is actually affected. This EU action does not establish a new uranium ban or an Ondas order. Because BIS discovery was incomplete, this report cannot establish that chip-export policy was unchanged; it simply has no verified new change to report.",
+        "ro": "Pentru a lega politica de o companie, trebuie identificat un furnizor, client, produs sau permis efectiv afectat. Acțiunea UE nu dovedește o nouă interdicție a uraniului sau o comandă pentru Ondas. Verificarea BIS fiind incompletă, raportul nu poate stabili că politica exporturilor de cipuri a rămas neschimbată; pur și simplu nu avem o modificare nouă verificată de prezentat."
+      },
+      "watch": {
+        "en": "Specific permissions and suppliers for LEU, actual licensing exposure for chip/cloud companies and signed orders for ONDS.",
+        "ro": "Autorizațiile și furnizorii concreți ai LEU, expunerea efectivă la licențe pentru companiile de cipuri/cloud și comenzile semnate pentru ONDS."
+      },
+      "source_ids": [
+        "M7",
+        "M13",
+        "M12"
+      ]
+    },
+    "execution": {
+      "context": {
+        "en": "An announcement is one step in a longer process. A project may still need money, construction, approvals, customers or a successful rollout before it produces cash. Borrowing adds funds but also obligations; an acquisition adds a business but may cost cash or shares. These are different economic events even when every headline sounds like expansion.",
+        "ro": "Un anunț este o etapă într-un proces mai lung. Un proiect poate avea încă nevoie de bani, construcție, aprobări, clienți sau o lansare reușită înainte să producă numerar. Un împrumut aduce fonduri, dar și obligații; o achiziție adaugă o afacere, dar poate costa numerar sau acțiuni. Sunt evenimente economice diferite, chiar dacă toate titlurile sugerează extindere."
+      },
+      "meaning": {
+        "en": "The practical question is what changed for each existing share: future earning potential, cash required, ownership percentage or the risk of delay. The company stories below explain the relevant step and what remains unproven. None replaces the saved checks for actual quarterly revenue, profitability or cash generation.",
+        "ro": "Întrebarea practică este ce s-a schimbat pentru fiecare acțiune existentă: potențialul de câștig, numerarul necesar, procentul de proprietate sau riscul de întârziere. Știrile de mai jos explică etapa relevantă și ce rămâne nedemonstrat. Niciuna nu înlocuiește verificările salvate despre veniturile, profitabilitatea și numerarul efectiv ale trimestrului."
+      },
+      "watch": {
+        "en": "Acquisition payments and shares at Ondas, debt terms at Vistra, adoption at Intuitive and the actual financial outcome of Meta’s case.",
+        "ro": "Plățile și acțiunile aferente achizițiilor Ondas, datoria Vistra, adopția Intuitive și rezultatul financiar efectiv al cazului Meta."
+      },
+      "source_ids": [
+        "E01S1",
+        "E05S1",
+        "E12S1",
+        "E14S1",
+        "E02S1"
+      ]
+    }
+  },
+  "market_pulse": {
+    "source_ids": [
+      "FRED-DGS10",
+      "FRED-DCOILBRENTEU",
+      "FRED-DEXUSEU"
+    ],
+    "paragraphs": [
+      {
+        "en": "A Treasury bond is a loan to the US government. Its yield is the annualised return implied by its current price and promised payments if held to maturity, before tax and inflation. It is different from the Fed’s short-term policy rate. Selling before maturity can produce a gain or loss, and a dollar return can change when converted into lei.",
+        "ro": "O obligațiune de Trezorerie este un împrumut acordat guvernului SUA. Randamentul ei este rentabilitatea anualizată implicată de prețul curent și plățile promise dacă este păstrată până la scadență, înainte de taxe și inflație. Diferă de dobânda de politică monetară pe termen scurt a Fed. Vânzarea înainte de scadență poate aduce câștig sau pierdere, iar randamentul în dolari se poate modifica la conversia în lei."
+      },
+      {
+        "en": "Why it matters for stocks: a higher return from a relatively safer dollar investment raises the bar for taking company risk. Investors may only buy a risky share at a lower price, so the possible reward is more attractive. Higher borrowing costs can also leave a company with less cash. A yield above 5% is not a magic danger line or a prediction that shares must fall.",
+        "ro": "De ce contează pentru acțiuni: un randament mai mare al unei investiții în dolari relativ mai sigure ridică ștacheta pentru asumarea riscului unei companii. Investitorii pot accepta să cumpere o acțiune riscantă doar la un preț mai mic, pentru ca recompensa posibilă să fie mai atractivă. Împrumuturile mai scumpe pot lăsa și compania cu mai puțin numerar. Un randament peste 5% nu este un prag magic de pericol sau o predicție că acțiunile trebuie să scadă."
+      },
+      {
+        "en": "Brent is an oil-price benchmark that helps us follow energy costs, not a direct measure of electricity-company profits. Dollars per euro shows how much one euro buys in dollars; a rising number means a stronger euro against the dollar. Each row has its own observation date, so the older exchange-rate value should not be read as a current quote.",
+        "ro": "Brent este un reper al prețului petrolului care ne ajută să urmărim costurile energiei, nu o măsură directă a profiturilor producătorilor de electricitate. Dolari pentru un euro arată câți dolari cumpără un euro; o valoare în creștere înseamnă un euro mai puternic față de dolar. Fiecare rând are propria dată a observației, deci cursul valutar mai vechi nu trebuie citit ca o cotație actuală."
+      }
+    ]
+  }
+}

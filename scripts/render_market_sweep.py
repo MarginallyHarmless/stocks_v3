@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate and render manually authored market landscapes from frozen run inputs."""
 import argparse
+import copy
 import hashlib
 import json
 import math
@@ -63,12 +64,43 @@ def validate(data, manifest):
             days.append(obs['date'])
         assert days==sorted(set(days))
     assert data['question_outcomes_resolved']==0
+    if data.get('news_reading_standard')=='beginner-news-1':
+        for item in data['events']+data['themes']:
+            for key in ('context','meaning','watch'):
+                assert set(item[key])=={'en','ro'} and all(item[key].values()), 'Missing beginner explanation'
+        pulse=data['market_pulse_guide']
+        assert pulse['paragraphs'] and set(pulse['source_ids'])<=source_ids
+        assert all(set(p)=={'en','ro'} and all(p.values()) for p in pulse['paragraphs'])
     return data
 
 
-def render(data, manifest):
+def validate_guide(guide, data):
+    assert guide['schema_version']=='market-reading-guide-1'
+    assert guide['editorial_only'] is True
+    assert guide['run_id']==data['run_id'] and guide['cutoff']==data['cutoff']
+    def bilingual(value):
+        assert set(value)=={'en','ro'} and all(isinstance(v,str) and v.strip() for v in value.values())
+    bilingual(guide['revision_note'])
+    for category, source_key in [('events','source_ids'),('themes','sources')]:
+        originals={item['id']:item for item in data[category]}
+        assert set(guide[category])==set(originals), 'Every selected story needs a beginner explanation'
+        for identity, item in guide[category].items():
+            assert set(item)=={'context','meaning','watch','source_ids'}
+            assert set(item['source_ids'])==set(originals[identity][source_key]), 'Editorial revision cannot add source evidence'
+            for key in ('context','meaning','watch'):bilingual(item[key])
+    pulse=guide['market_pulse']
+    assert set(pulse['source_ids'])<=set(s['id'] for s in data['sources'])
+    assert pulse['paragraphs']
+    for p in pulse['paragraphs']:bilingual(p)
+    return guide
+
+
+def render(data, manifest, guide=None, successor=None):
     validate(data,manifest)
-    payload=json.dumps(data,ensure_ascii=False,allow_nan=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
+    presentation=copy.deepcopy(data)
+    if guide:presentation['reading_guide']=validate_guide(guide,data)
+    if successor:presentation['newer_version']=successor
+    payload=json.dumps(presentation,ensure_ascii=False,allow_nan=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
     html=(ROOT/'assets/market-sweep.html').read_text()
     return html.replace('/*FONTS*/',fonts_css()).replace('/*CSS*/',(ROOT/'assets/market-sweep.css').read_text()).replace('/*JS*/',(ROOT/'assets/market-sweep.js').read_text()).replace('"__DATA__"',payload)
 
@@ -94,8 +126,22 @@ def main():
             assert data['manifest_path']==entry['manifest_path']
             assert hashlib.sha256(manifest_path.read_bytes()).hexdigest()==entry['manifest_sha256'], 'Manifest differs from saved registry hash'
             assert data['run_id']==entry['run_id'] and data['cutoff']==entry['cutoff']
+        revisions=entry.get('presentation_revisions',[]) if entry else []
+        if revisions:
+            assert revisions[-1]['html_path']==entry['html_path']
+            out=ROOT/entry['original_html_path']
         out.parent.mkdir(parents=True,exist_ok=True)
-        out.write_text(render(data,manifest))
+        successor=Path(entry['html_path']).name if revisions else None
+        out.write_text(render(data,manifest,successor=successor))
+        for revision in revisions:
+            guide_path=repository_file(ROOT,revision['guide_path'])
+            assert hashlib.sha256(guide_path.read_bytes()).hexdigest()==revision['guide_sha256']
+            guide=json.loads(guide_path.read_text())
+            assert guide['revision_id']==revision['revision_id']
+            assert guide['base_data_sha256']==hashlib.sha256(path.read_bytes()).hexdigest()
+            revision_out=ROOT/revision['html_path']
+            revision_out.parent.mkdir(parents=True,exist_ok=True)
+            revision_out.write_text(render(data,manifest,guide=guide))
         print(f'Validated and rendered {data["run_id"]}: {len(data["companies"])} companies')
 
 
