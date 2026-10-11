@@ -1,0 +1,1352 @@
+{
+  "SIE": {
+    "kind": "visual_research_supplement",
+    "schema_version": "1.0",
+    "ticker": "SIE",
+    "identity": "LEI:W38RGI023J3WT1HWRP32|ISIN:DE0007236101",
+    "retrieved_at": "2026-10-11",
+    "currency": "EUR",
+    "sources": {
+      "q3": {
+        "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:bdf8b45d-34dc-4911-ad72-5aa2a03d1d40/HQCOPR202608037433EN.pdf",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens Q3 FY2026 earnings release and financial statements",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision.",
+        "numeric_rows": [
+          {
+            "metric": "revenue",
+            "period": "Q3 2025",
+            "value": 19377,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "revenue",
+            "period": "Q3 2026",
+            "value": 20794,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "net_income",
+            "period": "Q3 2025",
+            "value": 2046,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "net_income",
+            "period": "Q3 2026",
+            "value": 2270,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cfo",
+            "period": "Q3 2025",
+            "value": 3556,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cfo",
+            "period": "Q3 2026",
+            "value": 4791,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "fcf",
+            "period": "Q4 2024",
+            "value": 5041.0,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "fcf",
+            "period": "Q1 2025",
+            "value": 1607.0,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "fcf",
+            "period": "Q2 2025",
+            "value": 1128.0,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "fcf",
+            "period": "Q3 2025",
+            "value": 3002.0,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "fcf",
+            "period": "Q4 2025",
+            "value": 5266.0,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "fcf",
+            "period": "Q1 2026",
+            "value": 682.0,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "fcf",
+            "period": "Q2 2026",
+            "value": 1728.0,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "fcf",
+            "period": "Q3 2026",
+            "value": 4155.0,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "sga",
+            "period": "Q3 2025",
+            "value": 3571,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "sga",
+            "period": "Q3 2026",
+            "value": 3760,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "rnd",
+            "period": "Q3 2025",
+            "value": 1650,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "rnd",
+            "period": "Q3 2026",
+            "value": 1703,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cash",
+            "period": "Q3 2026",
+            "value": 10930,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "debt",
+            "period": "Q3 2026",
+            "value": 49924,
+            "scale": 1000000.0
+          }
+        ]
+      },
+      "annual": {
+        "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:428ea18a-e7ab-4f93-a160-33908f1c3540/Siemens-Annual-Report-2025.pdf",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens Report 2025: consolidated statements, notes and compensation",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision.",
+        "numeric_rows": [
+          {
+            "metric": "cash",
+            "period": "Q4 2025",
+            "value": 14495,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "debt",
+            "period": "Q4 2025",
+            "value": 56015,
+            "scale": 1000000.0
+          }
+        ]
+      },
+      "q2": {
+        "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:6e946435-a71f-4654-a2bc-52340bc20104/2026-q2-earnings-release-en.pdf",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens Q2 FY2026 financial statements",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision.",
+        "numeric_rows": [
+          {
+            "metric": "revenue",
+            "period": "Q2 2025",
+            "value": 19757,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "revenue",
+            "period": "Q2 2026",
+            "value": 19756,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "net_income",
+            "period": "Q2 2025",
+            "value": 2250,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "net_income",
+            "period": "Q2 2026",
+            "value": 2027,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cfo",
+            "period": "Q2 2025",
+            "value": 1679,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cfo",
+            "period": "Q2 2026",
+            "value": 2253,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "sga",
+            "period": "Q2 2025",
+            "value": 3659,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "sga",
+            "period": "Q2 2026",
+            "value": 3563,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "rnd",
+            "period": "Q2 2025",
+            "value": 1621,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "rnd",
+            "period": "Q2 2026",
+            "value": 1654,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cash",
+            "period": "Q2 2026",
+            "value": 8664,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "debt",
+            "period": "Q2 2026",
+            "value": 54161,
+            "scale": 1000000.0
+          }
+        ]
+      },
+      "q1": {
+        "url": "https://assets.ctfassets.net/17si5cpawjzf/1liUz1NDLySSAIx9eMEu9D/26247a6526b6e3e9e2a4cf3e3549363e/2026-q1-earnings-release-en.pdf",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens Q1 FY2026 financial statements",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision.",
+        "numeric_rows": [
+          {
+            "metric": "revenue",
+            "period": "Q1 2025",
+            "value": 18353,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "revenue",
+            "period": "Q1 2026",
+            "value": 19139,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "net_income",
+            "period": "Q1 2025",
+            "value": 3705,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "net_income",
+            "period": "Q1 2026",
+            "value": 2030,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cfo",
+            "period": "Q1 2025",
+            "value": 2111,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cfo",
+            "period": "Q1 2026",
+            "value": 1176,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "sga",
+            "period": "Q1 2025",
+            "value": 3500,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "sga",
+            "period": "Q1 2026",
+            "value": 3608,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "rnd",
+            "period": "Q1 2025",
+            "value": 1545,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "rnd",
+            "period": "Q1 2026",
+            "value": 1637,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cash",
+            "period": "Q1 2026",
+            "value": 15263,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "debt",
+            "period": "Q1 2026",
+            "value": 56465,
+            "scale": 1000000.0
+          }
+        ]
+      },
+      "q4": {
+        "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:7fdd21fb-c248-43a3-b475-f2e618fbae88/2025-q4-earnings-release-en.pdf",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens Q4 FY2025 financial statements",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision.",
+        "numeric_rows": [
+          {
+            "metric": "revenue",
+            "period": "Q4 2024",
+            "value": 20811,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "revenue",
+            "period": "Q4 2025",
+            "value": 21427,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "net_income",
+            "period": "Q4 2024",
+            "value": 1900,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "net_income",
+            "period": "Q4 2025",
+            "value": 1619,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cfo",
+            "period": "Q4 2024",
+            "value": 5719,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "cfo",
+            "period": "Q4 2025",
+            "value": 6102,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "sga",
+            "period": "Q4 2024",
+            "value": 3671,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "sga",
+            "period": "Q4 2025",
+            "value": 4097,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "rnd",
+            "period": "Q4 2024",
+            "value": 1651,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "rnd",
+            "period": "Q4 2025",
+            "value": 1744,
+            "scale": 1000000.0
+          }
+        ]
+      },
+      "h1": {
+        "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:fd41cb37-28dc-4fa9-940f-6fe1a3fc3f8e/2026-q2-HY-report-en.pdf",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens Half-year Financial Report FY2026",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "release": {
+        "url": "https://press.siemens.com/global/en/pressrelease/record-third-quarter-outlook-raised",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens record third quarter and raised outlook",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "presentation": {
+        "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:78aef8c6-1161-4c11-a4d8-b77fd1a0f311/Q3-FY2026-Presentation.pdf",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens Q3 FY2026 investor presentation",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "calendar": {
+        "url": "https://www.siemens.com/en-us/company/investor-relations/financial-calendar/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens official financial calendar",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "results": {
+        "url": "https://www.siemens.com/en-us/company/investor-relations/financial-results/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens financial results index: Q3 FY2026 latest, Q4 unpublished",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "spin": {
+        "url": "https://press.siemens.com/global/en/pressrelease/siemens-clarifies-timeline-spin-siemens-healthineers-shares",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens clarifies Healthineers spin-off timeline",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "identity": {
+        "url": "https://www.tradingview.com/news/eqs:d95579c7c094b:0-siemens-aktiengesellschaft-release-of-a-capital-market-information/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Siemens EQS capital-market announcement: legal identity and ISIN",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "quote": {
+        "url": "https://stockanalysis.com/quote/etr/SIE/history/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Stock Analysis / S&P Global: Siemens Xetra price history",
+        "extraction_note": "October 9 2026 close EUR272.10; cross-checked against Xetra historical data on Investing.com. Provider header says CET; local exchange timestamp normalized to UTC+02 in October."
+      },
+      "quote-check": {
+        "url": "https://www.investing.com/equities/siemens-historical-data?cid=23201",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Investing.com: Siemens Xetra historical close cross-check",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "stats": {
+        "url": "https://stockanalysis.com/quote/etr/SIE/statistics/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Stock Analysis: Siemens statistics",
+        "extraction_note": "Closing quote EUR 272.10, 200-day average EUR 258.26; shares 767.99m; published market cap EUR208.97bn. Provider EPS/PE discrepancy discussed in research."
+      },
+      "overview": {
+        "url": "https://stockanalysis.com/quote/etr/SIE/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Stock Analysis: Siemens overview and 52-week range",
+        "extraction_note": "52-week high/low: EUR 291.70 / 198.00. Dates not supplied."
+      },
+      "ratios": {
+        "url": "https://stockanalysis.com/quote/etr/SIE/financials/ratios/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Stock Analysis / S&P Global: annual period-end multiples",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision.",
+        "numeric_rows": [
+          {
+            "metric": "pe",
+            "period": "FY 2021",
+            "value": 18.39,
+            "scale": 1
+          },
+          {
+            "metric": "pe",
+            "period": "FY 2022",
+            "value": 21.46,
+            "scale": 1
+          },
+          {
+            "metric": "pe",
+            "period": "FY 2023",
+            "value": 13.51,
+            "scale": 1
+          },
+          {
+            "metric": "pe",
+            "period": "FY 2024",
+            "value": 17.02,
+            "scale": 1
+          },
+          {
+            "metric": "pe",
+            "period": "FY 2025",
+            "value": 18.47,
+            "scale": 1
+          },
+          {
+            "metric": "ps",
+            "period": "FY 2021",
+            "value": 1.82,
+            "scale": 1
+          },
+          {
+            "metric": "ps",
+            "period": "FY 2022",
+            "value": 1.11,
+            "scale": 1
+          },
+          {
+            "metric": "ps",
+            "period": "FY 2023",
+            "value": 1.43,
+            "scale": 1
+          },
+          {
+            "metric": "ps",
+            "period": "FY 2024",
+            "value": 1.86,
+            "scale": 1
+          },
+          {
+            "metric": "ps",
+            "period": "FY 2025",
+            "value": 2.25,
+            "scale": 1
+          }
+        ]
+      },
+      "forecast": {
+        "url": "https://stockanalysis.com/quote/etr/SIE/forecast/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Stock Analysis / S&P Global: analyst estimates and recommendation distribution",
+        "extraction_note": "24 price target contributors; 12-month targets EUR 235 / 304.96 / 309 / 345; ratings October 2026: 13 / 3 / 6 / 2 / 0. Latest listed change October 9; aggregate update timestamp not separately supplied."
+      },
+      "provider-income": {
+        "url": "https://stockanalysis.com/quote/etr/SIE/financials/income-statement/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Stock Analysis / S&P Global: standardized annual income statements",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision.",
+        "numeric_rows": [
+          {
+            "metric": "diluted_shares",
+            "period": "FY 2021",
+            "value": 811,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "diluted_shares",
+            "period": "FY 2022",
+            "value": 810,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "diluted_shares",
+            "period": "FY 2023",
+            "value": 801,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "diluted_shares",
+            "period": "FY 2024",
+            "value": 799,
+            "scale": 1000000.0
+          },
+          {
+            "metric": "diluted_shares",
+            "period": "FY 2025",
+            "value": 794,
+            "scale": 1000000.0
+          }
+        ]
+      },
+      "abb": {
+        "url": "https://view.news.eu.nasdaq.com/view?id=b939e5acb8c8ce40e66a72ba0cc33f9e7&lang=en&src=listed",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "ABB Q2 2026 issuer announcement distributed by Nasdaq",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "schneider": {
+        "url": "https://www.se.com/ww/en/about-us/investor-relations/financial-results/",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Schneider Electric: half-year results and management commentary",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      },
+      "rockwell": {
+        "url": "https://www.rockwellautomation.com/en-se/company/news/press-releases/Rockwell-Automation-Reports-Third-Quarter-2026-Results.html",
+        "status": "read",
+        "retrieved_at": "2026-10-11",
+        "provider": "Rockwell Automation Q3 FY2026 results",
+        "extraction_note": "Rows transcribed from the cited tables; row values below preserve the source precision."
+      }
+    },
+    "series": {
+      "revenue": {
+        "unit": "currency",
+        "currency": "EUR",
+        "scale": 1000000.0,
+        "basis": "IFRS",
+        "period_kind": "quarter",
+        "source_id": "q3",
+        "source_row": "revenue: issuer quarter columns from Q4 FY2025 and Q1/Q2/Q3 FY2026 releases; comparative quarters from those same tables.",
+        "points": [
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-09-30",
+            "value": 20811,
+            "state": "reported",
+            "evidence_ref": "rev-2024q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2024-12-31",
+            "value": 18353,
+            "state": "reported",
+            "evidence_ref": "rev-2025q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-03-31",
+            "value": 19757,
+            "state": "reported",
+            "evidence_ref": "rev-2025q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-06-30",
+            "value": 19377,
+            "state": "reported",
+            "evidence_ref": "rev-2025q3",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-09-30",
+            "value": 21427,
+            "state": "reported",
+            "evidence_ref": "rev-2025q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2025-12-31",
+            "value": 19139,
+            "state": "reported",
+            "evidence_ref": "rev-2026q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-03-31",
+            "value": 19756,
+            "state": "reported",
+            "evidence_ref": "rev-2026q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2026",
+            "period_ending": "2026-06-30",
+            "value": 20794,
+            "state": "reported",
+            "evidence_ref": "rev-2026q3",
+            "source_id": "q3"
+          }
+        ]
+      },
+      "net_income": {
+        "unit": "currency",
+        "currency": "EUR",
+        "scale": 1000000.0,
+        "basis": "IFRS",
+        "period_kind": "quarter",
+        "source_id": "q3",
+        "source_row": "net_income: issuer quarter columns from Q4 FY2025 and Q1/Q2/Q3 FY2026 releases; comparative quarters from those same tables.",
+        "points": [
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-09-30",
+            "value": 1900,
+            "state": "reported",
+            "evidence_ref": "common-2024q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2024-12-31",
+            "value": 3705,
+            "state": "reported",
+            "evidence_ref": "common-2025q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-03-31",
+            "value": 2250,
+            "state": "reported",
+            "evidence_ref": "common-2025q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-06-30",
+            "value": 2046,
+            "state": "reported",
+            "evidence_ref": "common-2025q3",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-09-30",
+            "value": 1619,
+            "state": "reported",
+            "evidence_ref": "common-2025q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2025-12-31",
+            "value": 2030,
+            "state": "reported",
+            "evidence_ref": "common-2026q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-03-31",
+            "value": 2027,
+            "state": "reported",
+            "evidence_ref": "common-2026q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2026",
+            "period_ending": "2026-06-30",
+            "value": 2270,
+            "state": "reported",
+            "evidence_ref": "common-2026q3",
+            "source_id": "q3"
+          }
+        ],
+        "note": {
+          "en": "Profit attributable to Siemens shareholders, including discontinued operations. Q1 FY2025 includes a disposal gain; it is not a comparable recurring-profit run rate.",
+          "ro": "Profit atribuibil acționarilor Siemens, inclusiv activități întrerupte. T1 AF2025 include un câștig din vânzare; nu reprezintă profit recurent comparabil."
+        }
+      },
+      "cfo": {
+        "unit": "currency",
+        "currency": "EUR",
+        "scale": 1000000.0,
+        "basis": "IFRS",
+        "period_kind": "quarter",
+        "source_id": "q3",
+        "source_row": "cfo: issuer quarter columns from Q4 FY2025 and Q1/Q2/Q3 FY2026 releases; comparative quarters from those same tables.",
+        "points": [
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-09-30",
+            "value": 5719,
+            "state": "reported",
+            "evidence_ref": "cfo-2024q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2024-12-31",
+            "value": 2111,
+            "state": "reported",
+            "evidence_ref": "cfo-2025q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-03-31",
+            "value": 1679,
+            "state": "reported",
+            "evidence_ref": "cfo-2025q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-06-30",
+            "value": 3556,
+            "state": "reported",
+            "evidence_ref": "cfo-2025q3",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-09-30",
+            "value": 6102,
+            "state": "reported",
+            "evidence_ref": "cfo-2025q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2025-12-31",
+            "value": 1176,
+            "state": "reported",
+            "evidence_ref": "cfo-2026q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-03-31",
+            "value": 2253,
+            "state": "reported",
+            "evidence_ref": "cfo-2026q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2026",
+            "period_ending": "2026-06-30",
+            "value": 4791,
+            "state": "reported",
+            "evidence_ref": "cfo-2026q3",
+            "source_id": "q3"
+          }
+        ]
+      },
+      "fcf": {
+        "unit": "currency",
+        "currency": "EUR",
+        "scale": 1000000.0,
+        "basis": "IFRS",
+        "period_kind": "quarter",
+        "source_id": "q3",
+        "source_row": "fcf: issuer quarter columns from Q4 FY2025 and Q1/Q2/Q3 FY2026 releases; comparative quarters from those same tables.",
+        "points": [
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-09-30",
+            "value": 5041.0,
+            "state": "calculated",
+            "evidence_ref": "fcf-2024q4",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2024-12-31",
+            "value": 1607.0,
+            "state": "calculated",
+            "evidence_ref": "fcf-2025q1",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-03-31",
+            "value": 1128.0,
+            "state": "calculated",
+            "evidence_ref": "fcf-2025q2",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-06-30",
+            "value": 3002.0,
+            "state": "calculated",
+            "evidence_ref": "fcf-2025q3",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-09-30",
+            "value": 5266.0,
+            "state": "calculated",
+            "evidence_ref": "fcf-2025q4",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2025-12-31",
+            "value": 682.0,
+            "state": "calculated",
+            "evidence_ref": "fcf-2026q1",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-03-31",
+            "value": 1728.0,
+            "state": "calculated",
+            "evidence_ref": "fcf-2026q2",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q3 2026",
+            "period_ending": "2026-06-30",
+            "value": 4155.0,
+            "state": "calculated",
+            "evidence_ref": "fcf-2026q3",
+            "source_id": "q3"
+          }
+        ],
+        "note": {
+          "en": "Calculated from issuer continuing CFO minus cash additions to intangibles and PPE. Q3 FY2026: €4,791m − €636m = €4,155m; group all-in reported FCF is €4,148m. Financing interest, lease principal and acquisitions are not deducted here.",
+          "ro": "Calculat din CFO continuu al emitentului minus investiții în active necorporale și corporale. T3 AF2026: 4.791 − 636 = 4.155 mil. EUR; FCF total raportat este 4.148 mil. EUR. Dobânda, principalul leasingului și achizițiile nu sunt scăzute aici."
+        }
+      },
+      "sga": {
+        "unit": "currency",
+        "currency": "EUR",
+        "scale": 1000000.0,
+        "basis": "IFRS",
+        "period_kind": "quarter",
+        "source_id": "q3",
+        "source_row": "sga: issuer quarter columns from Q4 FY2025 and Q1/Q2/Q3 FY2026 releases; comparative quarters from those same tables.",
+        "points": [
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-09-30",
+            "value": 3671,
+            "state": "reported",
+            "evidence_ref": "sga-2024q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2024-12-31",
+            "value": 3500,
+            "state": "reported",
+            "evidence_ref": "sga-2025q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-03-31",
+            "value": 3659,
+            "state": "reported",
+            "evidence_ref": "sga-2025q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-06-30",
+            "value": 3571,
+            "state": "reported",
+            "evidence_ref": "sga-2025q3",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-09-30",
+            "value": 4097,
+            "state": "reported",
+            "evidence_ref": "sga-2025q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2025-12-31",
+            "value": 3608,
+            "state": "reported",
+            "evidence_ref": "sga-2026q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-03-31",
+            "value": 3563,
+            "state": "reported",
+            "evidence_ref": "sga-2026q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2026",
+            "period_ending": "2026-06-30",
+            "value": 3760,
+            "state": "reported",
+            "evidence_ref": "sga-2026q3",
+            "source_id": "q3"
+          }
+        ]
+      },
+      "rnd": {
+        "unit": "currency",
+        "currency": "EUR",
+        "scale": 1000000.0,
+        "basis": "IFRS",
+        "period_kind": "quarter",
+        "source_id": "q3",
+        "source_row": "rnd: issuer quarter columns from Q4 FY2025 and Q1/Q2/Q3 FY2026 releases; comparative quarters from those same tables.",
+        "points": [
+          {
+            "period": "Q4 2024",
+            "period_ending": "2024-09-30",
+            "value": 1651,
+            "state": "reported",
+            "evidence_ref": "rnd-2024q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2025",
+            "period_ending": "2024-12-31",
+            "value": 1545,
+            "state": "reported",
+            "evidence_ref": "rnd-2025q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2025",
+            "period_ending": "2025-03-31",
+            "value": 1621,
+            "state": "reported",
+            "evidence_ref": "rnd-2025q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2025",
+            "period_ending": "2025-06-30",
+            "value": 1650,
+            "state": "reported",
+            "evidence_ref": "rnd-2025q3",
+            "source_id": "q3"
+          },
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-09-30",
+            "value": 1744,
+            "state": "reported",
+            "evidence_ref": "rnd-2025q4",
+            "source_id": "q4"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2025-12-31",
+            "value": 1637,
+            "state": "reported",
+            "evidence_ref": "rnd-2026q1",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-03-31",
+            "value": 1654,
+            "state": "reported",
+            "evidence_ref": "rnd-2026q2",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2026",
+            "period_ending": "2026-06-30",
+            "value": 1703,
+            "state": "reported",
+            "evidence_ref": "rnd-2026q3",
+            "source_id": "q3"
+          }
+        ]
+      },
+      "diluted_shares": {
+        "unit": "shares",
+        "currency": null,
+        "scale": 1000000.0,
+        "basis": "Provider-standardized",
+        "period_kind": "annual",
+        "source_id": "provider-income",
+        "source_row": "FY2021–FY2025 diluted_shares: 811, 810, 801, 799, 794",
+        "points": [
+          {
+            "period": "FY 2021",
+            "period_ending": "2021-09-30",
+            "value": 811,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2022",
+            "period_ending": "2022-09-30",
+            "value": 810,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2023",
+            "period_ending": "2023-09-30",
+            "value": 801,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2024",
+            "period_ending": "2024-09-30",
+            "value": 799,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2025",
+            "period_ending": "2025-09-30",
+            "value": 794,
+            "state": "reported"
+          }
+        ],
+        "note": {
+          "en": "Annual diluted weighted averages, rounded by the provider to millions. Latest issuer exact figures: 793.781m (FY2025), 798.915m (FY2024), consistent with rounded points. A quarterly diluted-share history was not obtained.",
+          "ro": "Medii ponderate diluate anuale, rotunjite de furnizor la milioane. Cifre exacte ale emitentului: 793,781 mil. (AF2025), 798,915 mil. (AF2024), compatibile cu punctele rotunjite. Istoricul trimestrial nu a fost obținut."
+        }
+      },
+      "pe": {
+        "unit": "ratio",
+        "currency": null,
+        "scale": 1,
+        "basis": "Provider-standardized",
+        "period_kind": "annual",
+        "source_id": "ratios",
+        "source_row": "FY2021–FY2025 pe: 18.39, 21.46, 13.51, 17.02, 18.47",
+        "points": [
+          {
+            "period": "FY 2021",
+            "period_ending": "2021-09-30",
+            "value": 18.39,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2022",
+            "period_ending": "2022-09-30",
+            "value": 21.46,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2023",
+            "period_ending": "2023-09-30",
+            "value": 13.51,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2024",
+            "period_ending": "2024-09-30",
+            "value": 17.02,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2025",
+            "period_ending": "2025-09-30",
+            "value": 18.47,
+            "state": "reported"
+          }
+        ],
+        "note": {
+          "en": "Five provider annual period-end observations, not a 20-quarter history or five-year average. Earnings include nonrecurring items and provider restatements. Current P/E is independently recalculated in the analysis.",
+          "ro": "Cinci observații anuale la sfârșit de perioadă, nu istoric de 20 de trimestre sau medie pe cinci ani. Profitul include elemente nerecurente și retratări. P/E actual este recalculat separat în analiză."
+        }
+      },
+      "ps": {
+        "unit": "ratio",
+        "currency": null,
+        "scale": 1,
+        "basis": "Provider-standardized",
+        "period_kind": "annual",
+        "source_id": "ratios",
+        "source_row": "FY2021–FY2025 ps: 1.82, 1.11, 1.43, 1.86, 2.25",
+        "points": [
+          {
+            "period": "FY 2021",
+            "period_ending": "2021-09-30",
+            "value": 1.82,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2022",
+            "period_ending": "2022-09-30",
+            "value": 1.11,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2023",
+            "period_ending": "2023-09-30",
+            "value": 1.43,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2024",
+            "period_ending": "2024-09-30",
+            "value": 1.86,
+            "state": "reported"
+          },
+          {
+            "period": "FY 2025",
+            "period_ending": "2025-09-30",
+            "value": 2.25,
+            "state": "reported"
+          }
+        ],
+        "note": {
+          "en": "Provider equity-value / trailing sales at fiscal year end, not enterprise-value / sales. Only five annual observations verified.",
+          "ro": "Valoarea acțiunilor / venituri pe 12 luni la final de an fiscal, conform furnizorului; nu valoarea întreprinderii / venituri. Doar cinci observații anuale verificate."
+        }
+      },
+      "cash": {
+        "unit": "currency",
+        "currency": "EUR",
+        "scale": 1000000.0,
+        "basis": "IFRS",
+        "period_kind": "quarter",
+        "source_id": "q3",
+        "source_row": "FY2025 year-end, Q1/Q2/Q3 FY2026 balance-sheet cash: 14495, 15263, 8664, 10930",
+        "points": [
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-09-30",
+            "value": 14495,
+            "state": "reported",
+            "source_id": "annual"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2025-12-31",
+            "value": 15263,
+            "state": "reported",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-03-31",
+            "value": 8664,
+            "state": "reported",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2026",
+            "period_ending": "2026-06-30",
+            "value": 10930,
+            "state": "reported",
+            "source_id": "q3"
+          }
+        ]
+      },
+      "debt": {
+        "unit": "currency",
+        "currency": "EUR",
+        "scale": 1000000.0,
+        "basis": "IFRS",
+        "period_kind": "quarter",
+        "source_id": "q3",
+        "source_row": "FY2025 year-end, Q1/Q2/Q3 FY2026 balance-sheet debt: 56015, 56465, 54161, 49924",
+        "points": [
+          {
+            "period": "Q4 2025",
+            "period_ending": "2025-09-30",
+            "value": 56015,
+            "state": "reported",
+            "source_id": "annual"
+          },
+          {
+            "period": "Q1 2026",
+            "period_ending": "2025-12-31",
+            "value": 56465,
+            "state": "reported",
+            "source_id": "q1"
+          },
+          {
+            "period": "Q2 2026",
+            "period_ending": "2026-03-31",
+            "value": 54161,
+            "state": "reported",
+            "source_id": "q2"
+          },
+          {
+            "period": "Q3 2026",
+            "period_ending": "2026-06-30",
+            "value": 49924,
+            "state": "reported",
+            "source_id": "q3"
+          }
+        ],
+        "note": {
+          "en": "Issuer short-term plus long-term debt, including leases and Financial Services funding. This differs from industrial net debt (€9.342bn at June 30). Short-term investments were not verified separately; absence is not zero.",
+          "ro": "Datoria emitentului pe termen scurt plus lung, inclusiv leasingul și finanțarea Financial Services. Diferă de datoria industrială netă (9,342 mld. EUR la 30 iunie). Investițiile pe termen scurt nu sunt verificate separat; absența nu înseamnă zero."
+        }
+      }
+    },
+    "market": {
+      "overview_quote": {
+        "price": 272.1,
+        "observed_at": "2026-10-09T17:39:00+02:00",
+        "session": "regular_close",
+        "source_id": "quote"
+      },
+      "stats_quote": {
+        "price": 272.1,
+        "observed_at": "2026-10-09T17:39:00+02:00",
+        "session": "regular_close",
+        "source_id": "stats"
+      },
+      "forecast_quote": {
+        "price": 272.1,
+        "observed_at": "2026-10-09T17:39:00+02:00",
+        "session": "regular_close",
+        "source_id": "forecast"
+      },
+      "range": {
+        "low": 198,
+        "high": 291.7,
+        "low_date": null,
+        "high_date": null,
+        "method": "Provider published 52-week range, not a daily-close reconstruction; extrema dates not supplied.",
+        "source_id": "overview"
+      },
+      "ma200": {
+        "value": 258.26,
+        "method": "Provider 200-day moving average from the same closing-date snapshot.",
+        "source_id": "stats"
+      }
+    },
+    "consensus": {
+      "targets": {
+        "low": 235,
+        "mean": 304.96,
+        "median": 309,
+        "high": 345,
+        "horizon_months": 12,
+        "source_id": "forecast"
+      },
+      "target_analyst_count": 24,
+      "label": "Buy",
+      "ratings": {
+        "counts": {
+          "Strong Buy": 13,
+          "Buy": 3,
+          "Hold": 6,
+          "Sell": 2,
+          "Strong Sell": 0
+        },
+        "total": 24,
+        "period": "October 2026",
+        "source_id": "forecast",
+        "score": 1.875,
+        "score_scale": "1 Strong Buy – 5 Strong Sell"
+      }
+    },
+    "basis_note": {
+      "en": "Issuer IFRS financial flows, continuing operations except shareholder net profit. Annual provider histories are labeled separately. All amounts are EUR unless stated. Each row preserves its own fiscal period.",
+      "ro": "Fluxuri financiare IFRS ale emitentului, activități continue, exceptând profitul acționarilor. Seriile anuale ale furnizorului sunt marcate separat. Sumele sunt în EUR dacă nu se precizează altfel. Fiecare rând păstrează perioada fiscală."
+    },
+    "caveats": [
+      {
+        "en": "Eight quarterly observations were verified for operating flows; the preferred sixteen were not obtained. Annual shares and multiples are explicit fallbacks. A changing group perimeter, including the planned Healthineers distribution, limits comparisons.",
+        "ro": "Au fost verificate opt trimestre pentru fluxurile operaționale; nu au fost obținute cele șaisprezece preferate. Seriile anuale pentru acțiuni și multipli sunt alternative explicite. Perimetrul schimbător, inclusiv distribuirea planificată Healthineers, limitează comparațiile."
+      }
+    ]
+  }
+}

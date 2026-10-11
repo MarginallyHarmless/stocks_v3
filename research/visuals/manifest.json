@@ -102,5 +102,9 @@
   "AMZN-2026-09-27-v3": {
     "path": "research/visuals/AMZN-2026-09-27.json",
     "key": "AMZN"
+  },
+  "SIE-2026-10-11-v3": {
+    "path": "research/visuals/SIE-2026-10-11.json",
+    "key": "SIE"
   }
 }

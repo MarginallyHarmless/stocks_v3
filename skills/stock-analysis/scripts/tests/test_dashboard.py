@@ -17,6 +17,19 @@ def series(points, scale=1):
 
 
 class Charts(unittest.TestCase):
+    def test_euro_financial_series_and_interactive_values(self):
+        d=fixture();d['currency']='EUR';d['series']={'revenue':series([('Q1 2025',100),('Q2 2025',110)],1e6)}
+        d['series']['revenue']['currency']='EUR'
+        validate_dashboard(d)
+        en=financial_card(d,'Revenue',['revenue'],'en',('a','b'))
+        ro=financial_card(d,'Venituri',['revenue'],'ro',('a','b'))
+        self.assertIn('€110M',en);self.assertIn('110 mil. EUR',ro)
+        self.assertIn('quarters · EUR',en)
+        self.assertNotIn('$',en);self.assertNotIn('USD',ro)
+        self.assertIn('\\u20ac110M',en)
+        d['series']['revenue']['currency']='eu'
+        with self.assertRaises(ValueError):validate_dashboard(d)
+
     def test_period_focus_contract_preserves_missing_points(self):
         d=fixture();d['series']={'cfo':series([('Q1 2025',10),('Q3 2025',30)]),'fcf':series([('Q1 2025',5),('Q3 2025',20)])}
         for style in ('bar','line'):
@@ -77,6 +90,13 @@ class Charts(unittest.TestCase):
 
 
 class DataDrivenText(unittest.TestCase):
+    def test_euro_price_and_target_render_without_dollar_default(self):
+        d=self.market();d['currency']='EUR'
+        self.assertIn('€50',price_card(d,'en'))
+        self.assertIn('55 EUR',consensus_card(d,'ro'))
+        self.assertNotIn('$',consensus_card(d,'en'))
+        self.assertIn('$50',price_card(self.market(),'en'))
+
     def market(self):
         d=fixture()
         d['market']={'overview_quote':{'price':50,'observed_at':'2026-09-23','session':'after_hours','source_id':'s'},
