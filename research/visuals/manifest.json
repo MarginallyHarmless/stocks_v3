@@ -106,5 +106,9 @@
   "SIE-2026-10-11-v3": {
     "path": "research/visuals/SIE-2026-10-11.json",
     "key": "SIE"
+  },
+  "MSFT-2026-10-15-v3": {
+    "path": "research/visuals/MSFT-2026-10-15.json",
+    "key": "MSFT"
   }
 }
