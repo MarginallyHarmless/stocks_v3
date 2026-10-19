@@ -110,5 +110,9 @@
   "MSFT-2026-10-15-v3": {
     "path": "research/visuals/MSFT-2026-10-15.json",
     "key": "MSFT"
+  },
+  "ORCL-2026-10-19-v3": {
+    "path": "research/visuals/ORCL-2026-10-19.json",
+    "key": "ORCL"
   }
 }

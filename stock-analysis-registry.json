@@ -1330,6 +1330,75 @@
       ],
       "archive_path": "archives/stock-analysis-cik0000789019-nasdaq-msft-common-archive.json",
       "archive_filename": "stock-analysis-cik0000789019-nasdaq-msft-common-archive.json"
+    },
+    "CIK:0001341439|NYSE:ORCL:COMMON": {
+      "earnings_events": [
+        {
+          "id": "orcl-q227-results",
+          "kind": "results",
+          "period": "Q2 FY2027",
+          "confidence": "Estimated",
+          "date": "2026-12-09",
+          "checked_at": "2026-10-19",
+          "source_id": "stats",
+          "timezone": "America/New_York",
+          "basis": {
+            "en": "Stock Analysis estimates December 9; WSJ shows December 14. Oracle’s accessible calendar does not confirm either. Use December 9 as an estimated checking date; no exact time asserted.",
+            "ro": "Stock Analysis estimează 9 decembrie; WSJ afișează 14 decembrie. Calendarul accesibil Oracle nu confirmă niciuna. Folosim 9 decembrie ca reper estimat; fără oră exactă."
+          },
+          "source_url": "https://stockanalysis.com/stocks/orcl/statistics/",
+          "source_title": "Stock Analysis current statistics and estimated earnings date",
+          "baseline_report_id": "ORCL-2026-10-19-v3",
+          "reviewed_report_id": null
+        }
+      ],
+      "latest_report_id": "ORCL-2026-10-19-v3",
+      "latest_cutoff": "2026-10-19T17:00:00+00:00",
+      "watch_count": 7,
+      "card": {
+        "report_id": "ORCL-2026-10-19-v3",
+        "summary": {
+          "en": "Fast AI growth at a moderate earnings multiple; financing is the key risk.",
+          "ro": "Creștere AI rapidă la multiplu moderat; finanțarea este riscul-cheie."
+        },
+        "business": {
+          "en": "Databases, enterprise applications and AI cloud infrastructure.",
+          "ro": "Baze de date, aplicații și infrastructură cloud AI."
+        },
+        "risk": {
+          "en": "Cash after investment, customer advances, dilution and lease commitments.",
+          "ro": "Numerarul după investiții, avansurile, diluția și leasingul."
+        },
+        "logo_url": "https://www.oracle.com/asset/web/favicons/favicon-32.png",
+        "logo_source_url": "https://www.oracle.com/"
+      },
+      "company": {
+        "issuer_id": "CIK:0001341439",
+        "security_id": "NYSE:ORCL:COMMON",
+        "name": "Oracle Corporation",
+        "ticker": "ORCL",
+        "exchange": "NYSE",
+        "share_class": "Common stock",
+        "reporting_currency": "USD",
+        "trading_currency": "USD",
+        "fiscal_year_end": "May 31"
+      },
+      "ticker_aliases": [
+        "ORCL"
+      ],
+      "archive_sha256": "93a1583c2ce7350c4eb9dedab42c0fe063eebf2c039b116e640149a668fd24de",
+      "reports": [
+        {
+          "report_id": "ORCL-2026-10-19-v3",
+          "cutoff": "2026-10-19T17:00:00+00:00",
+          "parent_report_id": null,
+          "watch_count": 7,
+          "html_path": "reports/ORCL-stock-analysis-v3-2026-10-19.html",
+          "html_filename": "ORCL-stock-analysis-v3-2026-10-19.html"
+        }
+      ],
+      "archive_path": "archives/stock-analysis-cik0001341439-nyse-orcl-common-archive.json",
+      "archive_filename": "stock-analysis-cik0001341439-nyse-orcl-common-archive.json"
     }
   },
   "storage": {
