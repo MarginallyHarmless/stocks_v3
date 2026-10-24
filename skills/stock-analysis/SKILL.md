@@ -1,6 +1,6 @@
 ---
 name: stock-analysis
-description: Research public companies in beginner-friendly English or Romanian reports, compare fundamentals, review earnings against saved watchlists, and maintain a shared company index with earnings countdowns and a logo calendar. Use for company research, earnings follow-ups and the studied-company index, not quote-only lookups or trade execution.
+description: Research public companies in beginner-friendly English or Romanian reports, compare fundamentals, review earnings, and maintain the studied-company index. Assess investor risk profiles, diagnose actual holdings, suggest explained portfolio allocations and research additions that address diversification gaps. Use for company research, investor profiling, portfolio sizing, contribution planning and earnings follow-ups, not quote-only lookups or trade execution.
 ---
 
 # Stock Analysis
@@ -18,8 +18,17 @@ Produce a clear answer backed by inspectable evidence, then preserve what should
 | Translate or improve layout | Editorial | Preserve original cutoff, facts, source dates and expectations. Do not imply a financial refresh. |
 | Make a saved report explain more | Depth revision | Follow [depth-revisions.md](references/depth-revisions.md): new explanations and lessons from the existing evidence only; same cutoff and conclusions. |
 | Browse studied companies / earnings calendar | Index | Shared company cards, earnings countdowns, review states and a calendar with company logos. |
+| Assess my investor risk profile | Profile | Staged interview, separate capacity/tolerance/goal assessment, constraints and missing information. |
+| Review holdings / allocate my portfolio / invest new money | Portfolio | Dated holdings diagnosis, explained targets/ranges, stress comparisons and contribution plan. |
+| Find companies that improve my portfolio | Portfolio discovery | Gap-driven candidates; complete company research before assigning funded targets. |
 
 Resolve legal issuer, exchange, share class/ADR ratio, durable security identifier, trading/reporting currencies and fiscal year-end. A ticker is an alias, not identity. Ask only if ambiguity affects the security, baseline or requested scope. Prefer a regulator issuer identifier plus ISIN, or a verified exchange/share-class identity where no ISIN is available. Never invent an official identifier.
+
+## Investor profile and portfolio allocation
+
+For Profile, Portfolio and Portfolio discovery, read [portfolio-workflow.md](references/portfolio-workflow.md) and [portfolio-data.md](references/portfolio-data.md). Start the interview with up to three unanswered questions; reuse explicit current answers. Distinguish actual holdings from researched companies. Never infer ownership, risk capacity or tolerance from the registry or beginner status. Use `scripts/portfolio.py` for validated weight, exposure, target and hypothetical scenario arithmetic; it does not choose targets or certify suitability. Ground targets in the investor's constraints and fresh company evidence. Make gaps and infeasible requests visible rather than inventing inputs.
+
+Keep personal profiles, holdings and allocations separate from public company research. The GitHub persistence instructions below apply to company research and reusable methodology; do not put personal portfolio data in public repositories, Pages assets, company archives or the installed skill. Save personal artifacts privately using Library when requested or when producing a file. Preserve snapshot identity and record profile/report versions. Use conversation-only intake until a durable personal artifact is needed.
 
 ## Research
 
