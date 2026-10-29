@@ -17312,6 +17312,2694 @@
           "ro": "Revizie de aprofundare: adaugă explicații pe înțelesul tuturor și lecții despre concepte, care interpretează cifre deja prezente în raport, plus patru rapoarte și rate de creștere calculate din cifrele salvate. Nu există surse sau cifre raportate noi; data-limită, concluziile și criteriile de verificare sunt neschimbate."
         }
       }
+    },
+    "GOOG-2026-10-29-v3-q3-review": {
+      "sha256": "f3008f4589e6303c739215b6a8a9b7b1e613f19ffdea0e4ad3c5f61ed52845df",
+      "research": {
+        "schema_version": "3.0",
+        "profile": "strict",
+        "report_id": "GOOG-2026-10-29-v3-q3-review",
+        "parent_report_id": "GOOG-2026-09-18-v3-r2",
+        "mode": "update",
+        "synthetic": false,
+        "company": {
+          "issuer_id": "CIK:0001652044",
+          "security_id": "NASDAQ:GOOG:CLASS-C",
+          "name": "Alphabet Inc.",
+          "ticker": "GOOG",
+          "exchange": "NASDAQ",
+          "share_class": "Class C capital stock — non-voting",
+          "reporting_currency": "USD",
+          "trading_currency": "USD",
+          "fiscal_year_end": "December 31"
+        },
+        "cutoff": "2026-10-29T20:15:00+02:00",
+        "prepared_at": "2026-10-29T20:15:00+02:00",
+        "freshness_checked_at": "2026-10-29T20:15:00+02:00",
+        "languages": [
+          "en",
+          "ro"
+        ],
+        "default_language": "en",
+        "presentation": "guided",
+        "sources": [
+          {
+            "id": "q3-release",
+            "title": "Alphabet Q3 2026 earnings release, Exhibit 99.1",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+            "authority": "issuer",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "published_at": "2026-10-28T20:01:33Z"
+          },
+          {
+            "id": "q3-10q",
+            "title": "Alphabet Form 10-Q, quarter ended September 30, 2026",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm",
+            "authority": "regulator",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "published_at": "2026-10-29T00:29:06Z"
+          },
+          {
+            "id": "q3-filing-index",
+            "title": "SEC filing index 0001652044-26-000084",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/0001652044-26-000084-index.htm",
+            "authority": "regulator",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "published_at": "2026-10-29T00:29:06Z"
+          },
+          {
+            "id": "q3-call",
+            "title": "Alphabet Q3 2026 call transcript — Motley Fool, reproduced by Webull",
+            "url": "https://www.webull.hk/en/news/15829951194399744",
+            "authority": "secondary",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "publication_note": "Call held October 28, 2026 at 16:30 America/New_York; transcript page dated October 29. Displayed publication timezone not stated. Relevant prepared remarks and Q&A read; original audio not independently transcribed. Page takeaway incorrectly calls $2.12 non-GAAP; filing governs."
+          },
+          {
+            "id": "ceo",
+            "title": "Alphabet Q3 2026 CEO remarks",
+            "url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/",
+            "authority": "issuer",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "publication_note": "Published October 28, 2026; time not supplied."
+          },
+          {
+            "id": "adtech-order",
+            "title": "US v. Google, E.D. Va., Dkt. 1858, remedies memorandum opinion",
+            "url": "https://www.courthousenews.com/wp-content/uploads/2026/09/google-judge-memo.pdf",
+            "authority": "regulator",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "publication_note": "Filed September 2, 2026; publicly unsealed September 16. Court-authored document hosted by Courthouse News. Introduction and concluding remedies rulings read."
+          },
+          {
+            "id": "search-order",
+            "title": "US v. Google, D.D.C., Dkt. 1462, Final Judgment",
+            "url": "https://www.justice.gov/atr/media/1421546/dl?inline=",
+            "authority": "regulator",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "publication_note": "Filed December 5, 2025. Relevant data-sharing and syndication provisions read."
+          },
+          {
+            "id": "search-october",
+            "title": "Plaintiffs' supplemental recommendation on Search syndication terms, Dkt. 1561",
+            "url": "https://www.justice.gov/atr/media/1466831/dl?inline=",
+            "authority": "regulator",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "publication_note": "Filed October 13, 2026. Filing cover and explanation of redacted proposed terms read; this is a proposal, not a new final court order."
+          },
+          {
+            "id": "doj-adtech",
+            "title": "DOJ summary of ad-tech remedies",
+            "url": "https://www.justice.gov/opa/pr/department-justice-again-wins-substantial-relief-against-google",
+            "authority": "regulator",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "publication_note": "September 16, 2026; party's summary cross-checked against court opinion."
+          },
+          {
+            "id": "schedule",
+            "title": "Alphabet investor events calendar",
+            "url": "https://abc.xyz/investor/events/default.aspx",
+            "authority": "issuer",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "publication_note": "Live page checked October 29, 2026. Dynamic event list did not expose a verifiable Q4 release date."
+          },
+          {
+            "id": "quote",
+            "title": "Stock Analysis GOOG Class C quote",
+            "url": "https://stockanalysis.com/stocks/goog/",
+            "authority": "market",
+            "status": "read",
+            "retrieved_at": "2026-10-29T20:15:00+02:00",
+            "publication_note": "Page quote explicitly observed October 29, 2026, 14:03 EDT; intraday, not the final close."
+          },
+          {
+            "id": "release-index",
+            "title": "SEC 8-K filing index and acceptance timestamp",
+            "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/0001652044-26-000080-index.htm",
+            "authority": "regulator",
+            "status": "read",
+            "published_at": "2026-10-28T20:01:33Z",
+            "retrieved_at": "2026-10-29T20:15:00+02:00"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "search",
+            "kind": "fact",
+            "label": {
+              "en": "Search revenue",
+              "ro": "Venituri Search"
+            },
+            "definition": "Search & other revenue",
+            "value": 63350,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Q3 2026 supplemental financial tables",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "search-year-ago",
+            "kind": "fact",
+            "label": {
+              "en": "Search revenue, prior year",
+              "ro": "Venituri Search, anul anterior"
+            },
+            "definition": "Search & other revenue",
+            "value": 56567,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2025-07-01",
+              "end": "2025-09-30",
+              "label": "Q3 2025",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Supplemental revenue table",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "search-growth",
+            "kind": "calculation",
+            "label": {
+              "en": "Search revenue growth",
+              "ro": "Creșterea veniturilor Search"
+            },
+            "definition": "Year-over-year growth in Google Search & other revenue",
+            "operation": "growth",
+            "inputs": [
+              "search",
+              "search-year-ago"
+            ],
+            "value": 11.99109021160747,
+            "unit": "percent",
+            "scale": 1,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            }
+          },
+          {
+            "id": "cloud",
+            "kind": "fact",
+            "label": {
+              "en": "Cloud revenue",
+              "ro": "Venituri Cloud"
+            },
+            "definition": "Google Cloud revenue",
+            "value": 30709,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Q3 2026 supplemental financial tables",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "cloud-year-ago",
+            "kind": "fact",
+            "label": {
+              "en": "Cloud revenue, prior year",
+              "ro": "Venituri Cloud, anul anterior"
+            },
+            "definition": "Google Cloud revenue",
+            "value": 15157,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2025-07-01",
+              "end": "2025-09-30",
+              "label": "Q3 2025",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Segment revenues",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "cloud-profit",
+            "kind": "fact",
+            "label": {
+              "en": "Cloud operating profit",
+              "ro": "Profit operațional Cloud"
+            },
+            "definition": "Google Cloud operating income",
+            "value": 11121,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Q3 2026 supplemental financial tables",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "cloud-growth",
+            "kind": "calculation",
+            "label": {
+              "en": "Cloud revenue growth",
+              "ro": "Creșterea veniturilor Cloud"
+            },
+            "definition": "Year-over-year growth in Google Cloud revenue",
+            "operation": "growth",
+            "inputs": [
+              "cloud",
+              "cloud-year-ago"
+            ],
+            "value": 102.60605660750808,
+            "unit": "percent",
+            "scale": 1,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            }
+          },
+          {
+            "id": "cloud-margin",
+            "kind": "calculation",
+            "label": {
+              "en": "Cloud operating margin",
+              "ro": "Marjă operațională Cloud"
+            },
+            "definition": "Google Cloud operating income divided by segment revenue",
+            "operation": "percent_ratio",
+            "inputs": [
+              "cloud-profit",
+              "cloud"
+            ],
+            "value": 36.21413917743983,
+            "unit": "percent",
+            "scale": 1,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            }
+          },
+          {
+            "id": "revenue",
+            "kind": "fact",
+            "label": {
+              "en": "Alphabet revenue",
+              "ro": "Venituri Alphabet"
+            },
+            "definition": "Consolidated revenue",
+            "value": 127577,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Q3 2026 supplemental financial tables",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "revenue-year-ago",
+            "kind": "fact",
+            "label": {
+              "en": "Alphabet revenue, prior year",
+              "ro": "Venituri Alphabet, anul anterior"
+            },
+            "definition": "Consolidated revenue",
+            "value": 102346,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2025-07-01",
+              "end": "2025-09-30",
+              "label": "Q3 2025",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Consolidated income statement",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "revenue-growth",
+            "kind": "calculation",
+            "label": {
+              "en": "Revenue growth",
+              "ro": "Creșterea veniturilor"
+            },
+            "definition": "Consolidated revenue growth year over year",
+            "operation": "growth",
+            "inputs": [
+              "revenue",
+              "revenue-year-ago"
+            ],
+            "value": 24.652648857796102,
+            "unit": "percent",
+            "scale": 1,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            }
+          },
+          {
+            "id": "operating-profit",
+            "kind": "fact",
+            "label": {
+              "en": "Operating profit",
+              "ro": "Profit operațional"
+            },
+            "definition": "Consolidated operating income",
+            "value": 40576,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Q3 2026 supplemental financial tables",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "operating-profit-year-ago",
+            "kind": "fact",
+            "label": {
+              "en": "Operating profit, prior year",
+              "ro": "Profit operațional, anul anterior"
+            },
+            "definition": "Consolidated operating income",
+            "value": 31228,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2025-07-01",
+              "end": "2025-09-30",
+              "label": "Q3 2025",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Consolidated income statement",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "operating-growth",
+            "kind": "calculation",
+            "label": {
+              "en": "Operating profit growth",
+              "ro": "Creșterea profitului operațional"
+            },
+            "definition": "Consolidated operating income growth year over year",
+            "operation": "growth",
+            "inputs": [
+              "operating-profit",
+              "operating-profit-year-ago"
+            ],
+            "value": 29.934674010503404,
+            "unit": "percent",
+            "scale": 1,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            }
+          },
+          {
+            "id": "cfo",
+            "kind": "fact",
+            "label": {
+              "en": "Cash from operations",
+              "ro": "Numerar din exploatare"
+            },
+            "definition": "Operating cash flow",
+            "value": 42290,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Cash-flow statement, Q3 column",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "capex",
+            "kind": "fact",
+            "label": {
+              "en": "Cash property and equipment purchases",
+              "ro": "Plăți pentru imobilizări"
+            },
+            "definition": "Cash purchases of property and equipment",
+            "value": 51355,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Cash-flow statement, Q3 column",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "fcf",
+            "kind": "calculation",
+            "label": {
+              "en": "Cash left after equipment investment",
+              "ro": "Numerar rămas după investiții"
+            },
+            "definition": "Operating cash flow less cash purchases of property and equipment; non-GAAP derived from GAAP inputs",
+            "operation": "difference",
+            "inputs": [
+              "cfo",
+              "capex"
+            ],
+            "value": -9065.0,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "q2-cfo",
+            "kind": "fact",
+            "label": {
+              "en": "Q2 cash from operations",
+              "ro": "Numerar operațional T2"
+            },
+            "definition": "Operating cash flow",
+            "value": 39069,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-04-01",
+              "end": "2026-06-30",
+              "label": "Q2 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "FCF reconciliation, Q2 2026",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "q2-capex",
+            "kind": "fact",
+            "label": {
+              "en": "Q2 cash property and equipment purchases",
+              "ro": "Plăți pentru imobilizări T2"
+            },
+            "definition": "Cash purchases of property and equipment",
+            "value": 44924,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-04-01",
+              "end": "2026-06-30",
+              "label": "Q2 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "FCF reconciliation, Q2 2026",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "q2-fcf",
+            "kind": "calculation",
+            "label": {
+              "en": "Q2 free cash flow",
+              "ro": "Flux de numerar liber T2"
+            },
+            "definition": "Operating cash flow less cash purchases of property and equipment; non-GAAP derived from GAAP inputs",
+            "operation": "difference",
+            "inputs": [
+              "q2-cfo",
+              "q2-capex"
+            ],
+            "value": -5855.0,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-04-01",
+              "end": "2026-06-30",
+              "label": "Q2 2026",
+              "forecast": false
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "q1-fcf",
+            "kind": "fact",
+            "label": {
+              "en": "Q1 free cash flow",
+              "ro": "Flux de numerar liber T1"
+            },
+            "definition": "Operating cash flow less cash purchases of property and equipment; non-GAAP derived from GAAP inputs",
+            "value": 10116,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-01-01",
+              "end": "2026-03-31",
+              "label": "Q1 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "FCF reconciliation, Q1 2026",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "q4-fcf",
+            "kind": "fact",
+            "label": {
+              "en": "Q4 free cash flow",
+              "ro": "Flux de numerar liber T4"
+            },
+            "definition": "Operating cash flow less cash purchases of property and equipment; non-GAAP derived from GAAP inputs",
+            "value": 24551,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2025-10-01",
+              "end": "2025-12-31",
+              "label": "Q4 2025",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "FCF reconciliation, Q4 2025",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "fine-paid",
+            "kind": "fact",
+            "label": {
+              "en": "Previously accrued EC fine and interest paid",
+              "ro": "Amendă CE și dobândă plătite, provizionate anterior"
+            },
+            "definition": "Cash payment of previously accrued 2018 EC fine and interest",
+            "value": 5200,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "MD&A Other Information; paid July 2026",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "fcf-ex-fine",
+            "kind": "calculation",
+            "label": {
+              "en": "Illustrative FCF excluding the fine payment",
+              "ro": "FCF ilustrativ fără plata amenzii"
+            },
+            "definition": "Counterfactual operating cash flow less cash property and equipment purchases, adding back only the disclosed fine payment; not the saved criterion",
+            "operation": "sum",
+            "inputs": [
+              "fcf",
+              "fine-paid"
+            ],
+            "value": -3865.0,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "shares",
+            "kind": "fact",
+            "label": {
+              "en": "Consolidated diluted average common shares",
+              "ro": "Media consolidată a acțiunilor ordinare diluate"
+            },
+            "definition": "Consolidated diluted weighted-average common shares",
+            "value": 12368,
+            "unit": "shares",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Income statement, Q3 diluted denominator",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            }
+          },
+          {
+            "id": "shares-year-ago",
+            "kind": "fact",
+            "label": {
+              "en": "Prior-year diluted average common shares",
+              "ro": "Media diluată, anul anterior"
+            },
+            "definition": "Consolidated diluted weighted-average common shares",
+            "value": 12203,
+            "unit": "shares",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2025-07-01",
+              "end": "2025-09-30",
+              "label": "Q3 2025",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Income statement, Q3 2025 diluted denominator",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            }
+          },
+          {
+            "id": "dilution",
+            "kind": "calculation",
+            "label": {
+              "en": "Diluted share-count growth",
+              "ro": "Creșterea numărului diluat de acțiuni"
+            },
+            "definition": "Year-over-year growth in consolidated diluted weighted-average common shares",
+            "operation": "growth",
+            "inputs": [
+              "shares",
+              "shares-year-ago"
+            ],
+            "value": 1.3521265262640414,
+            "unit": "percent",
+            "scale": 1,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            }
+          },
+          {
+            "id": "class-c-eps",
+            "kind": "fact",
+            "label": {
+              "en": "GOOG Class C diluted EPS, quarter",
+              "ro": "Profit diluat pe acțiunea GOOG clasa C, trimestru"
+            },
+            "definition": "Class C diluted net income per common share",
+            "value": 2.11,
+            "unit": "currency_per_share",
+            "scale": 1,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 12, Q3 2026 Class C diluted EPS row",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "consolidated-eps",
+            "kind": "fact",
+            "label": {
+              "en": "Consolidated diluted EPS, quarter",
+              "ro": "Profit diluat pe acțiune consolidat, trimestru"
+            },
+            "definition": "Consolidated diluted net income per common share",
+            "value": 2.12,
+            "unit": "currency_per_share",
+            "scale": 1,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Consolidated income statement",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "atm-proceeds",
+            "kind": "fact",
+            "label": {
+              "en": "Q3 common-equity proceeds",
+              "ro": "Încasări din emisiuni ordinare T3"
+            },
+            "definition": "Net proceeds from issuance of common stock",
+            "value": 12371,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Cash-flow statement, Q3 financing activities",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "atm-c",
+            "kind": "fact",
+            "label": {
+              "en": "New Class C shares sold via ATM",
+              "ro": "Acțiuni clasa C vândute prin ATM"
+            },
+            "definition": "Class C shares issued under the ATM program",
+            "value": 24,
+            "unit": "shares",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "At-the-Market Program",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            }
+          },
+          {
+            "id": "preferred",
+            "kind": "fact",
+            "label": {
+              "en": "Preferred conversion added no shares to Q3's diluted denominator under the if-converted test; future conversion exposure remains.",
+              "ro": "Conversia preferențialelor nu a adăugat acțiuni la numitorul diluat T3 conform testului contabil; riscul conversiei viitoare rămâne."
+            },
+            "definition": "Preferred conversion added no shares to Q3's diluted denominator under the if-converted test; future conversion exposure remains.",
+            "state": {
+              "en": "Preferred conversion added no shares to Q3's diluted denominator under the if-converted test; future conversion exposure remains.",
+              "ro": "Conversia preferențialelor nu a adăugat acțiuni la numitorul diluat T3 conform testului contabil; riscul conversiei viitoare rămâne."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 12, Q3 conversion-of-preferred row and footnote 2; Note 11",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "cash",
+            "kind": "fact",
+            "label": {
+              "en": "Cash and equivalents",
+              "ro": "Numerar și echivalente"
+            },
+            "definition": "Cash and cash equivalents",
+            "value": 56334,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Balance sheet",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "debt-securities",
+            "kind": "fact",
+            "label": {
+              "en": "Current marketable debt securities",
+              "ro": "Titluri de creanță negociabile curente"
+            },
+            "definition": "Current marketable debt securities",
+            "value": 118380,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 3, debt securities maturity table",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "liquid",
+            "kind": "calculation",
+            "label": {
+              "en": "Cash plus current marketable debt securities",
+              "ro": "Numerar plus titluri de creanță negociabile curente"
+            },
+            "definition": "Cash plus current marketable debt securities",
+            "operation": "sum",
+            "inputs": [
+              "cash",
+              "debt-securities"
+            ],
+            "value": 174714.0,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "long-debt",
+            "kind": "fact",
+            "label": {
+              "en": "Long-term debt",
+              "ro": "Datorie pe termen lung"
+            },
+            "definition": "Long-term debt, carrying amount",
+            "value": 125102,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 6, total long-term debt",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "current-debt",
+            "kind": "fact",
+            "label": {
+              "en": "Current portion of debt",
+              "ro": "Partea curentă a datoriei"
+            },
+            "definition": "Current portion of long-term debt",
+            "value": 1016,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 6, current portion; no commercial paper",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "debt",
+            "kind": "calculation",
+            "label": {
+              "en": "Interest-bearing debt, excluding leases",
+              "ro": "Datorii cu dobândă, fără leasing"
+            },
+            "definition": "Interest-bearing debt, excluding leases",
+            "operation": "sum",
+            "inputs": [
+              "long-debt",
+              "current-debt"
+            ],
+            "value": 126118.0,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "liquid-cushion",
+            "kind": "calculation",
+            "label": {
+              "en": "Cash and debt securities less debt",
+              "ro": "Numerar și titluri de creanță minus datorii"
+            },
+            "definition": "Cash plus current marketable debt securities less interest-bearing debt; excludes equities and leases",
+            "operation": "difference",
+            "inputs": [
+              "liquid",
+              "debt"
+            ],
+            "value": 48596.0,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "restricted-equity",
+            "kind": "fact",
+            "label": {
+              "en": "SpaceX shares with sale restrictions",
+              "ro": "Acțiuni SpaceX cu restricții de vânzare"
+            },
+            "definition": "SpaceX investment subject to short-term sale restrictions",
+            "value": 75200,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 3, marketable equity securities footnote",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "backlog",
+            "kind": "fact",
+            "label": {
+              "en": "Cloud contracted revenue not yet recognized",
+              "ro": "Venituri Cloud contractate, nerecunoscute"
+            },
+            "definition": "Google Cloud revenue backlog",
+            "value": 560800,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 2, Revenue Backlog",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "crux-backlog",
+            "kind": "fact",
+            "label": {
+              "en": "Related-party Crux AI backlog",
+              "ro": "Contracte cu partea afiliată Crux AI"
+            },
+            "definition": "Revenue backlog associated with Crux AI related-party commercial agreement",
+            "value": 16800,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 2, Revenue Backlog",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "leases-unstarted",
+            "kind": "fact",
+            "label": {
+              "en": "Future payments for leases not yet started",
+              "ro": "Plăți viitoare pentru leasinguri neîncepute"
+            },
+            "definition": "Undiscounted future payments for leases not yet commenced",
+            "value": 130500,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 4 and MD&A cash commitments",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "purchase-next-year",
+            "kind": "fact",
+            "label": {
+              "en": "Purchase commitments due within 12 months",
+              "ro": "Angajamente de cumpărare scadente în 12 luni"
+            },
+            "definition": "Material purchase commitments due within 12 months",
+            "value": 213400,
+            "unit": "currency",
+            "scale": 1000000,
+            "basis": "GAAP",
+            "period": {
+              "kind": "instant",
+              "end": "2026-09-30",
+              "label": "2026-09-30",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "MD&A Future Cash Commitments",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD"
+          },
+          {
+            "id": "backlog-terms",
+            "kind": "fact",
+            "label": {
+              "en": "The short-contract inclusion introduced in Q1 remains. Just over 55% of total backlog is expected within 24 months; actual Q2-cohort conversion and cancellations are not quantified.",
+              "ro": "Includerea contractelor scurte introdusă în T1 continuă. Puțin peste 55% din total este estimat în 24 luni; conversia efectivă a contractelor T2 și anulările nu sunt cuantificate."
+            },
+            "definition": "The short-contract inclusion introduced in Q1 remains. Just over 55% of total backlog is expected within 24 months; actual Q2-cohort conversion and cancellations are not quantified.",
+            "state": {
+              "en": "The short-contract inclusion introduced in Q1 remains. Just over 55% of total backlog is expected within 24 months; actual Q2-cohort conversion and cancellations are not quantified.",
+              "ro": "Includerea contractelor scurte introdusă în T1 continuă. Puțin peste 55% din total este estimat în 24 luni; conversia efectivă a contractelor T2 și anulările nu sunt cuantificate."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 2, Revenue Backlog; scope and recognition language",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "funding-sufficiency",
+            "kind": "fact",
+            "label": {
+              "en": "Management expects cash, securities, operations and financing to cover commitments for at least 12 months; this is not a dated sources-and-uses bridge.",
+              "ro": "Conducerea estimează că numerarul, titlurile, operațiunile și finanțarea acoperă angajamentele cel puțin 12 luni; nu este o reconciliere pe scadențe."
+            },
+            "definition": "Management expects cash, securities, operations and financing to cover commitments for at least 12 months; this is not a dated sources-and-uses bridge.",
+            "state": {
+              "en": "Management expects cash, securities, operations and financing to cover commitments for at least 12 months; this is not a dated sources-and-uses bridge.",
+              "ro": "Conducerea estimează că numerarul, titlurile, operațiunile și finanțarea acoperă angajamentele cel puțin 12 luni; nu este o reconciliere pe scadențe."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "MD&A Liquidity and Material Cash Requirements",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "capex-outlook",
+            "kind": "fact",
+            "label": {
+              "en": "Management retained $195–205bn 2026 cash investment guidance and expects a significant increase in 2027. The saved baseline had no verified guidance to compare.",
+              "ro": "Conducerea a menținut ghidajul investițiilor 2026 la 195–205 mld. USD și anticipează o creștere semnificativă în 2027. Baza salvată nu avea ghidaj verificat pentru comparație."
+            },
+            "definition": "Management retained $195–205bn 2026 cash investment guidance and expects a significant increase in 2027. The saved baseline had no verified guidance to compare.",
+            "state": {
+              "en": "Management retained $195–205bn 2026 cash investment guidance and expects a significant increase in 2027. The saved baseline had no verified guidance to compare.",
+              "ro": "Conducerea a menținut ghidajul investițiilor 2026 la 195–205 mld. USD și anticipează o creștere semnificativă în 2027. Baza salvată nu avea ghidaj verificat pentru comparație."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-call",
+            "extraction": {
+              "locator": "CFO outlook",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "cloud-mix",
+            "kind": "fact",
+            "label": {
+              "en": "TPU system sales contribute to Cloud; separate TPU revenue, margin and Wiz-adjusted organic growth were not quantified.",
+              "ro": "Vânzările de sisteme TPU contribuie la Cloud; veniturile și marja TPU, respectiv creșterea organică fără Wiz, nu au fost cuantificate."
+            },
+            "definition": "TPU system sales contribute to Cloud; separate TPU revenue, margin and Wiz-adjusted organic growth were not quantified.",
+            "state": {
+              "en": "TPU system sales contribute to Cloud; separate TPU revenue, margin and Wiz-adjusted organic growth were not quantified.",
+              "ro": "Vânzările de sisteme TPU contribuie la Cloud; veniturile și marja TPU, respectiv creșterea organică fără Wiz, nu au fost cuantificate."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-call",
+            "extraction": {
+              "locator": "CFO prepared remarks and product-financials Q&A; corroborated by filing Note 8",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "cloud-headwind",
+            "kind": "fact",
+            "label": {
+              "en": "Management expects third-party compute use to increase in Q4 and pressure Cloud margins.",
+              "ro": "Conducerea anticipează folosirea mai intensă a capacității terților în T4 și presiune asupra marjei Cloud."
+            },
+            "definition": "Management expects third-party compute use to increase in Q4 and pressure Cloud margins.",
+            "state": {
+              "en": "Management expects third-party compute use to increase in Q4 and pressure Cloud margins.",
+              "ro": "Conducerea anticipează folosirea mai intensă a capacității terților în T4 și presiune asupra marjei Cloud."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-call",
+            "extraction": {
+              "locator": "CFO Q4 outlook",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "search-monetization",
+            "kind": "fact",
+            "label": {
+              "en": "Management attributes Search deceleration to currency, advertising mix and lower AI Mode monetization; faster query growth alone does not prove stronger economics.",
+              "ro": "Conducerea atribuie încetinirea Search cursului valutar, mixului publicitar și monetizării mai slabe a AI Mode; creșterea căutărilor singură nu dovedește o economie mai bună."
+            },
+            "definition": "Management attributes Search deceleration to currency, advertising mix and lower AI Mode monetization; faster query growth alone does not prove stronger economics.",
+            "state": {
+              "en": "Management attributes Search deceleration to currency, advertising mix and lower AI Mode monetization; faster query growth alone does not prove stronger economics.",
+              "ro": "Conducerea atribuie încetinirea Search cursului valutar, mixului publicitar și monetizării mai slabe a AI Mode; creșterea căutărilor singură nu dovedește o economie mai bună."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-call",
+            "extraction": {
+              "locator": "Schindler answer to JPMorgan question",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "legal-order",
+            "kind": "fact",
+            "label": {
+              "en": "Ad-tech structural divestiture was rejected; interoperability, data access and bidding restrictions remain. Final terms and implementation still matter.",
+              "ro": "Divizarea structurală ad-tech a fost respinsă; rămân interoperabilitatea, accesul la date și restricțiile de licitare. Termenii finali și implementarea contează."
+            },
+            "definition": "Ad-tech structural divestiture was rejected; interoperability, data access and bidding restrictions remain. Final terms and implementation still matter.",
+            "state": {
+              "en": "Ad-tech structural divestiture was rejected; interoperability, data access and bidding restrictions remain. Final terms and implementation still matter.",
+              "ro": "Divizarea structurală ad-tech a fost respinsă; rămân interoperabilitatea, accesul la date și restricțiile de licitare. Termenii finali și implementarea contează."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "adtech-order",
+            "extraction": {
+              "locator": "Introduction pp. 2–3; conclusion pp. 105–106",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "search-remedies",
+            "kind": "fact",
+            "label": {
+              "en": "Search judgment requires competitor data access and syndication. October's filing proposes license terms; it does not establish manageable financial effects.",
+              "ro": "Hotărârea Search impune acces la date și sindicalizare pentru concurenți. Documentul din octombrie propune licențierea; nu stabilește efecte financiare gestionabile."
+            },
+            "definition": "Search judgment requires competitor data access and syndication. October's filing proposes license terms; it does not establish manageable financial effects.",
+            "state": {
+              "en": "Search judgment requires competitor data access and syndication. October's filing proposes license terms; it does not establish manageable financial effects.",
+              "ro": "Hotărârea Search impune acces la date și sindicalizare pentru concurenți. Documentul din octombrie propune licențierea; nu stabilește efecte financiare gestionabile."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "search-order",
+            "extraction": {
+              "locator": "Sections IV–V, data access and syndication",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "legal-quantification",
+            "kind": "fact",
+            "label": {
+              "en": "The filing does not quantify Search/ad-tech remedy revenue effects or implementation costs; appeals and final ad-tech judgment remain unresolved.",
+              "ro": "Raportul nu cuantifică efectele măsurilor Search/ad-tech asupra veniturilor ori costurile implementării; apelurile și hotărârea finală ad-tech rămân nerezolvate."
+            },
+            "definition": "The filing does not quantify Search/ad-tech remedy revenue effects or implementation costs; appeals and final ad-tech judgment remain unresolved.",
+            "state": {
+              "en": "The filing does not quantify Search/ad-tech remedy revenue effects or implementation costs; appeals and final ad-tech judgment remain unresolved.",
+              "ro": "Raportul nu cuantifică efectele măsurilor Search/ad-tech asupra veniturilor ori costurile implementării; apelurile și hotărârea finală ad-tech rămân nerezolvate."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-10q",
+            "extraction": {
+              "locator": "Note 10, Antitrust Investigations and Litigation",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "earnings-distortion",
+            "kind": "fact",
+            "label": {
+              "en": "Investment valuation changes materially affect reported earnings; a low headline trailing P/E is not a clean measure of recurring operating profit.",
+              "ro": "Reevaluările investițiilor afectează material profitul raportat; un P/E istoric mic nu măsoară clar profitul operațional recurent."
+            },
+            "definition": "Investment valuation changes materially affect reported earnings; a low headline trailing P/E is not a clean measure of recurring operating profit.",
+            "state": {
+              "en": "Investment valuation changes materially affect reported earnings; a low headline trailing P/E is not a clean measure of recurring operating profit.",
+              "ro": "Reevaluările investițiilor afectează material profitul raportat; un P/E istoric mic nu măsoară clar profitul operațional recurent."
+            },
+            "period": {
+              "kind": "duration",
+              "start": "2026-07-01",
+              "end": "2026-09-30",
+              "label": "Q3 2026",
+              "forecast": false
+            },
+            "source_id": "q3-release",
+            "extraction": {
+              "locator": "Other income (expense) table and footnote on equity investment losses",
+              "note": "Paraphrase of the stated disclosure; management forecasts remain management statements."
+            }
+          },
+          {
+            "id": "price",
+            "kind": "fact",
+            "label": {
+              "en": "GOOG price — intraday",
+              "ro": "Preț GOOG — în ședință"
+            },
+            "definition": "NASDAQ GOOG Class C share price",
+            "value": 280.23,
+            "unit": "currency_per_share",
+            "scale": 1,
+            "basis": "market",
+            "period": {
+              "kind": "instant",
+              "end": "2026-10-29",
+              "label": "2026-10-29",
+              "forecast": false
+            },
+            "source_id": "quote",
+            "extraction": {
+              "locator": "Overview quote: October 29, 2026, 2:03 PM EDT",
+              "note": "Transcribed the named row and matching period. Currency amounts in USD millions unless explicitly per share; cash purchases stored as positive outflows."
+            },
+            "currency": "USD",
+            "observed_at": "2026-10-29T14:03:00-04:00",
+            "session": "intraday"
+          }
+        ],
+        "sections": [
+          {
+            "id": "growth",
+            "question": {
+              "en": "Is demand holding up?",
+              "ro": "Se menține cererea?"
+            },
+            "nav_label": {
+              "en": "Is demand holding up?",
+              "ro": "Se menține cererea?"
+            },
+            "claims": [
+              {
+                "type": "interpretation",
+                "text": {
+                  "en": "Management flags weaker AI Mode monetization and future Cloud margin pressure.",
+                  "ro": "Conducerea semnalează monetizarea mai slabă AI Mode și presiune viitoare asupra marjei Cloud."
+                },
+                "evidence_refs": [
+                  "search-monetization",
+                  "cloud-headwind"
+                ]
+              }
+            ],
+            "metrics": [
+              "search-growth",
+              "cloud-growth",
+              "cloud-margin"
+            ],
+            "caveat": {
+              "en": "Cloud totals include hardware sales and acquired operations; organic growth remains unquantified.",
+              "ro": "Totalul Cloud include hardware și operațiuni achiziționate; creșterea organică rămâne necuantificată."
+            },
+            "guide": {
+              "claims": [
+                {
+                  "type": "interpretation",
+                  "text": {
+                    "en": "Search passed the resilience test and Cloud passed both growth and profitability tests. Revenue growth measures sales; operating margin measures the portion left after operating costs.",
+                    "ro": "Search a trecut testul rezilienței, iar Cloud a trecut testele de creștere și profitabilitate. Creșterea veniturilor măsoară vânzările; marja operațională măsoară partea rămasă după costurile operaționale."
+                  },
+                  "evidence_refs": [
+                    "search-growth",
+                    "cloud-growth",
+                    "cloud-margin"
+                  ]
+                }
+              ],
+              "metrics": [
+                {
+                  "evidence_ref": "search-growth",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Still above our double-digit floor.",
+                      "ro": "Încă peste pragul nostru de două cifre."
+                    },
+                    "evidence_refs": [
+                      "search-growth"
+                    ]
+                  }
+                },
+                {
+                  "evidence_ref": "cloud-growth",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Reported sales more than doubled.",
+                      "ro": "Vânzările raportate s-au mai mult decât dublat."
+                    },
+                    "evidence_refs": [
+                      "cloud-growth"
+                    ]
+                  }
+                },
+                {
+                  "evidence_ref": "cloud-margin",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Above the saved profitability floor.",
+                      "ro": "Peste pragul de profitabilitate salvat."
+                    },
+                    "evidence_refs": [
+                      "cloud-margin"
+                    ]
+                  }
+                }
+              ],
+              "why_it_matters": {
+                "type": "interpretation",
+                "text": {
+                  "en": "Passing these tests supports demand, but cannot establish the return on all infrastructure spending.",
+                  "ro": "Trecerea testelor susține cererea, dar nu stabilește randamentul tuturor investițiilor în infrastructură."
+                },
+                "evidence_refs": [
+                  "search-growth",
+                  "cloud-growth",
+                  "cloud-margin"
+                ]
+              }
+            }
+          },
+          {
+            "id": "cash",
+            "question": {
+              "en": "Do sales leave useful cash?",
+              "ro": "Rămâne numerar util din vânzări?"
+            },
+            "nav_label": {
+              "en": "Do sales leave useful cash?",
+              "ro": "Rămâne numerar util din vânzări?"
+            },
+            "claims": [
+              {
+                "type": "interpretation",
+                "text": {
+                  "en": "The fine and inventory build help explain the pressure. They do not establish when cash recovery will occur.",
+                  "ro": "Amenda și acumularea stocurilor explică parțial presiunea. Nu stabilesc când revine numerarul."
+                },
+                "evidence_refs": [
+                  "fine-paid",
+                  "fcf-ex-fine",
+                  "capex-outlook"
+                ]
+              }
+            ],
+            "metrics": [
+              "cfo",
+              "capex",
+              "fcf"
+            ],
+            "caveat": {
+              "en": "Adding back the fine payment alone still leaves a shortfall; this illustration does not replace the original rule.",
+              "ro": "Eliminarea doar a plății amenzii lasă tot un deficit; exemplul nu înlocuiește regula originală."
+            },
+            "guide": {
+              "claims": [
+                {
+                  "type": "interpretation",
+                  "text": {
+                    "en": "Free cash flow means operating cash minus cash equipment purchases here. It deteriorated from Q2 despite higher sales.",
+                    "ro": "Aici, fluxul de numerar liber este numerarul operațional minus plățile pentru imobilizări. S-a deteriorat față de T2 în ciuda vânzărilor mai mari."
+                  },
+                  "evidence_refs": [
+                    "fcf",
+                    "q2-fcf",
+                    "revenue-growth"
+                  ]
+                }
+              ],
+              "metrics": [
+                {
+                  "evidence_ref": "cfo",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Cash generated before equipment investment.",
+                      "ro": "Numerar generat înaintea investițiilor."
+                    },
+                    "evidence_refs": [
+                      "cfo"
+                    ]
+                  }
+                },
+                {
+                  "evidence_ref": "capex",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Investment exceeded operating cash.",
+                      "ro": "Investițiile au depășit numerarul operațional."
+                    },
+                    "evidence_refs": [
+                      "capex"
+                    ]
+                  }
+                },
+                {
+                  "evidence_ref": "fcf",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "The original zero-or-positive test failed.",
+                      "ro": "Testul original de zero sau pozitiv a fost ratat."
+                    },
+                    "evidence_refs": [
+                      "fcf"
+                    ]
+                  }
+                }
+              ],
+              "why_it_matters": {
+                "type": "interpretation",
+                "text": {
+                  "en": "Accounting profit cannot finance spending unless it turns into cash or external funding is raised.",
+                  "ro": "Profitul contabil nu finanțează cheltuieli fără transformare în numerar ori finanțare externă."
+                },
+                "evidence_refs": [
+                  "fcf",
+                  "q2-fcf",
+                  "revenue-growth"
+                ]
+              }
+            },
+            "series": {
+              "title": {
+                "en": "Cash after equipment investment, quarterly",
+                "ro": "Numerar după investiții, trimestrial"
+              },
+              "evidence_refs": [
+                "q4-fcf",
+                "q1-fcf",
+                "q2-fcf",
+                "fcf"
+              ]
+            }
+          },
+          {
+            "id": "funding",
+            "question": {
+              "en": "What still needs proof?",
+              "ro": "Ce necesită încă dovezi?"
+            },
+            "nav_label": {
+              "en": "What still needs proof?",
+              "ro": "Ce necesită încă dovezi?"
+            },
+            "claims": [
+              {
+                "type": "interpretation",
+                "text": {
+                  "en": "Court remedies retain competition and implementation risk even without an ad-tech breakup.",
+                  "ro": "Remediile judiciare păstrează riscurile concurenței și implementării chiar fără divizare ad-tech."
+                },
+                "evidence_refs": [
+                  "legal-order",
+                  "search-remedies",
+                  "legal-quantification"
+                ]
+              }
+            ],
+            "metrics": [
+              "backlog",
+              "liquid-cushion"
+            ],
+            "caveat": {
+              "en": "No disclosed funding gap is not proof of a fully reconciled funding plan. Remedy economics also remain unquantified.",
+              "ro": "Absența unui deficit publicat nu dovedește un plan de finanțare complet reconciliat. Economia remediilor rămâne necuantificată."
+            },
+            "guide": {
+              "claims": [
+                {
+                  "type": "interpretation",
+                  "text": {
+                    "en": "Contracts are future sales, not cash already collected. Liquidity also needs to be matched against debt, leases and spending dates.",
+                    "ro": "Contractele sunt vânzări viitoare, nu numerar deja încasat. Lichiditatea trebuie comparată cu datoriile, leasingul și scadențele."
+                  },
+                  "evidence_refs": [
+                    "backlog",
+                    "backlog-terms",
+                    "liquid",
+                    "debt",
+                    "leases-unstarted"
+                  ]
+                }
+              ],
+              "metrics": [
+                {
+                  "evidence_ref": "backlog",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Conversion of the old contract pool remains unquantified.",
+                      "ro": "Conversia portofoliului vechi de contracte rămâne necuantificată."
+                    },
+                    "evidence_refs": [
+                      "backlog"
+                    ]
+                  }
+                },
+                {
+                  "evidence_ref": "liquid-cushion",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Excludes equity investments and leases; not distributable cash.",
+                      "ro": "Exclude investițiile în acțiuni și leasingul; nu este numerar distribuibil."
+                    },
+                    "evidence_refs": [
+                      "liquid-cushion"
+                    ]
+                  }
+                }
+              ],
+              "why_it_matters": {
+                "type": "interpretation",
+                "text": {
+                  "en": "Access to finance helps, but ownership value depends on cash earned relative to capital committed.",
+                  "ro": "Accesul la finanțare ajută, dar valoarea depinde de numerarul câștigat față de capitalul angajat."
+                },
+                "evidence_refs": [
+                  "backlog",
+                  "backlog-terms",
+                  "liquid",
+                  "debt",
+                  "leases-unstarted"
+                ]
+              }
+            }
+          },
+          {
+            "id": "price",
+            "question": {
+              "en": "Is GOOG attractive at this price?",
+              "ro": "Este GOOG atractiv la acest preț?"
+            },
+            "nav_label": {
+              "en": "Is GOOG attractive at this price?",
+              "ro": "Este GOOG atractiv la acest preț?"
+            },
+            "claims": [
+              {
+                "type": "interpretation",
+                "text": {
+                  "en": "A lower quote is not enough to establish value. Use Class C earnings and separate operating profit from investment revaluations.",
+                  "ro": "O cotație mai mică nu stabilește valoarea. Folosește profitul clasei C și separă profitul operațional de reevaluarea investițiilor."
+                },
+                "evidence_refs": [
+                  "price",
+                  "class-c-eps",
+                  "earnings-distortion"
+                ]
+              }
+            ],
+            "metrics": [
+              "price",
+              "class-c-eps"
+            ],
+            "caveat": {
+              "en": "No refreshed fair-value range, annual Class C earnings multiple or buy/sell recommendation is supplied.",
+              "ro": "Nu furnizăm un interval nou de valoare justă, multiplu anual clasa C ori recomandare de cumpărare/vânzare."
+            },
+            "guide": {
+              "claims": [
+                {
+                  "type": "interpretation",
+                  "text": {
+                    "en": "A lower quote is not enough to establish value. Use Class C earnings and separate operating profit from investment revaluations.",
+                    "ro": "O cotație mai mică nu stabilește valoarea. Folosește profitul clasei C și separă profitul operațional de reevaluarea investițiilor."
+                  },
+                  "evidence_refs": [
+                    "price",
+                    "class-c-eps",
+                    "earnings-distortion"
+                  ]
+                }
+              ],
+              "metrics": [
+                {
+                  "evidence_ref": "price",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Intraday snapshot, not today's closing price.",
+                      "ro": "Fotografie din ședință, nu închiderea zilei."
+                    },
+                    "evidence_refs": [
+                      "price"
+                    ]
+                  }
+                },
+                {
+                  "evidence_ref": "class-c-eps",
+                  "meaning": {
+                    "type": "interpretation",
+                    "text": {
+                      "en": "Class C quarterly figure; consolidated EPS is different.",
+                      "ro": "Cifră trimestrială clasa C; profitul consolidat pe acțiune diferă."
+                    },
+                    "evidence_refs": [
+                      "class-c-eps"
+                    ]
+                  }
+                }
+              ],
+              "why_it_matters": {
+                "type": "interpretation",
+                "text": {
+                  "en": "The business can grow while the return to a shareholder remains uncertain.",
+                  "ro": "Afacerea poate crește, în timp ce randamentul acționarului rămâne incert."
+                },
+                "evidence_refs": [
+                  "price",
+                  "class-c-eps",
+                  "earnings-distortion"
+                ]
+              }
+            }
+          }
+        ],
+        "coverage": {
+          "growth": {
+            "status": "covered",
+            "reason": {
+              "en": "Original growth criteria assessed.",
+              "ro": "Criteriile originale de creștere evaluate."
+            },
+            "section_ids": [
+              "growth"
+            ]
+          },
+          "cash_flow": {
+            "status": "covered",
+            "reason": {
+              "en": "Original cash criterion assessed with matching cash lines.",
+              "ro": "Criteriul de numerar evaluat cu liniile comparabile."
+            },
+            "section_ids": [
+              "cash"
+            ]
+          },
+          "balance_sheet": {
+            "status": "partial",
+            "reason": {
+              "en": "Funding bridge incomplete in disclosures.",
+              "ro": "Reconcilierea finanțării lipsește din raportări."
+            },
+            "section_ids": [
+              "funding"
+            ]
+          },
+          "valuation": {
+            "status": "partial",
+            "reason": {
+              "en": "Quote and quarterly Class C earnings only; no new valuation model.",
+              "ro": "Doar cotația și profitul trimestrial clasa C; fără model nou."
+            },
+            "section_ids": [
+              "price"
+            ]
+          }
+        },
+        "watchlist": [
+          {
+            "id": "GOOG-search-growth",
+            "criterion_version": 2,
+            "question": {
+              "en": "Does Search keep double-digit growth?",
+              "ro": "Păstrează Search creștere de două cifre?"
+            },
+            "why": {
+              "en": "Search still funds much of the expansion.",
+              "ro": "Search finanțează încă o mare parte din extindere."
+            },
+            "baseline_refs": [
+              "search",
+              "search-growth",
+              "search-monetization"
+            ],
+            "due_period": "Q4 2026",
+            "criterion": {
+              "kind": "numeric",
+              "basis": "analytical_test",
+              "description": {
+                "en": "Q4 Search & other reported revenue growth year over year is at least 10%. Explain AI Mode monetization and currency separately; neither changes the threshold.",
+                "ro": "Creșterea anuală raportată Search și altele în T4 este de minimum 10%. Explică separat monetizarea AI Mode și cursul valutar; niciuna nu schimbă pragul."
+              },
+              "rationale": {
+                "en": "Retain the resilience floor despite Q4 headwinds; analytical test, not management guidance.",
+                "ro": "Păstrează pragul rezilienței în ciuda presiunilor T4; test analitic, nu ghidaj."
+              },
+              "operator": "gte",
+              "value": 10,
+              "unit": "percent",
+              "scale": 1,
+              "accounting_basis": "GAAP",
+              "definition": "Year-over-year growth in Google Search & other revenue"
+            },
+            "impact": {
+              "favorable": {
+                "en": "Supports this part of the thesis; still assess the other checks.",
+                "ro": "Susține această parte a tezei; evaluează și celelalte teste."
+              },
+              "adverse": {
+                "en": "Weakens this part of the thesis; identify whether the cause is temporary or persistent.",
+                "ro": "Slăbește această parte a tezei; identifică dacă motivul este temporar sau persistent."
+              },
+              "mixed": {
+                "en": "Separate favorable and adverse components without changing the criterion.",
+                "ro": "Separă componentele favorabile și nefavorabile fără a schimba criteriul."
+              },
+              "unresolved": {
+                "en": "Insufficient comparable disclosure; do not count as an operating miss.",
+                "ro": "Informație comparabilă insuficientă; nu considera eșec operațional."
+              }
+            }
+          },
+          {
+            "id": "GOOG-cloud-economics",
+            "criterion_version": 2,
+            "question": {
+              "en": "Is Cloud growth still profitable?",
+              "ro": "Rămâne profitabilă creșterea Cloud?"
+            },
+            "why": {
+              "en": "Revenue alone cannot establish the return on AI investment.",
+              "ro": "Veniturile singure nu dovedesc randamentul investițiilor AI."
+            },
+            "baseline_refs": [
+              "cloud",
+              "cloud-growth",
+              "cloud-margin",
+              "cloud-mix",
+              "cloud-headwind"
+            ],
+            "due_period": "Q4 2026",
+            "criterion": {
+              "kind": "qualitative",
+              "basis": "analytical_test",
+              "description": {
+                "en": "Q4 Cloud reported revenue grows at least 40% year over year and segment operating margin is at least 30%. Both pass = Met, one = Mixed, neither = Missed. Separately identify TPU/Wiz contributions and third-party capacity costs when disclosed.",
+                "ro": "Veniturile Cloud raportate T4 cresc minimum 40% anual și marja operațională este minimum 30%. Ambele praguri = Îndeplinit, unul = Mixt, niciunul = Neîndeplinit. Separă contribuțiile TPU/Wiz și costurile capacității terților când sunt publicate."
+              },
+              "rationale": {
+                "en": "Retain both operating gates so lower-margin capacity cannot be hidden by revenue growth.",
+                "ro": "Păstrează ambele praguri pentru ca marja capacității noi să nu fie ascunsă de creșterea vânzărilor."
+              }
+            },
+            "impact": {
+              "favorable": {
+                "en": "Supports this part of the thesis; still assess the other checks.",
+                "ro": "Susține această parte a tezei; evaluează și celelalte teste."
+              },
+              "adverse": {
+                "en": "Weakens this part of the thesis; identify whether the cause is temporary or persistent.",
+                "ro": "Slăbește această parte a tezei; identifică dacă motivul este temporar sau persistent."
+              },
+              "mixed": {
+                "en": "Separate favorable and adverse components without changing the criterion.",
+                "ro": "Separă componentele favorabile și nefavorabile fără a schimba criteriul."
+              },
+              "unresolved": {
+                "en": "Insufficient comparable disclosure; do not count as an operating miss.",
+                "ro": "Informație comparabilă insuficientă; nu considera eșec operațional."
+              }
+            }
+          },
+          {
+            "id": "GOOG-cash-recovery",
+            "criterion_version": 2,
+            "question": {
+              "en": "Does cash after equipment investment recover?",
+              "ro": "Revine numerarul după investiții?"
+            },
+            "why": {
+              "en": "Cash conversion is the largest unresolved operating issue.",
+              "ro": "Conversia în numerar este principala problemă operațională nerezolvată."
+            },
+            "baseline_refs": [
+              "fcf",
+              "cfo",
+              "capex"
+            ],
+            "due_period": "Q4 2026",
+            "criterion": {
+              "kind": "numeric",
+              "basis": "analytical_test",
+              "description": {
+                "en": "Q4 operating cash flow minus cash purchases of property and equipment is at least zero. Derive standalone Q4 from full-year less nine-month cash flows; do not test the full-year total or add back fines.",
+                "ro": "Numerarul operațional T4 minus plățile pentru imobilizări este cel puțin zero. Calculează T4 separat ca an întreg minus nouă luni; nu testa totalul anual și nu elimina amenzile."
+              },
+              "rationale": {
+                "en": "Retain the zero-cash recovery marker after two negative quarters; seasonality is explanation, not an adjustment.",
+                "ro": "Păstrează reperul zero după două trimestre negative; sezonalitatea explică, nu ajustează."
+              },
+              "operator": "gte",
+              "value": 0,
+              "unit": "currency",
+              "currency": "USD",
+              "scale": 1000000,
+              "accounting_basis": "GAAP",
+              "definition": "Operating cash flow less cash purchases of property and equipment; non-GAAP derived from GAAP inputs"
+            },
+            "impact": {
+              "favorable": {
+                "en": "Supports this part of the thesis; still assess the other checks.",
+                "ro": "Susține această parte a tezei; evaluează și celelalte teste."
+              },
+              "adverse": {
+                "en": "Weakens this part of the thesis; identify whether the cause is temporary or persistent.",
+                "ro": "Slăbește această parte a tezei; identifică dacă motivul este temporar sau persistent."
+              },
+              "mixed": {
+                "en": "Separate favorable and adverse components without changing the criterion.",
+                "ro": "Separă componentele favorabile și nefavorabile fără a schimba criteriul."
+              },
+              "unresolved": {
+                "en": "Insufficient comparable disclosure; do not count as an operating miss.",
+                "ro": "Informație comparabilă insuficientă; nu considera eșec operațional."
+              }
+            }
+          },
+          {
+            "id": "GOOG-dilution",
+            "criterion_version": 2,
+            "question": {
+              "en": "Is dilution contained?",
+              "ro": "Este diluția controlată?"
+            },
+            "why": {
+              "en": "Company growth must reach each ownership unit.",
+              "ro": "Creșterea trebuie să ajungă la fiecare unitate de proprietate."
+            },
+            "baseline_refs": [
+              "shares",
+              "dilution",
+              "atm-c",
+              "preferred"
+            ],
+            "due_period": "Q4 2026",
+            "criterion": {
+              "kind": "numeric",
+              "basis": "analytical_test",
+              "description": {
+                "en": "Q4 consolidated weighted-average diluted common shares grow no more than 2% year over year. Use the standalone quarterly denominator; report ATM sales and preferred conversion inclusions/exclusions separately.",
+                "ro": "Media ponderată consolidată a acțiunilor ordinare diluate T4 crește cu maximum 2% anual. Folosește numitorul trimestrial separat; prezintă distinct vânzările ATM și includerea/excluderea preferențialelor."
+              },
+              "rationale": {
+                "en": "Retain the dilution ceiling; distinguish future conversion from this quarter's accounting denominator.",
+                "ro": "Păstrează plafonul diluției; separă conversia viitoare de numitorul contabil curent."
+              },
+              "operator": "lte",
+              "value": 2,
+              "unit": "percent",
+              "scale": 1,
+              "accounting_basis": "GAAP",
+              "definition": "Year-over-year growth in consolidated diluted weighted-average common shares"
+            },
+            "impact": {
+              "favorable": {
+                "en": "Supports this part of the thesis; still assess the other checks.",
+                "ro": "Susține această parte a tezei; evaluează și celelalte teste."
+              },
+              "adverse": {
+                "en": "Weakens this part of the thesis; identify whether the cause is temporary or persistent.",
+                "ro": "Slăbește această parte a tezei; identifică dacă motivul este temporar sau persistent."
+              },
+              "mixed": {
+                "en": "Separate favorable and adverse components without changing the criterion.",
+                "ro": "Separă componentele favorabile și nefavorabile fără a schimba criteriul."
+              },
+              "unresolved": {
+                "en": "Insufficient comparable disclosure; do not count as an operating miss.",
+                "ro": "Informație comparabilă insuficientă; nu considera eșec operațional."
+              }
+            }
+          },
+          {
+            "id": "GOOG-backlog-quality",
+            "criterion_version": 2,
+            "question": {
+              "en": "Do contracts convert without a definition trick?",
+              "ro": "Se transformă contractele în venituri comparabile?"
+            },
+            "why": {
+              "en": "Backlog supports demand but can overstate near-term cash visibility.",
+              "ro": "Comenzile susțin cererea, dar pot exagera vizibilitatea numerarului pe termen scurt."
+            },
+            "baseline_refs": [
+              "backlog",
+              "backlog-terms",
+              "crux-backlog"
+            ],
+            "due_period": "Q4 2026",
+            "criterion": {
+              "kind": "qualitative",
+              "basis": "analytical_test",
+              "description": {
+                "en": "Reconcile Q3-to-Q4 Cloud backlog scope, quantify recognition from the opening backlog and cancellations/delivery slippage, and identify Crux AI exposure. Favorable requires comparable scope and quantified realization without material deterioration. A headline increase or forward timing estimate alone remains Not disclosed.",
+                "ro": "Reconciliază perimetrul contractelor Cloud T3–T4, cuantifică recunoașterea din soldul inițial și anulările/întârzierile, și identifică expunerea Crux AI. Favorabil cere perimetru comparabil și realizare cuantificată fără deteriorare materială. Creșterea totalului ori estimarea calendarului singure rămân Neraportate."
+              },
+              "rationale": {
+                "en": "The Q3 review left conversion unresolved and identified related-party demand; require realized evidence.",
+                "ro": "Analiza T3 a lăsat conversia nerezolvată și a identificat cerere afiliată; cere dovezi efective."
+              }
+            },
+            "impact": {
+              "favorable": {
+                "en": "Supports this part of the thesis; still assess the other checks.",
+                "ro": "Susține această parte a tezei; evaluează și celelalte teste."
+              },
+              "adverse": {
+                "en": "Weakens this part of the thesis; identify whether the cause is temporary or persistent.",
+                "ro": "Slăbește această parte a tezei; identifică dacă motivul este temporar sau persistent."
+              },
+              "mixed": {
+                "en": "Separate favorable and adverse components without changing the criterion.",
+                "ro": "Separă componentele favorabile și nefavorabile fără a schimba criteriul."
+              },
+              "unresolved": {
+                "en": "Insufficient comparable disclosure; do not count as an operating miss.",
+                "ro": "Informație comparabilă insuficientă; nu considera eșec operațional."
+              }
+            }
+          },
+          {
+            "id": "GOOG-capital-plan",
+            "criterion_version": 2,
+            "question": {
+              "en": "Is the investment plan better funded?",
+              "ro": "Este planul de investiții mai bine finanțat?"
+            },
+            "why": {
+              "en": "Large investment commitments compete with cash returns and dilution.",
+              "ro": "Angajamentele mari concurează cu distribuțiile și pot genera diluție."
+            },
+            "baseline_refs": [
+              "liquid",
+              "debt",
+              "liquid-cushion",
+              "capex-outlook",
+              "leases-unstarted"
+            ],
+            "due_period": "Q4 2026",
+            "criterion": {
+              "kind": "qualitative",
+              "basis": "analytical_test",
+              "description": {
+                "en": "Reconcile the next-12-month funding sources and dated cash uses, including leases, purchase commitments and the 2027 investment outlook. Favorable requires adequate funding without dependence on restricted equity or unplanned new equity; a disclosed gap is Missed. Partial opposing evidence is Mixed; an absent bridge is Not disclosed. Compare FY2026 cash capex with the newly verified $195–205bn guidance as a separate disclosure, not a retroactive Q2 test.",
+                "ro": "Reconciliază sursele și utilizările numerarului pentru următoarele 12 luni, inclusiv leasingul, angajamentele și perspectiva investițiilor 2027. Favorabil cere finanțare adecvată fără dependență de acțiuni restricționate ori emisiuni neplanificate; deficit publicat = Neîndeplinit. Dovezi opuse parțiale = Mixt; lipsa reconcilierii = Neraportat. Compară investițiile 2026 cu ghidajul nou verificat de 195–205 mld. USD separat, nu retroactiv față de T2."
+              },
+              "rationale": {
+                "en": "Q3 funding was mixed. Compare usable resources with timing, not aggregate assets with all future obligations.",
+                "ro": "Finanțarea T3 a fost mixtă. Compară resurse utilizabile și scadențe, nu active totale cu toate obligațiile viitoare."
+              }
+            },
+            "impact": {
+              "favorable": {
+                "en": "Supports this part of the thesis; still assess the other checks.",
+                "ro": "Susține această parte a tezei; evaluează și celelalte teste."
+              },
+              "adverse": {
+                "en": "Weakens this part of the thesis; identify whether the cause is temporary or persistent.",
+                "ro": "Slăbește această parte a tezei; identifică dacă motivul este temporar sau persistent."
+              },
+              "mixed": {
+                "en": "Separate favorable and adverse components without changing the criterion.",
+                "ro": "Separă componentele favorabile și nefavorabile fără a schimba criteriul."
+              },
+              "unresolved": {
+                "en": "Insufficient comparable disclosure; do not count as an operating miss.",
+                "ro": "Informație comparabilă insuficientă; nu considera eșec operațional."
+              }
+            }
+          },
+          {
+            "id": "GOOG-regulation",
+            "criterion_version": 2,
+            "question": {
+              "en": "Do remedies change the economics?",
+              "ro": "Schimbă măsurile economia afacerii?"
+            },
+            "why": {
+              "en": "Distribution and auction rules underpin part of the advantage.",
+              "ro": "Distribuția și regulile licitațiilor susțin o parte din avantaj."
+            },
+            "baseline_refs": [
+              "legal-order",
+              "search-remedies",
+              "legal-quantification"
+            ],
+            "due_period": "Q4 2026",
+            "criterion": {
+              "kind": "qualitative",
+              "basis": "analytical_test",
+              "description": {
+                "en": "Review final Search/ad-tech terms, appeals and implementation. Require quantified costs/revenue effects, or a specific supported issuer conclusion that effects are immaterial, before calling impact manageable. Unquantified effects remain Not disclosed; no-breakup headlines alone do not pass.",
+                "ro": "Verifică termenii finali Search/ad-tech, apelurile și implementarea. Cere efecte cuantificate asupra costurilor/veniturilor ori o concluzie specifică și susținută a emitentului că sunt nesemnificative înainte de a considera impactul gestionabil. Efectele necuantificate rămân Neraportate; titlurile fără divizare nu sunt suficiente."
+              },
+              "rationale": {
+                "en": "Preserve the original economic-impact test while making acceptable evidence explicit.",
+                "ro": "Păstrează testul original al impactului economic și explicitează dovezile acceptabile."
+              }
+            },
+            "impact": {
+              "favorable": {
+                "en": "Supports this part of the thesis; still assess the other checks.",
+                "ro": "Susține această parte a tezei; evaluează și celelalte teste."
+              },
+              "adverse": {
+                "en": "Weakens this part of the thesis; identify whether the cause is temporary or persistent.",
+                "ro": "Slăbește această parte a tezei; identifică dacă motivul este temporar sau persistent."
+              },
+              "mixed": {
+                "en": "Separate favorable and adverse components without changing the criterion.",
+                "ro": "Separă componentele favorabile și nefavorabile fără a schimba criteriul."
+              },
+              "unresolved": {
+                "en": "Insufficient comparable disclosure; do not count as an operating miss.",
+                "ro": "Informație comparabilă insuficientă; nu considera eșec operațional."
+              }
+            }
+          }
+        ],
+        "related_events": [
+          {
+            "id": "goog-q426-call",
+            "kind": "call",
+            "period": "Q4 2026",
+            "confidence": "Not announced",
+            "date": null,
+            "checked_at": "2026-10-29",
+            "source_id": "schedule",
+            "timezone": "America/New_York",
+            "basis": {
+              "en": "Separate event; date and time unverified.",
+              "ro": "Eveniment separat; data și ora neverificate."
+            }
+          },
+          {
+            "id": "goog-q426-filing",
+            "kind": "filing",
+            "period": "Q4 2026",
+            "confidence": "Not announced",
+            "date": null,
+            "checked_at": "2026-10-29",
+            "source_id": "schedule",
+            "timezone": "America/New_York",
+            "basis": {
+              "en": "Separate event; date and time unverified.",
+              "ro": "Eveniment separat; data și ora neverificate."
+            }
+          }
+        ],
+        "key_stats": [
+          {
+            "concept": "price",
+            "evidence_ref": "price"
+          },
+          {
+            "concept": "eps",
+            "evidence_ref": "class-c-eps",
+            "label": {
+              "en": "Class C diluted EPS — Q3 only",
+              "ro": "Profit diluat pe acțiune clasa C — doar T3"
+            }
+          },
+          {
+            "concept": "pe",
+            "label": {
+              "en": "Comparable trailing P/E",
+              "ro": "P/E istoric comparabil"
+            },
+            "note": {
+              "en": "Not recalculated: matching Class C trailing earnings and recurring-profit adjustments need a fresh valuation model. Quarterly EPS is not an annual denominator.",
+              "ro": "Nerecalculat: profitul anual clasa C și ajustările recurente necesită un model nou. Profitul trimestrial nu este numitor anual."
+            }
+          },
+          {
+            "concept": "fcf",
+            "evidence_ref": "fcf"
+          }
+        ],
+        "review": {
+          "baseline_sha256": "ed75ee47e371c81c23bdda189c7528a78f43d66922a5f323c8991a24b1c7ac2d",
+          "release": {
+            "id": "SEC:0001652044-26-000080:EX-99.1",
+            "period": "Q3 2026",
+            "status": "published",
+            "source_id": "q3-release",
+            "published_at": "2026-10-28T20:01:33Z"
+          },
+          "provisional": false,
+          "coverage_note": {
+            "en": "All seven original checks assessed once against version 1. Read: issuer release, relevant Q3 10-Q statements/notes, CEO remarks, CFO and Q&A transcript, and primary remedies documents. Transcript is a third-party reproduction; original audio not independently checked. Missing operating disclosures remain explicit outcomes.",
+            "ro": "Toate cele șapte criterii originale au fost evaluate o singură dată, în versiunea 1. Citite: comunicatul, situațiile/notele relevante 10-Q T3, declarațiile CEO, transcrierea CFO și întrebărilor și documentele primare privind remediile. Transcrierea este reprodusă de un terț; sunetul original nu a fost verificat independent. Datele lipsă rămân rezultate explicite."
+          },
+          "thesis_status": "weakened",
+          "thesis_change": {
+            "en": "Three Met, one Missed, one Mixed and two Not disclosed. Growth remains strong, but the most important unresolved baseline issue—cash recovery—deteriorated. This weakens the investment thesis without negating Cloud's progress.",
+            "ro": "Trei Îndeplinite, unul Neîndeplinit, unul Mixt și două Neraportate. Creșterea rămâne puternică, dar principala problemă nerezolvată din bază—revenirea numerarului—s-a agravat. Teza investiției slăbește, fără a anula progresul Cloud."
+          },
+          "outcomes": [
+            {
+              "watch_id": "GOOG-search-growth",
+              "criterion_version": 1,
+              "criterion_sha256": "dd7d58d312887aa4a0f0dc290a6c5022529fd7de160bbf66887d4f79404f2e16",
+              "outcome": "Met",
+              "observed_period": "Q3 2026",
+              "new_evidence_refs": [
+                "search-growth"
+              ],
+              "reason": {
+                "en": "Reported Search growth clears the original 10% floor, despite slowing from Q2.",
+                "ro": "Creșterea raportată Search depășește pragul original de 10%, deși încetinește față de T2."
+              },
+              "thesis_impact": {
+                "en": "Search resilience holds; monetization pressure deserves continued attention.",
+                "ro": "Reziliența Search se menține; presiunea monetizării trebuie urmărită."
+              },
+              "actual_ref": "search-growth"
+            },
+            {
+              "watch_id": "GOOG-cloud-economics",
+              "criterion_version": 1,
+              "criterion_sha256": "0408e18d1c271b2fc301767fbde3bcab4907d973e3047f034be5d3f3ccb779b5",
+              "outcome": "Met",
+              "observed_period": "Q3 2026",
+              "new_evidence_refs": [
+                "cloud-growth",
+                "cloud-margin",
+                "cloud-mix"
+              ],
+              "reason": {
+                "en": "Both original gates pass: revenue growth ≥40% and operating margin ≥30%. Missing organic/TPU/Wiz splits limit interpretation, not the reported-metric test.",
+                "ro": "Ambele praguri originale sunt îndeplinite: creștere ≥40% și marjă operațională ≥30%. Lipsa separării organic/TPU/Wiz limitează interpretarea, nu testul indicatorilor raportați."
+              },
+              "thesis_impact": {
+                "en": "Cloud supports the growth thesis; this does not establish the cash return on all AI spending.",
+                "ro": "Cloud susține teza de creștere; nu dovedește randamentul în numerar al tuturor investițiilor AI."
+              }
+            },
+            {
+              "watch_id": "GOOG-cash-recovery",
+              "criterion_version": 1,
+              "criterion_sha256": "97a8e3ea335c77b29613f35ad9ebe5a02e2d875acdc8a62c5fc79af942ec370c",
+              "outcome": "Missed",
+              "observed_period": "Q3 2026",
+              "new_evidence_refs": [
+                "fcf",
+                "cfo",
+                "capex",
+                "fine-paid",
+                "fcf-ex-fine"
+              ],
+              "reason": {
+                "en": "Cash from operations minus equipment purchases is below zero. The fine explains part of the outflow, but even adding it back alone leaves negative cash flow. The original test is unadjusted.",
+                "ro": "Numerarul operațional minus investițiile este sub zero. Amenda explică o parte din ieșire, dar chiar eliminarea ei lasă flux negativ. Testul original nu permite ajustarea."
+              },
+              "thesis_impact": {
+                "en": "The central cash-recovery thesis weakened. Growth still requires substantial funding.",
+                "ro": "Teza centrală a revenirii numerarului a slăbit. Creșterea cere încă finanțare substanțială."
+              },
+              "actual_ref": "fcf"
+            },
+            {
+              "watch_id": "GOOG-dilution",
+              "criterion_version": 1,
+              "criterion_sha256": "9e70b6981f4bd5c0bb61f5b319db905697ef75edf7b9a92c0f01aa2134342766",
+              "outcome": "Met",
+              "observed_period": "Q3 2026",
+              "new_evidence_refs": [
+                "dilution",
+                "shares",
+                "shares-year-ago",
+                "atm-c",
+                "preferred"
+              ],
+              "reason": {
+                "en": "Consolidated diluted share growth remains ≤2%. This uses the saved consolidated denominator, not Class C shares alone. ATM issuance occurred; preferred conversion was excluded from Q3 diluted shares under the accounting test.",
+                "ro": "Creșterea numărului diluat consolidat rămâne ≤2%. Folosim numitorul consolidat salvat, nu numai clasa C. Au existat emisiuni ATM; conversia preferențialelor a fost exclusă contabil în T3."
+              },
+              "thesis_impact": {
+                "en": "Current dilution is contained by the saved rule, but future issuance/conversion remains a risk.",
+                "ro": "Diluția curentă respectă regula, dar emisiunile și conversiile viitoare rămân un risc."
+              },
+              "actual_ref": "dilution"
+            },
+            {
+              "watch_id": "GOOG-backlog-quality",
+              "criterion_version": 1,
+              "criterion_sha256": "ff466030bd1e31780e6117e3a17fe9b39b5eafabe27c307a237be6e269a55938",
+              "outcome": "Not disclosed",
+              "observed_period": "Q3 2026",
+              "new_evidence_refs": [
+                "backlog",
+                "backlog-terms",
+                "crux-backlog"
+              ],
+              "reason": {
+                "en": "The Q2 definition is retained and recognition timing is provided. No quantified conversion of the saved Q2 backlog or cancellation/delivery reconciliation is disclosed. The original rule explicitly leaves unquantified conversion unresolved; a larger backlog is not a pass.",
+                "ro": "Definiția T2 este păstrată și există un calendar estimat de recunoaștere. Nu este cuantificată conversia comenzilor T2 ori reconcilierea anulărilor/livrărilor. Regula originală lasă conversia necuantificată nerezolvată; creșterea totalului nu înseamnă succes."
+              },
+              "thesis_impact": {
+                "en": "Contracted demand is visible; realization and related-party quality remain open.",
+                "ro": "Cererea contractată este vizibilă; realizarea și calitatea relațiilor cu părți afiliate rămân neclare."
+              },
+              "checked_source_ids": [
+                "q3-10q",
+                "q3-release",
+                "q3-call"
+              ]
+            },
+            {
+              "watch_id": "GOOG-capital-plan",
+              "criterion_version": 1,
+              "criterion_sha256": "56ca21aa870f2ca2a4c435c33cddad8cdaab0493d0edd8ea348120a1c8f53afd",
+              "outcome": "Mixed",
+              "observed_period": "Q3 2026",
+              "new_evidence_refs": [
+                "liquid",
+                "debt",
+                "liquid-cushion",
+                "atm-proceeds",
+                "capex-outlook",
+                "leases-unstarted",
+                "funding-sufficiency"
+              ],
+              "reason": {
+                "en": "Liquidity increased from the saved Q2 baseline, but debt increased faster. Management reports sufficient funding, without a dated commitment-level funding bridge. The ATM program was already authorized, so its use is not classified as unplanned equity. No funding gap is disclosed.",
+                "ro": "Lichiditatea a crescut față de baza T2, dar datoria a crescut mai mult. Conducerea declară finanțare suficientă, fără reconciliere pe scadențe a angajamentelor. ATM era deja autorizat; folosirea lui nu este clasificată drept emisiune neplanificată. Nu este publicat un deficit de finanțare."
+              },
+              "thesis_impact": {
+                "en": "Financing access is a positive; balance-sheet and cash demands prevent a favorable verdict.",
+                "ro": "Accesul la finanțare este pozitiv; presiunea bilanțului și numerarului împiedică verdictul favorabil."
+              }
+            },
+            {
+              "watch_id": "GOOG-regulation",
+              "criterion_version": 1,
+              "criterion_sha256": "e2a1727617e43469c2e52fd9ea0d15a0281dd536a372550389ac072d6e66f01c",
+              "outcome": "Not disclosed",
+              "observed_period": "Q3 2026",
+              "new_evidence_refs": [
+                "legal-order",
+                "search-remedies",
+                "legal-quantification"
+              ],
+              "reason": {
+                "en": "Primary remedies documents and issuer disclosures establish obligations, not a quantified manageable economic impact. Implementation costs and revenue effects remain unquantified; avoiding a breakup alone does not meet the original criterion.",
+                "ro": "Documentele primare și raportările stabilesc obligații, nu un impact economic gestionabil cuantificat. Costurile implementării și efectele asupra veniturilor rămân necuantificate; evitarea divizării singură nu îndeplinește criteriul."
+              },
+              "thesis_impact": {
+                "en": "The regulatory risk remains unresolved, rather than proven harmless or an automatic operating failure.",
+                "ro": "Riscul de reglementare rămâne nerezolvat; nu este dovedit inofensiv și nici un eșec operațional automat."
+              },
+              "checked_source_ids": [
+                "q3-10q",
+                "adtech-order",
+                "search-order",
+                "search-october",
+                "doj-adtech"
+              ]
+            }
+          ],
+          "new_risks": [
+            {
+              "type": "interpretation",
+              "text": {
+                "en": "AI Mode monetizes less effectively, while Cloud faces additional third-party capacity costs.",
+                "ro": "AI Mode monetizează mai slab, iar Cloud va suporta costuri suplimentare pentru capacitatea terților."
+              },
+              "evidence_refs": [
+                "search-monetization",
+                "cloud-headwind"
+              ]
+            },
+            {
+              "type": "interpretation",
+              "text": {
+                "en": "Crux AI adds related-party contracted demand; assess customer funding and delivery, not just the backlog headline.",
+                "ro": "Crux AI adaugă cerere contractată de la o parte afiliată; verifică finanțarea și livrarea, nu doar totalul contractelor."
+              },
+              "evidence_refs": [
+                "crux-backlog"
+              ]
+            },
+            {
+              "type": "interpretation",
+              "text": {
+                "en": "Large commitments and restricted equity holdings make headline liquidity an incomplete funding measure.",
+                "ro": "Angajamentele mari și acțiunile cu restricții fac lichiditatea agregată o măsură incompletă a finanțării."
+              },
+              "evidence_refs": [
+                "purchase-next-year",
+                "leases-unstarted",
+                "restricted-equity"
+              ]
+            }
+          ]
+        },
+        "summary": [
+          {
+            "type": "interpretation",
+            "text": {
+              "en": "Alphabet is selling more, especially through Cloud, but less cash remains after investment. The original cash-recovery test failed.",
+              "ro": "Alphabet vinde mai mult, mai ales prin Cloud, dar rămâne mai puțin numerar după investiții. Testul original al revenirii numerarului a fost ratat."
+            },
+            "evidence_refs": [
+              "revenue-growth",
+              "cloud-growth",
+              "fcf"
+            ]
+          },
+          {
+            "type": "limitation",
+            "text": {
+              "en": "Next checkpoint: Q4 2026 results. No release date was verified on October 29; the next watchlist is due with that release.",
+              "ro": "Următoarea verificare: rezultatele T4 2026. La 29 octombrie nu a fost verificată o dată de publicare; noua listă se evaluează atunci."
+            },
+            "evidence_refs": []
+          }
+        ],
+        "business_assessment": {
+          "type": "interpretation",
+          "text": {
+            "en": "Growth strengthened; cash conversion and funding quality weakened. Keep those conclusions separate.",
+            "ro": "Creșterea s-a întărit; conversia în numerar și calitatea finanțării au slăbit. Păstrează concluziile separate."
+          },
+          "evidence_refs": [
+            "cloud-growth",
+            "fcf",
+            "debt",
+            "liquid"
+          ]
+        },
+        "price_assessment": {
+          "type": "interpretation",
+          "text": {
+            "en": "Quote refreshed; fair value remains unresolved. Investment gains distort trailing earnings, and no new normalized valuation or price target is claimed.",
+            "ro": "Cotație actualizată; valoarea justă rămâne neclară. Câștigurile din investiții distorsionează profitul anual; nu propunem o evaluare normalizată ori țintă nouă."
+          },
+          "evidence_refs": [
+            "price",
+            "earnings-distortion"
+          ]
+        },
+        "evidence_gaps": {
+          "en": "Missing: prior-backlog conversion, separate organic/TPU/Wiz economics, a dated funding bridge, and quantified remedy effects. No verified next release date. This is an earnings follow-up, not a new full valuation. Saved baseline data and criteria remain unchanged.",
+          "ro": "Lipsesc: conversia contractelor anterioare, economia separată organic/TPU/Wiz, reconcilierea finanțării pe scadențe și efectele cuantificate ale remediilor. Nu există o dată viitoare verificată. Este o analiză a rezultatelor, nu o evaluare completă nouă. Datele și criteriile originale rămân neschimbate."
+        },
+        "next_event": {
+          "id": "goog-q426-results",
+          "kind": "results",
+          "period": "Q4 2026",
+          "confidence": "Not announced",
+          "date": null,
+          "checked_at": "2026-10-29",
+          "source_id": "schedule",
+          "timezone": "America/New_York",
+          "basis": {
+            "en": "No issuer date verified. The dynamic official calendar returned no readable upcoming listing; recheck before assigning a countdown. This is not proof no announcement exists.",
+            "ro": "Nu a fost verificată o dată a emitentului. Calendarul dinamic oficial nu a oferit o listare viitoare lizibilă; reverifică înainte de numărătoare inversă. Nu dovedește absența unui anunț."
+          }
+        }
+      }
     }
   }
 }
