@@ -1,0 +1,3028 @@
+{
+  "schema_version": "3.0",
+  "profile": "strict",
+  "report_id": "NOW-2026-10-29-v3-q3-review",
+  "parent_report_id": "NOW-2026-09-25-v3",
+  "mode": "update",
+  "synthetic": false,
+  "company": {
+    "issuer_id": "CIK:0001373715",
+    "security_id": "NYSE:NOW:COMMON",
+    "name": "ServiceNow, Inc.",
+    "ticker": "NOW",
+    "exchange": "NYSE",
+    "share_class": "Common stock",
+    "reporting_currency": "USD",
+    "trading_currency": "USD",
+    "fiscal_year_end": "December 31"
+  },
+  "cutoff": "2026-10-29T22:24:13+02:00",
+  "prepared_at": "2026-10-29T22:24:13+02:00",
+  "freshness_checked_at": "2026-10-29T22:24:13+02:00",
+  "languages": [
+    "en",
+    "ro"
+  ],
+  "default_language": "en",
+  "presentation": "guided",
+  "sources": [
+    {
+      "id": "release",
+      "title": "ServiceNow Q3 2026 earnings release and reconciliations",
+      "url": "https://investor.servicenow.com/news/news-details/2026/ServiceNow-Reports-Third-Quarter-2026-Financial-Results/default.aspx",
+      "authority": "issuer",
+      "status": "read",
+      "retrieved_at": "2026-10-29T22:24:13+02:00",
+      "publication_note": "Published October 28, 2026; exact upload time not stated."
+    },
+    {
+      "id": "q3",
+      "title": "ServiceNow Q3 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000096/now-20260930.htm",
+      "authority": "regulator",
+      "status": "read",
+      "retrieved_at": "2026-10-29T22:24:13+02:00",
+      "published_at": "2026-10-28T17:12:31-04:00"
+    },
+    {
+      "id": "filing-index",
+      "title": "SEC filing index 0001373715-26-000096",
+      "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000096/0001373715-26-000096-index.htm",
+      "authority": "regulator",
+      "status": "read",
+      "retrieved_at": "2026-10-29T22:24:13+02:00",
+      "published_at": "2026-10-28T17:12:31-04:00"
+    },
+    {
+      "id": "h1",
+      "title": "ServiceNow Q2 2026 Form 10-Q, comparative intangible cash purchases",
+      "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000076/now-20260630.htm",
+      "authority": "regulator",
+      "status": "read",
+      "retrieved_at": "2026-10-29T22:24:13+02:00",
+      "publication_note": "Filed July 23, 2026; reopened for six-month cash-flow comparison."
+    },
+    {
+      "id": "call",
+      "title": "ServiceNow Q3 2026 call transcript, hosted by Motley Fool",
+      "url": "https://www.fool.com/earnings/call-transcripts/2026/10/29/servicenow-now-q3-2026-earnings-call-transcript/",
+      "authority": "secondary",
+      "status": "read",
+      "retrieved_at": "2026-10-29T22:24:13+02:00",
+      "publication_note": "Call October 28; transcript dated October 29. Relevant CFO prepared remarks and Q&A read; audio not independently transcribed. Use spoken ACV definition, not the secondary summary that sometimes calls it revenue."
+    },
+    {
+      "id": "calendar",
+      "title": "ServiceNow official events and presentations",
+      "url": "https://investor.servicenow.com/events-and-presentations/default.aspx",
+      "authority": "issuer",
+      "status": "read",
+      "retrieved_at": "2026-10-29T22:24:13+02:00",
+      "publication_note": "Undated live calendar checked October 29, 2026. Retrieved page did not expose a Q4/FY2026 announcement; do not infer an exact date."
+    },
+    {
+      "id": "baseline-q",
+      "title": "ServiceNow Q2 2026 Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000076/now-20260630.htm",
+      "authority": "regulator",
+      "status": "read",
+      "retrieved_at": "2026-09-25T16:30:00Z",
+      "publication_note": "Published 2026-07-23; time not used."
+    },
+    {
+      "id": "baseline-release",
+      "title": "ServiceNow Q2 2026 results and guidance",
+      "url": "https://investor.servicenow.com/news/news-details/2026/ServiceNow-Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+      "authority": "issuer",
+      "status": "read",
+      "retrieved_at": "2026-09-25T16:30:00Z",
+      "publication_note": "Published 2026-07-22; time not used."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "b-cash",
+      "kind": "fact",
+      "label": {
+        "en": "Cash and equivalents",
+        "ro": "Numerar și echivalente"
+      },
+      "definition": "Cash and equivalents",
+      "value": 2503,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-06-30",
+        "label": "2026-06-30",
+        "forecast": false
+      },
+      "source_id": "baseline-q",
+      "extraction": {
+        "locator": "Financial statements / MD&A / segment note",
+        "note": "Cash and equivalents: 2503; scale 1000000; 2026-06-30."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-stdebt",
+      "kind": "fact",
+      "label": {
+        "en": "Short-term borrowings, carrying value",
+        "ro": "Împrumuturi pe termen scurt"
+      },
+      "definition": "Short-term borrowings",
+      "value": 2082,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-06-30",
+        "label": "2026-06-30",
+        "forecast": false
+      },
+      "source_id": "baseline-q",
+      "extraction": {
+        "locator": "Financial statements / MD&A / segment note",
+        "note": "Short-term borrowings, carrying value: 2082; scale 1000000; 2026-06-30."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-ltdebt",
+      "kind": "fact",
+      "label": {
+        "en": "Long-term borrowings, carrying value",
+        "ro": "Împrumuturi pe termen lung"
+      },
+      "definition": "Long-term borrowings",
+      "value": 5435,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-06-30",
+        "label": "2026-06-30",
+        "forecast": false
+      },
+      "source_id": "baseline-q",
+      "extraction": {
+        "locator": "Financial statements / MD&A / segment note",
+        "note": "Long-term borrowings, carrying value: 5435; scale 1000000; 2026-06-30."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-debt",
+      "kind": "calculation",
+      "label": {
+        "en": "Borrowings excluding operating leases",
+        "ro": "Împrumuturi fără leasing operațional"
+      },
+      "definition": "Borrowings excluding operating leases",
+      "operation": "sum",
+      "inputs": [
+        "b-stdebt",
+        "b-ltdebt"
+      ],
+      "value": 7517.0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-06-30",
+        "label": "2026-06-30",
+        "forecast": false
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-renewal",
+      "kind": "fact",
+      "label": {
+        "en": "Annual-contract-value renewal rate",
+        "ro": "Rata reînnoirii valorii contractuale"
+      },
+      "definition": "Annual-contract-value renewal rate",
+      "value": 98,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "operating",
+      "period": {
+        "kind": "duration",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "label": "Q2 2026",
+        "forecast": false
+      },
+      "source_id": "baseline-q",
+      "extraction": {
+        "locator": "MD&A renewal rate",
+        "note": "Annual-contract-value renewal rate: 98; scale 1; Q2 2026."
+      }
+    },
+    {
+      "id": "b-shares",
+      "kind": "fact",
+      "label": {
+        "en": "Diluted weighted-average shares",
+        "ro": "Media ponderată a acțiunilor diluate"
+      },
+      "definition": "Diluted weighted-average shares",
+      "value": 1034.334,
+      "unit": "shares",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "label": "Q2 2026",
+        "forecast": false
+      },
+      "source_id": "baseline-q",
+      "extraction": {
+        "locator": "Income statement; thousands normalized to millions",
+        "note": "Diluted weighted-average shares: 1034.334; scale 1000000; Q2 2026."
+      }
+    },
+    {
+      "id": "b-cfo",
+      "kind": "fact",
+      "label": {
+        "en": "Operating cash flow",
+        "ro": "Numerar operațional"
+      },
+      "definition": "Operating cash flow",
+      "value": 587,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "label": "Q2 2026",
+        "forecast": false
+      },
+      "source_id": "baseline-release",
+      "extraction": {
+        "locator": "Financial statements / MD&A / segment note",
+        "note": "Operating cash flow: 587; scale 1000000; Q2 2026."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-capex",
+      "kind": "fact",
+      "label": {
+        "en": "Cash property/equipment spending",
+        "ro": "Investiții cash în active fixe"
+      },
+      "definition": "Cash property and equipment purchases",
+      "value": 114,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "label": "Q2 2026",
+        "forecast": false
+      },
+      "source_id": "baseline-release",
+      "extraction": {
+        "locator": "Financial statements / MD&A / segment note",
+        "note": "Cash property/equipment spending: 114; scale 1000000; Q2 2026."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-fcf",
+      "kind": "calculation",
+      "label": {
+        "en": "Cash flow after property/equipment spending",
+        "ro": "Numerar după investițiile în active fixe"
+      },
+      "definition": "Operating cash flow less cash property/equipment purchases",
+      "operation": "difference",
+      "inputs": [
+        "b-cfo",
+        "b-capex"
+      ],
+      "value": 473.0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "label": "Q2 2026",
+        "forecast": false
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-cfo-old",
+      "kind": "fact",
+      "label": {
+        "en": "Operating cash flow",
+        "ro": "Numerar operațional"
+      },
+      "definition": "Operating cash flow",
+      "value": 716,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-04-01",
+        "end": "2025-06-30",
+        "label": "Q2 2025",
+        "forecast": false
+      },
+      "source_id": "baseline-release",
+      "extraction": {
+        "locator": "Financial statements / MD&A / segment note",
+        "note": "Operating cash flow: 716; scale 1000000; Q2 2025."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-capex-old",
+      "kind": "fact",
+      "label": {
+        "en": "Cash property/equipment spending",
+        "ro": "Investiții cash în active fixe"
+      },
+      "definition": "Cash property and equipment purchases",
+      "value": 190,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-04-01",
+        "end": "2025-06-30",
+        "label": "Q2 2025",
+        "forecast": false
+      },
+      "source_id": "baseline-release",
+      "extraction": {
+        "locator": "Financial statements / MD&A / segment note",
+        "note": "Cash property/equipment spending: 190; scale 1000000; Q2 2025."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-fcf-old",
+      "kind": "calculation",
+      "label": {
+        "en": "Cash flow after property/equipment spending",
+        "ro": "Numerar după investițiile în active fixe"
+      },
+      "definition": "Operating cash flow less cash property/equipment purchases",
+      "operation": "difference",
+      "inputs": [
+        "b-cfo-old",
+        "b-capex-old"
+      ],
+      "value": 526.0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-04-01",
+        "end": "2025-06-30",
+        "label": "Q2 2025",
+        "forecast": false
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-fcf-addback",
+      "kind": "fact",
+      "label": {
+        "en": "Acquisition-related cash cost addback",
+        "ro": "Costuri cash de achiziție adăugate înapoi"
+      },
+      "definition": "Acquisition-related cash cost addback",
+      "value": 161,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "label": "Q2 2026",
+        "forecast": false
+      },
+      "source_id": "baseline-release",
+      "extraction": {
+        "locator": "Free cash flow reconciliation",
+        "note": "Acquisition-related cash cost addback: 161; scale 1000000; Q2 2026."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "b-debt-terms",
+      "kind": "fact",
+      "label": {
+        "en": "Commercial paper averaged 81 days remaining at June 30; $3bn revolving facility matures April 2031. The $4bn acquisition term loan was repaid with notes.",
+        "ro": "La 30 iunie, titlurile comerciale aveau în medie 81 de zile până la scadență; facilitatea revolving de 3 mld. USD expiră în aprilie 2031. Împrumutul de achiziție de 4 mld. USD a fost rambursat prin obligațiuni."
+      },
+      "definition": "Commercial paper averaged 81 days remaining at June 30; $3bn revolving facility matures April 2031. The $4bn acquisition term loan was repaid with notes.",
+      "state": {
+        "en": "Commercial paper averaged 81 days remaining at June 30; $3bn revolving facility matures April 2031. The $4bn acquisition term loan was repaid with notes.",
+        "ro": "La 30 iunie, titlurile comerciale aveau în medie 81 de zile până la scadență; facilitatea revolving de 3 mld. USD expiră în aprilie 2031. Împrumutul de achiziție de 4 mld. USD a fost rambursat prin obligațiuni."
+      },
+      "period": {
+        "kind": "duration",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "label": "Q2 2026",
+        "forecast": false
+      },
+      "source_id": "baseline-q",
+      "extraction": {
+        "locator": "Note 11: Debt",
+        "note": "Commercial paper averaged 81 days remaining at June 30; $3bn revolving facility matures April 2031. The $4bn acquisition term loan was repaid with notes."
+      }
+    },
+    {
+      "id": "sub",
+      "kind": "fact",
+      "label": {
+        "en": "Subscription revenue",
+        "ro": "Venituri din abonamente"
+      },
+      "definition": "Subscription revenue",
+      "value": 3988,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Subscription revenue: 3988; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "rev",
+      "kind": "fact",
+      "label": {
+        "en": "Total revenue",
+        "ro": "Venituri totale"
+      },
+      "definition": "Total revenue",
+      "value": 4106,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Total revenue: 4106; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "rev-old",
+      "kind": "fact",
+      "label": {
+        "en": "Total revenue",
+        "ro": "Venituri totale"
+      },
+      "definition": "Total revenue",
+      "value": 3407,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Total revenue: 3407; scale 1000000; Q3 2025. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "crpo-growth",
+      "kind": "fact",
+      "label": {
+        "en": "Contracted growth at constant currency",
+        "ro": "Creșterea contractelor la curs constant"
+      },
+      "definition": "cRPO constant currency year-on-year growth",
+      "value": 21,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Q3 summary table, cRPO constant-currency growth",
+        "note": "Contracted growth at constant currency: 21; scale 1; Q3 2026. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "crpo",
+      "kind": "fact",
+      "label": {
+        "en": "Contracted revenue for the next twelve months",
+        "ro": "Venituri contractate pentru următoarele douăsprezece luni"
+      },
+      "definition": "Contracted revenue for the next twelve months",
+      "value": 13650,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "operating",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "cRPO, $13.65 billion",
+        "note": "Contracted revenue for the next twelve months: 13650; scale 1000000; September 30, 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "margin",
+      "kind": "fact",
+      "label": {
+        "en": "Adjusted operating margin",
+        "ro": "Marjă operațională ajustată"
+      },
+      "definition": "Adjusted operating margin",
+      "value": 32.5,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "GAAP to non-GAAP reconciliation, operating margin",
+        "note": "Adjusted operating margin: 32.5; scale 1; Q3 2026. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "gaap-margin",
+      "kind": "fact",
+      "label": {
+        "en": "Reported operating margin, issuer rounded",
+        "ro": "Marjă operațională raportată, rotunjită de emitent"
+      },
+      "definition": "Reported operating margin, issuer rounded",
+      "value": 9.5,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Q3 summary table",
+        "note": "Reported operating margin, issuer rounded: 9.5; scale 1; Q3 2026. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "gaap-margin-old",
+      "kind": "fact",
+      "label": {
+        "en": "Reported operating margin, issuer rounded",
+        "ro": "Marjă operațională raportată, rotunjită de emitent"
+      },
+      "definition": "Reported operating margin, issuer rounded",
+      "value": 17,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Comparative operating-margin reconciliation",
+        "note": "Reported operating margin, issuer rounded: 17; scale 1; Q3 2025. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "op",
+      "kind": "fact",
+      "label": {
+        "en": "Reported operating profit",
+        "ro": "Profit operațional raportat"
+      },
+      "definition": "Reported operating profit",
+      "value": 385,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Operating-income reconciliation; expense included in reported operating profit",
+        "note": "Reported operating profit: 385; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "sbc",
+      "kind": "fact",
+      "label": {
+        "en": "Employee share compensation",
+        "ro": "Plata angajaților în acțiuni"
+      },
+      "definition": "Employee share compensation",
+      "value": 633,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Operating-income reconciliation; expense included in reported operating profit",
+        "note": "Employee share compensation: 633; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "amort",
+      "kind": "fact",
+      "label": {
+        "en": "Acquired-intangible amortization",
+        "ro": "Amortizarea intangibilelor achiziționate"
+      },
+      "definition": "Acquired-intangible amortization",
+      "value": 198,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Operating-income reconciliation; expense included in reported operating profit",
+        "note": "Acquired-intangible amortization: 198; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "acq-cost",
+      "kind": "fact",
+      "label": {
+        "en": "Acquisition and related expense adjustments",
+        "ro": "Ajustări pentru cheltuieli de achiziție"
+      },
+      "definition": "Acquisition and related expense adjustments",
+      "value": 35,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Operating-income reconciliation; expense included in reported operating profit",
+        "note": "Acquisition and related expense adjustments: 35; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "severance",
+      "kind": "fact",
+      "label": {
+        "en": "Severance expense",
+        "ro": "Cheltuieli de restructurare"
+      },
+      "definition": "Severance expense",
+      "value": 87,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Operating-income reconciliation; expense included in reported operating profit",
+        "note": "Severance expense: 87; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "adj-op",
+      "kind": "fact",
+      "label": {
+        "en": "Adjusted operating profit",
+        "ro": "Profit operațional ajustat"
+      },
+      "definition": "Adjusted operating profit",
+      "value": 1338,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "GAAP to non-GAAP operating-income reconciliation",
+        "note": "Adjusted operating profit: 1338; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "op-bridge",
+      "kind": "calculation",
+      "label": {
+        "en": "Reported profit plus excluded expenses",
+        "ro": "Profit raportat plus cheltuieli excluse"
+      },
+      "definition": "Reported profit plus excluded expenses",
+      "operation": "sum",
+      "inputs": [
+        "op",
+        "sbc",
+        "amort",
+        "acq-cost",
+        "severance"
+      ],
+      "value": 1338.0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "cfo",
+      "kind": "fact",
+      "label": {
+        "en": "Operating cash flow",
+        "ro": "Numerar din exploatare"
+      },
+      "definition": "Operating cash flow",
+      "value": 839,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Free cash flow reconciliation, three months ended September 30",
+        "note": "Operating cash flow: 839; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "cfo-old",
+      "kind": "fact",
+      "label": {
+        "en": "Operating cash flow",
+        "ro": "Numerar din exploatare"
+      },
+      "definition": "Operating cash flow",
+      "value": 813,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Free cash flow reconciliation, three months ended September 30",
+        "note": "Operating cash flow: 813; scale 1000000; Q3 2025. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "capex",
+      "kind": "fact",
+      "label": {
+        "en": "Cash property/equipment purchases",
+        "ro": "Achiziții cash de active fixe"
+      },
+      "definition": "Cash property/equipment purchases",
+      "value": 91,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Free cash flow reconciliation, three months ended September 30",
+        "note": "Cash property/equipment purchases: 91; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "capex-old",
+      "kind": "fact",
+      "label": {
+        "en": "Cash property/equipment purchases",
+        "ro": "Achiziții cash de active fixe"
+      },
+      "definition": "Cash property/equipment purchases",
+      "value": 235,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Free cash flow reconciliation, three months ended September 30",
+        "note": "Cash property/equipment purchases: 235; scale 1000000; Q3 2025. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "fcf",
+      "kind": "calculation",
+      "label": {
+        "en": "Cash after equipment spending",
+        "ro": "Numerar după investițiile în active fixe"
+      },
+      "definition": "Operating cash flow less cash property/equipment purchases",
+      "operation": "difference",
+      "inputs": [
+        "cfo",
+        "capex"
+      ],
+      "value": 748.0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "fcf-old",
+      "kind": "calculation",
+      "label": {
+        "en": "Cash after equipment spending",
+        "ro": "Numerar după investițiile în active fixe"
+      },
+      "definition": "Operating cash flow less cash property/equipment purchases",
+      "operation": "difference",
+      "inputs": [
+        "cfo-old",
+        "capex-old"
+      ],
+      "value": 578.0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "fcf-growth",
+      "kind": "calculation",
+      "label": {
+        "en": "Growth in cash after equipment spending",
+        "ro": "Creșterea numerarului după active fixe"
+      },
+      "definition": "Growth in cash after equipment spending",
+      "operation": "growth",
+      "inputs": [
+        "fcf",
+        "fcf-old"
+      ],
+      "value": 29.41176470588236,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      }
+    },
+    {
+      "id": "cfo-growth",
+      "kind": "calculation",
+      "label": {
+        "en": "Growth in operating cash",
+        "ro": "Creșterea numerarului din exploatare"
+      },
+      "definition": "Growth in operating cash",
+      "operation": "growth",
+      "inputs": [
+        "cfo",
+        "cfo-old"
+      ],
+      "value": 3.1980319803198043,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      }
+    },
+    {
+      "id": "cash-addback",
+      "kind": "fact",
+      "label": {
+        "en": "Acquisition-related cash addback",
+        "ro": "Costuri cash de achiziție adăugate înapoi"
+      },
+      "definition": "Acquisition-related cash addback",
+      "value": 74,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Free cash flow reconciliation",
+        "note": "Acquisition-related cash addback: 74; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "cash-addback-old",
+      "kind": "fact",
+      "label": {
+        "en": "Acquisition-related cash addback",
+        "ro": "Costuri cash de achiziție adăugate înapoi"
+      },
+      "definition": "Acquisition-related cash addback",
+      "value": 14,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Free cash flow reconciliation",
+        "note": "Acquisition-related cash addback: 14; scale 1000000; Q3 2025. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "adj-fcf",
+      "kind": "fact",
+      "label": {
+        "en": "Company-adjusted free cash flow",
+        "ro": "Flux de numerar liber ajustat de companie"
+      },
+      "definition": "Company-adjusted free cash flow",
+      "value": 822,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Free cash flow reconciliation",
+        "note": "Company-adjusted free cash flow: 822; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "int-y",
+      "kind": "fact",
+      "label": {
+        "en": "Separately purchased intangibles",
+        "ro": "Intangibile cumpărate separat"
+      },
+      "definition": "Cash purchases of other intangibles",
+      "value": 0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-01-01",
+        "end": "2026-09-30",
+        "label": "9M 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Cash-flow statement, purchases of other intangibles; YTD, not a standalone quarter",
+        "note": "Separately purchased intangibles: 0; scale 1000000; 9M 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "int-h",
+      "kind": "fact",
+      "label": {
+        "en": "Separately purchased intangibles",
+        "ro": "Intangibile cumpărate separat"
+      },
+      "definition": "Cash purchases of other intangibles",
+      "value": 0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "label": "H1 2026",
+        "forecast": false
+      },
+      "source_id": "h1",
+      "extraction": {
+        "locator": "Cash-flow statement, purchases of other intangibles; YTD, not a standalone quarter",
+        "note": "Separately purchased intangibles: 0; scale 1000000; H1 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "int-yo",
+      "kind": "fact",
+      "label": {
+        "en": "Separately purchased intangibles",
+        "ro": "Intangibile cumpărate separat"
+      },
+      "definition": "Cash purchases of other intangibles",
+      "value": 43,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-01-01",
+        "end": "2025-09-30",
+        "label": "9M 2025",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Cash-flow statement, purchases of other intangibles; YTD, not a standalone quarter",
+        "note": "Separately purchased intangibles: 43; scale 1000000; 9M 2025. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "int-ho",
+      "kind": "fact",
+      "label": {
+        "en": "Separately purchased intangibles",
+        "ro": "Intangibile cumpărate separat"
+      },
+      "definition": "Cash purchases of other intangibles",
+      "value": 34,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-01-01",
+        "end": "2025-06-30",
+        "label": "H1 2025",
+        "forecast": false
+      },
+      "source_id": "h1",
+      "extraction": {
+        "locator": "Cash-flow statement, purchases of other intangibles; YTD, not a standalone quarter",
+        "note": "Separately purchased intangibles: 34; scale 1000000; H1 2025. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "int-check",
+      "kind": "judgment",
+      "label": {
+        "en": "Separate intangible purchases are zero in both H1 and 9M 2026. In 2025 the total rose from $34m at H1 to $43m at 9M; the older comparison therefore also includes an additional intangible outflow. No acquisition purchase price is included in the equipment-only cash measure.",
+        "ro": "Achizițiile separate de intangibile sunt zero atât în S1, cât și în primele nouă luni din 2026. În 2025, totalul a crescut de la 34 mil. USD în S1 la 43 mil. USD în nouă luni; comparația veche include deci și o ieșire suplimentară pentru intangibile. Prețul achizițiilor de companii nu intră în indicatorul după active fixe."
+      },
+      "definition": "Separate intangible purchases are zero in both H1 and 9M 2026. In 2025 the total rose from $34m at H1 to $43m at 9M; the older comparison therefore also includes an additional intangible outflow. No acquisition purchase price is included in the equipment-only cash measure.",
+      "state": {
+        "en": "Separate intangible purchases are zero in both H1 and 9M 2026. In 2025 the total rose from $34m at H1 to $43m at 9M; the older comparison therefore also includes an additional intangible outflow. No acquisition purchase price is included in the equipment-only cash measure.",
+        "ro": "Achizițiile separate de intangibile sunt zero atât în S1, cât și în primele nouă luni din 2026. În 2025, totalul a crescut de la 34 mil. USD în S1 la 43 mil. USD în nouă luni; comparația veche include deci și o ieșire suplimentară pentru intangibile. Prețul achizițiilor de companii nu intră în indicatorul după active fixe."
+      },
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "evidence_refs": [
+        "int-y",
+        "int-h",
+        "int-yo",
+        "int-ho"
+      ]
+    },
+    {
+      "id": "cash",
+      "kind": "fact",
+      "label": {
+        "en": "Cash and equivalents",
+        "ro": "Numerar și echivalente"
+      },
+      "definition": "Cash and equivalents",
+      "value": 2393,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Cash and equivalents: 2393; scale 1000000; September 30, 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "st-invest",
+      "kind": "fact",
+      "label": {
+        "en": "Short-term marketable securities",
+        "ro": "Titluri tranzacționabile pe termen scurt"
+      },
+      "definition": "Short-term marketable securities",
+      "value": 2214,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Short-term marketable securities: 2214; scale 1000000; September 30, 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "lt-invest",
+      "kind": "fact",
+      "label": {
+        "en": "Long-term marketable securities",
+        "ro": "Titluri tranzacționabile pe termen lung"
+      },
+      "definition": "Long-term marketable securities",
+      "value": 2354,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Long-term marketable securities: 2354; scale 1000000; September 30, 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "st-debt",
+      "kind": "fact",
+      "label": {
+        "en": "Short-term debt carrying value",
+        "ro": "Valoarea contabilă a datoriei pe termen scurt"
+      },
+      "definition": "Short-term debt carrying value",
+      "value": 2086,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Short-term debt carrying value: 2086; scale 1000000; September 30, 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "lt-debt",
+      "kind": "fact",
+      "label": {
+        "en": "Long-term debt carrying value",
+        "ro": "Valoarea contabilă a datoriei pe termen lung"
+      },
+      "definition": "Long-term debt carrying value",
+      "value": 5438,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Long-term debt carrying value: 5438; scale 1000000; September 30, 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "debt",
+      "kind": "calculation",
+      "label": {
+        "en": "Borrowings excluding operating leases",
+        "ro": "Împrumuturi fără leasing operațional"
+      },
+      "definition": "Borrowings excluding operating leases",
+      "operation": "sum",
+      "inputs": [
+        "st-debt",
+        "lt-debt"
+      ],
+      "value": 7524.0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "liquidity",
+      "kind": "calculation",
+      "label": {
+        "en": "Cash and marketable securities",
+        "ro": "Numerar și titluri tranzacționabile"
+      },
+      "definition": "Cash and marketable securities",
+      "operation": "sum",
+      "inputs": [
+        "cash",
+        "st-invest",
+        "lt-invest"
+      ],
+      "value": 6961.0,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "cp",
+      "kind": "fact",
+      "label": {
+        "en": "Commercial-paper principal",
+        "ro": "Principalul titlurilor comerciale"
+      },
+      "definition": "Commercial-paper principal",
+      "value": 2100,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Note 11, commercial paper; excludes unamortized discount",
+        "note": "Commercial-paper principal: 2100; scale 1000000; September 30, 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "revolver",
+      "kind": "fact",
+      "label": {
+        "en": "Undrawn revolving credit facility",
+        "ro": "Facilitate revolving neutilizată"
+      },
+      "definition": "Undrawn revolving credit facility",
+      "value": 3000,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "instant",
+        "end": "2026-09-30",
+        "label": "September 30, 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Note 11, no outstanding borrowing; covenant compliance; maturity April 1, 2031",
+        "note": "Undrawn revolving credit facility: 3000; scale 1000000; September 30, 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "renewal",
+      "kind": "fact",
+      "label": {
+        "en": "Contract-value renewal rate",
+        "ro": "Rata reînnoirii valorii contractelor"
+      },
+      "definition": "Contract-value renewal rate",
+      "value": 98,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "operating",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "MD&A, Renewal rate; not net retention, does not fully capture downsizing",
+        "note": "Contract-value renewal rate: 98; scale 1; Q3 2026. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "renewal-old",
+      "kind": "fact",
+      "label": {
+        "en": "Contract-value renewal rate",
+        "ro": "Rata reînnoirii valorii contractelor"
+      },
+      "definition": "Contract-value renewal rate",
+      "value": 97,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "operating",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "MD&A, Renewal rate",
+        "note": "Contract-value renewal rate: 97; scale 1; Q3 2025. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "shares",
+      "kind": "fact",
+      "label": {
+        "en": "Diluted weighted-average shares",
+        "ro": "Media ponderată a acțiunilor diluate"
+      },
+      "definition": "Diluted weighted-average shares",
+      "value": 1043.011,
+      "unit": "shares",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Note 16; filing thousands converted to millions, five-for-one split consistently reflected",
+        "note": "Diluted weighted-average shares: 1043.011; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "shares-old",
+      "kind": "fact",
+      "label": {
+        "en": "Diluted weighted-average shares",
+        "ro": "Media ponderată a acțiunilor diluate"
+      },
+      "definition": "Diluted weighted-average shares",
+      "value": 1047.523,
+      "unit": "shares",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Note 16; comparative shares on the same split-adjusted basis",
+        "note": "Diluted weighted-average shares: 1047.523; scale 1000000; Q3 2025. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "share-growth",
+      "kind": "calculation",
+      "label": {
+        "en": "Year-on-year diluted share-count change",
+        "ro": "Modificarea anuală a acțiunilor diluate"
+      },
+      "definition": "Year-on-year diluted share-count change",
+      "operation": "growth",
+      "inputs": [
+        "shares",
+        "shares-old"
+      ],
+      "value": -0.4307303992370448,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      }
+    },
+    {
+      "id": "share-qoq",
+      "kind": "calculation",
+      "label": {
+        "en": "Sequential diluted share-count change",
+        "ro": "Modificarea trimestrială a acțiunilor diluate"
+      },
+      "definition": "Sequential diluted share-count change",
+      "operation": "growth",
+      "inputs": [
+        "shares",
+        "b-shares"
+      ],
+      "value": 0.8388973000984068,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      }
+    },
+    {
+      "id": "interest",
+      "kind": "fact",
+      "label": {
+        "en": "Quarterly interest expense",
+        "ro": "Cheltuieli trimestriale cu dobânzile"
+      },
+      "definition": "Quarterly interest expense",
+      "value": 81,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Quarterly interest expense: 81; scale 1000000; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "interest-old",
+      "kind": "fact",
+      "label": {
+        "en": "Quarterly interest expense",
+        "ro": "Cheltuieli trimestriale cu dobânzile"
+      },
+      "definition": "Quarterly interest expense",
+      "value": 6,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "label": "Q3 2025",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Condensed consolidated financial statements",
+        "note": "Quarterly interest expense: 6; scale 1000000; Q3 2025. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "eps",
+      "kind": "fact",
+      "label": {
+        "en": "Reported diluted earnings per share",
+        "ro": "Profit raportat pe acțiune diluată"
+      },
+      "definition": "Reported diluted earnings per share",
+      "value": 0.27,
+      "unit": "currency_per_share",
+      "scale": 1,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Note 16, Q3 2026; not annual or trailing EPS",
+        "note": "Reported diluted earnings per share: 0.27; scale 1; Q3 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "funding",
+      "kind": "fact",
+      "label": {
+        "en": "Commercial paper has 62 days of weighted-average remaining maturity and a 4.05% rate. The $3bn revolver is undrawn, covenant compliant and matures April 2031. Senior-note principal is $5.5bn, with maturities May 2028–May 2056. Management expects liquidity to cover at least the next twelve months.",
+        "ro": "Titlurile comerciale au scadență medie rămasă de 62 de zile și dobândă de 4,05%. Facilitatea de 3 mld. USD este neutilizată, respectă clauzele și expiră în aprilie 2031. Principalul obligațiunilor este de 5,5 mld. USD, cu scadențe mai 2028–mai 2056. Conducerea estimează lichiditate suficientă pentru cel puțin douăsprezece luni."
+      },
+      "definition": "Commercial paper has 62 days of weighted-average remaining maturity and a 4.05% rate. The $3bn revolver is undrawn, covenant compliant and matures April 2031. Senior-note principal is $5.5bn, with maturities May 2028–May 2056. Management expects liquidity to cover at least the next twelve months.",
+      "state": {
+        "en": "Commercial paper has 62 days of weighted-average remaining maturity and a 4.05% rate. The $3bn revolver is undrawn, covenant compliant and matures April 2031. Senior-note principal is $5.5bn, with maturities May 2028–May 2056. Management expects liquidity to cover at least the next twelve months.",
+        "ro": "Titlurile comerciale au scadență medie rămasă de 62 de zile și dobândă de 4,05%. Facilitatea de 3 mld. USD este neutilizată, respectă clauzele și expiră în aprilie 2031. Principalul obligațiunilor este de 5,5 mld. USD, cu scadențe mai 2028–mai 2056. Conducerea estimează lichiditate suficientă pentru cel puțin douăsprezece luni."
+      },
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Note 11 and MD&A liquidity",
+        "note": "Commercial paper has 62 days of weighted-average remaining maturity and a 4.05% rate. The $3bn revolver is undrawn, covenant compliant and matures April 2031. Senior-note principal is $5.5bn, with maturities May 2028–May 2056. Management expects liquidity to cover at least the next twelve months."
+      }
+    },
+    {
+      "id": "acq-disclosure",
+      "kind": "fact",
+      "label": {
+        "en": "The filing does not quantify separate Armis/Veza organic-versus-acquired revenue growth. Note 5 calls included acquisition results immaterial and omits pro-forma results on that basis. Aggregate renewals cannot establish acquisition-specific retention or returns.",
+        "ro": "Raportarea nu cuantifică separat creșterea organică versus cea achiziționată pentru Armis/Veza. Nota 5 consideră rezultatele achizițiilor nesemnificative și omite datele pro forma pe acest motiv. Reînnoirile agregate nu demonstrează retenția ori randamentul fiecărei achiziții."
+      },
+      "definition": "The filing does not quantify separate Armis/Veza organic-versus-acquired revenue growth. Note 5 calls included acquisition results immaterial and omits pro-forma results on that basis. Aggregate renewals cannot establish acquisition-specific retention or returns.",
+      "state": {
+        "en": "The filing does not quantify separate Armis/Veza organic-versus-acquired revenue growth. Note 5 calls included acquisition results immaterial and omits pro-forma results on that basis. Aggregate renewals cannot establish acquisition-specific retention or returns.",
+        "ro": "Raportarea nu cuantifică separat creșterea organică versus cea achiziționată pentru Armis/Veza. Nota 5 consideră rezultatele achizițiilor nesemnificative și omite datele pro forma pe acest motiv. Reînnoirile agregate nu demonstrează retenția ori randamentul fiecărei achiziții."
+      },
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "q3",
+      "extraction": {
+        "locator": "Note 5, Additional Acquisition-Related Information; MD&A renewal definition",
+        "note": "The filing does not quantify separate Armis/Veza organic-versus-acquired revenue growth. Note 5 calls included acquisition results immaterial and omits pro-forma results on that basis. Aggregate renewals cannot establish acquisition-specific retention or returns."
+      }
+    },
+    {
+      "id": "timing",
+      "kind": "fact",
+      "label": {
+        "en": "The CFO attributes roughly half of the Q3 contracted-growth beat to early renewals pulled from Q4. She also describes moving delivery-expertise value from subscription to services, with effects of about 25 basis points in Q3 and 50 in Q4. These explanations do not change the saved reported-revenue or constant-currency thresholds.",
+        "ro": "CFO atribuie aproximativ jumătate din depășirea țintei de creștere a contractelor T3 reînnoirilor devansate din T4. Descrie și mutarea valorii serviciilor de implementare din abonamente în servicii, cu efecte de circa 25 puncte de bază în T3 și 50 în T4. Explicațiile nu schimbă pragurile originale."
+      },
+      "definition": "The CFO attributes roughly half of the Q3 contracted-growth beat to early renewals pulled from Q4. She also describes moving delivery-expertise value from subscription to services, with effects of about 25 basis points in Q3 and 50 in Q4. These explanations do not change the saved reported-revenue or constant-currency thresholds.",
+      "state": {
+        "en": "The CFO attributes roughly half of the Q3 contracted-growth beat to early renewals pulled from Q4. She also describes moving delivery-expertise value from subscription to services, with effects of about 25 basis points in Q3 and 50 in Q4. These explanations do not change the saved reported-revenue or constant-currency thresholds.",
+        "ro": "CFO atribuie aproximativ jumătate din depășirea țintei de creștere a contractelor T3 reînnoirilor devansate din T4. Descrie și mutarea valorii serviciilor de implementare din abonamente în servicii, cu efecte de circa 25 puncte de bază în T3 și 50 în T4. Explicațiile nu schimbă pragurile originale."
+      },
+      "period": {
+        "kind": "duration",
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "label": "Q3 2026",
+        "forecast": false
+      },
+      "source_id": "call",
+      "extraction": {
+        "locator": "CFO Q&A with Alex Zukin, transcript lines 294–301",
+        "note": "The CFO attributes roughly half of the Q3 contracted-growth beat to early renewals pulled from Q4. She also describes moving delivery-expertise value from subscription to services, with effects of about 25 basis points in Q3 and 50 in Q4. These explanations do not change the saved reported-revenue or constant-currency thresholds."
+      }
+    },
+    {
+      "id": "q4-sub",
+      "kind": "estimate",
+      "label": {
+        "en": "Q4 subscription guidance floor",
+        "ro": "Limita prognozei abonamentelor T4"
+      },
+      "definition": "Subscription revenue",
+      "value": 4245,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "GAAP",
+      "period": {
+        "kind": "duration",
+        "start": "2026-10-01",
+        "end": "2026-12-31",
+        "label": "Q4 2026",
+        "forecast": true
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Financial outlook and AI annual contract value target; management forecast",
+        "note": "Q4 subscription guidance floor: 4245; scale 1000000; Q4 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    },
+    {
+      "id": "q4-crpo",
+      "kind": "estimate",
+      "label": {
+        "en": "Q4 contracted-growth guidance",
+        "ro": "Prognoza creșterii contractelor T4"
+      },
+      "definition": "cRPO constant currency year-on-year growth",
+      "value": 18.5,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-10-01",
+        "end": "2026-12-31",
+        "label": "Q4 2026",
+        "forecast": true
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Financial outlook and AI annual contract value target; management forecast",
+        "note": "Q4 contracted-growth guidance: 18.5; scale 1; Q4 2026. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "q4-margin",
+      "kind": "estimate",
+      "label": {
+        "en": "Q4 adjusted operating margin guidance",
+        "ro": "Prognoza marjei operaționale ajustate T4"
+      },
+      "definition": "Adjusted operating margin",
+      "value": 32,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-10-01",
+        "end": "2026-12-31",
+        "label": "Q4 2026",
+        "forecast": true
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Financial outlook and AI annual contract value target; management forecast",
+        "note": "Q4 adjusted operating margin guidance: 32; scale 1; Q4 2026. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "fy-fcf",
+      "kind": "estimate",
+      "label": {
+        "en": "FY2026 adjusted cash margin guidance",
+        "ro": "Prognoza marjei cash ajustate 2026"
+      },
+      "definition": "Company-adjusted free cash flow margin",
+      "value": 36,
+      "unit": "percent",
+      "scale": 1,
+      "basis": "adjusted",
+      "period": {
+        "kind": "duration",
+        "start": "2026-01-01",
+        "end": "2026-12-31",
+        "label": "FY 2026",
+        "forecast": true
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Financial outlook and AI annual contract value target; management forecast",
+        "note": "FY2026 adjusted cash margin guidance: 36; scale 1; FY 2026. Positive cash-purchase figures represent outflows."
+      }
+    },
+    {
+      "id": "ai-target",
+      "kind": "estimate",
+      "label": {
+        "en": "Year-end AI annual contract value target",
+        "ro": "Ținta valorii anuale a contractelor AI la final de an"
+      },
+      "definition": "AI annual contract value",
+      "value": 1700,
+      "unit": "currency",
+      "scale": 1000000,
+      "basis": "operating",
+      "period": {
+        "kind": "duration",
+        "start": "2026-01-01",
+        "end": "2026-12-31",
+        "label": "FY 2026",
+        "forecast": true
+      },
+      "source_id": "release",
+      "extraction": {
+        "locator": "Financial outlook and AI annual contract value target; management forecast",
+        "note": "Year-end AI annual contract value target: 1700; scale 1000000; FY 2026. Positive cash-purchase figures represent outflows."
+      },
+      "currency": "USD"
+    }
+  ],
+  "sections": [
+    {
+      "id": "demand",
+      "question": {
+        "en": "Did demand meet the saved tests?",
+        "ro": "Cererea a îndeplinit criteriile salvate?"
+      },
+      "claims": [
+        {
+          "type": "interpretation",
+          "text": {
+            "en": "Q4 management forecasts are recorded separately. The new lower contracted-growth threshold applies only to the next period.",
+            "ro": "Prognozele T4 sunt salvate separat. Pragul nou, mai mic, se aplică doar perioadei următoare."
+          },
+          "evidence_refs": [
+            "q4-crpo",
+            "q4-sub"
+          ]
+        }
+      ],
+      "metrics": [
+        "sub",
+        "crpo-growth",
+        "crpo"
+      ],
+      "caveat": {
+        "en": "Q4 contracted-growth guidance is 18.5%, below Q3 actual growth. Management cites timing and contract mix; this is a future risk, not a retroactive failure of the Q3 test.",
+        "ro": "Prognoza creșterii contractelor T4 este 18,5%, sub rezultatul T3. Conducerea invocă momentul și mixul contractelor; este un risc viitor, nu un eșec retroactiv al T3."
+      },
+      "guide": {
+        "claims": [
+          {
+            "type": "interpretation",
+            "text": {
+              "en": "Yes. Subscription sales cleared the saved floor. Contracted revenue due within twelve months also grew faster than the original constant-currency target. Early renewals helped the latter, so the result is delivery against plan rather than proof of accelerating underlying demand.",
+              "ro": "Da. Abonamentele au depășit limita salvată. Veniturile contractate scadente în douăsprezece luni au crescut și ele peste ținta originală la curs constant. Reînnoirile devansate au ajutat, deci rezultatul arată execuție conform planului, fără a demonstra accelerarea cererii de bază."
+            },
+            "evidence_refs": [
+              "sub",
+              "crpo-growth",
+              "timing"
+            ]
+          }
+        ],
+        "metrics": [
+          {
+            "evidence_ref": "sub",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Above the original $3,975m minimum.",
+                "ro": "Peste minimul original de 3.975 mil. USD."
+              },
+              "evidence_refs": [
+                "sub"
+              ]
+            }
+          },
+          {
+            "evidence_ref": "crpo-growth",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Above the original 20% minimum, measured without currency movements.",
+                "ro": "Peste minimul original de 20%, fără variațiile valutare."
+              },
+              "evidence_refs": [
+                "crpo-growth"
+              ]
+            }
+          },
+          {
+            "evidence_ref": "crpo",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Revenue already contracted for recognition within twelve months.",
+                "ro": "Venituri deja contractate pentru recunoaștere în douăsprezece luni."
+              },
+              "evidence_refs": [
+                "crpo"
+              ]
+            }
+          }
+        ],
+        "why_it_matters": {
+          "type": "interpretation",
+          "text": {
+            "en": "Sales show what was recognized now; contracted growth gives a different view of future demand. Neither measure by itself proves acquisition returns.",
+            "ro": "Vânzările arată ce s-a recunoscut acum; creșterea contractelor oferă altă perspectivă asupra cererii viitoare. Niciuna nu dovedește singură randamentul achizițiilor."
+          },
+          "evidence_refs": [
+            "sub",
+            "crpo-growth",
+            "timing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "profit",
+      "question": {
+        "en": "Does the margin pass mean stronger profit?",
+        "ro": "Trecerea testului de marjă înseamnă profit mai bun?"
+      },
+      "claims": [
+        {
+          "type": "interpretation",
+          "text": {
+            "en": "The adjusted margin test passes. Yet the reported margin is materially lower than a year ago. Adjusted profit removes employee share compensation and other real economic costs; it answers a different question.",
+            "ro": "Testul marjei ajustate este trecut. Totuși, marja raportată este mult sub anul trecut. Profitul ajustat exclude plata în acțiuni și alte costuri economice reale; răspunde unei alte întrebări."
+          },
+          "evidence_refs": [
+            "margin",
+            "gaap-margin",
+            "gaap-margin-old",
+            "op-bridge"
+          ]
+        }
+      ],
+      "metrics": [
+        "margin",
+        "gaap-margin",
+        "gaap-margin-old"
+      ],
+      "caveat": {
+        "en": "Bridge, USD millions: 385 reported profit + 633 share compensation + 198 amortization + 35 acquisition costs + 87 severance = 1,338 adjusted profit. The issuer rounds margins to half percentage points.",
+        "ro": "Reconciliere, mil. USD: 385 profit raportat + 633 plata în acțiuni + 198 amortizare + 35 costuri de achiziție + 87 restructurare = 1.338 profit ajustat. Emitentul rotunjește marjele la jumătăți de punct procentual."
+      },
+      "guide": {
+        "claims": [
+          {
+            "type": "interpretation",
+            "text": {
+              "en": "The adjusted margin test passes. Yet the reported margin is materially lower than a year ago. Adjusted profit removes employee share compensation and other real economic costs; it answers a different question.",
+              "ro": "Testul marjei ajustate este trecut. Totuși, marja raportată este mult sub anul trecut. Profitul ajustat exclude plata în acțiuni și alte costuri economice reale; răspunde unei alte întrebări."
+            },
+            "evidence_refs": [
+              "margin",
+              "gaap-margin",
+              "gaap-margin-old",
+              "op-bridge"
+            ]
+          }
+        ],
+        "metrics": [
+          {
+            "evidence_ref": "margin",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Meets the saved 31% adjusted target.",
+                "ro": "Îndeplinește ținta ajustată salvată de 31%."
+              },
+              "evidence_refs": [
+                "margin"
+              ]
+            }
+          },
+          {
+            "evidence_ref": "gaap-margin",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "The reported profit share of sales includes costs excluded from adjusted results.",
+                "ro": "Proporția profitului raportat include costurile excluse din rezultatele ajustate."
+              },
+              "evidence_refs": [
+                "gaap-margin"
+              ]
+            }
+          },
+          {
+            "evidence_ref": "gaap-margin-old",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "The comparable reported margin was higher a year earlier.",
+                "ro": "Marja raportată comparabilă era mai mare în urmă cu un an."
+              },
+              "evidence_refs": [
+                "gaap-margin-old"
+              ]
+            }
+          }
+        ],
+        "why_it_matters": {
+          "type": "interpretation",
+          "text": {
+            "en": "Keep the original pass and the adverse accounting evidence together. Changing the score would change the saved test; ignoring the bridge would overstate business quality.",
+            "ro": "Păstrează împreună rezultatul favorabil și datele contabile adverse. Schimbarea verdictului ar modifica testul salvat; ignorarea reconcilierii ar supraestima calitatea afacerii."
+          },
+          "evidence_refs": [
+            "margin",
+            "gaap-margin",
+            "gaap-margin-old",
+            "op-bridge"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cash",
+      "question": {
+        "en": "Has useful cash recovered?",
+        "ro": "Și-a revenit numerarul util?"
+      },
+      "claims": [
+        {
+          "type": "interpretation",
+          "text": {
+            "en": "The company reports adjusted cash flow of $822m after adding back $74m of acquisition-related cash costs; the comparable addback was $14m. The original favorable condition required growth without larger recurring addbacks.",
+            "ro": "Compania raportează cash ajustat de 822 mil. USD după adăugarea a 74 mil. USD de costuri cash de achiziție; ajustarea comparabilă era 14 mil. USD. Condiția originală favorabilă cerea creștere fără ajustări recurente mai mari."
+          },
+          "evidence_refs": [
+            "adj-fcf",
+            "cash-addback",
+            "cash-addback-old"
+          ]
+        },
+        {
+          "type": "interpretation",
+          "text": {
+            "en": "The separate-intangible check is preserved using the filed six- and nine-month totals.",
+            "ro": "Verificarea intangibilelor separate este păstrată folosind totalurile depuse pentru șase și nouă luni."
+          },
+          "evidence_refs": [
+            "int-check"
+          ]
+        }
+      ],
+      "metrics": [
+        "fcf",
+        "fcf-old",
+        "cfo-growth"
+      ],
+      "caveat": {
+        "en": "Equipment-only cash flow excludes acquisitions and separately purchased intangibles. Current-year intangible purchases remain zero; prior-year YTD totals rose from $34m at H1 to $43m at 9M. No assumption is made that lower equipment spending is permanently sustainable.",
+        "ro": "Numerarul după active fixe exclude achizițiile de companii și intangibilele cumpărate separat. Intangibilele curente rămân zero; în anul anterior totalul a crescut de la 34 mil. USD în S1 la 43 mil. USD în nouă luni. Nu presupunem că investițiile mai mici sunt permanent sustenabile."
+      },
+      "guide": {
+        "claims": [
+          {
+            "type": "interpretation",
+            "text": {
+              "en": "Partly. Cash left after equipment purchases increased, but operating cash grew only modestly. Lower equipment spending did much of the work. Acquisition-related cash exclusions increased, so this is a Mixed result under the original multi-part rule.",
+              "ro": "Parțial. Numerarul după active fixe a crescut, dar numerarul din exploatare a avansat modest. Investițiile mai mici au avut rolul principal. Excluderile cash de achiziție au crescut, deci verdictul este Mixt conform regulii originale."
+            },
+            "evidence_refs": [
+              "fcf",
+              "fcf-old",
+              "fcf-growth",
+              "cfo-growth",
+              "capex",
+              "capex-old",
+              "cash-addback",
+              "cash-addback-old"
+            ]
+          }
+        ],
+        "metrics": [
+          {
+            "evidence_ref": "fcf",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Operating cash minus property/equipment purchases, before acquisitions.",
+                "ro": "Numerar din exploatare minus active fixe, înaintea achizițiilor de companii."
+              },
+              "evidence_refs": [
+                "fcf"
+              ]
+            }
+          },
+          {
+            "evidence_ref": "fcf-old",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Same equipment-only definition for Q3 2025.",
+                "ro": "Aceeași definiție după active fixe pentru T3 2025."
+              },
+              "evidence_refs": [
+                "fcf-old"
+              ]
+            }
+          },
+          {
+            "evidence_ref": "cfo-growth",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Cash from operations grew much less than cash after equipment spending.",
+                "ro": "Numerarul din exploatare a crescut mult mai puțin decât numerarul după active fixe."
+              },
+              "evidence_refs": [
+                "cfo-growth"
+              ]
+            }
+          }
+        ],
+        "why_it_matters": {
+          "type": "interpretation",
+          "text": {
+            "en": "A higher adjusted cash number does not show that every component improved. Track cash actually retained, equipment needs and exclusions separately.",
+            "ro": "Un indicator cash ajustat mai mare nu arată că toate componentele s-au îmbunătățit. Urmărește separat numerarul rămas, investițiile și excluderile."
+          },
+          "evidence_refs": [
+            "fcf",
+            "fcf-old",
+            "fcf-growth",
+            "cfo-growth",
+            "capex",
+            "capex-old",
+            "cash-addback",
+            "cash-addback-old"
+          ]
+        }
+      }
+    },
+    {
+      "id": "funding",
+      "question": {
+        "en": "Are funding and customer retention holding up?",
+        "ro": "Rezistă finanțarea și retenția clienților?"
+      },
+      "claims": [
+        {
+          "type": "interpretation",
+          "text": {
+            "en": "Borrowings and interest cost remain material despite the favorable liquidity assessment. The pass is limited to the saved condition, not an assertion that funding risk disappeared.",
+            "ro": "Împrumuturile și dobânzile rămân importante în ciuda lichidității favorabile. Verdictul se limitează la condiția salvată, fără să susțină că riscul a dispărut."
+          },
+          "evidence_refs": [
+            "debt",
+            "b-debt",
+            "interest",
+            "interest-old"
+          ]
+        },
+        {
+          "type": "interpretation",
+          "text": {
+            "en": "Diluted-share comparison uses the same five-for-one split basis; both annual and sequential changes are retained.",
+            "ro": "Comparația acțiunilor folosește aceeași bază după splitul cinci-la-unu; sunt păstrate schimbările anuale și trimestriale."
+          },
+          "evidence_refs": [
+            "share-growth",
+            "share-qoq"
+          ]
+        }
+      ],
+      "metrics": [
+        "liquidity",
+        "cp",
+        "renewal"
+      ],
+      "caveat": {
+        "en": "Debt carrying value is $7.524bn versus $7.517bn at June. Diluted shares are lower year on year but higher than Q2. Renewal rates do not fully capture customer downsizing. Separate Armis/Veza organic growth remains undisclosed.",
+        "ro": "Datoria contabilă este 7,524 mld. USD față de 7,517 mld. USD în iunie. Acțiunile diluate sunt mai puține anual, dar mai multe decât în T2. Rata reînnoirii nu surprinde complet reducerile de abonamente. Creșterea organică Armis/Veza nu este prezentată separat."
+      },
+      "guide": {
+        "claims": [
+          {
+            "type": "interpretation",
+            "text": {
+              "en": "Yes, on the original liquidity-and-retention condition. Liquid investments and an undrawn credit line support near-term obligations; renewal rates remain stable. This is not proof that the acquisitions have earned their purchase prices.",
+              "ro": "Da, după condiția originală privind lichiditatea și retenția. Investițiile lichide și facilitatea neutilizată susțin obligațiile apropiate; reînnoirile rămân stabile. Nu este dovada că achizițiile și-au justificat prețurile."
+            },
+            "evidence_refs": [
+              "liquidity",
+              "revolver",
+              "cp",
+              "funding",
+              "renewal",
+              "acq-disclosure"
+            ]
+          }
+        ],
+        "metrics": [
+          {
+            "evidence_ref": "liquidity",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Cash plus short- and long-term marketable securities; strategic investments excluded.",
+                "ro": "Numerar plus titluri tranzacționabile scurte și lungi; investițiile strategice sunt excluse."
+              },
+              "evidence_refs": [
+                "liquidity"
+              ]
+            }
+          },
+          {
+            "evidence_ref": "cp",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Short-term principal that still needs repayment or refinancing.",
+                "ro": "Principal pe termen scurt care necesită rambursare sau refinanțare."
+              },
+              "evidence_refs": [
+                "cp"
+              ]
+            }
+          },
+          {
+            "evidence_ref": "renewal",
+            "meaning": {
+              "type": "interpretation",
+              "text": {
+                "en": "Stable versus Q2; this is contract-value renewal, not net customer expansion.",
+                "ro": "Stabilă față de T2; este reînnoirea valorii contractelor, nu expansiunea netă a clienților."
+              },
+              "evidence_refs": [
+                "renewal"
+              ]
+            }
+          }
+        ],
+        "why_it_matters": {
+          "type": "interpretation",
+          "text": {
+            "en": "Short-term borrowing must be refinanced or repaid. The available resources support the saved condition even though the debt burden remains significant.",
+            "ro": "Împrumuturile scurte trebuie refinanțate sau rambursate. Resursele disponibile susțin condiția salvată, deși datoria rămâne importantă."
+          },
+          "evidence_refs": [
+            "liquidity",
+            "revolver",
+            "cp",
+            "funding",
+            "renewal",
+            "acq-disclosure"
+          ]
+        }
+      }
+    }
+  ],
+  "coverage": {
+    "growth": {
+      "status": "covered",
+      "reason": {
+        "en": "Covered within the five-check earnings follow-up scope.",
+        "ro": "Acoperit în scopul celor cinci verificări."
+      },
+      "section_ids": [
+        "demand"
+      ]
+    },
+    "profitability": {
+      "status": "covered",
+      "reason": {
+        "en": "Covered within the five-check earnings follow-up scope.",
+        "ro": "Acoperit în scopul celor cinci verificări."
+      },
+      "section_ids": [
+        "profit"
+      ]
+    },
+    "cash_flow": {
+      "status": "covered",
+      "reason": {
+        "en": "Covered within the five-check earnings follow-up scope.",
+        "ro": "Acoperit în scopul celor cinci verificări."
+      },
+      "section_ids": [
+        "cash"
+      ]
+    },
+    "balance_sheet": {
+      "status": "covered",
+      "reason": {
+        "en": "Covered within the five-check earnings follow-up scope.",
+        "ro": "Acoperit în scopul celor cinci verificări."
+      },
+      "section_ids": [
+        "funding"
+      ]
+    },
+    "dilution": {
+      "status": "covered",
+      "reason": {
+        "en": "Covered within the five-check earnings follow-up scope.",
+        "ro": "Acoperit în scopul celor cinci verificări."
+      },
+      "section_ids": [
+        "funding"
+      ]
+    },
+    "risks": {
+      "status": "covered",
+      "reason": {
+        "en": "Covered within the five-check earnings follow-up scope.",
+        "ro": "Acoperit în scopul celor cinci verificări."
+      },
+      "section_ids": [
+        "demand",
+        "cash",
+        "funding"
+      ]
+    }
+  },
+  "summary": [
+    {
+      "type": "interpretation",
+      "text": {
+        "en": "Four of the five saved checks are Met; cash quality is Mixed. Demand delivered, but the cash recovery relies heavily on lower equipment spending and larger acquisition-related cash adjustments remain.",
+        "ro": "Patru dintre cele cinci criterii sunt îndeplinite; calitatea numerarului este mixtă. Cererea a livrat, dar revenirea numerarului depinde mult de investiții mai mici în active fixe, iar ajustările cash de achiziție rămân mai mari."
+      },
+      "evidence_refs": [
+        "sub",
+        "crpo-growth",
+        "margin",
+        "fcf-growth",
+        "cash-addback",
+        "cash-addback-old",
+        "funding",
+        "renewal"
+      ]
+    },
+    {
+      "type": "interpretation",
+      "text": {
+        "en": "The thesis is broadly unchanged: recurring demand remains resilient, while acquisitions, reported profitability and refinancing deserve continued attention. This is an operating-results review; price attractiveness has not been refreshed.",
+        "ro": "Teza rămâne în linii mari neschimbată: cererea recurentă rezistă, iar achizițiile, profitabilitatea raportată și refinanțarea necesită atenție. Aceasta este o analiză a rezultatelor; atractivitatea prețului nu a fost actualizată."
+      },
+      "evidence_refs": [
+        "crpo-growth",
+        "gaap-margin",
+        "debt",
+        "funding"
+      ]
+    }
+  ],
+  "business_assessment": {
+    "type": "interpretation",
+    "text": {
+      "en": "Demand and retention support the business case; the gap between adjusted and reported profit keeps the quality assessment qualified.",
+      "ro": "Cererea și retenția susțin afacerea; diferența dintre profitul ajustat și cel raportat păstrează rezerve privind calitatea."
+    },
+    "evidence_refs": [
+      "sub",
+      "renewal",
+      "margin",
+      "gaap-margin"
+    ]
+  },
+  "price_assessment": {
+    "type": "limitation",
+    "text": {
+      "en": "Not refreshed. No current quote, valuation multiple or buy/sell conclusion is inferred from this earnings review. The September valuation remains historical.",
+      "ro": "Neactualizată. Din această analiză nu rezultă o cotație curentă, un multiplu de evaluare ori o concluzie de cumpărare/vânzare. Evaluarea din septembrie rămâne istorică."
+    },
+    "evidence_refs": []
+  },
+  "evidence_gaps": {
+    "en": "No separate Armis/Veza organic-growth or retention breakdown. Call commentary uses a third-party transcript; no original audio transcription or investor slide-deck review. Next Q4/FY2026 release date not verified as announced. No refreshed market valuation.",
+    "ro": "Lipsesc defalcările creșterii organice și retenției Armis/Veza. Comentariile apelului provin dintr-o transcriere terță; fără transcriere audio proprie ori analiză a prezentării. Data rezultatelor T4/2026 nu a fost confirmată. Evaluarea bursieră nu este actualizată."
+  },
+  "key_stats": [
+    {
+      "concept": "revenue",
+      "evidence_ref": "rev"
+    },
+    {
+      "concept": "eps",
+      "evidence_ref": "eps",
+      "label": {
+        "en": "Reported quarterly EPS",
+        "ro": "Profit trimestrial raportat pe acțiune"
+      }
+    },
+    {
+      "concept": "price",
+      "label": {
+        "en": "Current price",
+        "ro": "Preț curent"
+      },
+      "note": {
+        "en": "Not refreshed in this operating update.",
+        "ro": "Neactualizat în această analiză operațională."
+      }
+    }
+  ],
+  "review": {
+    "baseline_sha256": "025369549873a2f3c0d5b73cbbc056ac257855ae7bbebba24eda5a8e09d70407",
+    "release": {
+      "id": "SEC:0001373715-26-000096",
+      "period": "Q3 2026",
+      "status": "published",
+      "source_id": "q3",
+      "published_at": "2026-10-28T17:12:31-04:00"
+    },
+    "provisional": false,
+    "coverage_note": {
+      "en": "All five original checks assessed using the issuer release, filed Q3 10-Q, H1 cash-flow comparison and relevant call transcript passages. The publication timestamp is the 10-Q acceptance checkpoint, not an invented press-release upload time. Missing acquisition breakdowns remain visible; no essential filing is pending for these checks.",
+      "ro": "Toate cele cinci verificări au fost evaluate folosind comunicatul, raportul T3 10-Q, comparația cash S1 și pasajele relevante ale transcrierii. Ora publicării este reperul acceptării 10-Q, nu o oră inventată a comunicatului. Lipsurile privind achizițiile rămân vizibile; nu este necesară așteptarea unei raportări esențiale."
+    },
+    "thesis_status": "broadly_unchanged",
+    "thesis_change": {
+      "en": "The thesis is broadly unchanged: recurring demand remains resilient, while acquisitions, reported profitability and refinancing deserve continued attention. This is an operating-results review; price attractiveness has not been refreshed.",
+      "ro": "Teza rămâne în linii mari neschimbată: cererea recurentă rezistă, iar achizițiile, profitabilitatea raportată și refinanțarea necesită atenție. Aceasta este o analiză a rezultatelor; atractivitatea prețului nu a fost actualizată."
+    },
+    "outcomes": [
+      {
+        "watch_id": "now-sub",
+        "criterion_version": 1,
+        "criterion_sha256": "00c0f47ea1175e43f8c721912da86dcca8e339a0425e1032723f2c063ba3da1c",
+        "outcome": "Met",
+        "observed_period": "Q3 2026",
+        "reason": {
+          "en": "Reported subscriptions are $3,988m, above the unchanged $3,975m floor. No currency or delivery-services addback is used to score the test.",
+          "ro": "Abonamentele raportate sunt 3.988 mil. USD, peste limita neschimbată de 3.975 mil. USD. Nu ajustăm cursul ori serviciile de implementare pentru verdict."
+        },
+        "thesis_impact": {
+          "en": "Supports execution despite Q2 revenue timing; not proof of acceleration.",
+          "ro": "Susține execuția în ciuda calendarului T2; nu dovedește accelerarea."
+        },
+        "new_evidence_refs": [
+          "sub",
+          "timing"
+        ],
+        "actual_ref": "sub"
+      },
+      {
+        "watch_id": "now-crpo",
+        "criterion_version": 1,
+        "criterion_sha256": "5bb8b471717cd0ce074b136f4f91dd591e9b792a72d1739a1eca2137e44d7f00",
+        "outcome": "Met",
+        "observed_period": "Q3 2026",
+        "reason": {
+          "en": "Constant-currency cRPO growth is 21% against the original minimum of 20%. Reported-currency growth is not substituted. Early renewals helped; the numerical condition still passes.",
+          "ro": "Creșterea cRPO la curs constant este 21% față de minimul original de 20%. Nu folosim creșterea la curs raportat. Reînnoirile devansate au ajutat; condiția numerică este totuși îndeplinită."
+        },
+        "thesis_impact": {
+          "en": "Contract delivery is supportive; Q4 timing must be followed separately.",
+          "ro": "Contractele susțin teza; calendarul T4 se urmărește separat."
+        },
+        "new_evidence_refs": [
+          "crpo-growth",
+          "timing"
+        ],
+        "actual_ref": "crpo-growth"
+      },
+      {
+        "watch_id": "now-margin",
+        "criterion_version": 1,
+        "criterion_sha256": "b31a7fcb555166b3869a2c0293d0b38558a9aa20ca39c95c626167f4566f2589",
+        "outcome": "Met",
+        "observed_period": "Q3 2026",
+        "reason": {
+          "en": "Adjusted operating margin is 32.5%, above 31%. The required GAAP bridge is preserved: 385 + 633 + 198 + 35 + 87 = $1,338m. Reported margin fell from 17% to 9.5%; this adverse evidence does not change the original adjusted threshold.",
+          "ro": "Marja ajustată este 32,5%, peste 31%. Reconcilierea GAAP cerută este păstrată: 385 + 633 + 198 + 35 + 87 = 1.338 mil. USD. Marja raportată a scăzut de la 17% la 9,5%; datele adverse nu schimbă pragul ajustat original."
+        },
+        "thesis_impact": {
+          "en": "Adjusted execution passes; reported profitability remains a concern.",
+          "ro": "Execuția ajustată trece testul; profitabilitatea raportată rămâne o preocupare."
+        },
+        "new_evidence_refs": [
+          "margin",
+          "gaap-margin",
+          "gaap-margin-old",
+          "op-bridge",
+          "adj-op"
+        ],
+        "actual_ref": "margin"
+      },
+      {
+        "watch_id": "now-cash",
+        "criterion_version": 1,
+        "criterion_sha256": "c6e9a9fdd3660a350a578769b2d2df9f41b72fc238dfe420ea43f977cdb689b6",
+        "outcome": "Mixed",
+        "observed_period": "Q3 2026",
+        "reason": {
+          "en": "Cash after equipment purchases rose from $578m to $748m. Operating cash rose from $813m to $839m, while equipment purchases fell from $235m to $91m. Acquisition-related cash addbacks rose from $14m to $74m, failing the no-larger-addbacks part of the favorable condition. Separate intangibles: H1/9M 2026 both zero; 2025 totals $34m/$43m. No unsupported claim that all improvement is timing.",
+          "ro": "Numerarul după active fixe a crescut de la 578 la 748 mil. USD. Numerarul din exploatare a crescut de la 813 la 839 mil. USD, iar investițiile au scăzut de la 235 la 91 mil. USD. Ajustările cash de achiziție au crescut de la 14 la 74 mil. USD, contrar părții favorabile care cerea ajustări cel mult egale. Intangibile: S1/nouă luni 2026 zero; 2025 totaluri 34/43 mil. USD. Nu atribuim nejustificat tot progresul calendarului."
+        },
+        "thesis_impact": {
+          "en": "Cash recovery is real on the saved equipment-only definition, but cash quality has not cleanly improved.",
+          "ro": "Revenirea există pe definiția salvată după active fixe, dar calitatea nu s-a îmbunătățit fără rezerve."
+        },
+        "new_evidence_refs": [
+          "fcf",
+          "fcf-old",
+          "cfo",
+          "cfo-old",
+          "capex",
+          "capex-old",
+          "cash-addback",
+          "cash-addback-old",
+          "int-check"
+        ]
+      },
+      {
+        "watch_id": "now-debt",
+        "criterion_version": 1,
+        "criterion_sha256": "35c465a7198526d40f80ae180c0fbe6cc1a7b1bffe298ba974d3e1da3a13d696",
+        "outcome": "Met",
+        "observed_period": "Q3 2026",
+        "reason": {
+          "en": "Met on the original favorable liquidity/retention condition. Cash and marketable securities total $6.961bn, with a $3bn undrawn, covenant-compliant revolver against $2.1bn commercial paper. Renewal is 98%, unchanged from Q2 and above 97% a year ago. Diluted shares are down year on year but up sequentially. Debt remains $7.524bn; commercial paper still requires rollover. Note 5 does not quantify Armis/Veza organic versus acquired growth; that disclosure component is unresolved, not evidence of success or failure.",
+          "ro": "Îndeplinit după condiția originală favorabilă de lichiditate/retenție. Numerarul și titlurile totalizează 6,961 mld. USD, cu facilitate neutilizată de 3 mld. USD conformă clauzelor, față de titluri comerciale de 2,1 mld. USD. Reînnoirea este 98%, egală cu T2 și peste 97% anual. Acțiunile diluate scad anual, dar cresc trimestrial. Datoria rămâne 7,524 mld. USD; titlurile comerciale cer refinanțare. Nota 5 nu separă numeric creșterea organică Armis/Veza; componenta rămâne nerezolvată, fără a dovedi succes ori eșec."
+        },
+        "thesis_impact": {
+          "en": "No disclosed aggregate retention deterioration or funding strain; acquisition-specific returns and renewal outcomes remain unproven.",
+          "ro": "Fără deteriorare agregată a retenției ori stres de finanțare raportat; randamentele și reînnoirile specifice achizițiilor rămân nedemonstrate."
+        },
+        "new_evidence_refs": [
+          "liquidity",
+          "revolver",
+          "cp",
+          "funding",
+          "renewal",
+          "renewal-old",
+          "b-renewal",
+          "share-growth",
+          "share-qoq",
+          "debt",
+          "b-debt",
+          "acq-disclosure"
+        ]
+      }
+    ],
+    "new_risks": [
+      {
+        "type": "interpretation",
+        "text": {
+          "en": "Q4 contracted-growth guidance slows, with early renewals and deployment-services allocation affecting interpretation.",
+          "ro": "Prognoza creșterii contractelor T4 încetinește, iar reînnoirile devansate și alocarea serviciilor de implementare influențează interpretarea."
+        },
+        "evidence_refs": [
+          "q4-crpo",
+          "timing"
+        ]
+      },
+      {
+        "type": "interpretation",
+        "text": {
+          "en": "Lower equipment spending supports cash flow, while higher acquisition cash exclusions and the reported-profit gap warrant continued scrutiny.",
+          "ro": "Investițiile mai mici susțin numerarul, în timp ce excluderile cash de achiziție și diferența de profit necesită urmărire."
+        },
+        "evidence_refs": [
+          "capex",
+          "capex-old",
+          "cash-addback",
+          "cash-addback-old",
+          "op-bridge"
+        ]
+      }
+    ]
+  },
+  "watchlist": [
+    {
+      "id": "now-sub",
+      "criterion_version": 2,
+      "question": {
+        "en": "Does subscription revenue meet the guided floor?",
+        "ro": "Abonamentele ating limita prognozei?"
+      },
+      "why": {
+        "en": "Tests Q4 delivery after early renewals and the allocation of deployment services.",
+        "ro": "Testează execuția T4 după reînnoirile devansate și alocarea serviciilor de implementare."
+      },
+      "baseline_refs": [
+        "sub",
+        "q4-sub"
+      ],
+      "due_period": "Q4 2026",
+      "criterion": {
+        "kind": "numeric",
+        "basis": "management_guidance",
+        "description": {
+          "en": "Q4 reported subscription revenue at least $4,245m, on the published accounting definition. Explain any services reallocation separately.",
+          "ro": "Abonamente raportate T4 de minimum 4.245 mil. USD, după definiția publicată. Explică separat realocările spre servicii."
+        },
+        "rationale": {
+          "en": "New period only. Continue the saved economic question using Q3 evidence and, for numeric targets, the issuer’s Q4 guidance. Original Q3 thresholds and outcomes remain unchanged.",
+          "ro": "Doar perioada nouă. Continuă întrebarea economică folosind datele T3 și, pentru praguri numerice, prognoza T4 a emitentului. Pragurile și rezultatele T3 rămân neschimbate."
+        },
+        "operator": "gte",
+        "value": 4245,
+        "unit": "currency",
+        "scale": 1000000,
+        "accounting_basis": "GAAP",
+        "definition": "Subscription revenue",
+        "currency": "USD",
+        "evidence_refs": [
+          "q4-sub"
+        ]
+      },
+      "impact": {
+        "favorable": {
+          "en": "Supports execution; recheck valuation separately.",
+          "ro": "Susține execuția; verifică evaluarea separat."
+        },
+        "adverse": {
+          "en": "Weakens the earnings/cash thesis; revisit scenario assumptions.",
+          "ro": "Slăbește teza profitului/cash-ului; revizuiește ipotezele."
+        },
+        "mixed": {
+          "en": "Separate demand progress from cost or timing deterioration.",
+          "ro": "Separă progresul cererii de deteriorarea costurilor sau calendarului."
+        },
+        "unresolved": {
+          "en": "Do not infer success or failure without comparable disclosure.",
+          "ro": "Nu deduce succes sau eșec fără date comparabile."
+        }
+      }
+    },
+    {
+      "id": "now-crpo",
+      "criterion_version": 2,
+      "question": {
+        "en": "Does contracted growth stay on plan?",
+        "ro": "Creșterea contractelor respectă planul?"
+      },
+      "why": {
+        "en": "Forward contracts help separate demand from revenue recognition timing.",
+        "ro": "Contractele separă cererea de calendarul recunoașterii veniturilor."
+      },
+      "baseline_refs": [
+        "crpo-growth",
+        "timing",
+        "q4-crpo"
+      ],
+      "due_period": "Q4 2026",
+      "criterion": {
+        "kind": "numeric",
+        "basis": "management_guidance",
+        "description": {
+          "en": "Q4 cRPO growth at constant currency at least 18.5%; separately explain renewal timing, acquisitions and on-premise mix.",
+          "ro": "Creștere cRPO T4 la curs constant de minimum 18,5%; explică separat calendarul reînnoirilor, achizițiile și mixul local."
+        },
+        "rationale": {
+          "en": "New period only. Continue the saved economic question using Q3 evidence and, for numeric targets, the issuer’s Q4 guidance. Original Q3 thresholds and outcomes remain unchanged.",
+          "ro": "Doar perioada nouă. Continuă întrebarea economică folosind datele T3 și, pentru praguri numerice, prognoza T4 a emitentului. Pragurile și rezultatele T3 rămân neschimbate."
+        },
+        "operator": "gte",
+        "value": 18.5,
+        "unit": "percent",
+        "scale": 1,
+        "accounting_basis": "adjusted",
+        "definition": "cRPO constant currency year-on-year growth",
+        "evidence_refs": [
+          "q4-crpo"
+        ]
+      },
+      "impact": {
+        "favorable": {
+          "en": "Supports execution; recheck valuation separately.",
+          "ro": "Susține execuția; verifică evaluarea separat."
+        },
+        "adverse": {
+          "en": "Weakens the earnings/cash thesis; revisit scenario assumptions.",
+          "ro": "Slăbește teza profitului/cash-ului; revizuiește ipotezele."
+        },
+        "mixed": {
+          "en": "Separate demand progress from cost or timing deterioration.",
+          "ro": "Separă progresul cererii de deteriorarea costurilor sau calendarului."
+        },
+        "unresolved": {
+          "en": "Do not infer success or failure without comparable disclosure.",
+          "ro": "Nu deduce succes sau eșec fără date comparabile."
+        }
+      }
+    },
+    {
+      "id": "now-margin",
+      "criterion_version": 2,
+      "question": {
+        "en": "Does the adjusted operating margin meet guidance?",
+        "ro": "Marja ajustată atinge prognoza?"
+      },
+      "why": {
+        "en": "Tests the cost of scaling AI and acquired products.",
+        "ro": "Testează costul extinderii AI și produselor achiziționate."
+      },
+      "baseline_refs": [
+        "margin",
+        "gaap-margin",
+        "q4-margin"
+      ],
+      "due_period": "Q4 2026",
+      "criterion": {
+        "kind": "numeric",
+        "basis": "management_guidance",
+        "description": {
+          "en": "Q4 adjusted operating margin at least 32%; reconcile reported profit and employee-share, amortization, acquisition and severance exclusions.",
+          "ro": "Marjă operațională ajustată T4 de minimum 32%; reconciliază profitul raportat și excluderile de acțiuni, amortizare, achiziții și restructurare."
+        },
+        "rationale": {
+          "en": "New period only. Continue the saved economic question using Q3 evidence and, for numeric targets, the issuer’s Q4 guidance. Original Q3 thresholds and outcomes remain unchanged.",
+          "ro": "Doar perioada nouă. Continuă întrebarea economică folosind datele T3 și, pentru praguri numerice, prognoza T4 a emitentului. Pragurile și rezultatele T3 rămân neschimbate."
+        },
+        "operator": "gte",
+        "value": 32,
+        "unit": "percent",
+        "scale": 1,
+        "accounting_basis": "adjusted",
+        "definition": "Adjusted operating margin",
+        "evidence_refs": [
+          "q4-margin"
+        ]
+      },
+      "impact": {
+        "favorable": {
+          "en": "Supports execution; recheck valuation separately.",
+          "ro": "Susține execuția; verifică evaluarea separat."
+        },
+        "adverse": {
+          "en": "Weakens the earnings/cash thesis; revisit scenario assumptions.",
+          "ro": "Slăbește teza profitului/cash-ului; revizuiește ipotezele."
+        },
+        "mixed": {
+          "en": "Separate demand progress from cost or timing deterioration.",
+          "ro": "Separă progresul cererii de deteriorarea costurilor sau calendarului."
+        },
+        "unresolved": {
+          "en": "Do not infer success or failure without comparable disclosure.",
+          "ro": "Nu deduce succes sau eșec fără date comparabile."
+        }
+      }
+    },
+    {
+      "id": "now-cash",
+      "criterion_version": 2,
+      "question": {
+        "en": "Does unadjusted cash conversion recover?",
+        "ro": "Se îmbunătățește conversia cash neajustată?"
+      },
+      "why": {
+        "en": "Adjusted FCF can hide recurring cash exclusions.",
+        "ro": "FCF ajustat poate ascunde excluderi recurente de cash."
+      },
+      "baseline_refs": [
+        "fcf",
+        "fcf-old",
+        "cash-addback",
+        "cash-addback-old",
+        "int-y",
+        "fy-fcf"
+      ],
+      "due_period": "Q4 2026",
+      "criterion": {
+        "kind": "qualitative",
+        "basis": "analytical_test",
+        "description": {
+          "en": "Compare Q4 CFO less equipment purchases with Q4 2025, then separately assess purchased intangibles and cash exclusions. Favorable only if cash grows without larger recurring addbacks; Mixed if these components diverge or timing drives the result. Separately reconcile the FY2026 adjusted FCF-margin target of 36%; it is not a 36% unadjusted-cash target.",
+          "ro": "Compară numerarul T4 după active fixe cu T4 2025, apoi verifică separat intangibilele și excluderile cash. Favorabil doar dacă numerarul crește fără ajustări recurente mai mari; Mixt dacă părțile diverg sau calendarul explică rezultatul. Reconciliază separat ținta anuală ajustată de 36%; nu este țintă de cash neajustat."
+        },
+        "rationale": {
+          "en": "New period only. Continue the saved economic question using Q3 evidence and, for numeric targets, the issuer’s Q4 guidance. Original Q3 thresholds and outcomes remain unchanged.",
+          "ro": "Doar perioada nouă. Continuă întrebarea economică folosind datele T3 și, pentru praguri numerice, prognoza T4 a emitentului. Pragurile și rezultatele T3 rămân neschimbate."
+        }
+      },
+      "impact": {
+        "favorable": {
+          "en": "Supports execution; recheck valuation separately.",
+          "ro": "Susține execuția; verifică evaluarea separat."
+        },
+        "adverse": {
+          "en": "Weakens the earnings/cash thesis; revisit scenario assumptions.",
+          "ro": "Slăbește teza profitului/cash-ului; revizuiește ipotezele."
+        },
+        "mixed": {
+          "en": "Separate demand progress from cost or timing deterioration.",
+          "ro": "Separă progresul cererii de deteriorarea costurilor sau calendarului."
+        },
+        "unresolved": {
+          "en": "Do not infer success or failure without comparable disclosure.",
+          "ro": "Nu deduce succes sau eșec fără date comparabile."
+        }
+      }
+    },
+    {
+      "id": "now-debt",
+      "criterion_version": 2,
+      "question": {
+        "en": "Are integration and funding risks easing?",
+        "ro": "Scad riscurile integrării și finanțării?"
+      },
+      "why": {
+        "en": "Acquisition returns must justify the larger debt burden.",
+        "ro": "Randamentul achizițiilor trebuie să justifice datoria mai mare."
+      },
+      "baseline_refs": [
+        "debt",
+        "liquidity",
+        "cp",
+        "revolver",
+        "renewal",
+        "shares",
+        "acq-disclosure"
+      ],
+      "due_period": "Q4 2026",
+      "criterion": {
+        "kind": "qualitative",
+        "basis": "analytical_test",
+        "description": {
+          "en": "At Q4, assess cash and marketable securities, commercial-paper refinancing, credit-facility availability/covenants, renewal stability and diluted shares. Favorable if liquidity stays adequate and aggregate retention is not impaired; adverse on material funding strain or disruption. Record Armis/Veza organic-growth and acquisition-specific retention disclosure separately as disclosed or unresolved; do not substitute aggregate renewal for it.",
+          "ro": "În T4, evaluează numerarul și titlurile, refinanțarea titlurilor comerciale, accesul/clauzele facilității, reînnoirile și acțiunile diluate. Favorabil dacă lichiditatea rămâne adecvată și retenția agregată rezistă; advers la stres ori perturbare materială. Marchează separat dezvăluirea creșterii organice și retenției Armis/Veza ca disponibilă sau nerezolvată."
+        },
+        "rationale": {
+          "en": "New period only. Continue the saved economic question using Q3 evidence and, for numeric targets, the issuer’s Q4 guidance. Original Q3 thresholds and outcomes remain unchanged.",
+          "ro": "Doar perioada nouă. Continuă întrebarea economică folosind datele T3 și, pentru praguri numerice, prognoza T4 a emitentului. Pragurile și rezultatele T3 rămân neschimbate."
+        }
+      },
+      "impact": {
+        "favorable": {
+          "en": "Supports execution; recheck valuation separately.",
+          "ro": "Susține execuția; verifică evaluarea separat."
+        },
+        "adverse": {
+          "en": "Weakens the earnings/cash thesis; revisit scenario assumptions.",
+          "ro": "Slăbește teza profitului/cash-ului; revizuiește ipotezele."
+        },
+        "mixed": {
+          "en": "Separate demand progress from cost or timing deterioration.",
+          "ro": "Separă progresul cererii de deteriorarea costurilor sau calendarului."
+        },
+        "unresolved": {
+          "en": "Do not infer success or failure without comparable disclosure.",
+          "ro": "Nu deduce succes sau eșec fără date comparabile."
+        }
+      }
+    },
+    {
+      "id": "now-ai-acv",
+      "criterion_version": 1,
+      "question": {
+        "en": "Does AI reach the raised annual contract-value target?",
+        "ro": "AI atinge ținta majorată de contracte anuale?"
+      },
+      "why": {
+        "en": "Tests monetization beyond product announcements.",
+        "ro": "Testează monetizarea dincolo de anunțuri."
+      },
+      "baseline_refs": [
+        "ai-target"
+      ],
+      "due_period": "FY 2026",
+      "criterion": {
+        "kind": "numeric",
+        "basis": "management_guidance",
+        "description": {
+          "en": "Year-end 2026 AI annual contract value at least $1,700m on the same disclosed scope. ACV is annualized contracted value, not GAAP revenue or cash; if scope changes and no reconciliation exists, use Not comparable.",
+          "ro": "Valoarea anuală a contractelor AI la final de 2026 de minimum 1.700 mil. USD pe același perimetru. ACV este valoare anualizată contractată, nu venit GAAP sau numerar; dacă perimetrul se schimbă fără reconciliere, verdictul este Necomparabil."
+        },
+        "rationale": {
+          "en": "Issuer raised the year-end target; preserve its measure instead of relabeling it as revenue.",
+          "ro": "Emitentul a majorat ținta; păstrează indicatorul fără a-l redenumi venit."
+        },
+        "operator": "gte",
+        "value": 1700,
+        "unit": "currency",
+        "scale": 1000000,
+        "currency": "USD",
+        "accounting_basis": "operating",
+        "definition": "AI annual contract value",
+        "evidence_refs": [
+          "ai-target"
+        ]
+      },
+      "impact": {
+        "favorable": {
+          "en": "Supports execution; recheck valuation separately.",
+          "ro": "Susține execuția; verifică evaluarea separat."
+        },
+        "adverse": {
+          "en": "Weakens the earnings/cash thesis; revisit scenario assumptions.",
+          "ro": "Slăbește teza profitului/cash-ului; revizuiește ipotezele."
+        },
+        "mixed": {
+          "en": "Separate demand progress from cost or timing deterioration.",
+          "ro": "Separă progresul cererii de deteriorarea costurilor sau calendarului."
+        },
+        "unresolved": {
+          "en": "Do not infer success or failure without comparable disclosure.",
+          "ro": "Nu deduce succes sau eșec fără date comparabile."
+        }
+      }
+    }
+  ],
+  "next_event": {
+    "id": "now-q4-2026-results",
+    "kind": "results",
+    "period": "Q4 2026",
+    "confidence": "Not announced",
+    "date": null,
+    "checked_at": "2026-10-29",
+    "source_id": "calendar",
+    "basis": {
+      "en": "No official Q4/FY2026 release date verified in the issuer calendar or announcement search as of October 29. Recheck before the next review; no countdown date is invented.",
+      "ro": "Nu a fost verificată o dată oficială T4/2026 în calendar ori anunțuri la 29 octombrie. Reverifică înaintea următoarei analize; nu inventăm data."
+    }
+  },
+  "related_events": [
+    {
+      "id": "now-q3-2026-call",
+      "kind": "call",
+      "period": "Q3 2026",
+      "confidence": "Confirmed",
+      "date": "2026-10-28",
+      "time": "14:00",
+      "timezone": "America/Los_Angeles",
+      "checked_at": "2026-10-29",
+      "source_id": "release"
+    }
+  ]
+}
