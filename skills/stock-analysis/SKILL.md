@@ -1,6 +1,6 @@
 ---
 name: stock-analysis
-description: Research public companies in beginner-friendly English or Romanian reports, compare fundamentals, review earnings against saved watchlists, and maintain a shared company index with earnings countdowns and a logo calendar. Use for company research, earnings follow-ups and the studied-company index, not quote-only lookups or trade execution.
+description: Research public companies in beginner-friendly English or Romanian reports, compare fundamentals, review earnings, and maintain a shared company index. Run on-demand market/news/macro/geopolitical sweeps of tracked companies and discover new publicly traded stock opportunities. Use for company research, market sweeps, stock discovery, earnings follow-ups and the studied-company index, not quote-only lookups or trade execution.
 ---
 
 # Stock Analysis
@@ -18,8 +18,16 @@ Produce a clear answer backed by inspectable evidence, then preserve what should
 | Translate or improve layout | Editorial | Preserve original cutoff, facts, source dates and expectations. Do not imply a financial refresh. |
 | Make a saved report explain more | Depth revision | Follow [depth-revisions.md](references/depth-revisions.md): new explanations and lessons from the existing evidence only; same cutoff and conclusions. |
 | Browse studied companies / earnings calendar | Index | Shared company cards, earnings countdowns, review states and a calendar with company logos. |
+| Run the market/news/macro/geopolitical sweep | Market sweep | Use the repository's existing dynamic tracked-company landscape workflow and saved-question ledger. |
+| Find promising stocks across markets / opportunity scan | Opportunity discovery | Evidence-backed wider-market candidate funnel and research-priority shortlist, separate from earnings watchlists. |
 
 Resolve legal issuer, exchange, share class/ADR ratio, durable security identifier, trading/reporting currencies and fiscal year-end. A ticker is an alias, not identity. Ask only if ambiguity affects the security, baseline or requested scope. Prefer a regulator issuer identifier plus ISIN, or a verified exchange/share-class identity where no ISIN is available. Never invent an official identifier.
+
+## Market intelligence and opportunity discovery
+
+For **Market sweep**, use the repository root's `AGENTS.md`, `docs/market-sweep-design.md` and `market-sweep-registry.json`. The existing `start_market_sweep.py`, `collect_market_sources.py` and `render_market_sweep.py` pipeline freezes every currently tracked company and exact saved question, adds company/macroeconomic/policy/geopolitical evidence, and publishes an auditable bilingual landscape. The user initiates runs; do not schedule automatic recurring sweeps, alter original questions, or clear earnings flags.
+
+For **Opportunity discovery**, read `docs/market-opportunity-discovery.md`. This is a **different** on-demand mode for identifying new publicly traded companies outside the registry. Freeze the security universe, investigate independent growth, quality, valuation, catalyst and diversification lenses, verify decisive primary sources and timestamped prices, disclose the coverage gaps and rejection log, and deliver research-priority tiers instead of unsupported buy ratings. Do not claim a whole-market screen from limited web searches, invent an automated discovery renderer, add candidates automatically to the company registry or recommend funded targets before full research. For portfolio-aware searches, apply the stock-analysis portfolio workflow and keep personal position data private.
 
 ## Research
 
